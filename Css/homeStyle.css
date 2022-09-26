@@ -1,0 +1,144 @@
+	/*FONT-FAMILIES USED*/
+	@import url('https://fonts.googleapis.com/css?family=Flamenco');
+	@import url('https://fonts.googleapis.com/css?family=Roboto Flex');
+
+	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+	/*CSS FILES*/
+	/*1*/
+	@import url('leftMenuStyle.css');
+
+	html {
+		height: 100%;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		width: 100%; height: auto;
+		font-family: Roboto Flex;
+		margin: 0;
+		padding: 0;
+	}
+
+	#bodyC {
+		position: relative;
+		display: table;
+		width: 100%; height: 100%;
+		background: white;
+		box-sizing: content-box;
+		overflow: hidden;
+	}
+		/*LEFT MENU IMPORT HERE*/
+
+		#rightBodyTCC {
+			position: relative;
+			display: table-cell;
+			width: 100%; height: 100%;
+			background: green;
+		}
+		#rightBodyC {
+			position: relative;
+			display: block;
+			width: 100%; height: 100%;
+		}
+			#topRightC {
+				position: fixed;
+				display: block;
+				width: 100%; height: 80px;
+				background: white;
+				top: 0;
+				box-shadow: 0 0 4px black;
+				z-index: 1;
+			}
+			#downRightC {
+				position: relative;
+				display: block;
+				width: 100%; height: 1000px;
+				background: lightgrey;
+			}
+
+				/*HERE IMPORT CSS FILE 1*/
+
+				/*#downBackgroundC {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 200px;
+					background: rgb(15, 13, 18);
+				}
+
+					#downMainScreenHomeC {
+
+					}
+
+
+					#profilePicC {
+						position: relative;
+						display: block;
+						width: 140px;
+						height: 140px;
+						background: rgba(15, 13, 18);
+						overflow: hidden;
+						border-radius: 6px;
+						border: 2px solid rgb(15, 13, 18);
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+
+						#profilePicImg {
+							width: 100%;
+							height: 100%;
+							background: rgb(15, 13, 18);
+							border-radius: 6px;
+							content: url('../Assets/developer3.jpg');
+							transform: translate(0, -400px);
+							animation: Appear2 1s linear 0s 1 normal;
+							animation-fill-mode: forwards;
+						}*/
+
+
+	/*SCREEN WIDTH UNDER 750px*/
+	@media only screen and (max-width: 750px) {
+		
+	}
+
+
+	/*ANIMATIONS*/
+	@keyframes DarkGreenToGreen {
+		from {
+			color: darkgreen;
+			box-shadow: 0 0 10px darkgreen;
+			border-color: darkgreen;
+		}
+		to {
+			color: green;
+			box-shadow: 0 0 12px none;
+			border-color: green;
+		}
+	}
+
+	@keyframes MovingInMenuLine {
+		0% {
+			left: 0;
+		}
+		50% {
+			left: 100%;
+		}
+		100% {
+			left: 0;
+		}
+	}
+
+	@keyframes Appear2 {
+		from {
+			transform: translate(0, -400px);
+		}
+		to {
+			transform: translate(0, 0);
+		}
+	}

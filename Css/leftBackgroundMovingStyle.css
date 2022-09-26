@@ -4,9 +4,7 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		background: rgb(31, 27, 36);
-		background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-		color: red;
+		background: transparent;
 	}
 
 		.squaresUL {
@@ -26,16 +24,18 @@
 				display: block;
 				width: 40px;
 				height: 20px;
-				background: rgba(255, 255, 255, 0.2);
+				background: rgba(138, 50, 6, 0.4);
 				border-radius: 50%;
 				bottom: -150px;
 				list-style: none;
-				animation: movingBackgroundsElements 20s linear infinite;
+				animation-fill-mode: forwards;
+				animation: movingBackgroundsElements 21s linear infinite;
 			}
 
 			.squaresUL li:nth-child(1) {
 				width: 80px;
 				height: 80px;
+				background: rgba(255, 255, 255, 0.2);
 				left: 25%;
 				animation-delay: 0s;
 			}
@@ -51,6 +51,7 @@
 			.squaresUL li:nth-child(3) {
 				width: 20px;
 				height: 20px;
+				background: rgba(255, 255, 255, 0.2);
 				left: 70%;
 				animation-delay: 4s;
 			}
@@ -80,6 +81,7 @@
 			.squaresUL li:nth-child(7) {
 				width: 150px;
 				height: 150px;
+				background: rgba(255, 255, 255, 0.2);
 				left: 35%;
 				animation-delay: 7s;
 			}
@@ -95,6 +97,7 @@
 			.squaresUL li:nth-child(9) {
 				width: 15px;
 				height: 15px;
+				background: rgba(255, 255, 255, 0.2);
 				left: 20%;
 				animation-delay: 2s;
 				animation-duration: 35s;
@@ -118,6 +121,6 @@
 		100% {
 			border-radius: 10%;
 			opacity: 0;
-			transform: translate(-500px, -1200px) rotate(720deg);
+			transform: translate(0px, -1200px) rotate(720deg);
 		}
 	}

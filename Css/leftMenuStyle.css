@@ -1,0 +1,252 @@
+		@import url('leftBackgroundMovingStyle.css');
+
+		#leftBodyTCC {
+			position: relative;
+			display: table-cell;
+			float: left;
+			width: 140px; height: 100%;
+			background: rgb(0, 0, 153);
+			background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+			transition: width 0.4s;
+		}
+
+		#leftBackgroundC {
+			position: absolute;
+			display: block;
+			width: inherit; height: 100%;
+			background: transparent;
+		}
+		
+		#leftBodyC {
+			position: fixed;
+			display: block;
+			width: inherit; height: 100%;
+			background: transparent;
+		}
+			#upLeftC {
+				position: relative;
+				display: block;
+				width: 100%; height: 80px;
+				background: transparent;
+			}
+			#openMenuBtnC {
+				position: relative;
+				display: inline-block;
+				width: 50px; height: 50px;
+				background: transparent;
+				left: 50%;
+				margin-top: 20px;
+				transform: translate(-50%, 0);
+			}
+			#openMenuBtn {
+				position: relative;
+				display: block;
+				width: 100%; height: 100%;
+				background: transparent;
+				border-radius: 0;
+				border: 2px solid rgb(117, 42, 6);
+				cursor: pointer;
+				padding: 2px;
+			}
+			#menuImg {
+				width: 100%; height: 100%;
+				content: url('../Assets/menu7.png');
+				transform: rotateY(180deg);
+			}
+
+			#downLeftC {
+				position: absolute;
+				display: block;
+				width: 100%;
+				background: transparent;
+				top: 80px;
+				bottom: 0;
+			}
+			#downMenuBtnLineC {
+				position: relative;
+				display: block;
+				width: 90%; height: 4px;
+				background: rgba(51, 51, 173);
+				left: 50%;
+				opacity: 0;
+				transform: translate(-50%, 0);
+				transition: opacity 0.5s;
+			}
+			#downMenuBtnMovingInLineC {
+				position: absolute;
+				width: 5%; height: 100%;
+				background: white;
+				border-radius: 5px;
+				left: 0;
+				animation: MovingInMenuLine 4s linear 0s infinite normal;
+				animation-play-state: paused;
+				animation-fill-mode: forwards;
+			}
+
+			#downMenuC {
+				position: relative;
+				display: block;
+				width: 100%;
+				background: transparent;
+				overflow: hidden;
+				top: 30%;
+				transform: translate(0, -50%);
+			}
+				#menuHideC {
+					position: absolute;
+					display: block;
+					float: left;
+					width: 100%; height: 100%;
+					background: transparent;
+					z-index: 1;
+					transform: translate(0, 0);
+					transition: transform 0.7s;
+				}
+
+				#menuShowC {
+					position: relative;
+					display: block;
+					width: 100%;
+					background: transparent;
+					transform: translate(-100%, 0);
+					transition: transform 0.7s;
+				}
+				#menuCenterShowC {
+					position: relative;
+					display: inline-block;
+					height: 100%;
+					background: transparent;
+					left: 50%;
+					transform: translate(-50%, 0);
+				}
+					#homeLeftMenuC {
+						margin-top: 0;
+					}
+					#resumeLeftMenuC {
+
+					}
+					#aboutMeLeftMenuC {
+
+					}
+					#contactLeftMenuC {
+						
+					}
+					.leftMenuBtnC {
+						position: relative;
+						display: block;
+						background: transparent;
+						margin-top: 15px;
+					}
+					.leftMenuBtn {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						border: none;
+						border-bottom: 1px solid rgb(51, 51, 173);
+						cursor: pointer;
+						padding: 2px 4px 2px 4px;
+					}
+					.leftMenuBtn:hover {
+						background: rgba(255, 255, 255, 0.4);
+					}
+					.leftMenuTextC {
+						position: relative;
+						display: inline-block;
+						float: left;
+						color: white;
+						font-size: 18px;
+					}
+					.leftMenuImg {
+						position: relative;
+						display: inline-block;
+						width: 12px; height: 12px;
+						background: transparent;
+						content: url('../Assets/arrow1.png');
+						margin: 5px 0 0 5px;
+					}
+					.leftMenuBtn:hover .leftMenuImg {
+						content: url('../Assets/arrow2.png');
+					}
+
+					#rightLineLeftMenuC {
+						position: absolute;
+						display: block;
+						width: 5px; height: 100%;
+						background: rgba(117, 42, 6, 0.5);
+						top: 0;
+						right: 14px;
+						opacity: 0;
+						transition: opacity 1s;
+					}
+
+				#menuProfileInfoC {
+					position: absolute;
+					display: block;
+					width: 100%;
+					background: transparent;
+					bottom: 0;
+				}
+				#menuProfileInfoCC {
+					position: relative;
+					display: inline-block;
+					float: right;
+					background: transparent;
+					left: 0;
+					padding: 5px 10px 5px 10px;
+					transform: translate(0, 0);
+					transition: translate 0.8s;
+				}
+					#facebookProfC {
+
+					}
+					#facebookProfImg {
+						content: url('../Assets/facebook1.png');
+					}
+					#facebookProfC:hover #facebookProfImg{
+						content: url('../Assets/facebook3.png');
+					}
+					#instagramProfC {
+
+					}
+					#instagramProfImg {
+						content: url('../Assets/instagram1.png');
+					}
+					#instagramProfC:hover #instagramProfImg{
+						content: url('../Assets/instagram3.png');
+					}
+					#linkedInProfC {
+
+					}
+					#linkedInProfImg {
+						content: url('../Assets/linkedIn1.png');
+					}
+					#linkedInProfC:hover #linkedInProfImg{
+						content: url('../Assets/linkedIn3.png');
+					}
+					#githubProfC {
+						margin-bottom: 2px;
+					}
+					#githubProfImg {
+						content: url('../Assets/gitHub4.png');
+					}
+					#githubProfC:hover #githubProfImg{
+						content: url('../Assets/gitHub6.png');
+					}
+					.menuProfC {
+						position: relative;
+						display: block;
+						width: 35px; height: 35px;
+						background: transparent;
+						margin-top: 8px;
+					}
+					.menuProfL {
+						position: relative;
+						display: block;
+						width: 100%; height: 100%;
+						cursor: pointer;
+					}
+					.menuProfImg {
+						position: relative;
+						display: block;
+						width: 100%; height: 100%;
+					}
