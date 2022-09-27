@@ -1,0 +1,83 @@
+	/*FONT-FAMILIES USED*/
+	@import url('https://fonts.googleapis.com/css?family=Flamenco');
+	@import url('https://fonts.googleapis.com/css?family=Roboto Flex');
+
+	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+	/*CSS FILES*/
+	/*1*/
+	@import url('../Css/leftMenuStyle.css');
+
+	html {
+		height: 100%;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		width: 100%; height: auto;
+		font-family: Roboto Flex;
+		margin: 0;
+		padding: 0;
+	}
+
+	#bodyC {
+		position: relative;
+		display: table;
+		width: 100%; height: 100%;
+		background: white;
+		box-sizing: content-box;
+		overflow: hidden;
+	}
+		/*LEFT MENU IMPORT HERE*/
+		/*1*/
+
+		#rightBodyTCC {
+			position: relative;
+			display: table-cell;
+			width: 100%; height: 100%;
+			background: green;
+		}
+		#rightBodyC {
+			position: relative;
+			display: block;
+			width: 100%; height: 100%;
+		}
+			#topRightC {
+				position: fixed;
+				display: block;
+				width: 100%; height: 80px;
+				background: white;
+				top: 0;
+				box-shadow: 0 0 4px black;
+				z-index: 1;
+			}
+			#downRightC {
+				position: relative;
+				display: block;
+				width: 100%; height: 1000px;
+				background: lightgrey;
+			}
+
+
+	/*SCREEN WIDTH UNDER 750px*/
+	@media only screen and (max-width: 750px) {
+		
+	}
+
+
+	/*ANIMATIONS*/
+	@keyframes MovingInMenuLine {
+		0% {
+			left: 0;
+		}
+		50% {
+			left: 100%;
+		}
+		100% {
+			left: 0;
+		}
+	}
