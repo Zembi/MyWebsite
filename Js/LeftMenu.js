@@ -23,6 +23,7 @@
 		Main() {
 			this.CreatePatronOfTheLeftMenu();
 			this.LeftScreenEventsHome();
+			this.SetUpTopRightBar();
 		}
 
 		CreatePatronOfTheLeftMenu() {
