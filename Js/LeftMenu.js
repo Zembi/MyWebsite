@@ -60,8 +60,8 @@
 					menuProfileInfoCC.style.left = "-50%";
 					menuProfileInfoCC.style.transform = "translate(50%, 0)";
 
-					//LOCAL STORAGE MENU STATUS
-					localStorage.setItem("leftMenuStatus", 1);
+					//SESSION STORAGE MENU STATUS
+					sessionStorage.setItem("leftMenuStatus", 1);
 				}
 				else {
 					menu.setStatus(0);
@@ -77,8 +77,8 @@
 					menuProfileInfoCC.style.left = "0";
 					menuProfileInfoCC.style.transform = "translate(0, 0)";
 
-					//LOCAL STORAGE MENU STATUS
-					localStorage.setItem("leftMenuStatus", 0);
+					//SESSION STORAGE MENU STATUS
+					sessionStorage.setItem("leftMenuStatus", 0);
 				}
 			});
 

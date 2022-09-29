@@ -6,6 +6,7 @@
 		background-image: linear-gradient(120deg, rgb(0, 4, 40) 0%, rgb(0, 78, 146) 100%);
 		top: 0;
 		box-shadow: 0 0 4px black;
+		overflow: hidden;
 		z-index: 1;
 	}
 
@@ -39,7 +40,9 @@
 		left: 50%;
 		bottom: 0;
 		padding: 4px 8px 4px 8px;
-		transform: translate(-50%, 0);
+		transform: translate(-50%, -500%);
+		animation: MovingTitle 0.8s linear 1;
+		animation-fill-mode: forwards;
 	}
 	#bottomTaskBarPageTitleTextC {
 		background: transparent;
@@ -62,37 +65,14 @@
 	}
 
 	/*ANIMATIONS*/
-	@keyframes MovingInAndOutMenuLine {
+	@keyframes MovingTitle {
 		0% {
-			left: 0;
-		}
-		25% {
-			width: 20px;
-			left: 50%;
-		}
-		30% {
-		}
-		40% {
-
-		}
-		50% {
-			width: 20px;
-			left: 100%;
-		}
-		60% {
-
-		}
-		75% {
-			left: 50%;
-		}
-		80% {
-
+			transform: translate(-50%, -500%);
 		}
 		90% {
-
+			transform: translate(-50%, 20%);
 		}
 		100% {
-			width: 2px;
-			left: 0;
+			transform: translate(-50%, 0);
 		}
 	}

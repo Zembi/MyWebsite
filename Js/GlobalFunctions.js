@@ -1,12 +1,12 @@
 
-	//LOCAL SESSION WORKSPACE
-	function LocalStorageEvents() {
-		//GET LOCAL STORAGE
-		var leftMenuStatus = localStorage.getItem("leftMenuStatus");
+	//SESSION STORAGE WORKSPACE
+	function SessionStorageEvents() {
+		//GET SESSION STORAGE
+		var leftMenuStatus = sessionStorage.getItem("leftMenuStatus");
 
 		if(leftMenuStatus == 1) {
 			document.getElementById("openMenuBtn").click();
 		}
 	}
 
-	LocalStorageEvents();
+	SessionStorageEvents();
