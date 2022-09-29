@@ -10,19 +10,17 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeLeftMenu();
-			this.InitializeRightScreen();
+			this.InitializeRightTopScreen();
 		}
 
 		InitializeLeftMenu() {
-			//LEFTMENU CLASS OBJECT
+			//LEFT MENU CLASS OBJECT
 			this.leftMenu = new LeftMenu("leftBodyTCC", "Resume");
 		}
 
-		InitializeRightScreen() {
-			var topRightC = document.getElementById("topRightC");
-			var downRightC = document.getElementById("downRightC");
-
-			//topRightC.innerHTML = "<div>";
+		InitializeRightTopScreen() {
+			//TOP BAR CLASS OBJECT
+			this.topBar = new TopBar("topBarC", "Resume");
 		}
 	}
 

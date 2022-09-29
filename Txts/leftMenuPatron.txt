@@ -1,21 +1,22 @@
 <div id="leftBodyTCC">
-		<!--<div id="leftBackgroundC">
-				<div class="backgroundMovingC">
-					<ul class="squaresUL">
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div >
-			</div>
-			<div id="leftBodyC">
+		<div id="leftBodyC">
+				<div id="leftBackgroundC">
+					<div class="backgroundMovingC">
+						<ul class="squaresUL">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div >
+				</div>
+			
 				<div id="upLeftC">
 					<div id="openMenuBtnC">
 						<button id="openMenuBtn">
@@ -84,5 +85,5 @@
 						</div>
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</div>

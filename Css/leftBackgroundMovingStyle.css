@@ -24,12 +24,12 @@
 				display: block;
 				width: 40px;
 				height: 20px;
-				background: rgba(138, 50, 6, 0.4);
+				background: rgba(112, 42, 6, 0.7);
 				border-radius: 50%;
 				bottom: -150px;
 				list-style: none;
 				animation-fill-mode: forwards;
-				animation: movingBackgroundsElements 21s linear infinite;
+				animation: movingBackgroundsElements 19s linear infinite;
 			}
 
 			.squaresUL li:nth-child(1) {
