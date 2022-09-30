@@ -1,0 +1,73 @@
+	/*FONT-FAMILIES USED*/
+	@import url('https://fonts.googleapis.com/css?family=Roboto Flex');
+
+	html {
+		width: 100%; height: 100%;
+	}
+
+	body {
+		display: block;
+		width: 100%; height: 100%;
+		background: rgb(0, 4, 41);
+		font-family: Poppins, sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	#loadRedirectC {
+		position: relative;
+		display: inline-block;
+		background: transparent;
+		width: 35%;
+		top: 50%;
+		left: 50%;
+		padding: 4px;
+		transform: translate(-50%, -50%);
+	}
+
+		#loadingTitleC {
+			position: relative;
+			display: inline-block;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+		#loadingTitleC h1 {
+			color: white;
+			font-size: 18px;
+			font-weight: normal;
+			margin: 0;
+		}
+
+		#loadingFullC {
+			position: relative;
+			display: block;
+			width: 100%; height: 8px;
+			background: rgb(255, 255, 255, 0.2);
+			border-radius: 2px;
+			overflow: hidden;
+			margin: 6px 0 6px 0;
+		}
+		#loadingBarC {
+			width: 0; height: 100%;
+			background: linear-gradient(90deg, rgb(117, 42, 6) 50%, rgb(191, 69, 10));
+		}
+
+		#loadingCountC {
+			position: relative;
+			display: inline-block;
+			left: 50%;
+			margin: 2px 0 0 0;
+			transform: translate(-50%, 0);
+		}
+		#loadingCountP {
+			color: white;
+			font-size: 15px;
+			margin: 0;
+			padding: 0;
+		}
+
+
+	/*SCREEN WIDTH UNDER 750px*/
+	@media only screen and (max-width: 750px) {
+		
+	}

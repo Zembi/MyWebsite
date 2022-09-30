@@ -25,7 +25,3 @@
 	}
 
 	var startHomeWeb = new HomeScreen();
-
-	function TalkToOtherFiles() {
-		
-	}
