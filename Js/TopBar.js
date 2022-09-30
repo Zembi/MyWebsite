@@ -23,12 +23,12 @@
 		}
 
 		CreatePatronOfTopBar() {
-			document.getElementById("topBarC").innerHTML = '<div id="topTaskBarHalfC"></div><div id="midTaskBarHalfC"><div id="bottomTaskBarMidC"><div id="bottomTaskBarPageTitleC"><div id="bottomTaskBarPageTitleTextC"></div></div></div></div><div id="bottomTaskBarHalfC"><div id="lineTaskBarC"></div></div>';
+			document.getElementById("topBarC").innerHTML = '<div id="topTaskBarHalfC"></div><div id="midTaskBarHalfC"><div id="bottomTaskBarMidC"><div id="bottomTaskBarPageTitleC"><div id="bottomTaskBarPageTitleTextH"></div></div></div></div><div id="bottomTaskBarHalfC"><div id="lineTaskBarC"></div></div>';
 		}
 
 		TitlePartBarInfo() {
-			var bottomTaskBarPageTitleTextC = document.getElementById("bottomTaskBarPageTitleTextC");
+			var bottomTaskBarPageTitleTextH = document.getElementById("bottomTaskBarPageTitleTextH");
 			
-			bottomTaskBarPageTitleTextC.innerHTML = this.getStatus();
+			bottomTaskBarPageTitleTextH.innerHTML = this.getStatus();
 		}
 	}

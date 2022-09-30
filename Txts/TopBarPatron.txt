@@ -1,13 +1,13 @@
-<div id="topBarC">
-	<div id="topTaskBarHalfC"></div>
-	<div id="midTaskBarHalfC">
-		<div id="bottomTaskBarMidC">
-			<div id="bottomTaskBarPageTitleC">
-				<div id="bottomTaskBarPageTitleTextC"></div>
+	<div id="topBarC">
+		<div id="topTaskBarHalfC"></div>
+		<div id="midTaskBarHalfC">
+			<div id="bottomTaskBarMidC">
+				<div id="bottomTaskBarPageTitleC">
+					<div id="bottomTaskBarPageTitleTextH"></div>
+				</div>
 			</div>
 		</div>
+		<div id="bottomTaskBarHalfC">
+			<div id="lineTaskBarC"></div>
+		</div>
 	</div>
-	<div id="bottomTaskBarHalfC">
-		<div id="lineTaskBarC"></div>
-	</div>
-</div>

@@ -30,7 +30,7 @@
 		position: relative;
 		display: table;
 		width: 100%; height: 100%;
-		background: white;
+		background: black;
 		box-sizing: content-box;
 		overflow: hidden;
 	}
@@ -42,26 +42,96 @@
 			display: table-cell;
 			float: right;
 			width: 100%; height: 100%;
-			background: green;
+			background: linear-gradient(90deg, rgb(0, 93, 176) -100%, rgb(0, 29, 76) 50%, rgb(0, 93, 176) 1000%);
 		}
 		#rightBodyC {
 			position: relative;
 			display: block;
-			width: 100%; height: 100%;
+			width: 96%; height: 100%;
+			margin: 0 2% 0 2%;
 		}
 			
-			/*TOP BAR IMPORT HERE*/
-			/*2*/
+		/*TOP BAR IMPORT HERE*/
+		/*2*/
 
-			#downRightC {
-				position: relative;
+		#downRightC {
+			position: relative;
+			display: block;
+			width: 100%; height: 100%;
+			background: transparent;
+			margin-top: 10px;
+			animation: OpacityElements 1s linear 1;
+			animation-fill-mode: forwards;
+		}
+		#mainHomeC {
+			position: relative;
+			display: block;
+			width: 100%; height: 100%;
+		}
+
+			#mainHomeBackgroundC {
+				position: absolute;
 				display: block;
 				width: 100%; height: 100%;
-				background: rgb(229, 230, 255);
+				background: rgba(255, 255, 255, 0.2);
 			}
+
+			#mainHomeBodyC {
+				position: relative;
+				display: inline-block;
+				width: 100%; height: 100%;
+				background: transparent;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+
+				#homeMainUpC {
+					position: relative;
+					display: block;
+					width: 100%; height: 300px;
+				}
+				
+					#homeMainUpTitleTextH {
+						position: absolute;
+						display: block;
+						color: white;
+						font-size: 25px;
+						margin: 10px 20px 10px 20px;
+						z-index: 1;
+					}
+					
+					#homeMainUpImgC {
+						position: relative;
+						display: block;
+						width: 100%; height: 100%;
+						background: rgb(2, 19, 35);
+						border: 2px solid rgb(1, 11, 20);
+						box-sizing: border-box;
+					}
+					#homeMainUpImg {
+						position: relative;
+						display: inline-block;
+						width: 99%; height: 98%;
+						border-radius: 2px;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						content: url('../Assets/network1.jpg');
+					}
 
 
 	/*SCREEN WIDTH UNDER 750px*/
 	@media only screen and (max-width: 750px) {
 		
+	}
+
+
+	/*ANIMATIONS*/
+	@keyframes OpacityElements {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}

@@ -57,8 +57,9 @@
 					menuShowC.style.transform = "translate(0, 0)";
 					rightLineLeftMenuC.style.opacity = "1";
 
-					menuProfileInfoCC.style.left = "-50%";
-					menuProfileInfoCC.style.transform = "translate(50%, 0)";
+					//SOCIAL INFO EVENTS
+					menuProfileInfoCC.style.animation = "ChangeSocialInfoPosToCenter 0.5s linear 1";
+					menuProfileInfoCC.style.animationFillMode = "forwards";
 
 					//SESSION STORAGE MENU STATUS
 					sessionStorage.setItem("leftMenuStatus", 1);
@@ -74,8 +75,9 @@
 					menuShowC.style.transform = "translate(-100%, 0)";
 					rightLineLeftMenuC.style.opacity = "0";
 
-					menuProfileInfoCC.style.left = "0";
-					menuProfileInfoCC.style.transform = "translate(0, 0)";
+					//SOCIAL INFO EVENTS
+					menuProfileInfoCC.style.animation = "ChangeSocialInfoPosToRight 0.5s linear 1";
+					menuProfileInfoCC.style.animationFillMode = "forwards";
 
 					//SESSION STORAGE MENU STATUS
 					sessionStorage.setItem("leftMenuStatus", 0);
@@ -85,21 +87,17 @@
 			//MENU BUTTON HOVER ACTIONS
 			menu.getButtonElmnt().addEventListener("mouseover", function() {
 				if(menu.getStatus() == 0) {
-					this.style.border = "2px solid rgb(0, 35, 84)";
 					this.children[0].style.content = "url(../Assets/menu9.png)";
 				}
 				else {
-					this.style.border = "2px solid rgb(0, 35, 84)";
 					this.children[0].style.content = "url(../Assets/menu10.png)";
 				}
 			});
 			menu.getButtonElmnt().addEventListener("mouseout", function() {
 				if(menu.getStatus() == 0) {
-					this.style.border = "2px solid rgb(117, 42, 6)";
 					this.children[0].style.content = "url(../Assets/menu7.png)";
 				}
 				else {
-					this.style.border = "2px solid rgb(117, 42, 6)";
 					this.children[0].style.content = "url(../Assets/menu8.png)";
 				}
 			});
