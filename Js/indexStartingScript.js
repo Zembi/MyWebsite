@@ -29,8 +29,8 @@ function LoadBar() {
 
 //READY TO CHANGE STATUS
 function ReadyToRoll() {
-  //document.location.href = "../Home/home.html";
-  
+  sessionStorage.setItem("siteIsLoaded", 1);
+
   var metaTag = document.getElementById("changePageMeta");
   metaTag.content = "0; Home/home.html";
 }
