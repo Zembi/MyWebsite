@@ -26,7 +26,7 @@
 
 		HomeUpTitleTypeWriter() {
 			//GENERAL TITLE VARIABLES
-			var timeToType = 80;
+			var timeToType = 60;
 			var table = new Array();
 			var status = "be aware";
 
@@ -44,11 +44,11 @@
 			var textToType2 = "Hello human..";
 			var myProfileSecondLineInfoC = document.getElementById("myProfileSecondLineInfoC");
 			var typeReturn2 = "delete";
-			var replaceTexts2 = new Array("..my guy is probably coding right now..", "..so he can't welcome you..", "..but I am here for that.", "So make sure that you feel like home..", "..and be free to explore.", "I forgot to say that he is..", "Full Stack Web Developer! ;)");
+			var replaceTexts2 = new Array("..my guy is probably coding right now..", "..so he can't welcome you..", "..but I am here for that.", "So make sure that you feel like home..", "..and be free to explore.", "If you missed anything just click on me.", "I forgot to say that he is..", "Full Stack Web Developer! ;)");
 			var table2 = new Array(timeToType, c2, textToType2, myProfileSecondLineInfoC, typeReturn2, replaceTexts2);
 			table.push(table2);
 
-			TypeWriter(table, 0, status, 1000, 60);
+			TypeWriter(table, 0, status, 1000, 40);
 		}
 	}
 

@@ -68,13 +68,11 @@
 				clearTimeout(timeout1);
 
 				if(allTextsAr != null) {
-					//allTextsAr.forEach(newText => {
-						lineItemsArray[counter][5].push(textToDelete);
-						lineItemsArray[counter][2] = allTextsAr[0];
-						lineItemsArray[counter][5] = lineItemsArray[counter][5].slice(1);
+					lineItemsArray[counter][5].push(textToDelete);
+					lineItemsArray[counter][2] = allTextsAr[0];
+					lineItemsArray[counter][5] = lineItemsArray[counter][5].slice(1);
 
-						TypeWriter(lineItemsArray, counter, type, timingToWait, timeToDelete);
-					//});
+					TypeWriter(lineItemsArray, counter, type, timingToWait, timeToDelete);
 				}
 			}
 			else {

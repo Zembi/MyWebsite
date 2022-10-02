@@ -44,7 +44,7 @@
 				left: 75%;
 				transform: translate(-50%, -50%);
 				z-index: 1;
-				animation: RotateHomeWelcomeTitle 1s linear 1s 1;
+				animation: OnOffHeaderHome 15s linear 1s infinite;
 				animation-fill-mode: forwards;
 			}
 					
@@ -60,7 +60,8 @@
 				position: absolute;
 				display: block;
 				background: rgba(255, 255, 255, 0.4);
-				animation: HomeBehindImgPerimeterMove 3s linear 1;
+				animation: HomeBehindImgPerimeterMove 3s linear 0.8s 1;
+				animation-fill-mode: forwards;
 			}
 			#homeMainUpImg {
 				position: relative;
@@ -86,18 +87,19 @@
 					display: block;
 					float: left;
 					width: 100px; height: 100px;
+					margin-left: -15px;
 				}
 				#myProfileImg {
 					width: 100%; height: 100%;
 					background: transparent;
-					content: url(../Assets/robot1.png);
+					content: url(../Assets/robot2.png);
 				}
 
 				#myProfileHeadLinesC {
 					position: relative;
 					display: inline-block;
 					background: transparent;
-					margin: 10px 5px 0 5px;
+					margin: 10px 5px 0 15px;
 				}
 
 				#firstHomeHeaderLineMainC {
@@ -201,6 +203,27 @@
 
 
 	/*ANIMATIONS*/
+	@keyframes OnOffHeaderHome {
+		0% {
+			color: white;
+		}
+		15% {
+			color: rgb(0, 76, 144);
+		}
+		30% {
+			color: rgb(0, 40, 91);
+		}
+		50% {
+			color: transparent;
+		}
+		70% {
+			color: rgb(117, 42, 6);
+		}
+		100% {
+			color: white;
+		}
+	}
+
 	@keyframes HomeBehindImgPerimeterMove {
 		0% {
 			width: 6%; height: 1%;
