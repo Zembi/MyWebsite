@@ -4,119 +4,193 @@
 
 	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-	/*CSS FILES*/
-	/*1*/
-	@import url('../Css/leftMenuStyle.css');
-	/*2*/
-	@import url('../Css/topBarStyle.css');
-
-	html {
-		height: 100%;
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
-	}
-
-	body {
-		width: 100%; height: 100%;
-		font-family: Roboto Flex;
-		margin: 0;
-		padding: 0;
-	}
-
-	#bodyC {
+	@import url('../Css/mainPageCoreStyle.css');
+		
+	#mainHomeC {
 		position: relative;
-		display: table;
+		display: block;
 		width: 100%; height: 100%;
-		background: black;
-		box-sizing: content-box;
-		overflow: hidden;
 	}
-		/*LEFT MENU IMPORT HERE*/
-		/*1*/
 
-		#rightBodyTCC {
-			position: relative;
-			display: table-cell;
-			float: right;
+		#mainHomeBackgroundC {
+			position: absolute;
+			display: block;
 			width: 100%; height: 100%;
-			background: linear-gradient(90deg, rgb(0, 93, 176) -100%, rgb(0, 29, 76) 50%, rgb(0, 93, 176) 1000%);
+			background: rgba(117, 42, 6, 0.6);
 		}
-		#rightBodyC {
-			position: relative;
-			display: block;
-			width: 96%; height: 100%;
-			margin: 0 2% 0 2%;
-		}
-			
-		/*TOP BAR IMPORT HERE*/
-		/*2*/
 
-		#downRightC {
+		#mainHomeBodyC {
 			position: relative;
-			display: block;
+			display: inline-block;
 			width: 100%; height: 100%;
 			background: transparent;
-			margin-top: 10px;
-			animation: OpacityElements 1s linear 1;
-			animation-fill-mode: forwards;
+			left: 50%;
+			transform: translate(-50%, 0);
 		}
-		#mainHomeC {
+		#homeMainUpC {
 			position: relative;
 			display: block;
-			width: 100%; height: 100%;
+			width: 100%; height: 300px;
+			overflow: hidden;
 		}
-
-			#mainHomeBackgroundC {
+				
+			#homeMainUpTitleTextH {
 				position: absolute;
 				display: block;
-				width: 100%; height: 100%;
-				background: rgba(255, 255, 255, 0.2);
+				color: white;
+				font-size: 25px;
+				font-weight: normal;
+				top: 30%;
+				left: 75%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				animation: RotateHomeWelcomeTitle 1s linear 1s 1;
+				animation-fill-mode: forwards;
 			}
-
-			#mainHomeBodyC {
+					
+			#homeMainUpImgC {
+				position: relative;
+				display: block;
+				width: 100%; height: 100%;
+				background: rgb(2, 19, 35);
+				border: 2px solid rgb(1, 11, 20);
+				box-sizing: border-box;
+			}
+			#homebackgroundImgAnimationC {
+				position: absolute;
+				display: block;
+				background: rgba(255, 255, 255, 0.4);
+				animation: HomeBehindImgPerimeterMove 3s linear 1;
+			}
+			#homeMainUpImg {
 				position: relative;
 				display: inline-block;
-				width: 100%; height: 100%;
-				background: transparent;
+				width: 99%; height: 98%;
+				border-radius: 2px;
+				top: 50%;
 				left: 50%;
-				transform: translate(-50%, 0);
+				transform: translate(-50%, -50%);
+				content: url('../Assets/network1.jpg');
 			}
 
-				#homeMainUpC {
+			#homeTopLeftInfoC {
+				position: absolute;
+				display: block;
+				background: transparent;
+				top: 8px;
+				left: 10px;
+			}
+				
+				#myProfileImgC {
 					position: relative;
 					display: block;
-					width: 100%; height: 300px;
+					float: left;
+					width: 100px; height: 100px;
 				}
-				
-					#homeMainUpTitleTextH {
-						position: absolute;
-						display: block;
-						color: white;
-						font-size: 25px;
-						margin: 10px 20px 10px 20px;
-						z-index: 1;
-					}
-					
-					#homeMainUpImgC {
-						position: relative;
-						display: block;
-						width: 100%; height: 100%;
-						background: rgb(2, 19, 35);
-						border: 2px solid rgb(1, 11, 20);
-						box-sizing: border-box;
-					}
-					#homeMainUpImg {
+				#myProfileImg {
+					width: 100%; height: 100%;
+					background: transparent;
+					content: url(../Assets/robot1.png);
+				}
+
+				#myProfileHeadLinesC {
+					position: relative;
+					display: inline-block;
+					background: transparent;
+					margin: 10px 5px 0 5px;
+				}
+
+				#firstHomeHeaderLineMainC {
+					position: relative;
+					display: block;
+					background: transparent;
+				}
+					#firstHomeHeaderLineFrontC {
 						position: relative;
 						display: inline-block;
-						width: 99%; height: 98%;
-						border-radius: 2px;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-						content: url('../Assets/network1.jpg');
+						background: transparent;
+					}
+					#myProfileFirstLineInfoC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						margin: 10px 5px 0 5px;
+					}
+						#myProfileFirstLineInfoP {
+							position: relative;
+							display: inline-block;
+							background: transparent;
+							color: white;
+							font-size: 22px;
+							margin: 0;
+							padding: 0 2px 0 0;
+						}
+						#typeWriterFirstLineSp {
+							position: relative;
+							display: none;
+							float: right;
+							width: 2px; height: 30px;
+							background: rgb(255, 255, 255);
+							margin: 0;
+							padding: 0;
+							animation: TypeWriterFlickering 0.3s linear infinite alternate;
+						}
+					#firstHomeHeaderLineBackC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+					}
+
+				#secondHomeHeaderLineMainC {
+					position: relative;
+					display: block;
+					background: transparent;
+				}
+					#secondHomeHeaderLineFrontC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+					}
+					#myProfileSecondLineInfoC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						margin: 10px 5px 0 5px;
+					}
+						#myProfileSecondLineInfoP {
+							position: relative;
+							display: inline-block;
+							background: transparent;
+							color: white;
+							font-size: 16px;
+							margin: 0;
+							padding: 0 2px 0 0;
+							animation: ChangeFontStyle 1s linear infinite;
+						}
+						#typeWriterSecondLineSp {
+							position: relative;
+							display: none;
+							float: right;
+							width: 2px; height: 20px;
+							background: rgb(255, 255, 255);
+							margin: 0;
+							padding: 0;
+							animation: TypeWriterFlickering 0.3s linear infinite alternate;
+						}
+					#secondHomeHeaderLineBackC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+					}
+
+					.homeHeaderLinesC span:nth-child(1) {
+						color: rgb(0, 52, 109);
+					}
+					.homeHeaderLinesC span:nth-child(2) {
+						color: rgb(117, 42, 6);
+					}
+					.homeHeaderLinesC span:nth-child(3) {
+						color: rgb(0, 52, 109);
 					}
 
 
@@ -127,11 +201,82 @@
 
 
 	/*ANIMATIONS*/
-	@keyframes OpacityElements {
+	@keyframes HomeBehindImgPerimeterMove {
 		0% {
+			width: 6%; height: 1%;
+			background: rgb(117, 42, 6);
+			top: 0;
+			left: 0;
+			opacity: 1;
+		}
+		25% {
+			width: 6%; height: 1%;
+			top: 0;
+			left: 96%;
+		}
+		26% {
+			width: 0.5%; height: 10%;
+			top: 0;
+			left: 99.5%;
+		}
+		50% {
+			width: 0.5%; height: 10%;
+			top: 95%;
+			left: 99.5%;
+
+		}
+		51% {
+			width: 6%; height: 1%;
+			top: 99%;;
+			left: 96%;
+		}
+		75% {
+			width: 6%; height: 1%;
+			top: 99%;
+			left: 0;
+		}
+		76% {
+			width: 0.5%; height: 10%;
+			top: 95%;
+			left: 0;
+			opacity: 1;
+		}
+		99% {
+			width: 0.5%; height: 10%;
+			top: 0;
+			left: 0;
+		}
+		100% {
+			width: 6%; height: 1%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+	}
+
+	@keyframes ChangeFontStyle {
+		0% {
+			color: white;
+		}
+		50% {
+			color: darkgrey;
+		}
+		100% {
+			color: white;
+		}
+	}
+
+	@keyframes TypeWriterFlickering {
+		0% {
+			opacity: 1;
+		}
+		40% {
+			opacity: 1;
+		}
+		60% {
 			opacity: 0;
 		}
 		100% {
-			opacity: 1;
+			opacity: 0;
 		}
 	}

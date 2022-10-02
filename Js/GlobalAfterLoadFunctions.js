@@ -1,5 +1,6 @@
 
-	//SESSION STORAGE WORKSPACE
+
+	//SESSION STORAGE WORKSPACE//
 	function SessionStorageEvents() {
 		//GET SESSION STORAGE
 		var leftMenuStatus = sessionStorage.getItem("leftMenuStatus");
@@ -10,3 +11,4 @@
 	}
 
 	SessionStorageEvents();
+	////

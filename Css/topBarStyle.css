@@ -37,7 +37,7 @@
 		border-bottom: 4px solid rgb(117, 42, 6);
 		left: 50%;
 		bottom: 0;
-		padding: 4px 8px 4px 8px;
+		padding: 4px 8px 0px 8px;
 		transform: translate(-50%, -500%);
 		animation: MovingTitle 0.8s linear 1;
 		animation-fill-mode: forwards;
@@ -45,9 +45,10 @@
 	#bottomTaskBarPageTitleTextH {
 		background: transparent;
 		color: white;
-		font-size: 26px;
+		font-size: 30px;
 		font-weight: bold;
 		margin: 0;
+		padding: 0;
 	}
 
 	#bottomTaskBarHalfC {

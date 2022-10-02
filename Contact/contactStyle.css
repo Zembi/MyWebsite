@@ -4,61 +4,8 @@
 
 	@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-	/*CSS FILES*/
-	/*1*/
-	@import url('../Css/leftMenuStyle.css');
-	/*2*/
-	@import url('../Css/topBarStyle.css');
-
-	html {
-		height: 100%;
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
-	}
-
-	body {
-		width: 100%; height: auto;
-		font-family: Roboto Flex;
-		margin: 0;
-		padding: 0;
-	}
-
-	#bodyC {
-		position: relative;
-		display: table;
-		width: 100%; height: 100%;
-		background: white;
-		box-sizing: content-box;
-		overflow: hidden;
-	}
-		/*LEFT MENU IMPORT HERE*/
-		/*1*/
-
-		#rightBodyTCC {
-			position: relative;
-			display: table-cell;
-			float: right;
-			width: 100%; height: 100%;
-			background: green;
-		}
-		#rightBodyC {
-			position: relative;
-			display: block;
-			width: 100%; height: 100%;
-		}
-		
-			/*TOP BAR IMPORT HERE*/
-			/*2*/
-
-			#downRightC {
-				position: relative;
-				display: block;
-				width: 100%; height: 1000px;
-				background: lightgrey;
-			}
+	
+	@import url('../Css/mainPageCoreStyle.css');
 
 
 	/*SCREEN WIDTH UNDER 750px*/
@@ -68,14 +15,3 @@
 
 
 	/*ANIMATIONS*/
-	@keyframes MovingInMenuLine {
-		0% {
-			left: 0;
-		}
-		50% {
-			left: 100%;
-		}
-		100% {
-			left: 0;
-		}
-	}
