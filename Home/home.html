@@ -8,7 +8,7 @@
 <!--EVENTS AND ACTIONS BEFORE LOAD SITE-->
 <script src="../Js/beforeLoadPageScript.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="changePageMeta" name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="theme-color" content="rgb(190, 214, 148)">
 
@@ -51,7 +51,9 @@
 									<img id="homeMainUpImg">
 									<div id="homeTopLeftInfoC">
 										<div id="myProfileImgC">
-											<img id="myProfileImg">
+											<button id="myProfileImgBtn">
+												<img id="myProfileImg">
+											</button>
 										</div>
 										<div id="myProfileHeadLinesC">
 											<div id="firstHomeHeaderLineMainC">
@@ -60,9 +62,9 @@
 													<span>name</span>
 													<span>></span>
 												</div>
-												<div id="myProfileFirstLineInfoC">
-													<p id="myProfileFirstLineInfoP"></p>
-													<span id="typeWriterFirstLineSp"></span>
+												<div id="myProfileFirstLineInfoC" class="writerVectorInfoC">
+													<p id="myProfileFirstLineInfoP" class="writerVectorP"></p>
+													<span id="typeWriterFirstLineSp" class="writerVectorSp"></span>
 												</div>
 												<div id="firstHomeHeaderLineBackC" class="homeHeaderLinesC">
 													<span>&#60;/</span>
@@ -77,15 +79,20 @@
 													<span>robot</span>
 													<span>></span>
 												</div>
-												<div id="myProfileSecondLineInfoC">
-													<p id="myProfileSecondLineInfoP"></p>
-													<span id="typeWriterSecondLineSp"></span>
+												<div id="myProfileSecondLineInfoC" class="writerVectorInfoC">
+													<p id="myProfileSecondLineInfoP" class="writerVectorP"></p>
+													<span id="typeWriterSecondLineSp" class="writerVectorSp"></span>
 												</div>
 												<div id="secondHomeHeaderLineBackC" class="homeHeaderLinesC">
 													<span>&#60;/</span>
 													<span>robot</span>
 													<span>></span>
 												</div>
+											</div>
+
+											<div id="robotCommentC" class="writerVectorInfoC">
+												<p id="robotCommentP" class="writerVectorP"></p>
+												<span id="robotCommentSp" class="writerVectorSp"></span>
 											</div>
 										</div>
 									</div>
