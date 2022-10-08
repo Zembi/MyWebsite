@@ -22,7 +22,7 @@
 		#mainHomeBodyC {
 			position: relative;
 			display: inline-block;
-			width: 100%; height: 100%;
+			width: 100%;
 			background: transparent;
 			left: 50%;
 			transform: translate(-50%, 0);
@@ -31,17 +31,18 @@
 			position: relative;
 			display: block;
 			width: 100%; height: 300px;
-			overflow: hidden;
 		}
 				
 			#homeMainUpTitleTextH {
 				position: absolute;
 				display: block;
 				color: white;
+				background: transparent;
 				font-size: 25px;
 				font-weight: normal;
-				top: 30%;
+				top: 38%;
 				left: 75%;
+				margin: 0;
 				transform: translate(-50%, -50%);
 				z-index: 1;
 				animation: OnOffHeaderHome 15s linear 1s infinite;
@@ -74,7 +75,7 @@
 				content: url('../Assets/network1.jpg');
 			}
 
-			#homeTopLeftInfoC {
+			#homeTopInfoC {
 				position: absolute;
 				display: block;
 				background: transparent;
@@ -86,8 +87,8 @@
 					position: relative;
 					display: block;
 					float: left;
-					width: 100px; height: 100px;
-					margin-left: -15px;
+					width: 80px; height: 80px;
+					margin: 4px 0 0 -13px;
 				}
 				#myProfileImgBtn {
 					position: relative;
@@ -111,7 +112,7 @@
 					position: relative;
 					display: inline-block;
 					background: transparent;
-					margin: 10px 5px 0 15px;
+					margin: 0 5px 0 15px;
 				}
 
 				#firstHomeHeaderLineMainC {
@@ -120,7 +121,7 @@
 					background: transparent;
 				}
 					#myProfileFirstLineInfoC {
-						margin: 10px 5px 0 5px;
+						margin: 5px 5px 0 5px;
 					}
 						#myProfileFirstLineInfoP {
 							font-size: 22px;
@@ -135,7 +136,7 @@
 					background: transparent;
 				}
 					#myProfileSecondLineInfoC {
-						margin: 10px 5px 0 5px;
+						margin: 8px 5px 0 5px;
 					}
 						#myProfileSecondLineInfoP {
 							font-size: 16px;
@@ -147,12 +148,12 @@
 
 				#robotCommentC {
 					opacity: 1;
-					margin: 5px 5px 0 1px;
+					margin: 7px 5px 0 1px;
 					transition: opacity 0.7s;
 				}
 					#robotCommentP {
 						font-size: 16px;
-						color: rgb(54, 55, 55);
+						color: rgba(255, 255, 255, 0.4);
 					}
 					#robotCommentSp {
 						width: 2px; height: 20px;
@@ -197,6 +198,247 @@
 							padding: 0;
 							animation: TypeWriterFlickering 0.3s linear infinite alternate;
 						}
+
+		#homeMainC {
+			position: relative;
+			display: block;
+			width: 100%;
+			background: transparent;
+			overflow: hidden;
+			padding: 0;
+		}
+		#homeMainCenterC {
+			position: relative;
+			display: block;
+			width: 100%;
+			border-radius: 5px;
+			overflow: hidden;
+			margin: 20px 0 20px 0;
+		}
+
+			#homeIntroductionC {
+				position: relative;
+				display: block;
+				width: 80%;
+				background: rgb(2, 19, 35, 0);
+				border-radius: 2px;
+				left: 50%;
+				margin: 20px 0 20px 0;
+				transform: translate(-50%, 0);
+			}
+			#homeIntroductionH {
+				position: relative;
+				display: inline-block;
+				background: transparent;
+				color: white;
+				border-bottom: 2px solid white;
+				left: 50%;
+				margin: 5px 0 15px 0;
+				padding: 0 4px 0 4px;
+				transform: translate(-50%, 0);
+			}
+			#homeIntroductionHH {
+				position: relative;
+				background: transparent;
+				color: white;
+				font-size: 19px;
+				font-weight: normal;
+				text-align: center;
+				margin: 0;
+				padding: 0 0 5px 0;
+			}
+
+			#homeIntroImgAndSymbolsC {
+				position: relative;
+				display: block;
+				height: 120px;
+				background: linear-gradient(90deg, rgb(0, 93, 176, 0.8) -100%, rgb(0, 29, 76, 0.8) 50%, rgb(0, 93, 176, 0.8) 1000%);
+				left: 50%;
+				box-shadow: 0 0 6px grey;
+				overflow: hidden;
+				margin: 20px 0 0 0;
+				padding: 0;
+				transform: translate(-50%, 0);
+			}
+				
+				#homeIntroTitleSymbolC {
+					position: absolute;
+					display: block;
+					width: 100px;
+					color: transparent;
+					transform: translate(0, -60%);
+				}
+				.homeTitleSymbolC {
+					position: relative;
+					display: block;
+					overflow: hidden;
+					margin: 6px 0 6px 0;
+				}
+				.homeTitleSymbolC p {
+					display: inline-block;
+					border-radius: 4px;
+					font-size: 16px;
+					font-weight: bold;
+					padding: 4px 0 4px 0;
+				}
+
+				#homeIntroSymbolsC {
+					position: relative;
+					display: inline-block;
+					height: 100%;
+					left: 50%;
+					padding: 0;
+					transform: translate(-50%, 0);
+				}
+
+					#homeFirstSymbolC {
+					}
+					#homeFirstSymbolImg {
+						content: url('../Assets/book2.png');
+					}
+
+					#homeSecondSymbolC {
+					}
+					#homeSecondSymbolImg {
+						content: url('../Assets/skills2.png');
+					}
+
+					#homeThirdSymbolC {
+						width: 120px; height: 100px;
+					}
+					#homeThirdSymbolImgC {
+						border-radius: 50%;
+						box-shadow: 0 0 5px black;
+					}
+					#imgFilterC {
+						position: absolute;
+						width: 100%; height: 100%;
+						background: rgb(0, 0, 0, 0.2);
+					}
+					#homeThirdSymbolImg {
+						border-radius: 50%;
+						content: url('../Assets/me1.jpg');
+					}
+
+					#homeFourthSymbolImg {
+						content: url('../Assets/laptop2.png');
+					}
+
+					#homeFifthSymbolC {
+						top: 52%;
+					}
+					#homeFifthSymbolImg {
+						content: url('../Assets/graduate2.png');
+					}
+
+					.homeSymbolsC {
+						position: relative;
+						display: block;
+						float: left;
+						width: 45px; height: 40px;
+						top: 50%;
+						margin: 0 20px 0 20px;
+						transform: translate(0, -50%);
+					}
+					.homeSymbolsImgC {
+						position: relative;
+						display: inline-block;
+						width: 100%; height: 100%;
+						overflow: hidden;
+					}
+					.homeSymbolsImg {
+						width: 100%; height: 100%;
+					}
+
+			#homeDescriptionContentC {
+				position: relative;
+				display: block;
+				width: 80%;
+				background: transparent;
+				left: 50%;
+				margin-top: 50px;
+				transform: translate(-50%, 0);
+			}
+
+				#homeContentTopC {
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					background: rgb(0, 0, 0, 0.2);
+					border-radius: 5px;
+					overflow: hidden;
+				}
+
+					#homeMotionContentTitleSp {
+						position: absolute;
+						width: 10%; height: 100%;
+					}
+
+					#homeContentTopLeftC {
+						position: relative;
+						display: block;
+						float: left;
+						width: 50%;
+						padding: 10px 0 10px 0;
+					}
+					#homeContentTopLeftTitleC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						left: 50%;
+						transform: translate(-50%, 0);
+					}
+					#homeContentTopLeftTitleH {
+						background: transparent;
+						color: white;
+						border-bottom: 2px solid white;
+						margin: 0;
+						padding: 0 5px 0 5px;
+					}
+
+					#homeContentTopRightC {
+						position: relative;
+						display: block;
+						float: left;
+						width: 50%; height: 100%;
+						padding: 10px 0 10px 0;
+					}
+					#homeContentTopRightTitleC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						left: 50%;
+						transform: translate(-50%, 0);
+					}
+					#homeContentTopRightTitleH {
+						background: transparent;
+						color: white;
+						border-bottom: 2px solid white;
+						margin: 0;
+						padding: 0 5px 0 5px;
+					}
+
+				#homeContentDownC {
+					position: relative;
+					display: block;
+					width: 100%; height: 500px;
+				}
+					#homeContentDownLeftC {
+						position: relative;
+						display: block;
+						float: left;
+						width: 50%;
+						background: rgb(255, 255, 255, 0.4);
+					}
+
+					#homeContentDownRightC {
+						position: relative;
+						display: block;
+						float: left;
+						width: 50%;
+						background: rgb(255, 255, 255, 0.2);
+					}
+
 
 
 	/*SCREEN WIDTH UNDER 750px*/
@@ -304,5 +546,59 @@
 		}
 		100% {
 			opacity: 0;
+		}
+	}
+
+	@keyframes MovingKeywordsHomeLines {
+		0% {
+			border: 2px solid white;
+			border-left: none;
+			border-right: none;
+			left: 10%;
+			transform: translate(0, -105%);
+		}
+		50% {
+			border: 2px solid rgb(117, 42, 6);
+			border-left: none;
+			border-right: none;
+			left: 10%;
+			transform: translate(0, 60%);
+		}
+		51% {
+			border: 2px solid rgb(117, 42, 6);
+			border-left: none;
+			border-right: none;
+			left: auto;
+			right: 10%;
+			transform: translate(0, 60%);
+		}
+		100% {
+			border: 2px solid white;
+			border-left: none;
+			border-right: none;
+			right: 10%;
+			transform: translate(0, -105%);
+		}
+	}
+
+	@keyframes TransformKeywordsHomeLines {
+		0%, 100% {
+			color: white;
+		}
+		50% {
+			color: rgb(117, 42, 6);
+		}
+	}
+
+	@keyframes ShiningTitle {
+		0%, 25% {
+			background-image: linear-gradient(90deg, rgb(56, 34, 35) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35) 100%);
+			left: -20%;
+			transform: skew(-50deg);
+		}
+		75%, 100% {
+			background-image: linear-gradient(90deg, rgb(56, 34, 35) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35) 100%);
+			left: 110%;
+			transform: skew(50deg);
 		}
 	}

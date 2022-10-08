@@ -45,11 +45,12 @@
 									clearInterval(interval2);
 									placeElmnt.children[1].style.display = "none";
 									if(document.getElementById("robotCommentP").childNodes.length == 0) {
-										CommentTyping(0, "//Missed something? Please, click on my figure", document.getElementById("robotCommentC"), null);
+										CommentTyping(0, "//Missed something? Please, click on my figure", document.getElementById("robotCommentC"), null, speedOfType, timeToDelete);
 									}
 									else {
 										document.getElementById("myProfileImgBtn").disabled = false;
 										document.getElementById("robotCommentC").style.opacity = "1";
+										endedActions = 1;
 									}
 								}
 							}
@@ -58,6 +59,12 @@
 							placeElmnt.children[1].style.display = "none";
 							document.getElementById("myProfileImgBtn").disabled = false;
 							document.getElementById("robotCommentC").style.opacity = "1";
+							endedActions = 1;
+						}
+
+						if(endedActions) {
+							document.getElementById("homeIntroTitleSymbolC").style.animation = "MovingKeywordsHomeLines 30s linear infinite, TransformKeywordsHomeLines 30s linear infinite";
+							document.getElementById("homeMotionContentTitleSp").style.animation = "ShiningTitle 6s ease-in-out 1s infinite alternate";
 						}
 					}, timingToWait);
 				}
@@ -107,11 +114,9 @@
 	}
 
 	//COMMENT WRITER
-	function CommentTyping(c, textToType, lineInfoC, typeReturn, replaceTexts) {	
+	function CommentTyping(c, textToType, lineInfoC, typeReturn, replaceTexts, timeToType, timeToDelete) {	
 		//GENERAL COMMENT VARIABLES
-		var timeToType = 50;
-		var timeToWait = 800;
-		var timeToDelete = 30;
+		var timeToWait = 100;
 		var secondaryTable = new Array();
 		var status = "comment";
 

@@ -9,26 +9,20 @@
 
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
-			this.InitializeLeftMenu();
-			this.InitializeRightTopScreen()
+			this.InitializeMainPageCore();
 			this.HomeUpTitleTypeWriter();
+			//this.HomeMainContent();
 		}
 
-		InitializeLeftMenu() {
-			//LEFT MENU CLASS OBJECT
-			this.leftMenu = new LeftMenu("leftBodyTCC", "Home");
-		}
-
-		InitializeRightTopScreen() {
-			//TOP BAR CLASS OBJECT
-			this.topBar = new TopBar("topBarC", "Home");
+		InitializeMainPageCore() {
+			var mainPageCore = new MainPageCore("Home");
 		}
 
 		HomeUpTitleTypeWriter() {
 			//GENERAL TITLE VARIABLES
-			var timeToType = 50;
-			var timeToWait = 800;
-			var timeToDelete = 20;
+			var timeToType = 3;
+			var timeToWait = 7;
+			var timeToDelete = 2;
 			var mainTable = new Array();
 			var status1 = "be aware";
 
@@ -69,6 +63,16 @@
 					console.log(mainTable);
 				}
 				BackSpaceWriter(mainTable, 1, status1, timeToWait, timeToDelete);
+			});
+		}
+
+		HomeMainContent() {
+			$(window).scroll(function() {
+			    if ($('#homeDescriptionContentC').is(':in-viewport')) {
+			        $('.sticky-info').hide();
+			    } else {
+			        $('.sticky-info').show();
+			    }
 			});
 		}
 	}

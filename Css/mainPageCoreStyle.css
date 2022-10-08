@@ -3,6 +3,8 @@
 	@import url('../Css/leftMenuStyle.css');
 	/*2*/
 	@import url('../Css/topBarStyle.css');
+	/*3*/
+	@import url('../Css/footerStyle.css');
 
 
 	/*FONT FACES*/
@@ -28,6 +30,7 @@
 
 	body {
 		width: 100%; height: 100%;
+		background: rgb(0, 93, 176);
 		font-family: Circular;
 		margin: 0;
 		padding: 0;
@@ -55,7 +58,7 @@
 			position: relative;
 			display: block;
 			width: 96%; height: 100%;
-			margin: 0 2% 0 2%;
+			margin: 0 2% 45px 2%;
 		}
 			
 		/*TOP BAR IMPORT HERE*/
@@ -64,12 +67,15 @@
 		#downRightC {
 			position: relative;
 			display: block;
-			width: 100%; height: 100%;
+			width: 100%;
 			background: transparent;
 			margin-top: 10px;
 			animation: OpacityElements 1s linear 1;
 			animation-fill-mode: forwards;
 		}
+
+		/*FOOTER CONTAINER IMPORT HERE*/
+		/*3*/
 
 
 	/*ANIMATIONS*/

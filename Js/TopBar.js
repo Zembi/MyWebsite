@@ -1,15 +1,10 @@
 	//TOP BAR  CLASS
 	class TopBar {
-		constructor(id, status) {
-			this.id = id;
+		constructor(status) {
 			this.status = status;
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
-		}
-
-		getId() {
-			return this.id;
 		}
 
 		getStatus() {
@@ -23,7 +18,7 @@
 		}
 
 		CreatePatronOfTopBar() {
-			document.getElementById("topBarC").innerHTML = '<div id="topTaskBarHalfC"></div><div id="midTaskBarHalfC"><div id="bottomTaskBarMidC"><div id="bottomTaskBarPageTitleC"><div id="bottomTaskBarPageTitleTextH"></div></div></div></div><div id="bottomTaskBarHalfC"><div id="lineTaskBarC"></div></div>';
+			document.getElementById("topBarC").innerHTML = '<div id="topTaskBarHalfC"></div><div id="midTaskBarHalfC"><div id="bottomTaskBarMidC"><div id="bottomTaskBarPageTitleC"><h1 id="bottomTaskBarPageTitleTextH"></h1></div></div></div><div id="bottomTaskBarHalfC"><div id="lineTaskBarC"></div></div>';
 		}
 
 		TitlePartBarInfo() {

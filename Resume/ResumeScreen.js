@@ -9,18 +9,11 @@
 
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
-			this.InitializeLeftMenu();
-			this.InitializeRightTopScreen();
+			this.InitializeMainPageCore();
 		}
 
-		InitializeLeftMenu() {
-			//LEFT MENU CLASS OBJECT
-			this.leftMenu = new LeftMenu("leftBodyTCC", "Resume");
-		}
-
-		InitializeRightTopScreen() {
-			//TOP BAR CLASS OBJECT
-			this.topBar = new TopBar("topBarC", "Resume");
+		InitializeMainPageCore() {
+			var mainPageCore = new MainPageCore("Resume");
 		}
 	}
 

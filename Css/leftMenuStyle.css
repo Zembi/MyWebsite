@@ -79,7 +79,7 @@
 				background: white;
 				border-radius: 5px;
 				left: 0;
-				animation: MovingInMenuLine 2s linear 0s infinite normal;
+				animation: MovingInMenuLine 2s steps(2, end) 0s infinite normal;
 				animation-play-state: paused;
 				animation-fill-mode: forwards;
 			}
@@ -215,6 +215,15 @@
 					#instagramProfC:hover #instagramProfImg{
 						content: url('../Assets/instagram3.png');
 					}
+					#twitterProfC {
+
+					}
+					#twitterProfImg {
+						content: url('../Assets/twitter1.png');
+					}
+					#twitterProfC:hover #twitterProfImg{
+						content: url('../Assets/twitter3.png');
+					}
 					#linkedInProfC {
 
 					}
@@ -236,7 +245,7 @@
 					.menuProfC {
 						position: relative;
 						display: block;
-						width: 35px; height: 35px;
+						width: 30px; height: 30px;
 						background: transparent;
 						margin-top: 8px;
 					}

@@ -1,7 +1,6 @@
 	//LEFT MENU CLASS
 	class LeftMenu {
-		constructor(id, status) {
-			this.id = id;
+		constructor(status) {
 			this.status = status;
 
 			//BUTTON CLASS OBJECT
@@ -11,16 +10,8 @@
 			this.Main();
 		}
 
-		getId() {
-			return this.id;
-		}
-
 		getStatus() {
 			return this.status;
-		}
-
-		setStatus(newStatus) {
-			this.status = newStatus;
 		}
 
 		//EVENT FUNCTIONS FROM HERE
@@ -30,12 +21,12 @@
 		}
 
 		CreatePatronOfTheLeftMenu() {
-			document.getElementById(this.getId()).innerHTML = '<div id="leftBodyC"><div id="leftBackgroundC"><div class="backgroundMovingC"><ul class="squaresUL"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div></div><div id="upLeftC"><div id="openMenuBtnC"><button id="openMenuBtn"><img id="menuImg"></button></div></div><div id="downLeftC"><div id="downMenuBtnLineC"><div id="downMenuBtnMovingInLineC"></div></div><div id="downMenuC"><div id="menuHideC"></div><div id="menuShowC"><div id="menuCenterShowC"><div id="homeLeftMenuC" class="leftMenuBtnC"><a id="homeLeftMenuL" class="leftMenuBtn" href="../Home/home.html"><div class="leftMenuTextC">Home</div><img class="leftMenuImg"></a></div><div id="resumeLeftMenuC" class="leftMenuBtnC"><a id="resumeLeftMenuL" class="leftMenuBtn"  href="../Resume/resume.html"><div class="leftMenuTextC">Resume</div><img class="leftMenuImg"></a></div><div id="aboutMeLeftMenuC" class="leftMenuBtnC"><a id="aboutMeLeftMenuL" class="leftMenuBtn" href="../AboutMe/aboutMe.html"><div class="leftMenuTextC">About me</div><img class="leftMenuImg"></a></div><div id="contactLeftMenuC" class="leftMenuBtnC"><a id="contactLeftMenuL" class="leftMenuBtn" href="../Contact/contact.html"><div class="leftMenuTextC">Contact</div><img class="leftMenuImg"></a></div></div><div id="rightLineLeftMenuC"></div></div></div><div id="menuProfileInfoC"><div id="menuProfileInfoCC"><div id="facebookProfC" class="menuProfC"><a id="facebookProfL" class="menuProfL" title="Facebook" href="https://ms-my.facebook.com/bvb.4ever1908/" target="_blank" rel="noreferrer noopener"><img id="facebookProfImg" class="menuProfImg"></a></div><div id="instagramProfC" class="menuProfC"><a id="instagramProfL" class="menuProfL" title="Instagram" href="https://www.instagram.com/zembi_b/" target="_blank" rel="noreferrer noopener"><img id="instagramProfImg" class="menuProfImg"></a></div><div id="linkedInProfC" class="menuProfC"><a id="linkedInProfL" class="menuProfL" title="LinkedIn" href="https://www.linkedin.com/in/vasileios-filippos-zembilas-a08908189" target="_blank" rel="noreferrer noopener"><img id="linkedInProfImg" class="menuProfImg"></a></div><div id="githubProfC" class="menuProfC"><a id="githubProfL" class="menuProfL" title="GitHub" href="https://github.com/Zembi" target="_blank" rel="noreferrer noopener"><img id="githubProfImg" class="menuProfImg"></a></div></div></div></div>';
+			document.getElementById("leftBodyTCC").innerHTML = '<div id="leftBodyC"><div id="leftBackgroundC"><div class="backgroundMovingC"><ul class="squaresUL"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div></div><div id="upLeftC"><div id="openMenuBtnC"><button id="openMenuBtn"><img id="menuImg"></button></div></div><div id="downLeftC"><div id="downMenuBtnLineC"><div id="downMenuBtnMovingInLineC"></div></div><div id="downMenuC"><div id="menuHideC"></div><div id="menuShowC"><div id="menuCenterShowC"><div id="homeLeftMenuC" class="leftMenuBtnC"><a id="homeLeftMenuL" class="leftMenuBtn" href="../Home/home.html"><div class="leftMenuTextC">Home</div><img class="leftMenuImg"></a></div><div id="resumeLeftMenuC" class="leftMenuBtnC"><a id="resumeLeftMenuL" class="leftMenuBtn"  href="../Resume/resume.html"><div class="leftMenuTextC">Resume</div><img class="leftMenuImg"></a></div><div id="aboutMeLeftMenuC" class="leftMenuBtnC"><a id="aboutMeLeftMenuL" class="leftMenuBtn" href="../AboutMe/aboutMe.html"><div class="leftMenuTextC">About me</div><img class="leftMenuImg"></a></div><div id="contactLeftMenuC" class="leftMenuBtnC"><a id="contactLeftMenuL" class="leftMenuBtn" href="../Contact/contact.html"><div class="leftMenuTextC">Contact</div><img class="leftMenuImg"></a></div></div><div id="rightLineLeftMenuC"></div></div></div><div id="menuProfileInfoC"><div id="menuProfileInfoCC"><div id="facebookProfC" class="menuProfC"><a id="facebookProfL" class="menuProfL" title="Facebook" href="https://www.facebook.com/bvb.4ever1908/" target="_blank" rel="noreferrer noopener"><img id="facebookProfImg" class="menuProfImg"></a></div><div id="instagramProfC" class="menuProfC"><a id="instagramProfL" class="menuProfL" title="Instagram" href="https://www.instagram.com/zembi_b/" target="_blank" rel="noreferrer noopener"><img id="instagramProfImg" class="menuProfImg"></a></div><div id="twitterProfC" class="menuProfC"><a id="twitterProfL" class="menuProfL" title="Twitter" href="https://twitter.com/VFZembilas" target="_blank" rel="noreferrer noopener"><img id="twitterProfImg" class="menuProfImg"></a></div><div id="linkedInProfC" class="menuProfC"><a id="linkedInProfL" class="menuProfL" title="LinkedIn" href="https://www.linkedin.com/in/vasileios-filippos-zembilas-a08908189" target="_blank" rel="noreferrer noopener"><img id="linkedInProfImg" class="menuProfImg"></a></div><div id="githubProfC" class="menuProfC"><a id="githubProfL" class="menuProfL" title="GitHub" href="https://github.com/Zembi" target="_blank" rel="noreferrer noopener"><img id="githubProfImg" class="menuProfImg"></a></div></div></div></div>';
 		}
 
 		LeftScreenEventsHome() {
 			//TRIGGERED CONTAINERS
-			var leftBodyTCC = document.getElementById(this.getId());
+			var leftBodyTCC = document.getElementById("leftBodyTCC");
 			var leftBodyC = document.getElementById("leftBodyC");
 			var downMenuBtnLineC = document.getElementById("downMenuBtnLineC");
 			var menuHideC = document.getElementById("menuHideC");
