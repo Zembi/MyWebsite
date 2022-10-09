@@ -16,7 +16,7 @@
 			position: absolute;
 			display: block;
 			width: 100%; height: 100%;
-			background: rgba(117, 42, 6, 0.6);
+			background: rgb(117, 42, 6, 0.7);
 		}
 
 		#mainHomeBodyC {
@@ -38,7 +38,6 @@
 				display: block;
 				color: white;
 				background: transparent;
-				font-size: 25px;
 				font-weight: normal;
 				top: 38%;
 				left: 75%;
@@ -55,6 +54,7 @@
 				width: 100%; height: 100%;
 				background: rgb(2, 19, 35);
 				border: 2px solid rgb(1, 11, 20);
+				overflow: hidden;
 				box-sizing: border-box;
 			}
 			#homebackgroundImgAnimationC {
@@ -213,7 +213,7 @@
 			width: 100%;
 			border-radius: 5px;
 			overflow: hidden;
-			margin: 20px 0 20px 0;
+			margin: 20px 0 5% 0;
 		}
 
 			#homeIntroductionC {
@@ -252,14 +252,63 @@
 				position: relative;
 				display: block;
 				height: 120px;
-				background: linear-gradient(90deg, rgb(0, 93, 176, 0.8) -100%, rgb(0, 29, 76, 0.8) 50%, rgb(0, 93, 176, 0.8) 1000%);
+				background: linear-gradient(90deg, rgb(0, 93, 176, 1) -100%, rgb(0, 29, 76, 1) 50%, rgb(0, 93, 176, 1) 1000%);
 				left: 50%;
-				box-shadow: 0 0 6px grey;
 				overflow: hidden;
 				margin: 20px 0 0 0;
 				padding: 0;
 				transform: translate(-50%, 0);
 			}
+
+				#homeLeftCoverIntroSymbolsC {
+					position: absolute;
+					display: block;
+					width: 50%; height: 100%;
+					background: rgba(2, 19, 35);
+					border: 1px solid rgb(255, 255, 255, 0.5);
+					border-left: none;
+					overflow: hidden;
+					box-sizing: border-box;
+					left: 0;
+					z-index: 2;
+				}
+				#homeLeftCoverIntroSymbolsTextC {
+					position: relative;
+					display: block;
+					float: right;
+					top: 50%;
+					right: 5%;
+					transform: translate(0, -50%);
+				}
+				#homeLeftCoverIntroSymbolsTextC p {
+					color: white;
+					font-size: 30px;
+				}
+
+				#homeRightCoverIntroSymbolsC {
+					position: absolute;
+					display: block;
+					width: 50%; height: 100%;
+					background: rgba(2, 19, 35);
+					border: 1px solid rgb(255, 255, 255, 0.5);
+					border-right: none;
+					overflow: hidden;
+					box-sizing: border-box;
+					right: 0;
+					z-index: 2;
+				}
+				#homeRightCoverIntroSymbolsTextC {
+					position: relative;
+					display: block;
+					float: left;
+					top: 50%;
+					left: 5%;
+					transform: translate(0, -50%);
+				}
+				#homeRightCoverIntroSymbolsTextC p {
+					color: white;
+					font-size: 30px;
+				}
 				
 				#homeIntroTitleSymbolC {
 					position: absolute;
@@ -283,7 +332,7 @@
 				}
 
 				#homeIntroSymbolsC {
-					position: relative;
+					position: absolute;
 					display: inline-block;
 					height: 100%;
 					left: 50%;
@@ -310,6 +359,9 @@
 						border-radius: 50%;
 						box-shadow: 0 0 5px black;
 					}
+					#homeThirdSymbolImgC:hover {
+						transform: none;
+					}
 					#imgFilterC {
 						position: absolute;
 						width: 100%; height: 100%;
@@ -333,7 +385,7 @@
 
 					.homeSymbolsC {
 						position: relative;
-						display: block;
+						display: inline-block;
 						float: left;
 						width: 45px; height: 40px;
 						top: 50%;
@@ -345,98 +397,167 @@
 						display: inline-block;
 						width: 100%; height: 100%;
 						overflow: hidden;
+						transition: transform 0.6s;
+					}
+					.homeSymbolsImgC:hover {
+						transform: rotate(360deg);
 					}
 					.homeSymbolsImg {
 						width: 100%; height: 100%;
 					}
 
-			#homeDescriptionContentC {
+			#homeMiddleC {
 				position: relative;
 				display: block;
-				width: 80%;
+				display: inline-block;
+				float: right;
+				right: 0px;
+				margin-top: 20px;
+			}
+			#homeChangeBackgroundBtnC {
+				position: relative;
+			}
+			#homeChangeBackgroundBtn {
+				width: 40px; height: 35px;
+				background: transparent;
+				border-radius: 2px 0 0 2px;
+				border: none;
+				cursor: pointer;
+				box-shadow: 0 0 2px black;
+				margin: 0;
+				padding: 3px 6px 3px 6px;
+				transition: box-shadow 0.2s;
+			}
+			#homeChangeBackgroundBtn:hover {
+				box-shadow: 0 0 6px black;
+			}
+			#homeChangeBackgroundBtnImg {
+				width: 100%; height: 100%;
+				content: url('../Assets/paintbrush1.png');
+				transform: rotateY(-180deg);
+			}
+			#homeChangeBackgroundBtn:hover #homeChangeBackgroundBtnImg {
+				content: url('../Assets/paintbrush2.png');
+			}
+
+			#homeDescriptionContentC {
+				position: relative;
+				display: inline-block;
+				width: 90%;
 				background: transparent;
 				left: 50%;
-				margin-top: 50px;
+				margin-top: 40px;
 				transform: translate(-50%, 0);
 			}
 
-				#homeContentTopC {
+				#homeContentLeftC {
 					position: relative;
-					display: inline-block;
-					width: 100%;
-					background: rgb(0, 0, 0, 0.2);
-					border-radius: 5px;
+					display: block;
+					float: left;
+					width: 50%;
+					background: transparent;
+					color: white;
+					border-radius: 4px;
 					overflow: hidden;
 				}
 
-					#homeMotionContentTitleSp {
+					#homeMotionLeftContentTitleSp {
 						position: absolute;
-						width: 10%; height: 100%;
+						display: block;
+						width: 20%; height: 100%;
 					}
 
 					#homeContentTopLeftC {
 						position: relative;
 						display: block;
-						float: left;
-						width: 50%;
-						padding: 10px 0 10px 0;
+						overflow: hidden;
 					}
 					#homeContentTopLeftTitleC {
 						position: relative;
 						display: inline-block;
 						background: transparent;
 						left: 50%;
+						margin: 10px 0 10px 0;
 						transform: translate(-50%, 0);
 					}
 					#homeContentTopLeftTitleH {
 						background: transparent;
 						color: white;
-						border-bottom: 2px solid white;
+						border-bottom: 4px solid rgb(0, 68, 128);
 						margin: 0;
-						padding: 0 5px 0 5px;
+						padding: 0 5px 2px 5px;
+					}
+
+					#homeContentDownLeftC {
+						position: relative;
+						display: block;
+					}
+					#homeContentDownLeftTextC {
+						position: relative;
+						display: block;
+						padding: 10px 10% 40px 10%;
+					}
+					#homeContentDownLeftTextP {
+						border-radius: 4px;
+						font-size: 18px;
+						box-shadow: 0 0 3px black;
+						padding: 5%;
+					}
+
+				#homeContentRightC {
+					position: relative;
+					display: block;
+					float: right;
+					width: 50%;
+					color: white;
+					border-radius: 4px;
+					overflow: hidden;
+				}
+
+					#homeMotionRightContentTitleSp {
+						position: absolute;
+						width: 20%; height: 100%;
 					}
 
 					#homeContentTopRightC {
 						position: relative;
 						display: block;
-						float: left;
-						width: 50%; height: 100%;
-						padding: 10px 0 10px 0;
+						overflow: hidden;
 					}
 					#homeContentTopRightTitleC {
 						position: relative;
 						display: inline-block;
 						background: transparent;
 						left: 50%;
+						margin: 10px 0 10px 0;
 						transform: translate(-50%, 0);
 					}
 					#homeContentTopRightTitleH {
 						background: transparent;
 						color: white;
-						border-bottom: 2px solid white;
+						border-bottom: 4px solid rgb(0, 68, 128);
 						margin: 0;
-						padding: 0 5px 0 5px;
-					}
-
-				#homeContentDownC {
-					position: relative;
-					display: block;
-					width: 100%; height: 500px;
-				}
-					#homeContentDownLeftC {
-						position: relative;
-						display: block;
-						float: left;
-						width: 50%;
-						background: rgb(255, 255, 255, 0.4);
+						padding: 0 5px 2px 5px;
 					}
 
 					#homeContentDownRightC {
 						position: relative;
 						display: block;
-						float: left;
-						width: 50%;
-						background: rgb(255, 255, 255, 0.2);
+					}
+					#homeContentDownRightTextC {
+						position: relative;
+						display: block;
+						padding: 10px 10% 40px 10%;
+					}
+					#homeContentDownRightTextP {
+						border-radius: 4px;
+						font-size: 18px;
+						box-shadow: 0 0 3px black;
+						padding: 5%;
+					}
+
+					.homeContentHighlightsSp {
+						color: rgb(0, 93, 176);
 					}
 
 
@@ -549,6 +670,47 @@
 		}
 	}
 
+	@keyframes CloseLeftElement {
+		0% {
+			width: 50%;
+			border: 1px solid rgb(255, 255, 255, 0.5);
+			border-left: none;
+		}
+		99% {
+			border: 1px solid rgb(255, 255, 255, 0.5);
+			border-left: none;
+		}
+		100% {
+			width: 0;
+			border: none;
+		}
+	}
+
+	@keyframes CloseRightElement {
+		0% {
+			width: 50%;
+			border: 1px solid rgb(255, 255, 255, 0.5);
+			border-right: none;
+		}
+		99% {
+			border: 1px solid rgb(255, 255, 255, 0.5);
+			border-right: none;
+		}
+		100% {
+			width: 0;
+			border: none;
+		}
+	}
+
+	@keyframes AfterCloseElement {
+		0% {
+			box-shadow: none;
+		}
+		100% {
+			box-shadow: 0 0 6px grey;
+		}
+	}
+
 	@keyframes MovingKeywordsHomeLines {
 		0% {
 			border: 2px solid white;
@@ -590,15 +752,28 @@
 		}
 	}
 
-	@keyframes ShiningTitle {
+	@keyframes ShiningTitle1 {
 		0%, 25% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35) 100%);
-			left: -20%;
-			transform: skew(-50deg);
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			left: -60%;
+			transform: skew(-45deg);
 		}
-		75%, 100% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35) 100%);
-			left: 110%;
-			transform: skew(50deg);
+		65%, 100% {
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			left: 100%;
+			transform: skew(0);
+		}
+	}
+
+	@keyframes ShiningTitle2 {
+		0%, 25% {
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			right: -60%;
+			transform: skew(45deg);
+		}
+		65%, 100% {
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			right: 100%;
+			transform: skew(0);
 		}
 	}

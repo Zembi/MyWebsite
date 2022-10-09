@@ -11,18 +11,21 @@
 		Main() {
 			this.InitializeMainPageCore();
 			this.HomeUpTitleTypeWriter();
+			this.HomeMainContentActions();
 			//this.HomeMainContent();
 		}
 
+		//LOAD MAIN CORE THAT ALL PAGES HAVE
 		InitializeMainPageCore() {
 			var mainPageCore = new MainPageCore("Home");
 		}
 
+		//BOT TYPING ASYNC WELCOME TEXT AFTER HOME LOADS
 		HomeUpTitleTypeWriter() {
 			//GENERAL TITLE VARIABLES
-			var timeToType = 3;
-			var timeToWait = 7;
-			var timeToDelete = 2;
+			var timeToType = 30;
+			var timeToWait = 700;
+			var timeToDelete = 20;
 			var mainTable = new Array();
 			var status1 = "be aware";
 
@@ -63,6 +66,27 @@
 					console.log(mainTable);
 				}
 				BackSpaceWriter(mainTable, 1, status1, timeToWait, timeToDelete);
+			});
+		}
+
+		//ALL EVENTS AND FUNCTIONS AT HOME PAGE MAIN CONTENT CONTAINER
+		HomeMainContentActions() {
+			//INITIALIZE VARIABLES
+			var homeChangeBackgroundBtn = document.getElementById("homeChangeBackgroundBtn");
+			var mainHomeBackgroundC = document.getElementById("mainHomeBackgroundC");
+
+			//CHANGE BACKGROUND OF HOME SCREEN FUNCTION
+			homeChangeBackgroundBtn.name = "opened";
+
+			homeChangeBackgroundBtn.addEventListener("click", function() {
+				if(this.name == "opened") {
+					mainHomeBackgroundC.style.background = "transparent";
+					this.name = "closed";
+				}
+				else {
+					mainHomeBackgroundC.style.background = "rgb(117, 42, 6, 0.7)";
+					this.name = "opened";
+				}
 			});
 		}
 

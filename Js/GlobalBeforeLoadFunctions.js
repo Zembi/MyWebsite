@@ -19,6 +19,7 @@
 		var textToType = lineItemsArray[counter][2];
 		var placeElmnt = lineItemsArray[counter][3];
 		var typeOfActionForLine = lineItemsArray[counter][4];
+		var endedActions = 0;
 		placeElmnt.children[1].style.display = "inline";
 
 		var interval1 = setInterval(function() {
@@ -63,8 +64,15 @@
 						}
 
 						if(endedActions) {
-							document.getElementById("homeIntroTitleSymbolC").style.animation = "MovingKeywordsHomeLines 30s linear infinite, TransformKeywordsHomeLines 30s linear infinite";
-							document.getElementById("homeMotionContentTitleSp").style.animation = "ShiningTitle 6s ease-in-out 1s infinite alternate";
+							document.getElementById("homeIntroTitleSymbolC").style.animation = "MovingKeywordsHomeLines 30s linear 1s infinite, TransformKeywordsHomeLines 30s linear 1s infinite";
+							document.getElementById("homeMotionLeftContentTitleSp").style.animation = "ShiningTitle1 10s ease-in-out infinite";
+							document.getElementById("homeLeftCoverIntroSymbolsC").style.animation = "CloseLeftElement 1s linear 1";
+							document.getElementById("homeLeftCoverIntroSymbolsC").style.animationFillMode = "forwards";
+							document.getElementById("homeMotionRightContentTitleSp").style.animation = "ShiningTitle2 10s ease-in-out infinite";
+							document.getElementById("homeRightCoverIntroSymbolsC").style.animation = "CloseRightElement 1s linear 1";
+							document.getElementById("homeRightCoverIntroSymbolsC").style.animationFillMode = "forwards";
+							document.getElementById("homeIntroImgAndSymbolsC").style.animation = "AfterCloseElement 1.5s linear 1s 1";
+							document.getElementById("homeIntroImgAndSymbolsC").style.animationFillMode = "forwards";
 						}
 					}, timingToWait);
 				}
