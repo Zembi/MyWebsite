@@ -1,4 +1,5 @@
 
+//CHECK USER PAGE STATUS BEFORE LOAD
 function CheckIfPageThatIsAboutToLoadIsInCurrentStatus() {
 	var check = sessionStorage.getItem("siteIsLoaded");
 	
@@ -9,3 +10,14 @@ function CheckIfPageThatIsAboutToLoadIsInCurrentStatus() {
 }
 
 CheckIfPageThatIsAboutToLoadIsInCurrentStatus();
+
+//GET PAGE WIDTH
+function GetPageWidth() {
+	var width =  Math.max(document.body.scrollWidth,
+		document.documentElement.scrollWidth,
+		document.body.offsetWidth,
+		document.documentElement.offsetWidth,
+		document.documentElement.clientWidth);
+
+	return width;
+}

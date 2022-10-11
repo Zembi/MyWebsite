@@ -19,6 +19,7 @@
 		display: inline-block;
 		background: transparent;
 		width: 35%;
+		min-width: 170px;
 		top: 50%;
 		left: 50%;
 		padding: 4px;
@@ -29,6 +30,7 @@
 			position: relative;
 			display: inline-block;
 			left: 50%;
+			padding: 0 10px 0 10px;
 			transform: translate(-50%, 0);
 		}
 		#loadingTitleC h1 {
@@ -66,8 +68,57 @@
 			padding: 0;
 		}
 
+	/*SCREEN RESIZE*/
 
-	/*SCREEN WIDTH UNDER 750px*/
-	@media only screen and (max-width: 750px) {
-		
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1000px) {
+		#loadingTitleC h1 {
+			font-size: 15px;
+		}
+
+		#loadingCountP {
+			font-size: 11px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 780px*/
+	@media only screen and (max-width: 780px) {
+		#loadingTitleC h1 {
+			font-size: 12px;
+		}
+
+		#loadingCountP {
+			font-size: 11px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 630px*/
+	@media only screen and (max-width: 630px) {
+		#loadingTitleC h1 {
+			font-size: 10px;
+		}
+
+		#loadingFullC {
+			margin: 2px 0 0 0;
+		}
+
+		#loadingCountP {
+			font-size: 8px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 550px*/
+	@media only screen and (max-width: 550px) {
+		#loadingTitleC h1 {
+			font-size: 8px;
+		}
+
+		#loadingFullC {
+			margin: 2px 0 -4px 0;
+		}
+
+
+		#loadingCountP {
+			font-size: 7px;
+		}
 	}

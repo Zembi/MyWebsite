@@ -36,13 +36,14 @@
 			#homeMainUpTitleTextH {
 				position: absolute;
 				display: block;
+				float: right;
 				color: white;
 				background: transparent;
 				font-weight: normal;
 				top: 38%;
-				left: 75%;
+				right: 10%;
 				margin: 0;
-				transform: translate(-50%, -50%);
+				transform: translate(0, -50%);
 				z-index: 1;
 				animation: OnOffHeaderHome 15s linear 1s infinite;
 				animation-fill-mode: forwards;
@@ -160,6 +161,10 @@
 						background: rgb(117, 42, 6);
 					}
 
+					.codeTitleSp {
+
+					}
+
 					.homeHeaderLinesC {
 						position: relative;
 						display: inline-block;
@@ -178,7 +183,6 @@
 						position: relative;
 						display: inline-block;
 						background: transparent;
-
 					}
 						.writerVectorP {
 							position: relative;
@@ -328,11 +332,12 @@
 					border-radius: 4px;
 					font-size: 16px;
 					font-weight: bold;
+					text-align: center;
 					padding: 4px 0 4px 0;
 				}
 
 				#homeIntroSymbolsC {
-					position: absolute;
+					position: relative;
 					display: inline-block;
 					height: 100%;
 					left: 50%;
@@ -425,7 +430,7 @@
 				cursor: pointer;
 				box-shadow: 0 0 2px black;
 				margin: 0;
-				padding: 3px 6px 3px 6px;
+				padding: 3px 7px 3px 5px;
 				transition: box-shadow 0.2s;
 			}
 			#homeChangeBackgroundBtn:hover {
@@ -433,11 +438,11 @@
 			}
 			#homeChangeBackgroundBtnImg {
 				width: 100%; height: 100%;
-				content: url('../Assets/paintbrush1.png');
+				content: url('../Assets/palette1.png');
 				transform: rotateY(-180deg);
 			}
 			#homeChangeBackgroundBtn:hover #homeChangeBackgroundBtnImg {
-				content: url('../Assets/paintbrush2.png');
+				content: url('../Assets/palette2.png');
 			}
 
 			#homeDescriptionContentC {
@@ -562,10 +567,140 @@
 
 
 
-	/*SCREEN WIDTH UNDER 750px*/
-	@media only screen and (max-width: 750px) {
-		
+
+
+	/*SCREEN WIDTH UNDER 1200px*/
+	@media only screen and (max-width: 1200px) {
+		h2 {
+			font-size: 22px;
+		}
+
+		#myProfileImgC {
+			width: 70px; height: 70px;
+		}
+
+		#myProfileFirstLineInfoP {
+			font-size: 21px;
+		}
+
+		#myProfileSecondLineInfoP {
+			font-size: 15px;
+		}
+
+		.codeTitleSp {
+			font-size: 15px;
+		}
+
+		#robotCommentP {
+			font-size: 15px;
+		}
+
+		#homeIntroductionHH {
+			font-size: 18px;
+		}
+
+		#homeIntroImgAndSymbolsC {
+			height: 100px;
+		}
+
+		#homeThirdSymbolC {
+			width: 100px; height: 80px;
+		}
+
+		#homeLeftCoverIntroSymbolsTextC p {
+			font-size: 26px;
+		}
+
+		#homeRightCoverIntroSymbolsTextC p {
+			font-size: 26px;
+		}
+
+		.homeSymbolsC {
+			width: 40px; height: 35px;
+		}
+
+		.homeTitleSymbolC p {
+			font-size: 14px;
+		}
+
+		#homeContentDownLeftTextP {
+			font-size: 16px;
+		}
+
+		#homeContentDownRightTextP {
+			font-size: 16px;
+		}
 	}
+
+
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1000px) {
+		h2 {
+			font-size: 20px;
+		}
+
+		#myProfileImgC {
+			width: 60px; height: 60px;
+		}
+
+		#myProfileFirstLineInfoP {
+			font-size: 20px;
+		}
+
+		#myProfileSecondLineInfoP {
+			font-size: 14px;
+		}
+
+		.codeTitleSp {
+			font-size: 14px;
+		}
+
+		#robotCommentP {
+			font-size: 14px;
+		}
+
+		#homeIntroductionHH {
+			font-size: 17px;
+		}
+
+		#homeIntroImgAndSymbolsC {
+			height: 90px;
+		}
+
+		#homeThirdSymbolC {
+			width: 90px; height: 70px;
+		}
+
+		#homeIntroTitleSymbolC {
+			width: 80px;
+		}
+
+		.homeSymbolsC {
+			width: 35px; height: 30px;
+		}
+
+		.homeTitleSymbolC p {
+			font-size: 12px;
+		}
+
+		#homeLeftCoverIntroSymbolsTextC p {
+			font-size: 24px;
+		}
+
+		#homeRightCoverIntroSymbolsTextC p {
+			font-size: 24px;
+		}
+
+		#homeContentDownLeftTextP {
+			font-size: 14px;
+		}
+
+		#homeContentDownRightTextP {
+			font-size: 14px;
+		}
+	}
+
+
 
 
 	/*ANIMATIONS*/

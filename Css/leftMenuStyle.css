@@ -4,10 +4,9 @@
 			position: relative;
 			display: table-cell;
 			width: 140px; height: 100%;
-			background: rgb(0, 31, 80);
 			background-image: linear-gradient(#000428 0%, rgb(0, 31, 80) 40%);
 			box-shadow: 0 0 6px black;
-			z-index: 1;
+			z-index: 2;
 			transition: width 0.4s;
 		}
 
@@ -28,15 +27,14 @@
 				position: relative;
 				display: block;
 				width: 100%; height: 80px;
-				background: transparent;
 			}
 			#openMenuBtnC {
 				position: relative;
 				display: inline-block;
 				width: 40px; height: 40px;
-				background: transparent;
 				top: 60%;
 				left: 50%;
+				overflow: hidden;
 				transform: translate(-50%, -50%);
 			}
 			#openMenuBtn {
@@ -47,7 +45,7 @@
 				border-radius: 0;
 				border: none;
 				cursor: pointer;
-				padding: 2px;
+				padding: 4px;
 			}
 			#menuImg {
 				width: 100%; height: 100%;
@@ -62,11 +60,19 @@
 				background: transparent;
 				top: 80px;
 				bottom: 0;
+				overflow: hidden;
+			}
+			#downLeftWrapC {
+				position: relative;
+				display: block;
+				width: 100%; height: 100%;
+				background: transparent;
 			}
 			#downMenuBtnLineC {
 				position: relative;
 				display: block;
 				width: 90%; height: 4px;
+				max-width: 150px;
 				background: rgba(255, 255, 255, 0.2);
 				left: 50%;
 				opacity: 0;
@@ -79,20 +85,24 @@
 				background: white;
 				border-radius: 5px;
 				left: 0;
-				animation: MovingInMenuLine 2s steps(2, end) 0s infinite normal;
+				animation: MovingInMenuLine 8s 0s infinite normal;
 				animation-play-state: paused;
 				animation-fill-mode: forwards;
 			}
 
-			#downMenuC {
+			#downMainMenuC {
 				position: relative;
 				display: block;
-				width: 100%;
-				background: transparent;
-				overflow: hidden;
-				top: 30%;
-				transform: translate(0, -50%);
+				width: 100%; height: 100%;
 			}
+				
+				#downMenuC {
+					position: relative;
+					display: block;
+					width: 100%; height: 50%;
+					background: transparent;
+					overflow: hidden;
+				}
 				#menuHideC {
 					position: absolute;
 					display: block;
@@ -103,20 +113,25 @@
 					transform: translate(0, 0);
 					transition: transform 0.7s;
 				}
-
 				#menuShowC {
 					position: relative;
 					display: block;
-					width: 100%;
+					width: 100%; height: 100%;
 					background: transparent;
-					padding: 4px 0 4px 0;
 					transform: translate(-100%, 0);
 					transition: transform 0.7s;
+				}
+				#menuWrapShowC {
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					background: transparent;
+					top: 50%;
+					transform: translate(0, -50%);
 				}
 				#menuCenterShowC {
 					position: relative;
 					display: inline-block;
-					height: 100%;
 					background: transparent;
 					left: 50%;
 					transform: translate(-50%, 0);
@@ -156,15 +171,14 @@
 						display: inline-block;
 						float: left;
 						color: white;
-						font-size: 18px;
 					}
 					.leftMenuImg {
-						position: relative;
+						position: absolute;
 						display: inline-block;
-						width: 12px; height: 12px;
 						background: transparent;
+						top: 55%;
 						content: url('../Assets/arrow1.png');
-						margin: 5px 0 0 5px;
+						transform: translate(0, -50%);
 					}
 					.leftMenuBtn:hover .leftMenuImg {
 						content: url('../Assets/arrow2.png');
@@ -182,23 +196,24 @@
 					}
 
 				#menuProfileInfoC {
-					position: absolute;
+					position: relative;
 					display: block;
-					width: 100%;
+					width: 100%; height: 50%;
 					background: transparent;
-					bottom: 0;
 				}
 				#menuProfileInfoCC {
-					position: relative;
+					position: absolute;
 					display: inline-block;
 					float: right;
 					background: transparent;
-					left: 0;
+					bottom: 50%;
+					right: 50%;
 					padding: 5px 10px 5px 10px;
-					transform: translate(0, 0);
+					transform: translate(50%, 0);
+					transition: bottom 0.6s, right 0.6s, transform 0.6s;
 				}
 					#facebookProfC {
-
+						margin-top: 0;
 					}
 					#facebookProfImg {
 						content: url('../Assets/facebook1.png');
@@ -247,7 +262,8 @@
 						display: block;
 						width: 30px; height: 30px;
 						background: transparent;
-						margin-top: 8px;
+						margin: 10px;
+						transition: transform 0.8s;
 					}
 					.menuProfL {
 						position: relative;
@@ -262,37 +278,52 @@
 					}
 
 
+
+	/*SCREEN WIDTH UNDER 1200px*/
+	@media only screen and (max-width: 1200px) {
+		#leftBodyTCC {
+			width: 120px;
+		}
+	}
+
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		#leftBodyTCC {
+			position: absolute;
+			width: 0;
+			background-image: linear-gradient(rgb(0, 4, 40, 0.9) 0%, rgb(0, 31, 80, 0.9) 40%);
+		}
+
+		#openMenuBtnC {
+			border-radius: 0 2px 2px 0;
+			transform: translate(0, -50%);
+		}
+
+		#rightLineLeftMenuC {
+			display: none;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 300px*/
+	@media only screen and (max-width: 300px) {
+		.menuProfC {
+			width: 26px; height: 26px;
+		}
+	}
+
+
+
+				
 	/*ANIMATIONS*/
 	@keyframes MovingInMenuLine {
-		0% {
+		0%, 20% {
 			left: 0;
 		}
-		50% {
+		50%, 80% {
 			left: 95%;
 		}
 		100% {
 			left: 0;
-		}
-	}
-
-	@keyframes ChangeSocialInfoPosToCenter {
-		0% {
-			left: 0;
-			transform: translate(0, 0);
-		}
-		100% {
-			left: -50%;
-			transform: translate(50%, 0);
-		}
-	}
-
-	@keyframes ChangeSocialInfoPosToRight {
-		0% {
-			left: -50%;
-			transform: translate(50%, 0);
-		}
-		100% {
-			left: 0;
-			transform: translate(0, 0);
 		}
 	}

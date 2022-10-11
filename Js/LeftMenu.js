@@ -21,59 +21,12 @@
 		}
 
 		CreatePatronOfTheLeftMenu() {
-			document.getElementById("leftBodyTCC").innerHTML = '<div id="leftBodyC"><div id="leftBackgroundC"><div class="backgroundMovingC"><ul class="squaresUL"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div></div><div id="upLeftC"><div id="openMenuBtnC"><button id="openMenuBtn"><img id="menuImg"></button></div></div><div id="downLeftC"><div id="downMenuBtnLineC"><div id="downMenuBtnMovingInLineC"></div></div><div id="downMenuC"><div id="menuHideC"></div><div id="menuShowC"><div id="menuCenterShowC"><div id="homeLeftMenuC" class="leftMenuBtnC"><a id="homeLeftMenuL" class="leftMenuBtn" href="../Home/home.html"><div class="leftMenuTextC">Home</div><img class="leftMenuImg"></a></div><div id="resumeLeftMenuC" class="leftMenuBtnC"><a id="resumeLeftMenuL" class="leftMenuBtn"  href="../Resume/resume.html"><div class="leftMenuTextC">Resume</div><img class="leftMenuImg"></a></div><div id="aboutMeLeftMenuC" class="leftMenuBtnC"><a id="aboutMeLeftMenuL" class="leftMenuBtn" href="../AboutMe/aboutMe.html"><div class="leftMenuTextC">About me</div><img class="leftMenuImg"></a></div><div id="contactLeftMenuC" class="leftMenuBtnC"><a id="contactLeftMenuL" class="leftMenuBtn" href="../Contact/contact.html"><div class="leftMenuTextC">Contact</div><img class="leftMenuImg"></a></div></div><div id="rightLineLeftMenuC"></div></div></div><div id="menuProfileInfoC"><div id="menuProfileInfoCC"><div id="facebookProfC" class="menuProfC"><a id="facebookProfL" class="menuProfL" title="Facebook" href="https://www.facebook.com/bvb.4ever1908/" target="_blank" rel="noreferrer noopener"><img id="facebookProfImg" class="menuProfImg"></a></div><div id="instagramProfC" class="menuProfC"><a id="instagramProfL" class="menuProfL" title="Instagram" href="https://www.instagram.com/zembi_b/" target="_blank" rel="noreferrer noopener"><img id="instagramProfImg" class="menuProfImg"></a></div><div id="twitterProfC" class="menuProfC"><a id="twitterProfL" class="menuProfL" title="Twitter" href="https://twitter.com/VFZembilas" target="_blank" rel="noreferrer noopener"><img id="twitterProfImg" class="menuProfImg"></a></div><div id="linkedInProfC" class="menuProfC"><a id="linkedInProfL" class="menuProfL" title="LinkedIn" href="https://www.linkedin.com/in/vasileios-filippos-zembilas-a08908189" target="_blank" rel="noreferrer noopener"><img id="linkedInProfImg" class="menuProfImg"></a></div><div id="githubProfC" class="menuProfC"><a id="githubProfL" class="menuProfL" title="GitHub" href="https://github.com/Zembi" target="_blank" rel="noreferrer noopener"><img id="githubProfImg" class="menuProfImg"></a></div></div></div></div>';
+			document.getElementById("leftBodyTCC").innerHTML = '<div id="leftBodyC"><div id="leftBackgroundC"><div class="backgroundMovingC"><ul class="squaresUL"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div></div><div id="upLeftC"><div id="openMenuBtnC"><button id="openMenuBtn"><img id="menuImg"></button></div></div><div id="downLeftC"><div id="downLeftWrapC"><div id="downMenuBtnLineC"><div id="downMenuBtnMovingInLineC"></div></div><div id="downMainMenuC"><div id="downMenuC"><div id="menuHideC"></div><div id="menuShowC"><div id="menuWrapShowC"><div id="menuCenterShowC"><div id="homeLeftMenuC" class="leftMenuBtnC"><a id="homeLeftMenuL" class="leftMenuBtn" href="../Home/home.html"><div class="leftMenuTextC">Home</div><img class="leftMenuImg"></a></div><div id="resumeLeftMenuC" class="leftMenuBtnC"><a id="resumeLeftMenuL" class="leftMenuBtn"  href="../Resume/resume.html"><div class="leftMenuTextC">Resume</div><img class="leftMenuImg"></a></div><div id="aboutMeLeftMenuC" class="leftMenuBtnC"><a id="aboutMeLeftMenuL" class="leftMenuBtn" href="../AboutMe/aboutMe.html"><div class="leftMenuTextC">About me</div><img class="leftMenuImg"></a></div><div id="contactLeftMenuC" class="leftMenuBtnC"><a id="contactLeftMenuL" class="leftMenuBtn" href="../Contact/contact.html"><div class="leftMenuTextC">Contact</div><img class="leftMenuImg"></a></div></div><div id="rightLineLeftMenuC"></div></div></div></div><div id="menuProfileInfoC"><div id="menuProfileInfoCC"><div id="facebookProfC" class="menuProfC"><a id="facebookProfL" class="menuProfL" title="Facebook" href="https://www.facebook.com/bvb.4ever1908/" target="_blank" rel="noreferrer noopener"><img id="facebookProfImg" class="menuProfImg"></a></div><div id="instagramProfC" class="menuProfC"><a id="instagramProfL" class="menuProfL" title="Instagram" href="https://www.instagram.com/zembi_b/" target="_blank" rel="noreferrer noopener"><img id="instagramProfImg" class="menuProfImg"></a></div><div id="twitterProfC" class="menuProfC"><a id="twitterProfL" class="menuProfL" title="Twitter" href="https://twitter.com/VFZembilas" target="_blank" rel="noreferrer noopener"><img id="twitterProfImg" class="menuProfImg"></a></div><div id="linkedInProfC" class="menuProfC"><a id="linkedInProfL" class="menuProfL" title="LinkedIn" href="https://www.linkedin.com/in/vasileios-filippos-zembilas-a08908189" target="_blank" rel="noreferrer noopener"><img id="linkedInProfImg" class="menuProfImg"></a></div><div id="githubProfC" class="menuProfC"><a id="githubProfL" class="menuProfL" title="GitHub" href="https://github.com/Zembi" target="_blank" rel="noreferrer noopener"><img id="githubProfImg" class="menuProfImg"></a></div></div></div></div></div></div>';
 		}
 
 		LeftScreenEventsHome() {
 			//TRIGGERED CONTAINERS
-			var leftBodyTCC = document.getElementById("leftBodyTCC");
-			var leftBodyC = document.getElementById("leftBodyC");
-			var downMenuBtnLineC = document.getElementById("downMenuBtnLineC");
-			var menuHideC = document.getElementById("menuHideC");
-			var menuShowC = document.getElementById("menuShowC");
-			var rightLineLeftMenuC = document.getElementById("rightLineLeftMenuC");
-			var menuProfileInfoCC = document.getElementById("menuProfileInfoCC");
-
-			//ACTION BUTTONS
 			let menu = this.menuBtn;
-			menu.getButtonElmnt().addEventListener("click", function() {
-				if(menu.getStatus() == 0) {
-					menu.setStatus(1);
-					leftBodyTCC.style.width = "240px";
-					downMenuBtnLineC.style.opacity = "1";
-					downMenuBtnMovingInLineC.style.animationPlayState = "running";
-					this.children[0].style.content = "url(../Assets/menu8.png)";
-
-					menuHideC.style.transform = "translate(100%, 0)";
-					menuShowC.style.transform = "translate(0, 0)";
-					rightLineLeftMenuC.style.opacity = "1";
-
-					//SOCIAL INFO EVENTS
-					menuProfileInfoCC.style.animation = "ChangeSocialInfoPosToCenter 0.5s linear 1";
-					menuProfileInfoCC.style.animationFillMode = "forwards";
-
-					//SESSION STORAGE MENU STATUS
-					sessionStorage.setItem("leftMenuStatus", 1);
-				}
-				else {
-					menu.setStatus(0);
-					leftBodyTCC.style.width = "140px";
-					downMenuBtnLineC.style.opacity = "0";
-					downMenuBtnMovingInLineC.style.animationPlayState = "paused";
-					this.children[0].style.content = "url(../Assets/menu7.png)";
-				
-					menuHideC.style.transform = "translate(0, 0)";
-					menuShowC.style.transform = "translate(-100%, 0)";
-					rightLineLeftMenuC.style.opacity = "0";
-
-					//SOCIAL INFO EVENTS
-					menuProfileInfoCC.style.animation = "ChangeSocialInfoPosToRight 0.5s linear 1";
-					menuProfileInfoCC.style.animationFillMode = "forwards";
-
-					//SESSION STORAGE MENU STATUS
-					sessionStorage.setItem("leftMenuStatus", 0);
-				}
-			});
 
 			//MENU BUTTON HOVER ACTIONS
 			menu.getButtonElmnt().addEventListener("mouseover", function() {
@@ -92,5 +45,206 @@
 					this.children[0].style.content = "url(../Assets/menu8.png)";
 				}
 			});
+
+			//ACTION BUTTONS
+			menu.getButtonElmnt().addEventListener("click", function() {
+				if(menu.getStatus() == 0) {
+					menu.setStatus(1);
+					ChangeOpenCloseMenuWhenResize(menu.getStatus());
+
+					this.children[0].style.content = "url(../Assets/menu8.png)";
+
+					//SESSION STORAGE MENU STATUS
+					sessionStorage.setItem("leftMenuStatus", 1);
+				}
+				else {
+					menu.setStatus(0);
+					ChangeOpenCloseMenuWhenResize(menu.getStatus());
+
+					this.children[0].style.content = "url(../Assets/menu7.png)";
+
+					//SESSION STORAGE MENU STATUS
+					sessionStorage.setItem("leftMenuStatus", 0);
+				}
+			});
+
+			//ON CLICK TO OPEN/CLOSE LEFT MENU CHECK CHANGES DEPENDS ON PAGE SIZE AND TAKE CARE OF RESIZE
+			function ChangeOpenCloseMenuWhenResize(menuStatus) {
+				var pointOfChange = 850;
+
+				if(menuStatus) {
+					OpenMenu(pointOfChange);
+				}
+				else {
+					CloseMenu(pointOfChange);
+				}
+			}
+
+			function OpenMenu(pointOfChange) {
+				//INITIALIZE VARIABLES
+				var leftBodyTCC = document.getElementById("leftBodyTCC");
+				var openMenuBtnC = document.getElementById("openMenuBtnC");
+				var downMenuBtnLineC = document.getElementById("downMenuBtnLineC");
+				var downMenuBtnMovingInLineC = document.getElementById("downMenuBtnMovingInLineC");
+				var menuHideC = document.getElementById("menuHideC");
+				var menuShowC = document.getElementById("menuShowC");
+				var rightLineLeftMenuC = document.getElementById("rightLineLeftMenuC");
+				var menuProfileInfoCC = document.getElementById("menuProfileInfoCC");
+			
+				//OPEN MENU GENERAL
+				openMenuBtnC.style.background = "transparent";
+				openMenuBtnC.style.transform = "translate(-50%, -50%)";
+
+				downMenuBtnLineC.style.opacity = "1";
+				downMenuBtnMovingInLineC.style.animationPlayState = "running";
+
+				menuHideC.style.transform = "translate(100%, 0)";
+				menuShowC.style.transform = "translate(0, 0)";
+				rightLineLeftMenuC.style.opacity = "1";
+
+				var allMenuItems = document.getElementsByClassName("leftMenuBtnC");
+				allMenuItems = Array.from(allMenuItems);
+				allMenuItems.forEach(menuItem => {
+					menuItem.children[0].tabIndex = "0";
+
+					if(GetPageWidth() > pointOfChange) {
+						menuItem.children[0].children[0].style.fontSize = "18px";
+						//IMG OF MENU BUTTON
+						menuItem.children[0].children[1].style.width = "12px";
+						menuItem.children[0].children[1].style.height = "12px";
+						menuItem.children[0].children[1].style.right = "-12px";
+					}
+					else {
+						if(GetPageWidth() > 400) {
+							menuItem.children[0].children[0].style.fontSize = "26px";
+						}
+						else {
+							menuItem.children[0].children[0].style.fontSize = "20px";
+						}
+						//IMG OF MENU BUTTON
+						menuItem.children[0].children[1].style.width = "19px";
+						menuItem.children[0].children[1].style.height = "19px";
+						menuItem.children[0].children[1].style.right = "-24px";
+					}
+				});
+
+				//SOCIAL INFO
+				var allSocialItems = document.getElementsByClassName("menuProfC");
+				allSocialItems = Array.from(allSocialItems);
+				allSocialItems.forEach(socialItem => {
+					socialItem.children[0].tabIndex = "0";
+					socialItem.style.transform = "rotate(90deg)";
+				});
+
+				if(GetPageWidth() > pointOfChange) {
+					//BIG OPEN MENU
+					if(GetPageWidth() < 1200) {
+						leftBodyTCC.style.width = "200px";
+					}
+					else {
+						leftBodyTCC.style.width = "240px";
+					}
+					openMenuBtnC.style.top = "60%";
+
+					//SOCIAL INFO
+					menuProfileInfoCC.style.bottom = "-10%";
+					menuProfileInfoCC.style.transform = "translate(50%, 0) rotate(-90deg)";
+				}
+				else {
+					//SMALL OPEN MENU
+					leftBodyTCC.style.width = "100%";
+
+					openMenuBtnC.style.top = "50%";
+
+					//SOCIAL INFO
+					menuProfileInfoCC.style.bottom = "50%";
+					menuProfileInfoCC.style.transform = "translate(50%, 50%) rotate(-90deg)";
+				}
+			
+				//SOCIAL INFO
+				menuProfileInfoCC.style.right = "50%";
+			}
+
+			function CloseMenu(pointOfChange) {
+				//INITIALIZE VARIABLES
+				var leftBodyTCC = document.getElementById("leftBodyTCC");
+				var openMenuBtnC = document.getElementById("openMenuBtnC");
+				var downMenuBtnLineC = document.getElementById("downMenuBtnLineC");
+				var downMenuBtnMovingInLineC = document.getElementById("downMenuBtnMovingInLineC");
+				var menuHideC = document.getElementById("menuHideC");
+				var menuShowC = document.getElementById("menuShowC");
+				var rightLineLeftMenuC = document.getElementById("rightLineLeftMenuC");
+				var menuProfileInfoCC = document.getElementById("menuProfileInfoCC");
+				
+				//CLOSE MENU GENERAL
+				openMenuBtnC.style.background = "transparent";
+				openMenuBtnC.style.top = "50%";
+
+				downMenuBtnLineC.style.opacity = "0";
+				downMenuBtnMovingInLineC.style.animationPlayState = "paused";
+
+				menuHideC.style.transform = "translate(0, 0)";
+				menuShowC.style.transform = "translate(-100%, 0)";
+				rightLineLeftMenuC.style.opacity = "0";
+
+				var allMenuItems = document.getElementsByClassName("leftMenuBtnC");
+				allMenuItems = Array.from(allMenuItems);
+				allMenuItems.forEach(menuItem => {
+					menuItem.children[0].tabIndex = "-1";
+
+					menuItem.children[0].children[0].style.fontSize = "18px";
+
+					menuItem.children[0].children[1].style.width = "12px";
+					menuItem.children[0].children[1].style.height = "12px";
+					menuItem.children[0].children[1].style.right = "-12px";
+				});
+
+				//SOCIAL INFO
+				var allSocialItems = document.getElementsByClassName("menuProfC");
+				allSocialItems = Array.from(allSocialItems);
+				allSocialItems.forEach(socialItem => {
+					socialItem.children[0].tabIndex = "0";
+					socialItem.style.transform = "rotate(0deg)";
+				});
+
+				if(GetPageWidth() > pointOfChange) {
+					//BIG CLOSE MENU
+					if(GetPageWidth() < 1200) {
+						leftBodyTCC.style.width = "110px";
+					}
+					else {
+						leftBodyTCC.style.width = "140px";
+					}
+					openMenuBtnC.style.transform = "translate(-50%, -50%)";
+				}
+				else {
+					//SMALL CLOSE MENU
+					leftBodyTCC.style.width = "0";
+					
+					openMenuBtnC.style.background = "darkgrey";
+					openMenuBtnC.style.transform = "translate(0, -50%)";
+
+					//SOCIAL INFO
+					allSocialItems.forEach(socialItem => {
+						socialItem.children[0].tabIndex = "-1";
+					});
+
+				}
+
+				//SOCIAL INFO
+				menuProfileInfoCC.style.right = "0";
+				menuProfileInfoCC.style.bottom = "50%";
+				menuProfileInfoCC.style.transform = "translate(0, 50%) rotate(0deg)";
+			}
+
+			//ON RESIZE CHANGES
+			function OnResizePageLeftMenuTriggers(menuStatus) {
+				ChangeOpenCloseMenuWhenResize(menuStatus);
+			}
+
+			window.addEventListener("resize", function() {
+				OnResizePageLeftMenuTriggers(menu.getStatus());
+			});
+			ChangeOpenCloseMenuWhenResize(menu.getStatus());
 		}
 	}
