@@ -31,8 +31,7 @@ function LoadBar() {
 function ReadyToRoll() {
   sessionStorage.setItem("siteIsLoaded", 1);
 
-  var metaTag = document.getElementById("changePageMeta");
-  metaTag.content = "0; Home/home.html";
+  window.location.href = "Home/home.html";
 }
 
 setTimeout(function() {
