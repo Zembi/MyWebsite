@@ -67,6 +67,69 @@
 		transform: translate(-50%, 0);
 	}
 
+	/*SCREEN WIDTH UNDER 1200px*/
+	@media only screen and (max-width: 1200px) {
+		#bottomTaskBarPageTitleTextH {
+			font-size: 28px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1000px) {
+		#topBarC {
+			height: 70px;
+		}
+
+		#bottomTaskBarPageTitleC {
+			border-bottom: 3px solid rgb(117, 42, 6);
+		}
+		#bottomTaskBarPageTitleTextH {
+			font-size: 26px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		#bottomTaskBarPageTitleTextH {
+			font-size: 25px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		#topBarC {
+			height: 60px;
+		}
+
+		#bottomTaskBarPageTitleTextH {
+			font-size: 24px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 450px*/
+	@media only screen and (max-width: 450px) {
+		#topBarC {
+			height: 50px;
+		}
+
+		#bottomTaskBarPageTitleTextH {
+			font-size: 20px;
+		}
+	}
+
+
+	/*SCREEN WIDTH UNDER 300px*/
+	@media only screen and (max-width: 300px) {
+		#topBarC {
+			height: 45px;
+		}
+
+		#bottomTaskBarPageTitleTextH {
+			font-size: 18px;
+		}
+	}
+
+
 	/*ANIMATIONS*/
 	@keyframes MovingTitle {
 		0% {

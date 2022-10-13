@@ -64,7 +64,7 @@
 						}
 
 						if(endedActions) {
-							document.getElementById("homeIntroTitleSymbolC").style.animation = "MovingKeywordsHomeLines 30s linear 1s infinite, TransformKeywordsHomeLines 30s linear 1s infinite";
+							document.getElementById("homeIntroKeywordsSymbolC").style.animation = "MovingKeywordsHomeLines 30s linear 1s infinite, TransformKeywordsHomeLines 30s linear 1s infinite";
 							document.getElementById("homeMotionLeftContentTitleSp").style.animation = "ShiningTitle1 10s ease-in-out infinite";
 							document.getElementById("homeLeftCoverIntroSymbolsC").style.animation = "CloseLeftElement 1s linear 1";
 							document.getElementById("homeLeftCoverIntroSymbolsC").style.animationFillMode = "forwards";

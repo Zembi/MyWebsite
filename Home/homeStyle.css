@@ -314,21 +314,22 @@
 					font-size: 30px;
 				}
 				
-				#homeIntroTitleSymbolC {
+				#homeIntroKeywordsSymbolC {
 					position: absolute;
 					display: block;
 					width: 100px;
 					color: transparent;
 					transform: translate(0, -60%);
 				}
-				.homeTitleSymbolC {
+				.homeKeywordSymbolC {
 					position: relative;
 					display: block;
 					overflow: hidden;
 					margin: 6px 0 6px 0;
 				}
-				.homeTitleSymbolC p {
-					display: inline-block;
+				.homeKeywordSymbolC p {
+					display: block;
+					width: 100%;
 					border-radius: 4px;
 					font-size: 16px;
 					font-weight: bold;
@@ -399,8 +400,9 @@
 					}
 					.homeSymbolsImgC {
 						position: relative;
-						display: inline-block;
+						display: block;
 						width: 100%; height: 100%;
+						background: transparent;
 						overflow: hidden;
 						transition: transform 0.6s;
 					}
@@ -408,6 +410,8 @@
 						transform: rotate(360deg);
 					}
 					.homeSymbolsImg {
+						position: relative;
+						display: block;
 						width: 100%; height: 100%;
 					}
 
@@ -415,12 +419,14 @@
 				position: relative;
 				display: block;
 				display: inline-block;
-				float: right;
-				right: 0px;
+				width: 100%;
 				margin-top: 20px;
+				z-index: 1;
 			}
 			#homeChangeBackgroundBtnC {
 				position: relative;
+				float: right;
+				right: 0;
 			}
 			#homeChangeBackgroundBtn {
 				width: 40px; height: 35px;
@@ -451,7 +457,7 @@
 				width: 90%;
 				background: transparent;
 				left: 50%;
-				margin-top: 40px;
+				margin-top: 10px;
 				transform: translate(-50%, 0);
 			}
 
@@ -566,9 +572,6 @@
 					}
 
 
-
-
-
 	/*SCREEN WIDTH UNDER 1200px*/
 	@media only screen and (max-width: 1200px) {
 		h2 {
@@ -579,21 +582,21 @@
 			width: 70px; height: 70px;
 		}
 
-		#myProfileFirstLineInfoP {
-			font-size: 21px;
-		}
+			.codeTitleSp {
+				font-size: 15px;
+			}
 
-		#myProfileSecondLineInfoP {
-			font-size: 15px;
-		}
+			#myProfileFirstLineInfoP {
+				font-size: 21px;
+			}
 
-		.codeTitleSp {
-			font-size: 15px;
-		}
+			#myProfileSecondLineInfoP {
+				font-size: 15px;
+			}
 
-		#robotCommentP {
-			font-size: 15px;
-		}
+			#robotCommentP {
+				font-size: 15px;
+			}
 
 		#homeIntroductionHH {
 			font-size: 18px;
@@ -602,34 +605,34 @@
 		#homeIntroImgAndSymbolsC {
 			height: 100px;
 		}
+			
+			#homeLeftCoverIntroSymbolsTextC p {
+				font-size: 26px;
+			}
 
-		#homeThirdSymbolC {
-			width: 100px; height: 80px;
-		}
+			#homeRightCoverIntroSymbolsTextC p {
+				font-size: 26px;
+			}
 
-		#homeLeftCoverIntroSymbolsTextC p {
-			font-size: 26px;
-		}
+			.homeKeywordSymbolC p {
+				font-size: 14px;
+			}
 
-		#homeRightCoverIntroSymbolsTextC p {
-			font-size: 26px;
-		}
+			.homeSymbolsC {
+				width: 40px; height: 35px;
+				margin: 0 16px 0 16px;
+			}
+				#homeThirdSymbolC {
+					width: 100px; height: 80px;
+				}
 
-		.homeSymbolsC {
-			width: 40px; height: 35px;
-		}
+			#homeContentDownLeftTextP {
+				font-size: 16px;
+			}
 
-		.homeTitleSymbolC p {
-			font-size: 14px;
-		}
-
-		#homeContentDownLeftTextP {
-			font-size: 16px;
-		}
-
-		#homeContentDownRightTextP {
-			font-size: 16px;
-		}
+			#homeContentDownRightTextP {
+				font-size: 16px;
+			}
 	}
 
 
@@ -643,21 +646,21 @@
 			width: 60px; height: 60px;
 		}
 
-		#myProfileFirstLineInfoP {
-			font-size: 20px;
-		}
+			.codeTitleSp {
+				font-size: 14px;
+			}
 
-		#myProfileSecondLineInfoP {
-			font-size: 14px;
-		}
+			#myProfileFirstLineInfoP {
+				font-size: 20px;
+			}
 
-		.codeTitleSp {
-			font-size: 14px;
-		}
+			#myProfileSecondLineInfoP {
+				font-size: 14px;
+			}
 
-		#robotCommentP {
-			font-size: 14px;
-		}
+			#robotCommentP {
+				font-size: 14px;
+			}
 
 		#homeIntroductionHH {
 			font-size: 17px;
@@ -667,41 +670,466 @@
 			height: 90px;
 		}
 
-		#homeThirdSymbolC {
-			width: 90px; height: 70px;
+			#homeLeftCoverIntroSymbolsTextC p {
+				font-size: 24px;
+			}
+
+			#homeRightCoverIntroSymbolsTextC p {
+				font-size: 24px;
+			}
+
+			#homeIntroKeywordsSymbolC {
+				width: 80px;
+			}
+				.homeKeywordSymbolC p {
+					font-size: 12px;
+				}
+
+			.homeSymbolsC {
+				width: 35px; height: 30px;
+				margin: 0 14px 0 14px;
+			}
+				#homeThirdSymbolC {
+					width: 90px; height: 70px;
+				}
+
+			#homeContentDownLeftTextP {
+				font-size: 14px;
+			}
+
+			#homeContentDownRightTextP {
+				font-size: 14px;
+			}
+	}
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		h2 {
+			font-size: 18px;
 		}
 
-		#homeIntroTitleSymbolC {
-			width: 80px;
+		#homeMainUpC {
+			height: 260px;
+		}
+			#homeMainUpTitleTextH {
+				font-size: 24px;
+				top: 75%;
+				right: 50%;
+				transform: translate(50%, -50%);
+			}
+
+		#myProfileImgC {
+			width: 55px; height: 55px;
 		}
 
-		.homeSymbolsC {
-			width: 35px; height: 30px;
+			.codeTitleSp {
+				font-size: 13px;
+			}
+		
+			#myProfileFirstLineInfoC {
+				margin: 4px 5px 0 5px;
+			}
+				#myProfileFirstLineInfoP {
+					font-size: 19px;
+				}
+
+			#myProfileSecondLineInfoC {
+				margin: 4px 5px 0 5px;
+			}
+				#myProfileSecondLineInfoP {
+					font-size: 13px;
+				}
+
+			#robotCommentC {
+				margin: 3px 5px 0 1px;
+			}
+				#robotCommentP {
+					font-size: 13px;
+				}
+
+		#homeIntroductionC {
+			margin: 15px 0 20px 0;
+		}
+			#homeIntroductionHH {
+				font-size: 16px;
+			}
+
+		#homeIntroImgAndSymbolsC {
+			height: 80px;
 		}
 
-		.homeTitleSymbolC p {
-			font-size: 12px;
-		}
+			#homeIntroKeywordsSymbolC {
+				width: 80px;
+			}
+				.homeKeywordSymbolC p {
+					font-size: 11px;
+				}
 
-		#homeLeftCoverIntroSymbolsTextC p {
-			font-size: 24px;
-		}
+			.homeSymbolsC {
+				width: 30px; height: 25px;
+				margin: 0 11px 0 11px;
+			}
+				#homeThirdSymbolC {
+					width: 85px; height: 65px;
+				}
 
-		#homeRightCoverIntroSymbolsTextC p {
-			font-size: 24px;
+		#homeMiddleC {
+			margin-top: 10px;
 		}
 
 		#homeContentDownLeftTextP {
-			font-size: 14px;
+			font-size: 13px;
 		}
 
 		#homeContentDownRightTextP {
-			font-size: 14px;
+			font-size: 13px;
 		}
 	}
 
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		#homeMainUpC {
+			height: 250px;
+		}
+			#homeMainUpTitleTextH {
+				font-size: 22px;
+				top: 75%;
+				right: 50%;
+				transform: translate(50%, -50%);
+			}
 
+			#myProfileImgC {
+				width: 50px; height: 50px;
+			}
 
+			#myProfileHeadLinesC {
+				font-size: 12px;
+				margin: 0 5px 0 10px;
+			}
+
+				.codeTitleSp {
+					font-size: 12px;
+				}
+
+				#myProfileFirstLineInfoC {
+					margin: 2px 4px 0 4px;
+				}
+					#myProfileFirstLineInfoP {
+						font-size: 17px;
+					}
+
+				#myProfileSecondLineInfoC {
+					margin: 2px 4px 0 4px;
+				}
+					#myProfileSecondLineInfoP {
+						font-size: 13px;
+					}
+
+				#robotCommentC {
+					margin: 2px 5px 0 1px;
+				}
+					#robotCommentP {
+						font-size: 12px;
+					}
+
+		#homeIntroductionC {
+			margin: 10px 0 20px 0;
+		}
+			#homeIntroductionHH {
+				font-size: 15px;
+			}
+
+/**/
+		#homeLeftCoverIntroSymbolsTextC p {
+			font-size: 20px;
+		}
+
+		#homeRightCoverIntroSymbolsTextC p {
+			font-size: 20px;
+		}
+
+		#homeIntroKeywordsSymbolC {
+			width: 60px;
+		}
+			.homeKeywordSymbolC p {
+				font-size: 11px;
+			}
+
+		.homeSymbolsC {
+			width: 30px; height: 25px;
+			margin: 0 8px 0 8px;
+		}
+			#homeThirdSymbolC {
+				width: 80px; height: 65px;
+			}
+
+		#homeChangeBackgroundBtn {
+			width: 35px; height: 30px;
+		}
+
+		#homeContentLeftC {
+			width: 100%;
+		}
+			#homeContentDownLeftTextC {
+				padding: 10px 10% 30px 10%;
+			}
+				#homeContentTopLeftTitleC {
+					margin: 5px 0 5px 0;
+				}
+					#homeContentDownLeftTextP {
+						font-size: 13px;
+					}
+
+		#homeContentRightC {
+			width: 100%;
+		}
+			#homeContentDownRightTextC {
+				padding: 10px 10% 30px 10%;
+			}
+				#homeContentTopRightTitleC {
+					margin: 5px 0 5px 0;
+				}
+					#homeContentDownRightTextP {
+						font-size: 13px;
+					}
+	}
+
+	/*SCREEN WIDTH UNDER 450px*/
+	@media only screen and (max-width: 450px) {
+		h2 {
+			font-size: 14px;
+		}
+
+		#homeMainUpC {
+			height: 200px;
+		}
+			#homeMainUpTitleTextH {
+				font-size: 14px;
+			}
+
+			#myProfileImgC {
+				width: 40px; height: 40px;
+			}
+
+			#myProfileHeadLinesC {
+				font-size: 9px;
+				margin: 0 5px 0 5px;
+			}
+
+				.codeTitleSp {
+					font-size: 9px;
+				}
+
+				#myProfileFirstLineInfoC {
+					margin: 2px 2px 0 2px;
+				}
+					#myProfileFirstLineInfoP {
+						font-size: 12px;
+					}
+
+				#myProfileSecondLineInfoC {
+					margin: 2px 2px 0 2px;
+				}
+					#myProfileSecondLineInfoP {
+						font-size: 9px;
+					}
+
+				#robotCommentC {
+					margin: 2px 5px 0 1px;
+				}
+					#robotCommentP {
+						font-size: 8px;
+					}
+
+		#homeIntroductionC {
+			margin: 0 0 20px 0;
+		}
+			#homeIntroductionHH {
+				font-size: 12px;
+			}
+
+		#homeIntroImgAndSymbolsC {
+			height: 70px;
+		}
+
+			#homeLeftCoverIntroSymbolsTextC p {
+				font-size: 16px;
+			}
+
+			#homeRightCoverIntroSymbolsTextC p {
+				font-size: 16px;
+			}
+
+			#homeIntroKeywordsSymbolC {
+				width: 50px;
+			}
+				.homeKeywordSymbolC p {
+					font-size: 10px;
+				}
+
+			.homeSymbolsC {
+				width: 30px; height: 25px;
+				margin: 0 8px 0 8px;
+			}
+				#homeThirdSymbolC {
+					width: 70px; height: 55px;
+				}
+
+		#homeMiddleC {
+			margin-top: 10px;
+		}
+			#homeChangeBackgroundBtn {
+				width: 35px; height: 30px;
+			}
+
+		#homeDescriptionContentC {
+			margin-top: 0;
+		}
+
+			#homeContentLeftC {
+				width: 100%;
+			}
+				#homeContentTopLeftTitleC {
+					margin: 0;
+				}
+				
+				#homeContentDownLeftTextP {
+					font-size: 11px;
+				}
+
+			#homeContentRightC {
+				width: 100%;
+			}
+				#homeContentTopRightTitleC {
+					margin: 0;
+				}
+				
+				#homeContentDownRightTextP {
+					font-size: 11px;
+				}
+	}
+
+	/*SCREEN WIDTH UNDER 300px*/
+	@media only screen and (max-width: 300px) {
+		h2 {
+			font-size: 12px;
+		}
+
+		#homeMainUpC {
+			height: 160px;
+		}
+			#homeMainUpTitleTextH {
+				font-size: 10px;
+			}
+
+			#myProfileImgC {
+				width: 30px; height: 30px;
+				margin-top: 0;
+			}
+
+			#myProfileHeadLinesC {
+				font-size: 6px;
+				margin: 0 2px 0 5px;
+			}
+
+				.codeTitleSp {
+					font-size: 6px;
+				}
+
+				#myProfileFirstLineInfoC {
+					margin: 1px 1px 0 1px;
+				}
+					#myProfileFirstLineInfoP {
+						font-size: 10px;
+					}
+
+				#myProfileSecondLineInfoC {
+					margin: 1px 1px 0 1px;
+				}
+					#myProfileSecondLineInfoP {
+						font-size: 7px;
+					}
+
+				#robotCommentC {
+					margin: 1px 5px 0 1px;
+				}
+					#robotCommentP {
+						font-size: 6px;
+					}
+
+		#homeIntroductionC {
+			margin: 0 0 20px 0;
+		}
+			#homeIntroductionHH {
+				font-size: 10px;
+			}
+
+		#homeIntroImgAndSymbolsC {
+			height: 60px;
+		}
+
+			#homeLeftCoverIntroSymbolsTextC p {
+				font-size: 14px;
+			}
+
+			#homeRightCoverIntroSymbolsTextC p {
+				font-size: 14px;
+			}
+
+			#homeIntroKeywordsSymbolC {
+				width: 40px;
+			}
+				.homeKeywordSymbolC p {
+					font-size: 8px;
+				}
+
+			.homeSymbolsC {
+				width: 20px; height: 20px;
+				margin: 0 4px 0 4px;
+			}
+				#homeThirdSymbolC {
+					width: 60px; height: 50px;
+				}
+
+		#homeMiddleC {
+			margin-top: 10px;
+		}
+			#homeChangeBackgroundBtn {
+				width: 30px; height: 25px;
+			}
+
+		#homeDescriptionContentC {
+			margin-top: 0;
+		}
+
+			#homeContentLeftC {
+				width: 100%;
+			}
+				#homeContentTopLeftTitleC {
+					margin: 0;
+				}
+					#homeContentTopLeftTitleH {
+						border-bottom: 3px solid rgb(0, 68, 128);
+					}
+				
+				#homeContentDownLeftTextP {
+					font-size: 9px;
+				}
+
+			#homeContentRightC {
+				width: 100%;
+			}
+				#homeContentTopRightTitleC {
+					margin: 0;
+				}
+					#homeContentTopRightTitleH {
+						border-bottom: 3px solid rgb(0, 68, 128);
+					}
+
+				#homeContentDownRightTextP {
+					font-size: 9px;
+				}
+	}
 
 	/*ANIMATIONS*/
 	@keyframes OnOffHeaderHome {
@@ -851,14 +1279,14 @@
 			border: 2px solid white;
 			border-left: none;
 			border-right: none;
-			left: 10%;
+			left: 8%;
 			transform: translate(0, -105%);
 		}
 		50% {
 			border: 2px solid rgb(117, 42, 6);
 			border-left: none;
 			border-right: none;
-			left: 10%;
+			left: 8%;
 			transform: translate(0, 60%);
 		}
 		51% {
@@ -866,14 +1294,14 @@
 			border-left: none;
 			border-right: none;
 			left: auto;
-			right: 10%;
+			right: 8%;
 			transform: translate(0, 60%);
 		}
 		100% {
 			border: 2px solid white;
 			border-left: none;
 			border-right: none;
-			right: 10%;
+			right: 8%;
 			transform: translate(0, -105%);
 		}
 	}

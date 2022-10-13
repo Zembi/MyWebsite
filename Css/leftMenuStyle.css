@@ -27,6 +27,9 @@
 				position: relative;
 				display: block;
 				width: 100%; height: 80px;
+				background: transparent;
+				margin: 0;
+				padding: 0;
 			}
 			#openMenuBtnC {
 				position: relative;
@@ -66,8 +69,8 @@
 				position: relative;
 				display: block;
 				width: 100%; height: 100%;
-				background: transparent;
 			}
+
 			#downMenuBtnLineC {
 				position: relative;
 				display: block;
@@ -195,10 +198,17 @@
 						transition: opacity 1s;
 					}
 
+				#menuSplitHeightC {
+					position: relative;
+					display: block;
+					width: 100%; height: 10%;
+					background: transparent;
+				}
+
 				#menuProfileInfoC {
 					position: relative;
 					display: block;
-					width: 100%; height: 50%;
+					width: 100%; height: 40%;
 					background: transparent;
 				}
 				#menuProfileInfoCC {
@@ -286,6 +296,17 @@
 		}
 	}
 
+	/*SCREEN WIDTH UNDER 1200px*/
+	@media only screen and (max-width: 1000px) {
+		#upLeftC {
+			height: 70px;
+		}
+
+		#downLeftC {
+			top: 70px;
+		}
+	}
+
 
 	/*SCREEN WIDTH UNDER 850px*/
 	@media only screen and (max-width: 850px) {
@@ -305,8 +326,42 @@
 		}
 	}
 
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		#upLeftC {
+			height: 60px;
+		}
+
+		#openMenuBtnC {
+			width: 35px; height: 35px;
+		}
+
+		#downLeftC {
+			top: 60px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 450px*/
+	@media only screen and (max-width: 450px) {
+		#upLeftC {
+			height: 50px;
+		}
+
+		#downLeftC {
+			top: 50px;
+		}
+	}
+
 	/*SCREEN WIDTH UNDER 300px*/
 	@media only screen and (max-width: 300px) {
+		#upLeftC {
+			height: 45px;
+		}
+
+		#downLeftC {
+			top: 45px;
+		}
+
 		.menuProfC {
 			width: 26px; height: 26px;
 		}
