@@ -8,8 +8,15 @@
 	@import url('../Css/mainPageCoreStyle.css');
 
 
-	/*SCREEN WIDTH UNDER 750px*/
-	@media only screen and (max-width: 750px) {
+	#resumeBodyC {
+		position: relative;
+		display: block;
+		width: 100%; height: 100%;
+	}
+
+
+	/*SCREEN WIDTH UNDER 1200px*/
+	@media only screen and (max-width: 1200px) {
 		
 	}
 
