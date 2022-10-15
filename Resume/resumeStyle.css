@@ -12,29 +12,378 @@
 		position: relative;
 		display: block;
 		width: 100%; height: 100%;
+		background: rgb(117, 42, 6, 0.7);
+		border-radius: 2px;
+		overflow: hidden;
 	}
+		#resumeTopgroundC {
+			position: absolute;
+			display: block;
+			width: 100%; height: 100%;
+			background: transparent;
+			z-index: 1;
+			animation: HideTopGround 0.1s linear 2.2s 1;
+			animation-fill-mode: forwards;
+		}
+			#upLeftTopgroundC {
+				position: absolute;
+				display: block;
+				float: left;
+				width: 50%; height: 50%;
+				top: 0;
+				left: 0;
+				box-sizing: border-box;
+				animation: MovingLeft 1s linear 1.5s 1, ShowBorders 0.4s linear 1;
+				animation-fill-mode: forwards;
+			}
+
+			#upRightTopgroundC {
+				position: absolute;
+				display: block;
+				float: right;
+				width: 50%; height: 50%;
+				top: 0;
+				right: 0;
+				box-sizing: border-box;
+				animation: MovingUp 1s linear 1.6s 1, ShowBorders 0.4s linear 1;
+				animation-fill-mode: forwards;
+			}
+
+			#downLeftTopgroundC {
+				position: absolute;
+				display: block;
+				float: left;
+				width: 50%; height: 50%;
+				bottom: 0;
+				left: 0;
+				box-sizing: border-box;
+				animation: MovingDown 1s linear 1.7s 1, ShowBorders 0.4s linear 1;
+				animation-fill-mode: forwards;
+			}
+
+			#downRightTopgroundC {
+				position: absolute;
+				display: block;
+				float: right;
+				width: 50%; height: 50%;
+				bottom: 0;
+				right: 0;
+				box-sizing: border-box;
+				animation: MovingRight 1s linear 1.8s 1, ShowBorders 0.4s linear 1;
+				animation-fill-mode: forwards;
+			}
 	
-		#resumeIframeC {
+		#resumeIframeFullContentC {
 			position: relative;
 			display: block;
-			width: 80%; height: 400px;
+			background: transparent;
 			left: 50%;
+			margin-bottom: 100px;
 			transform: translate(-50%, 0);
 
 		}
-		#resume {
-			position: relative;
-			display: block;
-			width: 100%; height: 100%;
-			padding: 0;
+			#resumeIframeTitleC {
+				position: relative;
+				display: block;
+				width: 100%;
+			}
+			#resumeIframeTitleDownC {
+				position: relative;
+				display: block;
+				width: 100%; height: 60%;
+				background: transparent;
+				bottom: 0;
+			}
+				#resumeTopTitleC {
+					position: relative;
+					display: block;
+					background: transparent;
+					margin: 50px 0 0 0;
+					padding: 0 10px 0 10px;
+				}
+					#resumeIframeTitleP {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						color: white;
+						font-size: 16px;
+						text-decoration: underline;
+						text-align: center;
+						left: 50%;
+						margin: 0;
+						padding: 0;
+						transform: translate(-50%, 0);
+					}
+
+				#resumeDownloadC {
+					position: relative;
+					display: inline-block;
+					background: transparent;
+					width: 60%;
+					left: 50%;
+					margin: 15px 0 10px 0;
+					transform: translate(-50%, 0);
+				}
+
+					#resumeDownloadBtn {
+						position: relative;
+						display: block;
+						float: right;
+						background: rgb(255, 255, 255, 0.1);
+						border-radius: 4px;
+						border: none;
+						box-shadow: 0 0 2px black;
+						cursor: pointer;
+						padding: 5px 35px 5px 10px;
+						transition: box-shadow 0.4s;
+					}
+					#resumeDownloadBtn:hover {
+						background: rgb(255, 255, 255, 0.4);
+						box-shadow: 0 0 5px black;
+					}
+						#resumeDownloadTextC {
+							position: relative;
+							display: block;
+							float: left;
+							border-right: 2px solid grey;
+							padding: 0 10px 0 0;
+						}
+						#resumeDownloadBtn:hover #resumeDownloadTextC {
+							border-right: 2px solid rgb(117, 42, 6);
+						}
+						#resumeDownloadTextP {
+							color: white;
+							font-size: 14px;
+						}
+						#resumeDownloadBtn:active #resumeDownloadTextP {
+							color: rgb(117, 42, 6);
+						}
+						#resumeDownloadTextP:hover span {
+							color: rgb(117, 42, 6);
+						}
+
+						#resumeDownloadImgC {
+							position: absolute;
+							display: inline-block;
+							float: right;
+							width: 16px; height: 16px;
+							top: 50%;
+							right: 10px;
+							overflow: hidden;
+							transform: translate(0, -50%);
+						}
+						#resumeDownloadImgC:hover #resumeDownloadImg {
+							content: url('../Assets/download3.png');
+						}
+						#resumeDownloadImg {
+							position: relative;
+							display: block;
+							width: 100%; height: 100%;
+							content: url('../Assets/download2.png');
+						}
+						#resumeDownloadBtn:active #resumeDownloadImg {
+							content: url('../Assets/download3.png');
+						}
+
+			#resumeIframeC {
+				position: relative;
+				display: block;
+				width: 60%; height: 800px;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+				#resumeIframe {
+					position: relative;
+					display: block;
+					width: 100%; height: 100%;
+					background: white;
+					border-radius: 4px;
+					border: 4px solid rgb(0, 78, 146);
+					box-sizing: border-box;
+					padding: 0;
+					transition: box-shadow 0.4s, border 0.4s;
+				}
+				#resumeIframe:hover {
+					border: 4px solid rgb(0, 16, 57);
+					box-shadow: 0 0 10px rgb(0, 16, 57);
+				}
+
+
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		#resumeIframeTitleP {
+			font-size: 14px;
 		}
 
+		#resumeDownloadC {
+			width: 80%;
+		}
+			#resumeDownloadBtn {
+				padding: 5px 30px 5px 6px;
+			}
+				#resumeDownloadTextC {
+					padding: 0 8px 0 0;
+				}
+				#resumeDownloadTextP {
+					font-size: 12px;
+				}
 
+				#resumeDownloadImgC {
+					width: 13px; height: 13px;
+				}
 
-	/*SCREEN WIDTH UNDER 1200px*/
-	@media only screen and (max-width: 1200px) {
-		
+		#resumeIframeC {
+			width: 80%; height: 600px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 600px*/
+	@media only screen and (max-width: 600px) {
+		#resumeTopTitleC {
+			margin: 30px 0 0 0;
+		}
+		#resumeIframeTitleP {
+			font-size: 12px;
+		}
+
+		#resumeDownloadC {
+			width: 95%;
+		}
+		#resumeDownloadBtn {
+			padding: 5px 23px 5px 6px;
+		}
+			#resumeDownloadTextC {
+				padding: 0 6px 0 0;
+			}
+			#resumeDownloadTextP {
+				font-size: 10px;
+			}
+
+			#resumeDownloadImgC {
+				width: 11px; height: 11px;
+				right: 6px;
+			}
+
+		#resumeIframeC {
+			width: 95%; height: 500px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 350px*/
+	@media only screen and (max-width: 350px) {
+		#resumeTopTitleC {
+			margin: 20px 0 0 0;
+		}
+		#resumeIframeTitleP {
+			font-size: 10px;
+		}
+
+		#resumeDownloadC {
+			width: 95%;
+			margin: 10px 0 5px 0;
+		}
+		#resumeDownloadBtn {
+			padding: 5px 18px 5px 4px;
+		}
+			#resumeDownloadTextC {
+				padding: 0 4px 0 0;
+			}
+			#resumeDownloadTextP {
+				font-size: 8px;
+			}
+
+			#resumeDownloadImgC {
+				width: 9px; height: 9px;
+				right: 4px;
+			}
+
+		#resumeIframeC {
+			width: 100%; height: 500px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 200px*/
+	@media only screen and (max-width: 200px) {
+		#resumeIframeTitleP {
+			font-size: 8px;
+		}
+
+		#resumeDownloadBtn {
+			padding: 4px 15px 4px 4px;
+		}
+			#resumeDownloadTextC {
+				padding: 0 4px 0 0;
+			}
+			#resumeDownloadTextP {
+				font-size: 6px;
+			}
+
+			#resumeDownloadImgC {
+				width: 6px; height: 6px;
+				right: 4px;
+			}
+
+		#resumeIframeC {
+			height: 350px;
+		}
 	}
 
 
 	/*ANIMATIONS*/
+	@keyframes HideTopGround {
+		0% {
+			display: block;
+		}
+		1%, 100% {
+			display: none;
+			z-index: -1;
+		}
+	}
+
+	@keyframes MovingLeft {
+		0% {
+			left: 0;
+		}
+		100% {
+			left: -100%;
+		}
+	}
+	
+	@keyframes MovingUp {
+		0% {
+			top: 0;
+		}
+		100% {
+			top: -100%;
+		}
+	}
+
+	@keyframes MovingDown {
+		0% {
+			bottom: 0;
+		}
+		100% {
+			bottom: -100%;
+		}
+	}
+
+	@keyframes MovingRight {
+		0% {
+			right: 0;
+		}
+		100% {
+			right: -100%;
+		}
+	}
+
+	@keyframes ShowBorders {
+		0% {
+			background: rgb(0, 16, 57, 0.9);
+			border: 0px solid darkgrey;
+		}
+		100% {
+			background: rgb(0, 16, 57, 0.3);
+			border: 2px solid darkgrey;
+		}
+	}

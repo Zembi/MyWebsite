@@ -23,9 +23,9 @@
 		//BOT TYPING ASYNC WELCOME TEXT AFTER HOME LOADS
 		HomeUpTitleTypeWriter() {
 			//GENERAL TITLE VARIABLES
-			var timeToType = 0;
-			var timeToWait = 0;
-			var timeToDelete = 0;
+			var timeToType =25;
+			var timeToWait = 600;
+			var timeToDelete = 15;
 			var mainTable = new Array();
 			var status1 = "be aware";
 

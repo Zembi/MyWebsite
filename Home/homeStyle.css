@@ -9,7 +9,9 @@
 	#mainHomeC {
 		position: relative;
 		display: block;
-		width: 100%; height: 100%;
+		width: 100%; height: 100%;		
+		animation: OpacityElements 1s linear 1;
+		animation-fill-mode: forwards;
 	}
 
 		#mainHomeBackgroundC {
@@ -1132,6 +1134,15 @@
 	}
 
 	/*ANIMATIONS*/
+	@keyframes OpacityElements {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
 	@keyframes OnOffHeaderHome {
 		0% {
 			color: white;

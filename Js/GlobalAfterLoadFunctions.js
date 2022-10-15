@@ -6,7 +6,7 @@
 		var leftMenuStatus = sessionStorage.getItem("leftMenuStatus");
 	
 		if(leftMenuStatus == 1) {
-			document.getElementById("openMenuBtn").click();
+			//document.getElementById("openMenuBtn").click();
 		}
 	}
 

@@ -33,6 +33,8 @@
 	}
 
 	body {
+		position: relative;
+		display: block;
 		width: 100%; height: 100%;
 		min-width: 190px;
 		background: rgb(0, 93, 176);
@@ -72,11 +74,9 @@
 		#downRightC {
 			position: relative;
 			display: block;
-			width: 100%;
+			width: 100%; height: 100%;
 			background: transparent;
 			margin-top: 10px;
-			animation: OpacityElements 1s linear 1;
-			animation-fill-mode: forwards;
 		}
 
 		/*FOOTER CONTAINER IMPORT HERE*/
@@ -84,11 +84,3 @@
 
 
 	/*ANIMATIONS*/
-	@keyframes OpacityElements {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
