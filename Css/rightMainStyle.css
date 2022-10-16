@@ -58,13 +58,22 @@
 	/*SCREEN WIDTH UNDER 650px*/
 	@media only screen and (max-width: 450px) {
 		#changeBackgroundBtn {
-			width: 35px; height: 30px;
+			width: 30px; height: 25px;
+		}
+
+		#rightMainTopMenuC {
+			margin: 4px 0 4px 0;
+			padding: 0 4px 2px 4px;
 		}
 	}
 
 	/*SCREEN WIDTH UNDER 650px*/
 	@media only screen and (max-width: 300px) {
 		#changeBackgroundBtn {
-				width: 30px; height: 25px;
+				width: 25px; height: 20px;
+		}
+
+		#rightMainTopMenuC {
+			padding: 0 3px 2px 3px;
 		}
 	}

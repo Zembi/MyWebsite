@@ -10,6 +10,17 @@ function CheckIfPageThatIsAboutToLoadIsInCurrentStatus() {
 }
 
 CheckIfPageThatIsAboutToLoadIsInCurrentStatus();
+////
+
+//PAGE BACKGROUND BUTTON STATUS LOAD
+function InitializePageBackgroundStatus() {
+	if(sessionStorage.getItem("pageBackgroundProfile") == null) {
+		sessionStorage.setItem("pageBackgroundProfile", "prof1");
+	}
+}
+	
+InitializePageBackgroundStatus();
+////
 
 //GET PAGE WIDTH
 function GetPageWidth() {
@@ -21,3 +32,4 @@ function GetPageWidth() {
 
 	return width;
 }
+////

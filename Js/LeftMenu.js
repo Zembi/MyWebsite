@@ -90,6 +90,7 @@
 				var menuShowC = document.getElementById("menuShowC");
 				var rightLineLeftMenuC = document.getElementById("rightLineLeftMenuC");
 				var menuProfileInfoCC = document.getElementById("menuProfileInfoCC");
+				var movingElementsBackgroundMenu  = document.querySelector(".squaresUL").childNodes;
 			
 				//OPEN MENU GENERAL
 				openMenuBtnC.style.background = "transparent";
@@ -152,9 +153,10 @@
 					}
 					openMenuBtnC.style.top = "60%";
 
-					//SOCIAL INFO
-					menuProfileInfoCC.style.bottom = "50%";
-					menuProfileInfoCC.style.transform = "translate(50%, 50%) rotate(-90deg)";
+					//MOVING BACKGROUND LEFT MENU
+					movingElementsBackgroundMenu.forEach(movingMenuItem => {
+						movingMenuItem.style.animationPlayState = "running";
+					});
 				}
 				else {
 					//SMALL OPEN MENU
@@ -162,13 +164,16 @@
 
 					openMenuBtnC.style.top = "50%";
 
-					//SOCIAL INFO
-					menuProfileInfoCC.style.bottom = "50%";
-					menuProfileInfoCC.style.transform = "translate(50%, 50%) rotate(-90deg)";
+					//MOVING BACKGROUND LEFT MENU
+					movingElementsBackgroundMenu.forEach(movingMenuItem => {
+						movingMenuItem.style.animationPlayState = "running";
+					});
 				}
 			
 				//SOCIAL INFO
 				menuProfileInfoCC.style.right = "50%";
+				menuProfileInfoCC.style.bottom = "50%";
+				menuProfileInfoCC.style.transform = "translate(50%, 50%) rotate(-90deg)";
 			}
 
 			function CloseMenu(pointOfChange) {
@@ -181,6 +186,7 @@
 				var menuShowC = document.getElementById("menuShowC");
 				var rightLineLeftMenuC = document.getElementById("rightLineLeftMenuC");
 				var menuProfileInfoCC = document.getElementById("menuProfileInfoCC");
+				var movingElementsBackgroundMenu  = document.querySelector(".squaresUL").childNodes;
 				
 				//CLOSE MENU GENERAL
 				openMenuBtnC.style.background = "transparent";
@@ -222,6 +228,11 @@
 						leftBodyTCC.style.width = "140px";
 					}
 					openMenuBtnC.style.transform = "translate(-50%, -50%)";
+
+					//MOVING BACKGROUND LEFT MENU
+					movingElementsBackgroundMenu.forEach(movingMenuItem => {
+						movingMenuItem.style.animationPlayState = "running";
+					});
 				}
 				else {
 					//SMALL CLOSE MENU
@@ -235,6 +246,10 @@
 						socialItem.children[0].tabIndex = "-1";
 					});
 
+					//MOVING BACKGROUND LEFT MENU
+					movingElementsBackgroundMenu.forEach(movingMenuItem => {
+						movingMenuItem.style.animationPlayState = "paused";
+					});
 				}
 
 				//SOCIAL INFO
