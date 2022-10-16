@@ -16,6 +16,7 @@
 			this.InitializeLeftMenu();
 			this.InitializeRightTopScreen();
 			this.InitializeFooter();
+			this.InitializeRightMainScreen()
 		}
 
 		InitializeLeftMenu() {
@@ -26,6 +27,11 @@
 		InitializeRightTopScreen() {
 			//TOP BAR CLASS OBJECT
 			this.topBarObj = new TopBar(this.getStatus());
+		}
+
+		InitializeRightMainScreen() {
+			//RIGHT MAIN CLASS OBJECT
+			this.topBarObj = new RightMain(this.getStatus());
 		}
 
 		InitializeFooter() {

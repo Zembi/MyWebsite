@@ -1,7 +1,7 @@
 
 
 	//MATHEMATICS FUNCTION
-	function sumFactorial(n) {
+	function SumFactorial(n) {
 		var sum = 0;
 
 		for(var i = 1; i <= n; i++) {
@@ -10,6 +10,16 @@
 
 		return sum;
 	}
+	////
+
+	//PAGE BACKGROUND BUTTON STATUS LOAD
+	function InitializePageBackgroundStatus() {
+		if(sessionStorage.getItem("pageBackgroundProfile") == null) {
+			sessionStorage.setItem("pageBackgroundProfile", "prof1");
+		}
+	}
+	
+	InitializePageBackgroundStatus();
 	////
 	
 	//TYPE WRITER FUNCTION, SO CAN ANIMATE TEXT WRITING//

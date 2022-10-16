@@ -1,0 +1,70 @@
+
+	#rightMainScreenC {
+		position: relative;
+		display: block;
+		width: 100%;
+		background: rgb(0, 0, 0, 0.4);
+		overflow: hidden;
+	}
+		#rightMainTopMenuC {
+			position: relative;
+			display: block;
+			float: left;
+			background: transparent;
+			border-bottom: 2px solid white;
+			left: 50%;
+			margin: 4px 0 6px 0;
+			padding: 0 5px 4px 5px;
+			transform: translate(-50%, 0);
+		}
+			.rightMainTopMenuItemBtnC {
+				position: relative;
+				display: block;
+				float: left;
+			}
+			.rightMainTopMenuItemBtn {
+				width: 40px; height: 35px;
+				background: transparent;
+				border-radius: 2px 0 0 2px;
+				border: none;
+				cursor: pointer;
+				box-shadow: 0 0 2px black;
+				margin: 0;
+				padding: 3px 7px 3px 5px;
+				transition: box-shadow 0.2s;
+			}
+			.rightMainTopMenuItemBtn:hover {
+				box-shadow: 0 0 4px black;
+			}
+				.rightMainTopMenuItemImg {
+					width: 100%; height: 100%;
+				}
+
+				#changeBackgroundBtnImg {
+					content: url('../Assets/palette2.png');
+					transform: rotateY(-180deg);
+				}
+				#changeBackgroundBtn:hover #changeBackgroundBtnImg {
+					content: url('../Assets/palette4.png');
+				}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		#changeBackgroundBtn {
+			width: 35px; height: 30px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 450px) {
+		#changeBackgroundBtn {
+			width: 35px; height: 30px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 300px) {
+		#changeBackgroundBtn {
+				width: 30px; height: 25px;
+		}
+	}

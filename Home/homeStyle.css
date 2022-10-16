@@ -18,7 +18,7 @@
 			position: absolute;
 			display: block;
 			width: 100%; height: 100%;
-			background: rgb(117, 42, 6, 0.7);
+			background: transparent;
 		}
 
 		#mainHomeBodyC {
@@ -259,8 +259,10 @@
 				display: block;
 				height: 120px;
 				background: linear-gradient(90deg, rgb(0, 93, 176, 1) -100%, rgb(0, 29, 76, 1) 50%, rgb(0, 93, 176, 1) 1000%);
+				border: 1px solid white; border-left: none; border-right: none;
 				left: 50%;
 				overflow: hidden;
+				box-sizing: border-box;
 				margin: 20px 0 0 0;
 				padding: 0;
 				transform: translate(-50%, 0);
@@ -344,6 +346,7 @@
 					display: inline-block;
 					height: 100%;
 					left: 50%;
+					box-sizing: border-box;
 					padding: 0;
 					transform: translate(-50%, 0);
 				}
@@ -351,7 +354,7 @@
 					#homeFirstSymbolC {
 					}
 					#homeFirstSymbolImg {
-						content: url('../Assets/book2.png');
+						content: url('../Assets/book3.png');
 					}
 
 					#homeSecondSymbolC {
@@ -395,7 +398,7 @@
 						position: relative;
 						display: inline-block;
 						float: left;
-						width: 45px; height: 40px;
+						width: 45px; height: 45px;
 						top: 50%;
 						margin: 0 20px 0 20px;
 						transform: translate(0, -50%);
@@ -424,33 +427,6 @@
 				width: 100%;
 				margin-top: 20px;
 				z-index: 1;
-			}
-			#homeChangeBackgroundBtnC {
-				position: relative;
-				float: right;
-				right: 0;
-			}
-			#homeChangeBackgroundBtn {
-				width: 40px; height: 35px;
-				background: transparent;
-				border-radius: 2px 0 0 2px;
-				border: none;
-				cursor: pointer;
-				box-shadow: 0 0 2px black;
-				margin: 0;
-				padding: 3px 7px 3px 5px;
-				transition: box-shadow 0.2s;
-			}
-			#homeChangeBackgroundBtn:hover {
-				box-shadow: 0 0 6px black;
-			}
-			#homeChangeBackgroundBtnImg {
-				width: 100%; height: 100%;
-				content: url('../Assets/palette1.png');
-				transform: rotateY(-180deg);
-			}
-			#homeChangeBackgroundBtn:hover #homeChangeBackgroundBtnImg {
-				content: url('../Assets/palette2.png');
 			}
 
 			#homeDescriptionContentC {
@@ -621,7 +597,7 @@
 			}
 
 			.homeSymbolsC {
-				width: 40px; height: 35px;
+				width: 40px; height: 40px;
 				margin: 0 16px 0 16px;
 			}
 				#homeThirdSymbolC {
@@ -688,7 +664,7 @@
 				}
 
 			.homeSymbolsC {
-				width: 35px; height: 30px;
+				width: 35px; height: 35px;
 				margin: 0 14px 0 14px;
 			}
 				#homeThirdSymbolC {
@@ -768,7 +744,7 @@
 				}
 
 			.homeSymbolsC {
-				width: 30px; height: 25px;
+				width: 30px; height: 30px;
 				margin: 0 11px 0 11px;
 			}
 				#homeThirdSymbolC {
@@ -858,16 +834,12 @@
 			}
 
 		.homeSymbolsC {
-			width: 30px; height: 25px;
+			width: 25px; height: 25px;
 			margin: 0 8px 0 8px;
 		}
 			#homeThirdSymbolC {
 				width: 80px; height: 65px;
 			}
-
-		#homeChangeBackgroundBtn {
-			width: 35px; height: 30px;
-		}
 
 		#homeContentLeftC {
 			width: 100%;
@@ -970,7 +942,7 @@
 				}
 
 			.homeSymbolsC {
-				width: 30px; height: 25px;
+				width: 20px; height: 20px;
 				margin: 0 8px 0 8px;
 			}
 				#homeThirdSymbolC {
@@ -980,9 +952,6 @@
 		#homeMiddleC {
 			margin-top: 10px;
 		}
-			#homeChangeBackgroundBtn {
-				width: 35px; height: 30px;
-			}
 
 		#homeDescriptionContentC {
 			margin-top: 0;
@@ -1096,9 +1065,6 @@
 		#homeMiddleC {
 			margin-top: 10px;
 		}
-			#homeChangeBackgroundBtn {
-				width: 30px; height: 25px;
-			}
 
 		#homeDescriptionContentC {
 			margin-top: 0;
