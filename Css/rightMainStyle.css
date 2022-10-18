@@ -4,7 +4,9 @@
 		display: block;
 		width: 100%;
 		background: rgb(0, 0, 0, 0.4);
+		border-bottom: 4px solid transparent;
 		overflow: hidden;
+		box-shadow: 0 0 4px black;
 	}
 		#rightMainTopMenuC {
 			position: relative;
@@ -50,21 +52,29 @@
 
 	/*SCREEN WIDTH UNDER 650px*/
 	@media only screen and (max-width: 650px) {
-		#changeBackgroundBtn {
-			width: 35px; height: 30px;
+		#rightMainScreenC {
+			border-bottom-width: 3px;
 		}
+
+			#changeBackgroundBtn {
+				width: 35px; height: 30px;
+			}
 	}
 
 	/*SCREEN WIDTH UNDER 650px*/
 	@media only screen and (max-width: 450px) {
-		#changeBackgroundBtn {
-			width: 30px; height: 25px;
+		#rightMainScreenC {
+			border-bottom-width: 2px;
 		}
 
-		#rightMainTopMenuC {
-			margin: 4px 0 4px 0;
-			padding: 0 4px 2px 4px;
-		}
+			#changeBackgroundBtn {
+				width: 30px; height: 25px;
+			}
+
+			#rightMainTopMenuC {
+				margin: 4px 0 4px 0;
+				padding: 0 4px 2px 4px;
+			}
 	}
 
 	/*SCREEN WIDTH UNDER 650px*/

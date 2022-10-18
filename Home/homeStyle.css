@@ -272,7 +272,7 @@
 					position: absolute;
 					display: block;
 					width: 50%; height: 100%;
-					background: rgba(2, 19, 35);
+					background: rgba(2, 19, 35, 0.9);
 					border: 1px solid rgb(255, 255, 255, 0.5);
 					border-left: none;
 					overflow: hidden;
@@ -297,7 +297,7 @@
 					position: absolute;
 					display: block;
 					width: 50%; height: 100%;
-					background: rgba(2, 19, 35);
+					background: rgba(2, 19, 35, 0.9);
 					border: 1px solid rgb(255, 255, 255, 0.5);
 					border-right: none;
 					overflow: hidden;
@@ -489,6 +489,7 @@
 					#homeContentDownLeftTextP {
 						border-radius: 4px;
 						font-size: 18px;
+						text-indent: 10%;
 						box-shadow: 0 0 3px black;
 						padding: 5%;
 					}
@@ -541,11 +542,80 @@
 					#homeContentDownRightTextP {
 						border-radius: 4px;
 						font-size: 18px;
+						text-indent: 10%;
 						box-shadow: 0 0 3px black;
 						padding: 5%;
 					}
 
-					.homeContentHighlightsSp {
+				#homeContentDetailsC {
+					position: relative;
+					display: block;
+					float: left;
+					width: 100%;
+					color: white;
+					border-radius: 4px;
+					overflow: hidden;
+					margin-top: 20px;
+				}
+
+					#homeContentTopDetailsC {
+						position: relative;
+						display: block;
+						background: transparent;
+						overflow: hidden;
+					}
+					#homeContentTopDetailsTitleC {
+						position: relative;
+						display: inline-block;
+						background: transparent;
+						left: 50%;
+						margin: 10px 0 10px 0;
+						transform: translate(-50%, 0);
+					}
+					#homeContentTopDetailsTitleH {
+						background: transparent;
+						color: white;
+						border-bottom: 4px solid rgb(0, 68, 128);
+						margin: 0;
+						padding: 0 5px 2px 5px;
+					}
+
+					#homeContentDownDetailsC {
+						position: relative;
+						display: block;
+					}
+					#homeContentDownDetailsTextC {
+						position: relative;
+						display: block;
+						padding: 10px 10% 40px 10%;
+					}
+					#homeContentDownDetailsTextParC {
+						border-radius: 4px;
+						font-size: 18px;
+						box-shadow: 0 0 3px black;
+						padding: 5%;
+					}
+					#homeContentDownDetailsTextParC p {
+						text-indent: 10%;
+					}
+
+						#homeSendToAboutMeLink:link {
+							font-style: italic;
+							color: white;
+							text-decoration: underline;
+						}
+
+						#homeSendToAboutMeLink:visited {
+							color: lightgrey;
+							text-decoration: none;
+						}
+
+						#homeSendToAboutMeLink:hover {
+							color: rgb(117, 42, 6);
+							text-decoration: underline;
+						}
+
+					.highlightTxt1 {
 						color: rgb(0, 93, 176);
 					}
 
@@ -610,6 +680,13 @@
 
 			#homeContentDownRightTextP {
 				font-size: 16px;
+			}
+
+			#homeContentDetailsC {
+				margin-top: 15px
+			}
+			#homeContentDownDetailsTextParC p {
+				font-size: 18px;
 			}
 	}
 
@@ -677,6 +754,13 @@
 
 			#homeContentDownRightTextP {
 				font-size: 14px;
+			}
+
+			#homeContentDetailsC {
+				margin-top: 10px
+			}
+			#homeContentDownDetailsTextParC p {
+				font-size: 15px;
 			}
 	}
 
@@ -762,6 +846,13 @@
 		#homeContentDownRightTextP {
 			font-size: 13px;
 		}
+
+		#homeContentDetailsC {
+			margin-top: 5px
+		}
+		#homeContentDownDetailsTextParC p {
+			font-size: 14px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 650px*/
@@ -817,7 +908,6 @@
 				font-size: 15px;
 			}
 
-/**/
 		#homeLeftCoverIntroSymbolsTextC p {
 			font-size: 20px;
 		}
@@ -850,6 +940,10 @@
 				#homeContentTopLeftTitleC {
 					margin: 5px 0 5px 0;
 				}
+					#homeContentTopLeftTitleH {
+						border-bottom-width: 3px;
+					}
+
 					#homeContentDownLeftTextP {
 						font-size: 13px;
 					}
@@ -863,9 +957,27 @@
 				#homeContentTopRightTitleC {
 					margin: 5px 0 5px 0;
 				}
+					#homeContentTopRightTitleH {
+						border-bottom-width: 3px;
+					}
+
 					#homeContentDownRightTextP {
 						font-size: 13px;
 					}
+
+		#homeContentDetailsC {
+			margin: 0;
+		}
+			#homeContentTopDetailsTitleC {
+				margin: 5px 0 5px 0;
+			}
+				#homeContentTopDetailsTitleH {
+					border-bottom-width: 3px;
+				}
+
+				#homeContentDownDetailsTextParC p {
+					font-size: 14px;
+				}
 	}
 
 	/*SCREEN WIDTH UNDER 450px*/
@@ -978,6 +1090,19 @@
 				#homeContentDownRightTextP {
 					font-size: 11px;
 				}
+
+			#homeContentDetailsC {
+				margin: 0;
+			}
+				#homeContentTopDetailsTitleC {
+					margin: 0;
+				}
+
+				#homeContentDownDetailsTextParC p {
+					font-size: 12px;
+				}
+
+
 	}
 
 	/*SCREEN WIDTH UNDER 300px*/
@@ -1077,12 +1202,12 @@
 					margin: 0;
 				}
 					#homeContentTopLeftTitleH {
-						border-bottom: 3px solid rgb(0, 68, 128);
+						border-bottom-width: 2px;
 					}
 				
-				#homeContentDownLeftTextP {
-					font-size: 9px;
-				}
+					#homeContentDownLeftTextP {
+						font-size: 9px;
+					}
 
 			#homeContentRightC {
 				width: 100%;
@@ -1091,12 +1216,27 @@
 					margin: 0;
 				}
 					#homeContentTopRightTitleH {
-						border-bottom: 3px solid rgb(0, 68, 128);
+						border-bottom-width: 2px;
 					}
 
-				#homeContentDownRightTextP {
-					font-size: 9px;
+					#homeContentDownRightTextP {
+						font-size: 9px;
+					}
+			
+			#homeContentDetailsC {
+				margin: 0;
+			}
+				#homeContentTopDetailsTitleC {
+					margin: 0;
 				}
+
+					#homeContentTopDetailsTitleH {
+						border-bottom-width: 2px;
+					}
+
+					#homeContentDownDetailsTextParC p {
+						font-size: 10px;
+					}
 	}
 
 	/*ANIMATIONS*/
@@ -1294,12 +1434,12 @@
 
 	@keyframes ShiningTitle1 {
 		0%, 25% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.1) 50%, rgb(56, 34, 35, 0.1) 100%);
 			left: -60%;
 			transform: skew(-45deg);
 		}
 		65%, 100% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.1) 50%, rgb(56, 34, 35, 0.1) 100%);
 			left: 100%;
 			transform: skew(0);
 		}
@@ -1307,12 +1447,12 @@
 
 	@keyframes ShiningTitle2 {
 		0%, 25% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.1) 50%, rgb(56, 34, 35, 0.1) 100%);
 			right: -60%;
 			transform: skew(45deg);
 		}
 		65%, 100% {
-			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.2) 50%, rgb(56, 34, 35, 0.1) 100%);
+			background-image: linear-gradient(90deg, rgb(56, 34, 35, 0.1) 0%, rgb(255, 255, 255, 0.1) 50%, rgb(56, 34, 35, 0.1) 100%);
 			right: 100%;
 			transform: skew(0);
 		}
