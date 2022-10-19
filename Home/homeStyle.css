@@ -130,7 +130,7 @@
 							font-size: 22px;
 						}
 						#typeWriterFirstLineSp {
-							width: 2px; height: 30px;
+							width: 2px; height: 25px;
 						}
 
 				#secondHomeHeaderLineMainC {
@@ -146,7 +146,7 @@
 							animation: ChangeFontStyle 1s linear infinite;
 						}
 						#typeWriterSecondLineSp {
-							width: 2px; height: 20px;
+							width: 2px; height: 19px;
 						}
 
 				#robotCommentC {
@@ -159,7 +159,7 @@
 						color: rgba(255, 255, 255, 0.4);
 					}
 					#robotCommentSp {
-						width: 2px; height: 20px;
+						width: 2px; height: 19px;
 						background: rgb(117, 42, 6);
 					}
 
@@ -328,7 +328,7 @@
 				.homeKeywordSymbolC {
 					position: relative;
 					display: block;
-					overflow: hidden;
+					overflow: visible;
 					margin: 6px 0 6px 0;
 				}
 				.homeKeywordSymbolC p {
@@ -637,13 +637,22 @@
 			#myProfileFirstLineInfoP {
 				font-size: 21px;
 			}
+			#typeWriterFirstLineSp {
+				height: 24px;
+			}
 
 			#myProfileSecondLineInfoP {
 				font-size: 15px;
 			}
+			#typeWriterSecondLineSp {
+				height: 18px;
+			}
 
 			#robotCommentP {
 				font-size: 15px;
+			}
+			#robotCommentSp {
+				height: 18px;
 			}
 
 		#homeIntroductionHH {
@@ -708,13 +717,22 @@
 			#myProfileFirstLineInfoP {
 				font-size: 20px;
 			}
+			#typeWriterFirstLineSp {
+				height: 23px;
+			}
 
 			#myProfileSecondLineInfoP {
 				font-size: 14px;
 			}
+			#typeWriterSecondLineSp {
+				height: 17px;
+			}
 
 			#robotCommentP {
 				font-size: 14px;
+			}
+			#robotCommentSp {
+				height: 17px;
 			}
 
 		#homeIntroductionHH {
@@ -794,6 +812,9 @@
 				#myProfileFirstLineInfoP {
 					font-size: 19px;
 				}
+				#typeWriterFirstLineSp {
+					height: 22px;
+				}
 
 			#myProfileSecondLineInfoC {
 				margin: 4px 5px 0 5px;
@@ -801,12 +822,18 @@
 				#myProfileSecondLineInfoP {
 					font-size: 13px;
 				}
+				#typeWriterSecondLineSp {
+					height: 16px;
+				}
 
 			#robotCommentC {
 				margin: 3px 5px 0 1px;
 			}
 				#robotCommentP {
 					font-size: 13px;
+				}
+				#robotCommentSp {
+					height: 16px;
 				}
 
 		#homeIntroductionC {
@@ -886,6 +913,9 @@
 					#myProfileFirstLineInfoP {
 						font-size: 17px;
 					}
+					#typeWriterFirstLineSp {
+						height: 20px;
+					}
 
 				#myProfileSecondLineInfoC {
 					margin: 2px 4px 0 4px;
@@ -893,12 +923,18 @@
 					#myProfileSecondLineInfoP {
 						font-size: 13px;
 					}
+					#typeWriterSecondLineSp {
+						height: 16px;
+					}
 
 				#robotCommentC {
 					margin: 2px 5px 0 1px;
 				}
 					#robotCommentP {
 						font-size: 12px;
+					}
+					#robotCommentSp {
+						height: 15px;
 					}
 
 		#homeIntroductionC {
@@ -1012,6 +1048,9 @@
 					#myProfileFirstLineInfoP {
 						font-size: 12px;
 					}
+					#typeWriterFirstLineSp {
+						height: 15px;
+					}
 
 				#myProfileSecondLineInfoC {
 					margin: 2px 2px 0 2px;
@@ -1019,12 +1058,18 @@
 					#myProfileSecondLineInfoP {
 						font-size: 9px;
 					}
+					#typeWriterSecondLineSp {
+						height: 12px;
+					}
 
 				#robotCommentC {
 					margin: 2px 5px 0 1px;
 				}
 					#robotCommentP {
 						font-size: 8px;
+					}
+					#robotCommentSp {
+						height: 11px;
 					}
 
 		#homeIntroductionC {
@@ -1050,7 +1095,7 @@
 				width: 50px;
 			}
 				.homeKeywordSymbolC p {
-					font-size: 10px;
+					font-size: 11px;
 				}
 
 			.homeSymbolsC {
@@ -1138,6 +1183,9 @@
 					#myProfileFirstLineInfoP {
 						font-size: 10px;
 					}
+					#typeWriterFirstLineSp {
+						height: 13px;
+					}
 
 				#myProfileSecondLineInfoC {
 					margin: 1px 1px 0 1px;
@@ -1145,12 +1193,18 @@
 					#myProfileSecondLineInfoP {
 						font-size: 7px;
 					}
+					#typeWriterSecondLineSp {
+						height: 10px;
+					}
 
 				#robotCommentC {
 					margin: 1px 5px 0 1px;
 				}
 					#robotCommentP {
 						font-size: 6px;
+					}
+					#robotCommentSp {
+						height: 9px;
 					}
 
 		#homeIntroductionC {
@@ -1173,7 +1227,7 @@
 			}
 
 			#homeIntroKeywordsSymbolC {
-				width: 40px;
+				width: 50px;
 			}
 				.homeKeywordSymbolC p {
 					font-size: 8px;

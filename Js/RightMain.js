@@ -98,15 +98,15 @@
 
 				}
 				else if(btn.name == "prof2") {
-					contentToChange.style.background = "rgb(75, 32, 22)";
+					contentToChange.style.background = "rgb(255, 255, 255, 0.4)";
 					if(!firstTime) {
 						btn.name = "prof3";
 					}
 
 					//HOME PAGE CHANGES PROF 2
 					if(currentObj.getStatus() == "Home") {
-						homeLeftCoverIntroSymbolsC.style.background = "rgb(75, 32, 22, 0.9)";
-						homeRightCoverIntroSymbolsC.style.background = "rgb(75, 32, 22, 0.9)";
+						homeLeftCoverIntroSymbolsC.style.background = "rgb(136, 153, 148, 0.9)";
+						homeRightCoverIntroSymbolsC.style.background = "rgb(136, 153, 148, 0.9)";
 
 						var borderBotColor = "rgb(136, 153, 148)";
 						homeContentTopLeftTitleH.style.borderBottomColor = borderBotColor;
