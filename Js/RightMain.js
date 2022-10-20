@@ -68,6 +68,7 @@
 
 				sessionStorage.setItem("pageBackgroundProfile", btn.name);
 
+				//LIGHT
 				if(btn.name == "prof1") {
 					rightMainScreenC.style.borderBottomColor = "transparent";
 					rightMainScreenC.style.boxShadow = "0 0 2px black";
@@ -97,6 +98,7 @@
 					}
 
 				}
+				//LIGHTER
 				else if(btn.name == "prof2") {
 					contentToChange.style.background = "rgb(255, 255, 255, 0.4)";
 					if(!firstTime) {
@@ -127,6 +129,7 @@
 					else if(currentObj.getStatus() == "Contact") {
 					}
 				}
+				//DARK
 				else if(btn.name == "prof3") {
 					rightMainScreenC.style.borderBottomColor = "rgb(0, 40, 91, 0.5)";
 					rightMainScreenC.style.boxShadow = "0 0 4px grey";

@@ -45,17 +45,24 @@
 				
 				<div id="downRightC">
 					<div id="aboutMeBodyC">
-						<div id="aboutMeBodyMainC">
-							<div id="aboutMeMainContentC"></div>
-						</div>
-						
 						<div class="aboutMeBodyTopGroundAnimC" id="aboutMeBodyTopGround1C"></div>
 						<div class="aboutMeBodyTopGroundAnimC" id="aboutMeBodyTopGround2C"></div>
 						<div class="aboutMeBodyTopGroundAnimC" id="aboutMeBodyTopGround3C"></div>
 						<div class="aboutMeBodyTopGroundAnimC" id="aboutMeBodyTopGround4C"></div>
 
-						<div id="aboutMeBodyTopGroundHeartC">
-							<i id="aboutMeBodyTopGroundHeart" class="fa-solid fa-heart"></i>
+						<div id="aboutMeBodyTopGroundOverC">
+							<div id="aboutMeBodyTopGroundHeartC">
+								<i id="aboutMeBodyTopGroundHeart" class="fa-solid fa-heart"></i>
+							</div>
+							<p id="aboutMeBodyTopGroundP">Living Page</p>
+						</div>
+
+						<div id="aboutMeBodyMainC">
+							<div id="aboutMeMainContentC">
+								<div id="canvasC" class="elementsHoverIn1">
+									<canvas id="myChart"></canvas>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -68,6 +75,8 @@
 
 	<!--EVENTS AND ACTIONS BEFORE LOAD SITE-->
 	<script src="../Js/GlobalBeforeLoadFunctions.js"></script>
+		<!--LOAD CHART.JS PROPS TO https://www.chartjs.org/-->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<!--MAIN CONSTRUCTION OF PAGE-->
 	<script src="../Js/Button.js"></script>
