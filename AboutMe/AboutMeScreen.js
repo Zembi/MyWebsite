@@ -68,7 +68,7 @@
 		}*/
 
 		LoadGoogleCharts() {
-			//LOAD LIBRARIES
+			//LOAD LIBRARY
 			google.charts.load("current", {packages:['corechart']});
 			//TIME TO DRAW
 			google.charts.setOnLoadCallback(DrawChart);
@@ -101,7 +101,7 @@
 					vAxis: {
 						minValue: 5,
 						maxValue: 10,
-						
+						title: "GPA",
 						titleTextStyle: {
 							color: "white"
 						},
@@ -159,7 +159,8 @@
 				chartColumn.draw(data, options);
 			}
 
-			$(window).resize(function(){
+			window.addEventListener("resize", function() {
+				document.getElementById("canvasC").innerHTML = "";
 				DrawChart();
 			});
 		}
