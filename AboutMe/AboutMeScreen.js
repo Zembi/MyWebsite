@@ -10,14 +10,15 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
-			this.InitializeAboutMeCharts();
+			//this.InitializeAboutMeCharts();
+			this.LoadGoogleCharts();
 		}
 
 		InitializeMainPageCore() {
 			var mainPageCore = new MainPageCore("About me");
 		}
 
-		InitializeAboutMeCharts() {
+		/*InitializeAboutMeCharts() {
 			const labels = ['Winter 1', 'Spring 1', 'Winter 2', 'Spring 2', 'Winter 3', 'Spring 3', 'Winter 4', 'Spring 4'];
 
 			const data = {
@@ -48,7 +49,7 @@
 					scales: {
 						x: {
 							ticks: {
-								color: ['orange', 'brown']
+								color: ['orange', 'brownS']
 							}
 						},
 						y: {
@@ -63,7 +64,104 @@
 			};
 
 			const myChart = new Chart(document.getElementById('myChart'), config);
-			//myChart.
+			
+		}*/
+
+		LoadGoogleCharts() {
+			//LOAD LIBRARIES
+			google.charts.load("current", {packages:['corechart']});
+			//TIME TO DRAW
+			google.charts.setOnLoadCallback(DrawChart);
+
+			//START CODING
+			var firstTime = true;
+
+			function DrawChart() {
+				var winterStyling = "color: rgb(0, 43, 98); opacity: 0.4; border: 4px solid rgb(0, 43, 98)";
+				var springStyling = "color: rgb(117, 42, 6); opacity: 0.4; border: 4px solid rgb(117, 42, 8)";
+
+				var data = google.visualization.arrayToDataTable([
+					["Element", "Winter", "Spring", "WinterLine", "SpringLine"],
+					["1", 7.142, 7, 7.142, 7],
+					["2", 7.167, 6.5, 7.167, 6.5],
+					["3", 7.667, 7.167, 7.667, 7.167],
+					["4", 9, 8.6, 9, 8.6],
+				]);
+
+				var options = {
+					title: "Overall University Performance (average/semester)",
+					titleTextStyle: {
+						color: "white"
+					},
+					groupwidth: 10,
+					width: "100%",
+					height: "100%",
+					backgroundColor: "transparent",
+					pointSize: 4,
+					vAxis: {
+						minValue: 5,
+						maxValue: 10,
+						
+						titleTextStyle: {
+							color: "white"
+						},
+						textStyle: {
+							color: "white"
+						},
+						gridlines: {
+							color: "white"
+						},
+						minorGridlines: {
+							color: "darkgrey"
+						}
+					},
+					hAxis: {
+						title: "Year",
+						titleTextStyle: {
+							color: "white"
+						},
+						textStyle: {
+							color: "white"
+						},
+						gridlines: {
+							color: "white"
+						}
+					},
+					seriesType: "bars",
+					series: {
+						0: {
+							color: "rgb(0, 43, 98)",
+							dataOpacity: "0.5"
+						},
+						1: {
+							color: "rgb(117, 42, 6)",
+							dataOpacity: "0.5"
+						},
+						2: {
+							type: "line",
+							color: "rgb(0, 43, 98)"
+						},
+						3: {
+							type: "line",
+							color: "rgb(117, 42, 6)"
+						}
+					},
+					animation: {
+						startup: firstTime,
+						duration: 4000,
+						easing: "out"
+					}
+				};
+
+				firstTime = false;
+
+				var chartColumn = new google.visualization.ComboChart(document.getElementById("canvasC"));
+				chartColumn.draw(data, options);
+			}
+
+			$(window).resize(function(){
+				DrawChart();
+			});
 		}
 	}
 
