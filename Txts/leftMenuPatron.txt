@@ -1,5 +1,5 @@
 	<div id="leftBodyTCC">
-		<div id="leftBodyC">
+		<div id="leftBodyWrapC">
 			<div id="leftBackgroundC">
 				<div class="backgroundMovingC">
 					<ul class="squaresUL">

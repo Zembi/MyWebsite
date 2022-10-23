@@ -12,7 +12,6 @@
 			this.InitializeMainPageCore();
 			this.HomeUpTitleTypeWriter();
 			this.HomeMainContentActions();
-			//this.HomeMainContent();
 		}
 
 		//LOAD MAIN CORE THAT ALL PAGES HAVE
@@ -71,16 +70,6 @@
 
 		//ALL EVENTS AND FUNCTIONS AT HOME PAGE MAIN CONTENT CONTAINER
 		HomeMainContentActions() {
-		}
-
-		HomeMainContent() {
-			$(window).scroll(function() {
-			    if ($('#homeDescriptionContentC').is(':in-viewport')) {
-			        $('.sticky-info').hide();
-			    } else {
-			        $('.sticky-info').show();
-			    }
-			});
 		}
 	}
 

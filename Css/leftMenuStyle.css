@@ -3,10 +3,10 @@
 		#leftBodyTCC {
 			position: relative;
 			display: table-cell;
-			width: 140px; height: 100%;
+			width: 140px;height: 100%;
 			background-image: linear-gradient(#000428 0%, rgb(0, 31, 80) 40%);
 			box-shadow: 0 0 6px black;
-			z-index: 2;
+			z-index: 20;
 			transition: width 0.4s;
 		}
 
@@ -17,7 +17,7 @@
 			background: transparent;
 		}
 		
-		#leftBodyC {
+		#leftBodyWrapC {
 			position: fixed;
 			display: block;
 			width: inherit; height: 100%;

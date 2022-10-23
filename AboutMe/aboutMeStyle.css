@@ -7,41 +7,69 @@
 	
 	@import url('../Css/mainPageCoreStyle.css');
 
+	:root {
+		--animeSlideOut: 0.6s;
+		--step:  0.3s;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
 
 	#aboutMeBodyC {
 		position: relative;
 		display: block;
-		width: 100%;
+		width: 100%; height: 100%;
 		color: white;
 	}
 
 		#aboutMeBodyTopGround1C {
 			top: 0;
-			bottom: 74.5%;
-			animation-delay: 1s;
+			bottom: 87%;
+			animation-delay: var(--animeSlideOut);
 		}
 		#aboutMeBodyTopGround2C {
-			top: 25%;
-			bottom: 49.5%;
-			animation-delay: 1.6s;
+			top: 12.5%;
+			bottom: 74.5%;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 1));
 		}
 		#aboutMeBodyTopGround3C {
-			top: 50%;
-			bottom: 24.5%;
+			top: 25%;
+			bottom: 62%;
 			overflow: hidden;
-			animation-delay: 2.2s;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 2));
 		}
 		#aboutMeBodyTopGround4C {
+			top: 37.5%;
+			bottom: 49.5%;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 3));
+		}
+		#aboutMeBodyTopGround5C {
+			top: 50%;
+			bottom: 37%;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 4));
+		}
+		#aboutMeBodyTopGround6C {
+			top: 62.5%;
+			bottom: 24.5%;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 5));
+		}
+		#aboutMeBodyTopGround7C {
 			top: 75%;
+			bottom: 12%;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 6));
+		}
+		#aboutMeBodyTopGround8C {
+			top: 87.5%;
 			bottom: -0.5%;
-			animation-delay: 2.8s;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step) * 7));
 		}
 		.aboutMeBodyTopGroundAnimC {
 			position: absolute;
 			display: block;
 			width: 100%;
 			background: rgb(0, 16, 57, 0.9);
-			z-index: 1;
+			z-index: 2;
     		animation: MoveLeftTopGround 1s ease-in-out 1;
 	    	animation-fill-mode: forwards;
 		}
@@ -52,7 +80,7 @@
 			float: right;
 			top: 0;
 			right: 50%;
-			z-index: 1;
+			z-index: 2;
 			transform: translate(50%, 0);
 			animation: MoveOverTopGroundToMainPos 1.5s ease-in-out 2s 1;
 			animation-fill-mode: forwards;
@@ -75,19 +103,22 @@
 			#aboutMeBodyTopGroundP {
 				position: relative;
 				display: block;
-				color: darkgrey;
-				font-size: 300%;
+				color: white;
+				font-size: 35px;
 				animation: AfterTopGroundParAction 1.5s ease-in-out 2s 1;
 				animation-fill-mode: forwards;
 			}
 
 
-
+		:root {
+			--animationWaitToEnter: 0.4s;
+		}
 
 
 		#aboutMeBodyMainC {
 			position: relative;
 			display: block;
+			width: 100%;
 			background: transparent;
 			overflow: hidden;
 		}
@@ -95,21 +126,120 @@
 			position: relative;
 			display: block;
 			width: 100%;
-		}
-		#canvasC {
-			position: relative;
-			display: block;
-			wdith: 100%; height: 600px;
 			background: rgb(0, 0, 0, 0.6);
 			overflow: hidden;
-			padding: 0;
 		}
-		.elementsHoverIn1 {
-			opacity: 1;
-			transform: translate(-100%, 0);
-			animation: SendScreenInView 1.5s ease-out 0s 1;
-			animation-fill-mode: forwards;
+		#titlesGeneralBtnC {
+			position: relative;
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			margin: 20px 0 0 0;
 		}
+			#titleEducationH {
+				position: relative;
+				display: inline-block;
+				background: transparent;
+				color: white;
+				border-bottom: 3px solid white;
+				margin: 0;
+				padding: 10px 0 5px 0;
+				animation: SendScreenInView 1.5s ease-out calc(var(--animationWaitToEnter)) 1;
+				animation-fill-mode: forwards;
+			}
+
+		#aboutMeEducationC {
+			position: relative;
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			margin-top: 20px;
+		}
+			#textIntroEducationC {
+				position: relative;
+				display: block;
+				background: transparent;
+				z-index: 1;
+			}
+			#textIntroEducationP {
+				font-size: 18px;
+				text-align: center;
+				opacity: 0;
+				padding: 0 5% 0 5%;
+				animation: ShowElement 2.4s linear 2s 1;
+				animation-fill-mode: forwards;
+			}
+			#textIntroEducationP span {
+				color: rgb(117, 42 ,6);
+				font-size: 20px;
+				font-weight: bold;
+			}
+
+			#chartWrapC {
+				position: relative;
+				display: block;
+				width: 100%; height: 600px;
+				overflow: hidden;
+				margin-top: -20px;
+				animation: SendScreenInView 1.5s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
+				animation-fill-mode: forwards;
+			}
+			.elementsMoveInsight {
+				opacity: 0;
+				transform: translate(-100%, 0);
+			}
+				#chartCC {
+					position: absolute;
+					display: block;
+					wdith: 100%; height: 100%;
+					left: 0; right: 0;
+					overflow: hidden;
+				}
+					#chartC {
+						position: relative;
+						width: 100%; height: 100%;
+						background: transparent;
+					}
+
+				#eduChartLoadingFullC {
+					position: absolute;
+					display: none;
+					width: 90%; height: 90%;
+					border: 2px solid rgb(117, 42, 6);
+					top: 50%;
+					left: 50%;
+					z-index: -1;
+					transform: translate(-50%, -50%);
+				}
+					#eduChartCenterLoaderC {
+						position: relative;
+						display: block;
+						width: 8vw; height: 8vw;
+						max-width: 100px; max-height: 100px;
+						background: transparent;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+					#eduChartCenterLoadingImg {
+						position: relative;
+						display: block;
+						width: 100%; height: 100%;
+						content: url("../Assets/loading1.png");
+						animation: LoadingCharts 0.5s ease-in-out infinite;
+						animation-play-state: paused;
+					}
+
+			#eduCoursesOfUniversityC {
+				position: relative;
+				display: block;
+				width: 100%;
+				background: red;
+			}
+
+			#infoAndPhotosOfUniversityC {
+
+			}
 
 
 	/*SCREEN WIDTH UNDER 1000px*/
@@ -185,6 +315,9 @@
 	}
 
 	@keyframes AfterTopGroundParAction {
+		0% {
+			font-size: 35px;
+		}
 		20% {
 			color: transparent;
 		}
@@ -197,27 +330,42 @@
 		100% {
 			float: right;
 			right: 2px;
-			font-size: 100%;
+			font-size: 16px;
 			padding-left: 6px;
 			transform: translate(0, 40%);
 		}
 	}
 
-
-
+	@keyframes ShowElement {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
 	@keyframes SendScreenInView {
 		0% {
 			left: 0;
 			opacity: 0;
-			transform: translate(-100%, 0) skew(-30deg);
+			transform: translate(-100%, 0) skew(-120deg);
 		}
 		50% {
-			opacity: 0.5;
+			opacity: 0;
 		}
 		100% {
 			opacity: 1;
 			left: 50%;
 			transform: translate(-50%, 0) skew(0deg);
+		}
+	}
+
+	@keyframes LoadingCharts {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
 		}
 	}

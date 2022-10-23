@@ -364,7 +364,7 @@
 					}
 
 					#homeThirdSymbolC {
-						width: 120px; height: 100px;
+						width: 110px; height: 100px;
 					}
 					#homeThirdSymbolImgC {
 						border-radius: 50%;
@@ -380,7 +380,7 @@
 					}
 					#homeThirdSymbolImg {
 						border-radius: 50%;
-						content: url('../Assets/me1.jpg');
+						content: url('../Assets/profileImgCv3.jpg');
 					}
 
 					#homeFourthSymbolImg {

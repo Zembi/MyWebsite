@@ -61,6 +61,7 @@
 				}
 				//ABOUT ME PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "About me") {
+					var aboutMeMainContentC = document.getElementById("aboutMeMainContentC");
 				}
 				//CONTACT PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "Contact") {
@@ -92,6 +93,8 @@
 					}
 					//ABOUT ME PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "About me") {
+						aboutMeMainContentC.style.background = "rgb(0, 0, 0, 0.6)";
+
 					}
 					//CONTACT PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "Contact") {
@@ -161,6 +164,7 @@
 					}
 					//ABOUT ME PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "About me") {
+						aboutMeMainContentC.style.background = "rgb(0, 0, 0, 0)";
 					}
 					//CONTACT PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "Contact") {

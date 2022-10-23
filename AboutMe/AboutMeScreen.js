@@ -10,73 +10,25 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
-			//this.InitializeAboutMeCharts();
 			this.LoadGoogleCharts();
+			//this.AboutMeMainContent();
 		}
 
 		InitializeMainPageCore() {
 			var mainPageCore = new MainPageCore("About me");
 		}
 
-		/*InitializeAboutMeCharts() {
-			const labels = ['Winter 1', 'Spring 1', 'Winter 2', 'Spring 2', 'Winter 3', 'Spring 3', 'Winter 4', 'Spring 4'];
-
-			const data = {
-				labels: labels,
-				datasets: [{
-					label: "Overall University Performance (average/semester)",
-					data: [7.142, 7, 7.167, 6.5, 7.667, 7.167, 9, 8.6],
-					backgroundColor: [
-						'rgb(0, 43, 98, 0.2)',
-						'rgb(117, 42, 6, 0.2)'
-					],
-					borderColor: [
-						'rgb(0, 43, 98)',
-						'rgb(117, 42, 6)'
-					],
-					borderWidth: 1
-				}]
-			};
-
-			const config = {
-				type: 'bar',
-				data: data,
-				options: {
-					parsing: {
-						xAxisKey: 'id',
-						yAxisKey: 'nested.value'
-					},
-					scales: {
-						x: {
-							ticks: {
-								color: ['orange', 'brownS']
-							}
-						},
-						y: {
-							min: 5,
-							max: 10,
-							ticks: {
-								color: 'white'
-							}
-						}
-					}
-				}
-			};
-
-			const myChart = new Chart(document.getElementById('myChart'), config);
-			
-		}*/
-
 		LoadGoogleCharts() {
 			//LOAD LIBRARY
 			google.charts.load("current", {packages:['corechart']});
 			//TIME TO DRAW
-			google.charts.setOnLoadCallback(DrawChart);
+			google.charts.setOnLoadCallback(function() {
+				DrawChart(true, 4500);
+			});
 
-			//START CODING
-			var firstTime = true;
-
-			function DrawChart() {
+			function DrawChart(firstT, animationTime) {
+				var chartC = document.getElementById("chartC");
+			
 				var winterStyling = "color: rgb(0, 43, 98); opacity: 0.4; border: 4px solid rgb(0, 43, 98)";
 				var springStyling = "color: rgb(117, 42, 6); opacity: 0.4; border: 4px solid rgb(117, 42, 8)";
 
@@ -93,11 +45,16 @@
 					titleTextStyle: {
 						color: "white"
 					},
-					groupwidth: 10,
 					width: "100%",
 					height: "100%",
 					backgroundColor: "transparent",
 					pointSize: 4,
+					legend: {
+						position: "bottom",
+						textStyle: {
+							color: "white",
+						}
+					},
 					vAxis: {
 						minValue: 5,
 						maxValue: 10,
@@ -131,11 +88,11 @@
 					series: {
 						0: {
 							color: "rgb(0, 43, 98)",
-							dataOpacity: "0.5"
+							dataOpacity: "0.6"
 						},
 						1: {
 							color: "rgb(117, 42, 6)",
-							dataOpacity: "0.5"
+							dataOpacity: "0.6"
 						},
 						2: {
 							type: "line",
@@ -147,21 +104,72 @@
 						}
 					},
 					animation: {
-						startup: firstTime,
-						duration: 4000,
+						startup: firstT,
+						duration: animationTime,
 						easing: "out"
 					}
 				};
 
-				firstTime = false;
+				firstT = false;
 
-				var chartColumn = new google.visualization.ComboChart(document.getElementById("canvasC"));
+				var chartColumn = new google.visualization.ComboChart(chartC);
 				chartColumn.draw(data, options);
 			}
 
+			//RESIZING TRIGGERS RELOAD OF CHART AND IF IT IS LOADING AND IT IS CHANGING, IT KEEPS ON LOADING
 			window.addEventListener("resize", function() {
-				document.getElementById("canvasC").innerHTML = "";
-				DrawChart();
+				if(document.getElementById("eduChartCenterLoadingImg").style.animationPlayState != "running") {
+					var chartCC = document.getElementById("chartCC");
+					chartCC.innerHTML = ""
+					
+					var newChartC = document.createElement("div");
+					newChartC.id = "chartC";
+					chartCC.appendChild(newChartC);
+
+					document.getElementById("eduChartLoadingFullC").style.display = "block";
+					document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
+					document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
+					
+					setTimeout(function() {
+						document.getElementById("eduChartLoadingFullC").style.display = "none";
+						document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
+						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
+						DrawChart(true, 500);
+					}, 500);
+				}
+			});
+
+			//LOAD CHART WHEN MENU OPENS AND CLOSES, WHEN WINDOW WIDTH IS MORE THAN 850, CAUSE THERE WAS RESPONSIVENESS ERRORS
+			document.getElementById("openMenuBtn").addEventListener("click", function() {
+				if(GetPageWidth() > 850) {
+					var chartCC = document.getElementById("chartCC");
+					chartCC.innerHTML = ""
+					
+					var newChartC = document.createElement("div");
+					newChartC.id = "chartC";
+					chartCC.appendChild(newChartC);
+
+					document.getElementById("eduChartLoadingFullC").style.display = "block";
+					document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
+					document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
+					
+					setTimeout(function() {
+						document.getElementById("eduChartLoadingFullC").style.display = "none";
+						document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
+						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
+						DrawChart(true, 500);
+					}, 500);
+				}
+			});
+		}
+
+		AboutMeMainContent() {
+			$(window).scroll(function() {
+			    if ($('#chartCC').is(':in-viewport')) {
+			        alert(1);
+			    } else {
+			    	alert(0);
+			    }
 			});
 		}
 	}
