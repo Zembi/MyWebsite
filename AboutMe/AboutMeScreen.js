@@ -26,6 +26,9 @@
 				DrawChart(true, 4500);
 			});
 
+			var aboutMeBodyC = document.getElementById("aboutMeBodyC");
+			aboutMeBodyC.name = GetPageWidth();
+
 			function DrawChart(firstT, animationTime) {
 				var chartC = document.getElementById("chartC");
 			
@@ -118,25 +121,30 @@
 
 			//RESIZING TRIGGERS RELOAD OF CHART AND IF IT IS LOADING AND IT IS CHANGING, IT KEEPS ON LOADING
 			window.addEventListener("resize", function() {
-				if(document.getElementById("eduChartCenterLoadingImg").style.animationPlayState != "running") {
-					var chartCC = document.getElementById("chartCC");
-					chartCC.innerHTML = ""
-					
-					var newChartC = document.createElement("div");
-					newChartC.id = "chartC";
-					chartCC.appendChild(newChartC);
+				var pageCurWidth = GetPageWidth();
 
-					document.getElementById("eduChartLoadingFullC").style.display = "block";
-					document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
-					document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
-					
-					setTimeout(function() {
-						document.getElementById("eduChartLoadingFullC").style.display = "none";
-						document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
-						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
-						DrawChart(true, 500);
-					}, 500);
+				if(pageCurWidth != aboutMeBodyC.name) {
+					if(document.getElementById("eduChartCenterLoadingImg").style.animationPlayState != "running") {
+						var chartCC = document.getElementById("chartCC");
+						chartCC.innerHTML = ""
+						
+						var newChartC = document.createElement("div");
+						newChartC.id = "chartC";
+						chartCC.appendChild(newChartC);
+
+						document.getElementById("eduChartLoadingFullC").style.display = "block";
+						document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
+						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
+						
+						setTimeout(function() {
+							document.getElementById("eduChartLoadingFullC").style.display = "none";
+							document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
+							document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
+							DrawChart(true, 500);
+						}, 500);
+					}
 				}
+				aboutMeBodyC.name = GetPageWidth();
 			});
 
 			//LOAD CHART WHEN MENU OPENS AND CLOSES, WHEN WINDOW WIDTH IS MORE THAN 850, CAUSE THERE WAS RESPONSIVENESS ERRORS
