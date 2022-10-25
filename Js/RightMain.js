@@ -29,6 +29,10 @@
 			var downRightC = document.getElementById("downRightC");
 			var rightMainScreenC = document.getElementById("rightMainScreenC");
 			var thisItem = this;
+			//PROFS FUNCTION
+			var prof1 = 1;
+			var prof2 = 0;
+			var prof3 = 1;
 
 			//CHANGE BACKGROUND OF MAIN BACKGROUND SCREEN FUNCTION
 			changeBackgroundBtn.name = sessionStorage.getItem("pageBackgroundProfile");
@@ -69,13 +73,18 @@
 
 				sessionStorage.setItem("pageBackgroundProfile", btn.name);
 
-				//LIGHT
-				if(btn.name == "prof1") {
+				//SEE THROUGH
+				if(btn.name == "prof1" && prof1) {
 					rightMainScreenC.style.borderBottomColor = "transparent";
 					rightMainScreenC.style.boxShadow = "0 0 2px black";
 					contentToChange.style.background = "transparent";
 					if(!firstTime) {
-						btn.name = "prof2";
+						if(prof2) {
+							btn.name = "prof2";
+						}
+						else if(prof3) {
+							btn.name = "prof3";
+						}
 					}
 
 					//HOME PAGE CHANGES PROF 1
@@ -93,7 +102,7 @@
 					}
 					//ABOUT ME PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "About me") {
-						aboutMeMainContentC.style.background = "rgb(0, 0, 0, 0.6)";
+						//aboutMeMainContentC.style.background = "rgb(0, 0, 0, 0.6)";
 
 					}
 					//CONTACT PAGE CHANGES PROF 1
@@ -102,10 +111,15 @@
 
 				}
 				//LIGHTER
-				else if(btn.name == "prof2") {
+				else if(btn.name == "prof2" && prof2) {
 					contentToChange.style.background = "rgb(255, 255, 255, 0.4)";
 					if(!firstTime) {
-						btn.name = "prof3";
+						if(prof3) {
+							btn.name = "prof3";
+						}
+						else if(prof1) {
+							btn.name = "prof1";
+						}
 					}
 
 					//HOME PAGE CHANGES PROF 2
@@ -133,12 +147,17 @@
 					}
 				}
 				//DARK
-				else if(btn.name == "prof3") {
+				else if(btn.name == "prof3" && prof3) {
 					rightMainScreenC.style.borderBottomColor = "rgb(0, 40, 91, 0.5)";
 					rightMainScreenC.style.boxShadow = "0 0 4px grey";
 					contentToChange.style.background = "rgb(0, 0, 20)";
 					if(!firstTime) {
-						btn.name = "prof1";
+						if(prof1) {
+							btn.name = "prof1";
+						}
+						else if(prof2) {
+							btn.name = "prof2";
+						}
 					}
 
 					//HOME PAGE CHANGES PROF 3

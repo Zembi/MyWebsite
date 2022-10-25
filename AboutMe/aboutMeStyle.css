@@ -80,6 +80,7 @@
 			float: right;
 			top: 0;
 			right: 50%;
+			margin-top: 40px;
 			z-index: 2;
 			transform: translate(50%, 0);
 			animation: MoveOverTopGroundToMainPos 1.5s ease-in-out 2s 1;
@@ -126,7 +127,7 @@
 			position: relative;
 			display: block;
 			width: 100%;
-			background: rgb(0, 0, 0, 0.6);
+			background: transparent;
 			overflow: hidden;
 		}
 		#titlesGeneralBtnC {
@@ -142,9 +143,10 @@
 				background: transparent;
 				color: white;
 				border-bottom: 3px solid white;
+				opacity: 0;
 				margin: 0;
 				padding: 10px 0 5px 0;
-				animation: SendScreenInView 1.5s ease-out calc(var(--animationWaitToEnter)) 1;
+				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter)) 1;
 				animation-fill-mode: forwards;
 			}
 
@@ -155,16 +157,11 @@
 			overflow: hidden;
 			margin-top: 20px;
 		}
-			#textIntroEducationC {
-				position: relative;
-				display: block;
-				background: transparent;
-				z-index: 1;
-			}
 			#textIntroEducationP {
 				font-size: 18px;
 				text-align: center;
 				opacity: 0;
+				margin: 20px 0 20px 0;
 				padding: 0 5% 0 5%;
 				animation: ShowElement 2.4s linear 2s 1;
 				animation-fill-mode: forwards;
@@ -175,13 +172,72 @@
 				font-weight: bold;
 			}
 
+			#textIntroEducationC {
+				position: relative;
+				display: block;
+				background: transparent;
+				overflow: auto;
+				z-index: 1;
+			}
+			#textIntroInfoAboutMeEduC {
+				position: relative;
+				display: inline-block;
+				left: 50%;
+				opacity: 0;
+				transform: translate(-50%, 0);
+				animation: ShowElement 2s linear 1.8s 1;
+				animation-fill-mode: forwards;
+			}
+			#textIntroInfoAboutMeEduUl {
+				position: relative;
+				display: block;
+				font-size: 18px;
+				margin: 0;
+				padding: 0;
+			}
+				.textIntroInfoAboutMeEduLi {
+
+				}
+				.textIntroInfoAboutMeEduLi span {
+					color: rgb(117, 42, 6);
+				}
+				.textIntroInfoAboutMeEduLi span img {
+					width: 16px; height: 16px;
+					margin: 0 0 -3px 7px;
+					content: url(../Assets/loading2.png);
+					animation: Loader 1s ease-in-out 2.5s infinite;
+				}
+
+			#chartTitleC {
+				position: relative;
+				display: block;
+				overflow: auto;
+				opacity: 0;
+				margin-top: 50px;
+				z-index: 1;
+				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
+				animation-fill-mode: forwards;
+			}
+			#chartTitleH {
+				position: relative;
+				display: block;
+				float: left;
+				font-size: 18px;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+			#chartTitleH span {
+				color: rgb(117, 42, 6);
+				padding: 0 2px 0 2px;
+			}
+
 			#chartWrapC {
 				position: relative;
 				display: block;
 				width: 100%; height: 600px;
 				overflow: hidden;
-				margin-top: -20px;
-				animation: SendScreenInView 1.5s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
+				margin-top: -80px;
+				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
 				animation-fill-mode: forwards;
 			}
 			.elementsMoveInsight {
@@ -234,8 +290,205 @@
 				position: relative;
 				display: block;
 				width: 100%;
-				background: red;
+				background: transparent;
 			}
+			#titleWrapAboutSemestersChooseC {
+				position: relative;
+				display: block;
+				width: 100%;
+				background: transparent;
+				margin: 50px 0 100px 0;
+			}
+			#titleAboutSemestersChooseC {
+				position: relative;
+				display: block;
+				width: 140px;
+				background: transparent;
+				transform: translate(-100%, 0);
+				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.4s) 1;
+				animation-fill-mode: forwards;
+			}
+				#semestersUpBtnC {
+					position: relative;
+					display: block;
+					width: 26px; height: 18px;
+					margin: auto; margin-bottom: 6px;
+				}
+				#semestersUpBtn {
+					position: relative;
+					display: block;
+					width: 100%; height: 100%;
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					opacity: 0;
+					box-sizing: border-box;
+					padding: 0;
+					transition: opacity 0.2s;
+				}
+				#semestersUpBtn img {
+					width: 100%; height: 100%;
+					content: url("../Assets/arrow5.png");
+				}
+				#semestersUpBtn:hover img {
+					content: url("../Assets/arrow4.png");
+				}
+				
+				#semestersTitleC {
+					position: relative;
+					display: block;
+					background: rgb(255, 255, 255, 0.3);
+					border: 2px solid white;
+					overflow: hidden;
+					-ms-overflow-style: none;  /*IE AND EDGE*/
+					scrollbar-width: none;  /*FIREFOX*/
+				}
+				/*HIDE SCROLLBAR FOR CHROME, SAFARI and OPERA*/
+				#semestersTitleC::-webkit-scrollbar {
+				  display: none;
+				}
+				
+				#semestersDownBtnC {
+					position: relative;
+					display: block;
+					width: 26px; height: 18px;
+					background: transparent;
+					margin: auto; margin-top: 6px;
+				}
+				#semestersDownBtn{
+					position: relative;
+					display: block;
+					width: 100%; height: 100%;
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					box-sizing: border-box;
+					padding: 0;
+					transition: opacity 0.5s;
+				}
+				#semestersDownBtn img {
+					width: 100%; height: 100%;
+					transform: rotate(180deg);
+					content: url("../Assets/arrow5.png");
+				}
+				#semestersDownBtn:hover img {
+					content: url("../Assets/arrow4.png");
+				}
+
+			.verticalDragC {
+				position: relative;
+				display: block;
+				width: 100%;
+				background: transparent;
+				margin-top: 0;
+				transition: margin 0.4s;
+			}
+			.verticalDragP {
+				position: relative;
+				display: block;
+				color: white;
+				font-size: 16px;
+				text-align: center;
+				border: 1px solid transparent;
+				box-sizing: border-box;
+				padding: 4px 5px 0 5px;
+				transform: scale(1);
+				transition: transform 0.3s;
+			}
+				.verticalMenuSemesterSp {
+					color: rgb(0, 0, 0, 0.5);
+					font-weight: bold;
+				}
+
+				.verticalMenuTextSp {
+
+				}
+
+
+			#semestersContentC {
+				position: relative;
+				display: block;
+				background: transparent;
+				opacity: 0;
+				margin-top: 20px;
+				padding: 0 5% 0 5%;
+				transition: opacity 0.2s;
+				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.6s) 1;
+				animation-fill-mode: forwards;
+			}
+				.semesterTitleC {
+					position: relative;
+					display: block;
+					background: transparent;
+					border-bottom: 2px solid white;
+					overflow: auto;
+					padding: 6px 2% 6px 2%;
+				}
+					.semesterTitleH {
+						position: relative;
+						display: block;
+						float: left;
+						background: transparent;
+						font-size: 20px;
+						margin: 0;
+						padding: 0;
+					}
+					.semesterTitleH span {
+						color: rgb(117, 42, 6);
+						font-weight: bold;
+					}
+					
+					.semesterTitleAverageC {
+						position: relative;
+						display: block;
+						float: right;
+					}
+					.semesterTitleAverageP {
+						position: relative;
+						display: block;
+						font-size: 20px;
+					}
+						.semesterTitleAverageTextSp {
+							position: relative;
+							font-size: 16px;
+							margin-right: 5px;
+							font-style: italic;
+						}
+						.semesterTitleAverageSp {
+							position: relative;
+							color: rgb(117, 42, 6);
+							font-weight: bold;
+						}
+				
+				.semesterMainContentC {
+					padding: 0 2% 0 2%;
+				}
+				.currSemesterCourseWrapC {
+					border: none; border-bottom: 1px solid white;
+					overflow: auto;
+					box-sizing: border-box;
+					padding: 4px 0 4px 0;
+				}
+					.currSemesterCourseC {
+						position: relative;
+						display: block;
+						float: left;
+						left: 2%;
+					}
+					.currSemesterCourseP {
+						font-size: 16px;
+					}
+
+					.currSemesterCourseGradeC {
+						position: relative;
+						display: block;
+						float: right;
+						right: 5%;
+					}
+					.currSemesterCourseGradeP {
+						font-size: 18px;
+					}
+
 
 			#infoAndPhotosOfUniversityC {
 
@@ -263,6 +516,7 @@
 	@keyframes MoveOverTopGroundToMainPos {
 		100% {
 			right: 0;
+			margin-top: 0;
 			padding: 0 5px 0 0;
 			transform: translate(0, 0);
 		}
@@ -358,6 +612,15 @@
 			opacity: 1;
 			left: 50%;
 			transform: translate(-50%, 0) skew(0deg);
+		}
+	}
+
+	@keyframes Loader {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
 		}
 	}
 
