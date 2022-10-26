@@ -12,10 +12,66 @@
 		--step:  0.3s;
 	}
 
-	h2 {
-		font-size: 22px;
+	div {
+		-ms-overflow-style: none;  /*IE AND EDGE*/
+		scrollbar-width: none;  /*FIREFOX*/
+	}
+	
+	/*HIDE SCROLLBAR FOR CHROME, SAFARI and OPERA*/
+	div::-webkit-scrollbar {
+		  display: none;
 	}
 
+	/*GENERAL RULES ELEMENTS*/
+	.big_Title {
+		font-size: 32px;
+	}
+	.medium_Title {
+		font-size: 24px;
+	}
+	.small_Title {
+		font-size: 20px;
+	}
+	.highlight_Title {
+		color: rgb(117, 42 ,6) !important;
+		font-weight: bold !important;
+	}
+
+	.medium_Highlight_Text {
+		color: rgb(117, 42 ,6) !important;
+		font-size: 20px !important;
+		font-weight: bold !important;
+	}
+	.simple_Highlight_Text {
+		color: rgb(117, 42 ,6) !important;
+		font-size: 18px !important;
+		font-weight: bold !important;
+	}
+
+	.simple_Text {
+		font-size: 18px;
+	}
+	.small_Text {
+		font-size: 16px;
+	}
+
+	.button_Text {
+		font-size: 16px;
+	}
+
+	.lineToBreakContentC {
+		position: relative;
+		display: block;
+		width: 60%; height: 4px;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		opacity: 0;
+		margin: 80px auto 60px auto;
+		animation: ShowElement 1.5s linear 2.5s 1;
+		animation-fill-mode: forwards;
+	}
+
+	/*SECIFIC CONTENT FROM NOW ON*/
 	#aboutMeBodyC {
 		position: relative;
 		display: block;
@@ -101,11 +157,13 @@
 				animation-fill-mode: forwards;
 			}
 
+			/*big_Title*/
 			#aboutMeBodyTopGroundP {
 				position: relative;
 				display: block;
 				color: white;
 				font-size: 35px;
+				overflow: hidden;
 				animation: AfterTopGroundParAction 1.5s ease-in-out 2s 1;
 				animation-fill-mode: forwards;
 			}
@@ -130,6 +188,27 @@
 			background: transparent;
 			overflow: hidden;
 		}
+		#changeContentAboutMeBtnC {
+			position: relative;
+			display: block;
+			width: 100%;
+			background: transparent;
+			overflow: hidden;
+		}
+			/*.button_Text*/
+			#changeContentAboutMeBtn {
+				position: relative;
+				display: block;
+				background: transparent;
+				color: white;
+				border-radius: 2px;
+				border: 1px solid white;
+				cursor: pointer;
+				margin: 5px auto 5px auto;
+				transform: translateY(calc(-100% - 10px));
+				animation: ShowMenu 0.5s linear 2s 1;
+				animation-fill-mode: forwards;
+			}
 		#titlesGeneralBtnC {
 			position: relative;
 			display: block;
@@ -137,6 +216,7 @@
 			overflow: hidden;
 			margin: 20px 0 0 0;
 		}
+			/*.medium_Title*/
 			#titleEducationH {
 				position: relative;
 				display: inline-block;
@@ -149,14 +229,19 @@
 				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter)) 1;
 				animation-fill-mode: forwards;
 			}
-
+		/*WORKING POINT1998*/
 		#aboutMeEducationC {
 			position: relative;
 			display: block;
 			width: 100%;
+			background: transparent;
 			overflow: hidden;
+			opacity: 1;
 			margin-top: 20px;
+			transform: scale(0deg);
+			transition: width 1s, opacity 1s, transform 1s;
 		}
+			/*.simple_text*/
 			#textIntroEducationP {
 				font-size: 18px;
 				text-align: center;
@@ -166,10 +251,8 @@
 				animation: ShowElement 2.4s linear 2s 1;
 				animation-fill-mode: forwards;
 			}
+			/*.medium_Highlight_Text*/
 			#textIntroEducationP span {
-				color: rgb(117, 42 ,6);
-				font-size: 20px;
-				font-weight: bold;
 			}
 
 			#textIntroEducationC {
@@ -184,22 +267,23 @@
 				display: inline-block;
 				left: 50%;
 				opacity: 0;
+				padding: 0 10% 0 10%;
 				transform: translate(-50%, 0);
 				animation: ShowElement 2s linear 1.8s 1;
 				animation-fill-mode: forwards;
 			}
+			/*.simple_text*/
 			#textIntroInfoAboutMeEduUl {
 				position: relative;
 				display: block;
-				font-size: 18px;
 				margin: 0;
 				padding: 0;
 			}
 				.textIntroInfoAboutMeEduLi {
 
 				}
+				/*.medium_Highlight_Text*/
 				.textIntroInfoAboutMeEduLi span {
-					color: rgb(117, 42, 6);
 				}
 				.textIntroInfoAboutMeEduLi span img {
 					width: 16px; height: 16px;
@@ -214,18 +298,20 @@
 				overflow: auto;
 				opacity: 0;
 				margin-top: 50px;
+				padding: 0 5% 0 5%;
 				z-index: 1;
 				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
 				animation-fill-mode: forwards;
 			}
+			/*.small_Title*/
 			#chartTitleH {
 				position: relative;
 				display: block;
 				float: left;
-				font-size: 18px;
 				left: 50%;
 				transform: translate(-50%, 0);
 			}
+			/*.highlight_Title*/
 			#chartTitleH span {
 				color: rgb(117, 42, 6);
 				padding: 0 2px 0 2px;
@@ -236,7 +322,7 @@
 				display: block;
 				width: 100%; height: 600px;
 				overflow: hidden;
-				margin-top: -80px;
+				margin: -80px 0 -60px 0;
 				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter) + 0.2s) 1;
 				animation-fill-mode: forwards;
 			}
@@ -261,6 +347,7 @@
 					position: absolute;
 					display: none;
 					width: 90%; height: 90%;
+					background: rgba(0, 0, 0, 0.6);
 					border: 2px solid rgb(117, 42, 6);
 					top: 50%;
 					left: 50%;
@@ -297,7 +384,6 @@
 				display: block;
 				width: 100%;
 				background: transparent;
-				margin: 50px 0 100px 0;
 			}
 			#titleAboutSemestersChooseC {
 				position: relative;
@@ -369,10 +455,10 @@
 				#semestersDownBtn img {
 					width: 100%; height: 100%;
 					transform: rotate(180deg);
-					content: url("../Assets/arrow5.png");
+					content: url("../Assets/arrow4.png");
 				}
 				#semestersDownBtn:hover img {
-					content: url("../Assets/arrow4.png");
+					content: url("../Assets/arrow5.png");
 				}
 
 			.verticalDragC {
@@ -383,11 +469,11 @@
 				margin-top: 0;
 				transition: margin 0.4s;
 			}
+			/*.simple_Text*/
 			.verticalDragP {
 				position: relative;
 				display: block;
 				color: white;
-				font-size: 16px;
 				text-align: center;
 				border: 1px solid transparent;
 				box-sizing: border-box;
@@ -402,6 +488,9 @@
 
 				.verticalMenuTextSp {
 
+				}
+				.verticalDragP:hover .verticalMenuTextSp {
+					color: rgb(0, 0, 0, 0.5);
 				}
 
 
@@ -424,18 +513,17 @@
 					overflow: auto;
 					padding: 6px 2% 6px 2%;
 				}
+					/*.small_Title*/
 					.semesterTitleH {
 						position: relative;
 						display: block;
 						float: left;
 						background: transparent;
-						font-size: 20px;
 						margin: 0;
 						padding: 0;
 					}
+					/*.highlight_Title*/
 					.semesterTitleH span {
-						color: rgb(117, 42, 6);
-						font-weight: bold;
 					}
 					
 					.semesterTitleAverageC {
@@ -443,21 +531,19 @@
 						display: block;
 						float: right;
 					}
+					/*.small_Text*/
 					.semesterTitleAverageP {
 						position: relative;
 						display: block;
-						font-size: 20px;
 					}
 						.semesterTitleAverageTextSp {
 							position: relative;
-							font-size: 16px;
 							margin-right: 5px;
 							font-style: italic;
 						}
+						/*.medium_Highlight_Text*/
 						.semesterTitleAverageSp {
 							position: relative;
-							color: rgb(117, 42, 6);
-							font-weight: bold;
 						}
 				
 				.semesterMainContentC {
@@ -475,8 +561,11 @@
 						float: left;
 						left: 2%;
 					}
+					/*.small_Text*/
 					.currSemesterCourseP {
-						font-size: 16px;
+					}
+					.currSemesterCourseWrapC:hover .currSemesterCourseP {
+						color: grey;
 					}
 
 					.currSemesterCourseGradeC {
@@ -485,14 +574,27 @@
 						float: right;
 						right: 5%;
 					}
+					/*.simple_Text*/
 					.currSemesterCourseGradeP {
-						font-size: 18px;
+					}
+					.currSemesterCourseWrapC:hover .currSemesterCourseGradeP {
+						color: rgb(117, 42, 6);
 					}
 
 
 			#infoAndPhotosOfUniversityC {
 
 			}
+
+		#aboutMeSkillsAndExperienceC {
+			position: relative;
+			display: block;
+			width: 100%; height: 100px;
+			background: green;
+			opacity: 0;
+			transform: translateX(-100%) skew(-90deg);
+			transition: opacity 2s, transform 1.5s;
+		}
 
 
 	/*SCREEN WIDTH UNDER 1000px*/
@@ -576,17 +678,30 @@
 			color: transparent;
 		}
 		50% {
+			display: none;
+			width: 0;
 			float: right;
-			right: 2px;
 			color: transparent;
 			padding-right: 6px;
 		}
 		100% {
+			display: none;
 			float: right;
-			right: 2px;
-			font-size: 16px;
+			width: 0;
+			right: 0px;
+			color: transparent;
+			font-size: 0;
 			padding-left: 6px;
 			transform: translate(0, 40%);
+		}
+	}
+
+	@keyframes ShowMenu {
+		0% {
+			transform: translateY(-100%);
+		}
+		100% {
+			transform: translateY(0);
 		}
 	}
 

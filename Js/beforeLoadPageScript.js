@@ -38,7 +38,7 @@ function GetPageWidth() {
 
 
 //CREATE VERTICAL AND HORIZONTAL MENU OPTIONS
-function CreateVerticalMenu(items, placeToBe, counter, upBtn, downBtn) {
+function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn) {
 	var counterHelp = 0;
 	var verticalDragElmntC = null;
 	//HEIGHT OF EACH PAR
@@ -55,7 +55,7 @@ function CreateVerticalMenu(items, placeToBe, counter, upBtn, downBtn) {
 
 		var verticalDragC = document.getElementsByClassName("verticalDragC")[counter];
 		var elmnt = document.createElement("p");
-		elmnt.className = "verticalDragP";
+		elmnt.className = "verticalDragP simple_Text";
 		elmnt.id = "verticalDragP" + counter + "" + counterHelp;
 		elmnt.innerHTML = '<span class="verticalMenuSemesterSp">' + titleFirstPart + ' </span><span class="verticalMenuTextSp">' + titleSecondPart + '</span>';
 

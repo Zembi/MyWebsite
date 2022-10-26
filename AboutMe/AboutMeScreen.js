@@ -10,12 +10,50 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
-			this.LoadGoogleCharts();
-			this.InitializeTranscriptOfUniCourses();
+			this.MainContentButton();
+			this.InitializeAboutMeMenuItems();
 		}
 
 		InitializeMainPageCore() {
 			var mainPageCore = new MainPageCore("About me");
+		}
+
+		MainContentButton() {
+			var c = false;
+			var changeContentAboutMeBtn = document.getElementById("changeContentAboutMeBtn");
+			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
+			var aboutMeSkillsAndExperienceC = document.getElementById("aboutMeSkillsAndExperienceC");
+
+			changeContentAboutMeBtn.addEventListener("click", function() {
+				if(!c) {
+					aboutMeEducationC.style.opacity = "0";
+					setTimeout(function() {
+						aboutMeEducationC.style.display = "none";
+						aboutMeEducationC.style.transform = "translateX(-100%) skew(-90deg)";
+						aboutMeSkillsAndExperienceC.style.display = "block";
+						aboutMeSkillsAndExperienceC.style.opacity = "1";
+						aboutMeSkillsAndExperienceC.style.transform = "translateX(0) skew(0)";
+					}, 500);
+
+					c = true;
+				}
+				else {
+					aboutMeSkillsAndExperienceC.style.opacity = "0";
+					setTimeout(function() {
+						aboutMeSkillsAndExperienceC.style.display = "none";
+						aboutMeEducationC.style.display = "block";
+						aboutMeEducationC.style.opacity = "1";
+						aboutMeEducationC.style.transform = "translateX(0) skew(0)";
+					}, 500);
+
+					c = false;
+				}
+			});
+		}
+
+		InitializeAboutMeMenuItems() {
+			this.LoadGoogleCharts();
+			this.InitializeTranscriptOfUniCourses();
 		}
 
 		LoadGoogleCharts() {
@@ -43,14 +81,8 @@
 					["4", 9, 8.6, 9, 8.6],
 				]);
 
-				var chartTitleH = document.getElementById("chartTitleH");
-				//|| IS A BREAKPOINT FOR STRING
-				var chartTitle = "Overall University Performance||(average / semester)";
-				chartTitle = chartTitle.toUpperCase();
-				var firstPart = chartTitle.substring(0, chartTitle.indexOf("||"));
-				var secondPart = chartTitle.substring(chartTitle.indexOf("||") + 3, chartTitle.length - 1);
-
-				chartTitleH.innerHTML = firstPart + " (<span>" + secondPart + "</span>)";
+				//LOOK HTML FILE, element with id: #chartTitleH
+				var chartTitle = "";
 
 				var options = {
 					title: chartTitle,
@@ -303,7 +335,7 @@
 				CreateContentOfSemester(courses, 7);
 			}
 
-			CreateVerticalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn);
+			CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn);
 
 			function CreateContentOfSemester(courses, counter) {
 				var average = 0;
@@ -317,7 +349,7 @@
 				var titleSecondPart = "Semester";
 				titleSecondPart = titleSecondPart.toUpperCase();
 
-				semestersContentC.innerHTML = '<div class="semesterTitleC"><h2 class="semesterTitleH"><span>' + titleFirstPart + ' </span>' + titleSecondPart + '</h2><div class="semesterTitleAverageC"><p class="semesterTitleAverageP"><span class="semesterTitleAverageTextSp"></span><span class="semesterTitleAverageSp"></span></p></div></div><div class="semesterMainContentC"></div>';
+				semestersContentC.innerHTML = '<div class="semesterTitleC"><h2 class="semesterTitleH small_Title"><span class="highlight_Title">' + titleFirstPart + ' </span>' + titleSecondPart + '</h2><div class="semesterTitleAverageC"><p class="semesterTitleAverageP small_Text"><span class="semesterTitleAverageTextSp"></span><span class="semesterTitleAverageSp medium_Highlight_Text"></span></p></div></div><div class="semesterMainContentC"></div>';
 				var semesterMainContentC = document.getElementsByClassName("semesterMainContentC")[0];
 				
 				courses.forEach(course => {
@@ -328,7 +360,7 @@
 						var currSemesterCourseC = document.createElement("div");
 						currSemesterCourseC.className = "currSemesterCourseC";
 						var currSemesterCourseP = document.createElement("p");
-						currSemesterCourseP.className = "currSemesterCourseP";
+						currSemesterCourseP.className = "currSemesterCourseP small_Text";
 						currSemesterCourseP.innerHTML = course[0];
 
 						currSemesterCourseC.appendChild(currSemesterCourseP);
@@ -337,7 +369,7 @@
 						var currSemesterCourseGradeC = document.createElement("div");
 						currSemesterCourseGradeC.className = "currSemesterCourseGradeC";
 						var currSemesterCourseGradeP = document.createElement("p");
-						currSemesterCourseGradeP.className = "currSemesterCourseGradeP";
+						currSemesterCourseGradeP.className = "currSemesterCourseGradeP simple_Text";
 						currSemesterCourseGradeP.innerHTML = course[1];
 
 						currSemesterCourseGradeC.appendChild(currSemesterCourseGradeP);
@@ -345,10 +377,12 @@
 						semesterMainContentC.appendChild(currSemesterCourseWrapC);
 
 						if((courseCount % 2) == 0) {
+							currSemesterCourseWrapC.style.borderLeft = " 4px solid transparent";
 							currSemesterCourseWrapC.style.borderRight = " 4px solid rgb(117, 42, 6)";
 						}
 						else {
 							currSemesterCourseWrapC.style.borderLeft = " 4px solid rgb(117, 42, 6)";
+							currSemesterCourseWrapC.style.borderRight = " 4px solid transparent";
 						}
 
 						average += course[1];
