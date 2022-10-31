@@ -18,7 +18,19 @@
 		}
 
 		CreatePatronOfTopBar() {
-			document.getElementById("topBarC").innerHTML = '<div id="topTaskBarHalfC"></div><div id="midTaskBarHalfC"><div id="bottomTaskBarMidC"><div id="bottomTaskBarPageTitleC"><h1 id="bottomTaskBarPageTitleTextH"></h1></div></div></div><div id="bottomTaskBarHalfC"><div id="lineTaskBarC"></div></div>';
+			document.getElementById("topBarC").innerHTML = `
+				<div id="topTaskBarHalfC"></div>
+				<div id="midTaskBarHalfC">
+					<div id="bottomTaskBarMidC">
+						<div id="bottomTaskBarPageTitleC">
+							<h1 id="bottomTaskBarPageTitleTextH"></h1>
+						</div>
+					</div>
+				</div>
+				<div id="bottomTaskBarHalfC">
+					<div id="lineTaskBarC"></div>
+				</div>
+			`;
 		}
 
 		TitlePartBarInfo() {

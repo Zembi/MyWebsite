@@ -24,31 +24,47 @@
 			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
 			var aboutMeSkillsAndExperienceC = document.getElementById("aboutMeSkillsAndExperienceC");
 
+			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsAndExperienceC, true);
+
 			changeContentAboutMeBtn.addEventListener("click", function() {
 				if(!c) {
-					aboutMeEducationC.style.opacity = "0";
-					setTimeout(function() {
-						aboutMeEducationC.style.display = "none";
-						aboutMeEducationC.style.transform = "translateX(-100%) skew(-90deg)";
-						aboutMeSkillsAndExperienceC.style.display = "block";
-						aboutMeSkillsAndExperienceC.style.opacity = "1";
-						aboutMeSkillsAndExperienceC.style.transform = "translateX(0) skew(0)";
-					}, 500);
-
+					OpenedAboutMeContent(aboutMeSkillsAndExperienceC, aboutMeEducationC, false);
 					c = true;
 				}
 				else {
-					aboutMeSkillsAndExperienceC.style.opacity = "0";
-					setTimeout(function() {
-						aboutMeSkillsAndExperienceC.style.display = "none";
-						aboutMeEducationC.style.display = "block";
-						aboutMeEducationC.style.opacity = "1";
-						aboutMeEducationC.style.transform = "translateX(0) skew(0)";
-					}, 500);
-
+					OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsAndExperienceC, false);
 					c = false;
 				}
 			});
+
+			function OpenedAboutMeContent(elementToShow, elementToHide, firstTimeCall) {
+				elementToHide.style.display = "none";
+				elementToHide.style.opacity = "0";
+				elementToHide.style.transform = "translateX(-100%) skew(-90deg)";
+
+				elementToShow.style.display = "block";
+				elementToShow.style.opacity = "1";
+				elementToShow.style.transform = "translateX(0) skew(0)";
+
+				if(firstTimeCall) {
+					document.documentElement.style.setProperty("--animationEnter", "1.5s");
+					document.documentElement.style.setProperty("--animationWaitToEnter", "0.6s");
+					document.documentElement.style.setProperty("--step2", "0.2s");
+
+					document.documentElement.style.setProperty("--animationShow", "2s");
+					document.documentElement.style.setProperty("--animationWaitToShow", "1.2s");
+					document.documentElement.style.setProperty("--step3", "1s");
+				}
+				else {
+					document.documentElement.style.setProperty("--animationEnter", "0.3s");
+					document.documentElement.style.setProperty("--animationWaitToEnter", "0.1s");
+					document.documentElement.style.setProperty("--step2", "0.1s");
+
+					document.documentElement.style.setProperty("--animationShow", "0.8s");
+					document.documentElement.style.setProperty("--animationWaitToShow", "0s");
+					document.documentElement.style.setProperty("--step3", "0s");
+				}
+			}
 		}
 
 		InitializeAboutMeMenuItems() {
@@ -134,7 +150,7 @@
 					seriesType: "bars",
 					series: {
 						0: {
-							color: "rgb(14, 75, 153)",
+							color: "rgb(0, 4, 40)",
 							dataOpacity: "0.6"
 						},
 						1: {
@@ -143,7 +159,7 @@
 						},
 						2: {
 							type: "line",
-							color: "rgb(14, 75, 153)"
+							color: "rgb(0, 4, 40)"
 						},
 						3: {
 							type: "line",
@@ -170,7 +186,7 @@
 				if(pageCurWidth != aboutMeBodyC.name) {
 					if(document.getElementById("eduChartCenterLoadingImg").style.animationPlayState != "running") {
 						var chartCC = document.getElementById("chartCC");
-						chartCC.innerHTML = ""
+						chartCC.innerHTML = "";
 						
 						var newChartC = document.createElement("div");
 						newChartC.id = "chartC";
@@ -377,12 +393,12 @@
 						semesterMainContentC.appendChild(currSemesterCourseWrapC);
 
 						if((courseCount % 2) == 0) {
-							currSemesterCourseWrapC.style.borderLeft = " 4px solid transparent";
-							currSemesterCourseWrapC.style.borderRight = " 4px solid rgb(117, 42, 6)";
+							currSemesterCourseWrapC.style.borderLeftWidth = "0";
+							currSemesterCourseWrapC.style.borderRightWidth = "4px";
 						}
 						else {
-							currSemesterCourseWrapC.style.borderLeft = " 4px solid rgb(117, 42, 6)";
-							currSemesterCourseWrapC.style.borderRight = " 4px solid transparent";
+							currSemesterCourseWrapC.style.borderLeftWidth = "4px";
+							currSemesterCourseWrapC.style.borderRightWidth = "0";
 						}
 
 						average += course[1];

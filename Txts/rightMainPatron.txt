@@ -1,9 +1,0 @@
-<div id="rightMainScreenC">
-	<div id="rightMainTopMenuC">
-		<div id="changeBackgroundBtnC" class="rightMainTopMenuItemBtnC">
-			<button id="changeBackgroundBtn" class="rightMainTopMenuItemBtn" title="Picassos Button" name="prof1">
-				<img id="changeBackgroundBtnImg" class="rightMainTopMenuItemImg">
-			</button>
-		</div>
-	</div>
-</div>

@@ -28,7 +28,7 @@
 		display: block;
 		width: 100%; height: 100%;
 		min-width: 190px; min-height: 590px;
-		background: rgb(0, 33, 83);
+		background: linear-gradient(120deg, rgb(189, 195, 199) 50%, rgb(44, 62, 80) 100%);
 		font-family: Display;
 		margin: 0;
 		padding: 0;
@@ -38,7 +38,7 @@
 		position: relative;
 		display: table;
 		width: 100%; height: 100%;
-		background: black;
+		background: linear-gradient(120deg, rgb(189, 195, 199) 50%, rgb(44, 62, 80) 100%);
 		box-sizing: content-box;
 		overflow: hidden;
 	}
@@ -50,7 +50,7 @@
 			display: table-cell;
 			float: right;
 			width: 100%; height: 100%;
-			background: linear-gradient(90deg, rgb(0, 93, 176) -100%, rgb(0, 29, 76) 50%, rgb(0, 93, 176) 1000%);
+			background: linear-gradient(120deg, rgb(189, 195, 199) 50%, rgb(44, 62, 80) 100%);
 		}
 		#rightBodyC {
 			position: relative;
@@ -70,7 +70,7 @@
 			border-radius: 2px;
 			overflow: hidden;
 			margin-top: 10px;
-			transition: background 0.4s;
+			transition: background 0.1s;
 		}
 
 		/*RIGHT MAIN IMPORT HERE*/
