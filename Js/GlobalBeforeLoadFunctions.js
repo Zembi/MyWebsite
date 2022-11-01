@@ -1,4 +1,7 @@
-
+	
+	//CREATE THE GlobalsAboutMe OBJECT THAT STORES ALL GLOBAL VARIABLES
+	var globalVars = new GlobalsAboutMe();
+	////
 
 	//MATHEMATICS FUNCTION
 	function SumFactorial(n) {

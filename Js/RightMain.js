@@ -118,6 +118,11 @@
 					//ABOUT ME PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
+	
+						//CHECK IF GLOBAL GOOGLE CHART EXISTS
+						if(globalVars.GetEduGoogleChart() != null) {
+							globalVars.GetEduGoogleChart().RecolorSeries(0, "rgb(0, 4, 40)", "0.6");
+						}
 					}
 					//CONTACT PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "Contact") {
@@ -195,6 +200,11 @@
 					//ABOUT ME PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
+						
+						//CHECK IF GLOBAL GOOGLE CHART EXISTS
+						if(globalVars.GetEduGoogleChart() != null) {
+							globalVars.GetEduGoogleChart().RecolorSeries(0, "rgb(255, 255, 255)", "0.8");
+						}
 					}
 					//CONTACT PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "Contact") {

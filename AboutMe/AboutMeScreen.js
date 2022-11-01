@@ -73,162 +73,111 @@
 		}
 
 		LoadGoogleCharts() {
-			//LOAD LIBRARY
-			google.charts.load("current", {packages:['corechart']});
-			//TIME TO DRAW
-			google.charts.setOnLoadCallback(function() {
-				DrawChart(true, 4500);
-			});
+			var data = [
+				["Element", "Winter", "Spring", "WinterLine", "SpringLine"],
+				["1", 7.143, 7, 7.143, 7],
+				["2", 7.167, 6.5, 7.167, 6.5],
+				["3", 7.667, 7.167, 7.667, 7.167],
+				["4", 9, 8.6, 9, 8.6],
+			];
 
-			var aboutMeBodyC = document.getElementById("aboutMeBodyC");
-			aboutMeBodyC.name = GetPageWidth();
+			//CHANGE COLORS COMPARED TO CURRENT BACKGROUND PROFILE
+			var changeBackgroundBtn = document.getElementById("changeBackgroundBtn");
+			if(changeBackgroundBtn.name == "prof1") {
+				var color0 = "rgb(255, 255, 255)";
+				var dataOpacity0 = "0.8";
+				
+				var color2 = "white";
+			}
+			else if(changeBackgroundBtn.name == "prof3") {
+				var color0 = "rgb(0, 4, 40)";
+				var dataOpacity0 = "0.6";
 
-			function DrawChart(firstT, animationTime) {
-				var chartC = document.getElementById("chartC");
-			
-				var winterStyling = "color: rgb(0, 43, 98); opacity: 0.4; border: 4px solid rgb(0, 43, 98)";
-				var springStyling = "color: rgb(117, 42, 6); opacity: 0.4; border: 4px solid rgb(117, 42, 8)";
-
-				var data = google.visualization.arrayToDataTable([
-					["Element", "Winter", "Spring", "WinterLine", "SpringLine"],
-					["1", 7.143, 7, 7.143, 7],
-					["2", 7.167, 6.5, 7.167, 6.5],
-					["3", 7.667, 7.167, 7.667, 7.167],
-					["4", 9, 8.6, 9, 8.6],
-				]);
-
-				//LOOK HTML FILE, element with id: #chartTitleH
-				var chartTitle = "";
-
-				var options = {
-					title: chartTitle,
-					titleTextStyle: {
-						color: "white",
-						textAlign: "center"
-					},
-					titlePosition: "none",
-					axisTitlesPosition: "out",
-					width: "100%",
-					height: "100%",
-					backgroundColor: "transparent",
-					pointSize: 4,
-					legend: {
-						position: "bottom",
-						textStyle: {
-							color: "white",
-						}
-					},
-					vAxis: {
-						minValue: 5,
-						maxValue: 10,
-						title: "GPA",
-						titleTextStyle: {
-							color: "white"
-						},
-						textStyle: {
-							color: "white"
-						},
-						gridlines: {
-							color: "white"
-						},
-						minorGridlines: {
-							color: "darkgrey"
-						}
-					},
-					hAxis: {
-						title: "Year",
-						titleTextStyle: {
-							color: "white"
-						},
-						textStyle: {
-							color: "white"
-						},
-						gridlines: {
-							color: "white"
-						}
-					},
-					seriesType: "bars",
-					series: {
-						0: {
-							color: "rgb(0, 4, 40)",
-							dataOpacity: "0.6"
-						},
-						1: {
-							color: "rgb(143, 56, 14)",
-							dataOpacity: "0.6"
-						},
-						2: {
-							type: "line",
-							color: "rgb(0, 4, 40)"
-						},
-						3: {
-							type: "line",
-							color: "rgb(143, 56, 14)"
-						}
-					},
-					animation: {
-						startup: firstT,
-						duration: animationTime,
-						easing: "out"
-					}
-				};
-
-				firstT = false;
-
-				var chartColumn = new google.visualization.ComboChart(chartC);
-				chartColumn.draw(data, options);
+				var color2 = "rgb(0, 4, 40)";
 			}
 
-			//RESIZING TRIGGERS RELOAD OF CHART AND IF IT IS LOADING AND IT IS CHANGING, IT KEEPS ON LOADING
-			window.addEventListener("resize", function() {
-				var pageCurWidth = GetPageWidth();
-
-				if(pageCurWidth != aboutMeBodyC.name) {
-					if(document.getElementById("eduChartCenterLoadingImg").style.animationPlayState != "running") {
-						var chartCC = document.getElementById("chartCC");
-						chartCC.innerHTML = "";
-						
-						var newChartC = document.createElement("div");
-						newChartC.id = "chartC";
-						chartCC.appendChild(newChartC);
-
-						document.getElementById("eduChartLoadingFullC").style.display = "block";
-						document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
-						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
-						
-						setTimeout(function() {
-							document.getElementById("eduChartLoadingFullC").style.display = "none";
-							document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
-							document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
-							DrawChart(true, 500);
-						}, 500);
+			//LOOK HTML FILE, ELEMENT WITH ID: #chartTitleH FOR CHART TITLE
+			var options = {
+				title: "",
+				titleTextStyle: {
+					color: "white",
+					textAlign: "center"
+				},
+				titlePosition: "none",
+				axisTitlesPosition: "out",
+				width: "100%",
+				height: "100%",
+				backgroundColor: "transparent",
+				pointSize: 4,
+				legend: {
+					position: "bottom",
+					textStyle: {
+						color: "white",
 					}
+				},
+				vAxis: {
+					minValue: 5,
+					maxValue: 10,
+					title: "GPA",
+					titleTextStyle: {
+						color: "white"
+					},
+					textStyle: {
+						color: "white"
+					},
+					gridlines: {
+						color: "white"
+					},
+					minorGridlines: {
+						color: "darkgrey"
+					}
+				},
+				hAxis: {
+					title: "Year",
+					titleTextStyle: {
+						color: "white"
+					},
+					textStyle: {
+						color: "white"
+					},
+					gridlines: {
+						color: "white"
+					}
+				},
+				seriesType: "bars",
+				series: {
+					0: {
+						color: color0,
+						dataOpacity: dataOpacity0
+					},
+					1: {
+						color: "rgb(143, 56, 14)",
+						dataOpacity: "0.6"
+					},
+					2: {
+						type: "line",
+						color: color2
+					},
+					3: {
+						type: "line",
+						color: "rgb(143, 56, 14)"
+					}
+				},
+				animation: {
+					startup: null,
+					duration: null,
+					easing: "out"
 				}
-				aboutMeBodyC.name = GetPageWidth();
-			});
+			};
 
-			//LOAD CHART WHEN MENU OPENS AND CLOSES, WHEN WINDOW WIDTH IS MORE THAN 850, CAUSE THERE WAS RESPONSIVENESS ERRORS
-			document.getElementById("openMenuBtn").addEventListener("click", function() {
-				if(GetPageWidth() > 850) {
-					var chartCC = document.getElementById("chartCC");
-					chartCC.innerHTML = ""
-					
-					var newChartC = document.createElement("div");
-					newChartC.id = "chartC";
-					chartCC.appendChild(newChartC);
-
-					document.getElementById("eduChartLoadingFullC").style.display = "block";
-					document.getElementById("eduChartLoadingFullC").style.zIndex = "0";
-					document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "running";
-					
-					setTimeout(function() {
-						document.getElementById("eduChartLoadingFullC").style.display = "none";
-						document.getElementById("eduChartLoadingFullC").style.zIndex = "-1";
-						document.getElementById("eduChartCenterLoadingImg").style.animationPlayState = "paused";
-						DrawChart(true, 500);
-					}, 500);
-				}
-			});
+			var chartWrapC = document.getElementById("chartWrapC");
+			var triggerElemnt = document.getElementById("aboutMeBodyC");
+			var buttonMenu = document.getElementById("openMenuBtn");
+			var eduGC = new GoogleChart(
+				"Combo=bars+lines", data, options, chartWrapC,
+				4500, 500, triggerElemnt, buttonMenu, 850
+			);
+			globalVars.SetEduGoogleChart(eduGC);
 		}
 
 		InitializeTranscriptOfUniCourses() {
@@ -393,12 +342,12 @@
 						semesterMainContentC.appendChild(currSemesterCourseWrapC);
 
 						if((courseCount % 2) == 0) {
-							currSemesterCourseWrapC.style.borderLeftWidth = "0";
+							currSemesterCourseWrapC.style.borderLeftColor = "transparent";
 							currSemesterCourseWrapC.style.borderRightWidth = "4px";
 						}
 						else {
 							currSemesterCourseWrapC.style.borderLeftWidth = "4px";
-							currSemesterCourseWrapC.style.borderRightWidth = "0";
+							currSemesterCourseWrapC.style.borderRightColor = "transparent";
 						}
 
 						average += course[1];
