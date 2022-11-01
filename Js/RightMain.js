@@ -75,7 +75,6 @@
 				}
 				//ABOUT ME PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "About me") {
-					var aboutMeMainContentC = document.getElementById("aboutMeMainContentC");
 				}
 				//CONTACT PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "Contact") {
@@ -119,10 +118,12 @@
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 	
-						//CHECK IF GLOBAL GOOGLE CHART EXISTS
-						if(globalVars.GetEduGoogleChart() != null) {
-							globalVars.GetEduGoogleChart().RecolorSeries(0, "rgb(0, 4, 40)", "0.6");
-						}
+						currentObj.AboutMeChartChanges();
+
+						//ARROWS CHANGES
+						var changeArrowImg = "url('../Assets/arrow5.png')";
+						document.documentElement.style.setProperty("--upArrowUrl", changeArrowImg);
+						document.documentElement.style.setProperty("--downArrowHoverUrl", changeArrowImg);
 					}
 					//CONTACT PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "Contact") {
@@ -201,10 +202,12 @@
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 						
-						//CHECK IF GLOBAL GOOGLE CHART EXISTS
-						if(globalVars.GetEduGoogleChart() != null) {
-							globalVars.GetEduGoogleChart().RecolorSeries(0, "rgb(255, 255, 255)", "0.8");
-						}
+						currentObj.AboutMeChartChanges();
+
+						//ARROWS CHANGES
+						var changeArrowImg = "url('../Assets/arrow6.png')";
+						document.documentElement.style.setProperty("--upArrowUrl", changeArrowImg);
+						document.documentElement.style.setProperty("--downArrowHoverUrl", changeArrowImg);
 					}
 					//CONTACT PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "Contact") {
@@ -212,6 +215,43 @@
 				}
 
 				return btn.name;
+			}
+		}
+
+		AboutMeChartChanges() {
+			if(changeBackgroundBtn.name == "prof1") {
+				//1ST BARS AND LINE
+				var color0 = "rgb(255, 255, 255)";
+				var dataOpacity0 = "0.8";
+				
+				var color2 = "white";
+
+				//2ND BARS AND LINE
+				var color1 = "rgb(87, 126, 161)";
+				var dataOpacity1 = "0.8";
+
+				var color3 = "rgb(87, 126, 161)";
+			}
+			else if(changeBackgroundBtn.name == "prof3") {
+				//1ST BARS AND LINE
+				var color0 = "rgb(0, 4, 40)";
+				var dataOpacity0 = "0.6";
+
+				var color2 = "rgb(0, 4, 40)";
+
+				//2ND BARS AND LINE
+				var color1 = "rgb(143, 56, 14)";
+				var dataOpacity1 = "0.6";
+
+				var color3 = "rgb(143, 56, 14)";
+			}
+
+			//CHECK IF GLOBAL GOOGLE CHART EXISTS
+			if(globalVars.getEduGoogleChart() != null) {
+				globalVars.getEduGoogleChart().RecolorSeries(0, color0, dataOpacity0);
+				globalVars.getEduGoogleChart().RecolorSeries(1, color1, dataOpacity1);
+				globalVars.getEduGoogleChart().RecolorSeries(2, color2, 0);
+				globalVars.getEduGoogleChart().RecolorSeries(3, color3, 0);
 			}
 		}
 	}

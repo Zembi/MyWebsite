@@ -1,6 +1,5 @@
-	
-	//CREATE THE GlobalsAboutMe OBJECT THAT STORES ALL GLOBAL VARIABLES
-	var globalVars = new GlobalsAboutMe();
+	//CREATE THE GlobalVariables OBJECT THAT STORES ALL GLOBAL VARIABLES
+	var globalVars = new GlobalVariables();
 	////
 
 	//MATHEMATICS FUNCTION

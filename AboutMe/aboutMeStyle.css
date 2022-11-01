@@ -8,10 +8,17 @@
 	@import url('../Css/mainPageCoreStyle.css');
 
 	:root {
+		--stepOfTopground: 0.1%;
+
 		--highlightTextColor: rgb(117, 42, 6);
 
 		--animeSlideOut: 0.6s;
 		--step1:  0.3s;
+
+		--upArrowUrl: url("../Assets/arrow5.png");
+		--upArrowHoverUrl: url("../Assets/arrow4.png");
+		--downArrowUrl: url("../Assets/arrow4.png");
+		--downArrowHoverUrl: url("../Assets/arrow5.png");
 	}
 
 	div {
@@ -26,7 +33,7 @@
 
 	/*GENERAL RULES ELEMENTS*/
 	.big_Title {
-		font-size: 32px;
+		font-size: 34px;
 	}
 	.medium_Title {
 		font-size: 24px;
@@ -41,12 +48,12 @@
 
 	.medium_Highlight_Text {
 		color: var(--highlightTextColor) !important;
-		font-size: 20px !important;
+		font-size: 20px;
 		font-weight: bold !important;
 	}
 	.simple_Highlight_Text {
 		color: var(--highlightTextColor) !important;
-		font-size: 18px !important;
+		font-size: 18px;
 		font-weight: bold !important;
 	}
 
@@ -93,43 +100,43 @@
 
 		#aboutMeBodyTopGround1C {
 			top: 0;
-			bottom: 87%;
+			bottom: calc(87.5% - var(--stepOfTopground));
 			animation-delay: var(--animeSlideOut);
 		}
 		#aboutMeBodyTopGround2C {
 			top: 12.5%;
-			bottom: 74.5%;
+			bottom: calc(75% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 1));
 		}
 		#aboutMeBodyTopGround3C {
 			top: 25%;
-			bottom: 62%;
+			bottom: calc(62.5% - var(--stepOfTopground));
 			overflow: hidden;
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 2));
 		}
 		#aboutMeBodyTopGround4C {
 			top: 37.5%;
-			bottom: 49.5%;
+			bottom: calc(50% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 3));
 		}
 		#aboutMeBodyTopGround5C {
 			top: 50%;
-			bottom: 37%;
+			bottom: calc(37.5% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 4));
 		}
 		#aboutMeBodyTopGround6C {
 			top: 62.5%;
-			bottom: 24.5%;
+			bottom: calc(25% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 5));
 		}
 		#aboutMeBodyTopGround7C {
 			top: 75%;
-			bottom: 12%;
+			bottom: calc(12.5% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 6));
 		}
 		#aboutMeBodyTopGround8C {
 			top: 87.5%;
-			bottom: -0.5%;
+			bottom: calc(0% - var(--stepOfTopground));
 			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 7));
 		}
 		.aboutMeBodyTopGroundAnimC {
@@ -157,7 +164,7 @@
 			#aboutMeBodyTopGroundHeartC {
 				position: relative;
 				display: inline-block;
-				font-size: 400%;;
+				font-size: 400%;
 				left: 50%;
 				transform: translate(-50%, 0);
 				animation: AfterTopGroundHeartAction 1.5s ease-in-out 2s 1;
@@ -174,7 +181,7 @@
 				position: relative;
 				display: block;
 				color: white;
-				font-size: 35px;
+				text-align: center;
 				overflow: hidden;
 				animation: AfterTopGroundParAction 1.5s ease-in-out 2s 1;
 				animation-fill-mode: forwards;
@@ -254,10 +261,9 @@
 		}
 			/*.simple_text .animShow*/
 			#textIntroEducationP {
-				font-size: 18px;
 				text-align: center;
 				opacity: 0;
-				margin: 20px 0 20px 0;
+				margin: 20px 0 40px 0;
 				padding: 0 5% 0 5%;
 				animation-delay: calc(var(--animationWaitToShow) + calc(var(--step3) * 1));
 			}
@@ -319,6 +325,7 @@
 				position: relative;
 				display: block;
 				float: left;
+				text-align: center;
 				left: 50%;
 				transform: translate(-50%, 0);
 			}
@@ -425,10 +432,10 @@
 				}
 				#semestersUpBtn img {
 					width: 100%; height: 100%;
-					content: url("../Assets/arrow5.png");
+					content: var(--upArrowUrl);
 				}
 				#semestersUpBtn:hover img {
-					content: url("../Assets/arrow4.png");
+					content: var(--upArrowHoverUrl);
 				}
 				
 				#semestersTitleC {
@@ -466,10 +473,10 @@
 				#semestersDownBtn img {
 					width: 100%; height: 100%;
 					transform: rotate(180deg);
-					content: url("../Assets/arrow4.png");
+					content: var(--downArrowUrl);
 				}
 				#semestersDownBtn:hover img {
-					content: url("../Assets/arrow5.png");
+					content: var(--downArrowHoverUrl);
 				}
 
 			.verticalDragC {
@@ -480,11 +487,11 @@
 				margin-top: 0;
 				transition: margin 0.4s;
 			}
-			/*.simple_Text*/
 			.verticalDragP {
 				position: relative;
 				display: block;
 				color: white;
+				font-size: 18px !important;
 				text-align: center;
 				border: 1px solid transparent;
 				box-sizing: border-box;
@@ -572,10 +579,13 @@
 						position: relative;
 						display: block;
 						float: left;
-						left: 2%;
+						width: 88%;
+						box-sizing: border-box;
+						padding-left: 2%;
 					}
 					/*.small_Text*/
 					.currSemesterCourseP {
+						text-align: left;
 					}
 					.currSemesterCourseWrapC:hover .currSemesterCourseP {
 						color: grey;
@@ -585,10 +595,17 @@
 						position: relative;
 						display: block;
 						float: right;
-						right: 5%;
+						width: 12%; height: 100%;
+						box-sizing: border-box;
+						padding-right: 5%;
+
 					}
 					/*.simple_Text*/
 					.currSemesterCourseGradeP {
+						position: relative;
+						display: block;
+						height: 100%;
+						text-align: right;
 					}
 					.currSemesterCourseWrapC:hover .currSemesterCourseGradeP {
 						color: var(--highlightTextColor);
@@ -608,10 +625,171 @@
 
 	/*SCREEN WIDTH UNDER 1000px*/
 	@media only screen and (max-width: 1000px) {
-		#canvasC {
-			height: 400px;
+		.big_Title {
+			font-size: 32px;
+		}
+		.medium_Title {
+			font-size: 23px;
+		}
+		.small_Title {
+			font-size: 19px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 19px;
+		}
+		.simple_Highlight_Text {
+			font-size: 17px;
+		}
+
+		.simple_Text {
+			font-size: 17px;
+		}
+		.small_Text {
+			font-size: 15px;
+		}
+
+		.button_Text {
+			font-size: 15px;
 		}
 	}
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		.big_Title {
+			font-size: 30px;
+		}
+		.medium_Title {
+			font-size: 22px;
+		}
+		.small_Title {
+			font-size: 18px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 18px;
+		}
+		.simple_Highlight_Text {
+			font-size: 16px;
+		}
+
+		.simple_Text {
+			font-size: 16px;
+		}
+		.small_Text {
+			font-size: 15px;
+		}
+
+		.button_Text {
+			font-size: 15px;
+		}
+
+		/*CHANGE SEMESTER CONTENT*/
+		#titleAboutSemestersChooseC {
+			width: 120px;
+		}
+
+		.verticalDragP {
+			font-size: 15px !important;
+			padding-top: 1.5px;
+		}
+		/**/
+	}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		.big_Title {
+			font-size: 28px;
+		}
+		.medium_Title {
+			font-size: 20px;
+		}
+		.small_Title {
+			font-size: 16px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 16px;
+		}
+		.simple_Highlight_Text {
+			font-size: 15px;
+		}
+
+		.simple_Text {
+			font-size: 15px;
+		}
+		.small_Text {
+			font-size: 14px;
+		}
+
+		.button_Text {
+			font-size: 15px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 450px*/
+	@media only screen and (max-width: 450px) {
+		.big_Title {
+			font-size: 25px;
+		}
+		.medium_Title {
+			font-size: 18px;
+		}
+		.small_Title {
+			font-size: 14px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 15px;
+		}
+		.simple_Highlight_Text {
+			font-size: 14px;
+		}
+
+		.simple_Text {
+			font-size: 12px;
+		}
+		.small_Text {
+			font-size: 11px;
+		}
+
+		.button_Text {
+			font-size: 15px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 350px*/
+	@media only screen and (max-width: 350px) {
+		.big_Title {
+			font-size: 18px;
+		}
+		.medium_Title {
+			font-size: 16px;
+		}
+		.small_Title {
+			font-size: 12px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 13px;
+		}
+		.simple_Highlight_Text {
+			font-size: 12px;
+		}
+
+		.simple_Text {
+			font-size: 10px;
+		}
+		.small_Text {
+			font-size: 9px;
+		}
+
+		.button_Text {
+			font-size: 15px;
+		}
+	}
+
+
 
 
 	/*ANIMATIONS*/
@@ -680,9 +858,6 @@
 	}
 
 	@keyframes AfterTopGroundParAction {
-		0% {
-			font-size: 35px;
-		}
 		20% {
 			color: transparent;
 		}

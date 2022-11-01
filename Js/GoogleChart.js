@@ -14,12 +14,12 @@
 			//ELEMENT THAT CONTAINS ALL CHART ELEMENTS AND LOADER
 			this.elmntOverall = elmntOverall;
 			//SPLIT IT TO ALL ELEMENTS
-			this.elmntChartOverall = this.GetElmntOverall().children[0];
-			this.elmntChartMain = this.GetElmntChartOverall().children[0];
+			this.elmntChartOverall = this.getElmntOverall().children[0];
+			this.elmntChartMain = this.getElmntChartOverall().children[0];
 			
-			this.elmntChartLoadingOverall = this.GetElmntOverall().children[1];
-			this.elmntChartCenterLoading = this.GetElmntChartLoadingOverall().children[0];
-			this.elmntChartCenterLoadingImg = this.GetElmntChartCenterLoading().children[0];
+			this.elmntChartLoadingOverall = this.getElmntOverall().children[1];
+			this.elmntChartCenterLoading = this.getElmntChartLoadingOverall().children[0];
+			this.elmntChartCenterLoadingImg = this.getElmntChartCenterLoading().children[0];
 
 			//FIRST EVER LOADING CHART ANIMATION 
 			this.firstTime = firstTime;
@@ -43,29 +43,29 @@
 		}
 
 		//GETTERS 
-		GetChartType() {
+		getChartType() {
 			return this.chartType;
 		}
 
-		GetChartData() {
+		getChartData() {
 			return this.chartData;
 		}
 
-		GetChartDataAsGoogleDataForm() {
+		getChartDataAsGoogleDataForm() {
 			return this.googleVisualizedChartData;
 		}
-		SetChartDataToGoogleDataForm(newChartData) {
+		setChartDataToGoogleDataForm(newChartData) {
 			this.googleVisualizedChartData = newChartData;
 		}
 
-		GetChartOptions() {
+		getChartOptions() {
 			return this.chartOptions;
 		}
 
-		GetElmntOverall() {
+		getElmntOverall() {
 			return this.elmntOverall;
 		}
-		GetElmntChartOverall() {
+		getElmntChartOverall() {
 			return this.elmntChartOverall;
 		}
 		GetElmntChartMain() {
@@ -75,33 +75,33 @@
 			this.elmntChartMain = elmntChartMain;
 		}
 		
-		GetElmntChartLoadingOverall() {
+		getElmntChartLoadingOverall() {
 			return this.elmntChartLoadingOverall;
 		}
-		GetElmntChartCenterLoading() {
+		getElmntChartCenterLoading() {
 			return this.elmntChartCenterLoading;
 		}
-		GetElmntChartCenterLoadingImg() {
+		getElmntChartCenterLoadingImg() {
 			return this.elmntChartCenterLoadingImg;
 		}
 
-		GetFirstTime() {
+		getFirstTime() {
 			return this.firstTime;
 		}
 
-		GetAfterTime() {
+		getAfterTime() {
 			return this.afterTime;
 		}
 
-		GetElmntTrigR() {
+		getElmntTrigR() {
 			return this.elmntTrigR;
 		}
 
-		GetButtonResize() {
+		getButtonResize() {
 			return this.buttonResize;
 		}
 
-		GetTurningScreenPoint() {
+		getTurningScreenPoint() {
 			return this.turningScreenPoint;
 		}
 
@@ -113,7 +113,7 @@
 			//DRAW NOW FUNCTION
 			this.DrawNow(true);
 
-			this.GetElmntTrigR().name = GetPageWidth();
+			this.getElmntTrigR().name = GetPageWidth();
 
 			this.ResizeTriggersReload();
 			this.ButtonTriggerReload();
@@ -125,28 +125,27 @@
 			//TIME TO DRAW
 			if(firstTime) {
 				google.charts.setOnLoadCallback(function() {
-					thisObj.DrawChart(true, thisObj.GetFirstTime());
+					thisObj.DrawChart(true, thisObj.getFirstTime());
 				});
 			}
 			else {
 				google.charts.setOnLoadCallback(function() {
-					thisObj.DrawChart(true, thisObj.GetAfterTime());
+					thisObj.DrawChart(true, thisObj.getAfterTime());
 				});
 			}
 		}
 
 		DrawChart(firstT, animationTime) {
 			//DATA VISUALIZATION AS GOOGLE WANTS
-			var helper = google.visualization.arrayToDataTable(this.GetChartData());
-			this.SetChartDataToGoogleDataForm(helper);
+			var helper = google.visualization.arrayToDataTable(this.getChartData());
+			this.setChartDataToGoogleDataForm(helper);
 
 			//OPTIONS LAST FIXES BEFORE FUNCTION RUNS
-			this.GetChartOptions().animation.startup = firstT;
-			this.GetChartOptions().animation.duration = animationTime;
+			this.getChartOptions().animation.startup = firstT;
+			this.getChartOptions().animation.duration = animationTime;
 
 			var chartColumn = new google.visualization.ComboChart(this.GetElmntChartMain());
-			chartColumn.draw(this.GetChartDataAsGoogleDataForm(), this.GetChartOptions());
-			console.log(chartColumn);
+			chartColumn.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
 		}
 
 		ResizeTriggersReload() {
@@ -155,20 +154,20 @@
 			window.addEventListener("resize", function() {
 				var pageCurWidth = GetPageWidth();
 
-				if(pageCurWidth != thisObj.GetElmntTrigR().name) {
-					if(thisObj.GetElmntChartCenterLoadingImg().style.animationPlayState != "running") {
+				if(pageCurWidth != thisObj.getElmntTrigR().name) {
+					if(thisObj.getElmntChartCenterLoadingImg().style.animationPlayState != "running") {
 						thisObj.ReloadLoadingAnimation();
 					}
 				}
-				thisObj.GetElmntTrigR().name = GetPageWidth();
+				thisObj.getElmntTrigR().name = GetPageWidth();
 			});
 		}
 
 		ButtonTriggerReload() {
 			var thisObj = this;
 			//LOAD CHART WHEN MENU OPENS AND CLOSES, WHEN WINDOW WIDTH IS MORE THAN 850, CAUSE THERE WAS RESPONSIVENESS ERRORS
-			this.GetButtonResize().addEventListener("click", function() {
-				if(GetPageWidth() > thisObj.GetTurningScreenPoint()) {
+			this.getButtonResize().addEventListener("click", function() {
+				if(GetPageWidth() > thisObj.getTurningScreenPoint()) {
 					thisObj.ReloadLoadingAnimation();
 				}
 			});
@@ -176,29 +175,29 @@
 
 		ReloadLoadingAnimation() {
 			//SPLIT MAIN CONTAINER TO ITS ELEMENTS
-			var chartOverall = this.GetElmntChartOverall();
+			var chartOverall = this.getElmntChartOverall();
 			var chartMain = this.GetElmntChartMain();
 
-			var chartLoadingOverall = this.GetElmntChartLoadingOverall();
-			var chartCenterLoading = this.GetElmntChartCenterLoading();
-			var chartCenterLoadingImg = this.GetElmntChartCenterLoadingImg();
+			var chartLoadingOverall = this.getElmntChartLoadingOverall();
+			var chartCenterLoading = this.getElmntChartCenterLoading();
+			var chartCenterLoadingImg = this.getElmntChartCenterLoadingImg();
 
-			this.GetElmntChartOverall().innerHTML = "";
+			this.getElmntChartOverall().innerHTML = "";
 						
 			var newChartMain = document.createElement("div");
 			newChartMain.id = this.GetElmntChartMain().id;
-			this.GetElmntChartOverall().appendChild(newChartMain);
+			this.getElmntChartOverall().appendChild(newChartMain);
 			this.SetElmntChartMain(newChartMain);
 
-			this.GetElmntChartLoadingOverall().style.display = "block";
-			this.GetElmntChartLoadingOverall().style.zIndex = "0";
-			this.GetElmntChartCenterLoadingImg().style.animationPlayState = "running";
+			this.getElmntChartLoadingOverall().style.display = "block";
+			this.getElmntChartLoadingOverall().style.zIndex = "0";
+			this.getElmntChartCenterLoadingImg().style.animationPlayState = "running";
 			
 			var thisObj = this;
 			setTimeout(function() {
-				thisObj.GetElmntChartLoadingOverall().style.display = "none";
-				thisObj.GetElmntChartLoadingOverall().style.zIndex = "-1";
-				thisObj.GetElmntChartCenterLoadingImg().style.animationPlayState = "paused";
+				thisObj.getElmntChartLoadingOverall().style.display = "none";
+				thisObj.getElmntChartLoadingOverall().style.zIndex = "-1";
+				thisObj.getElmntChartCenterLoadingImg().style.animationPlayState = "paused";
 				google.charts.setOnLoadCallback(function() {
 					thisObj.DrawNow(false);
 				});
@@ -208,9 +207,11 @@
 		//EDIT COLOR OF CHART
 		RecolorSeries(number, color, dataOpacity) {
 			//MAKE THE CHANGE
-			this.GetChartOptions().series[number].color = color;
-			this.GetChartOptions().series[number].dataOpacity = dataOpacity;
-			
+			this.getChartOptions().series[number].color = color;
+			if(dataOpacity != 0) {
+				this.getChartOptions().series[number].dataOpacity = dataOpacity;
+			}
+
 			//TIME TO DRAW
 			var thisObj = this;
 			google.charts.setOnLoadCallback(function() {

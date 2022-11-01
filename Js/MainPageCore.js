@@ -3,12 +3,45 @@
 		constructor(status) {
 			this.status = status;
 
+			this.leftMenuObj;
+			this.topBarObj;
+			this.rightMainObj;
+			this.footerObj;
+
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
 		}
 
 		getStatus() {
 			return this.status;
+		}
+
+		getLeftMenuObj() {
+			return this.leftMenuObj;
+		}
+		setLeftMenuObj(leftMenuObj) {
+			this.leftMenuObj = leftMenuObj;
+		}
+
+		getTopBarObj() {
+			return this.topBarObj;
+		}
+		setTopBarObj(topBarObj) {
+			this.topBarObj = topBarObj;
+		}
+
+		getRightMainObj() {
+			return this.rightMainObj;
+		}
+		setRightMainObj(rightMainObj) {
+			this.rightMainObj = rightMainObj;
+		}
+
+		getFooterObj() {
+			return this.footerObj;
+		}
+		setFooterObj(footerObj) {
+			this.footerObj = footerObj;
 		}
 
 		//EVENT FUNCTIONS FROM HERE
@@ -21,21 +54,21 @@
 
 		InitializeLeftMenu() {
 			//LEFT MENU CLASS OBJECT
-			this.leftMenuObj = new LeftMenu(this.getStatus());
+			this.setLeftMenuObj(new LeftMenu(this.getStatus()));
 		}
 
 		InitializeRightTopScreen() {
 			//TOP BAR CLASS OBJECT
-			this.topBarObj = new TopBar(this.getStatus());
+			this.setTopBarObj(new TopBar(this.getStatus()));
 		}
 
 		InitializeRightMainScreen() {
 			//RIGHT MAIN CLASS OBJECT
-			this.topBarObj = new RightMain(this.getStatus());
+			this.setRightMainObj(new RightMain(this.getStatus()));
 		}
 
 		InitializeFooter() {
 			//FOOTER CLASS OBJECT
-			this.footerObj = new Footer(this.getStatus());
+			this.setFooterObj(new Footer(this.getStatus()));
 		}
 	}

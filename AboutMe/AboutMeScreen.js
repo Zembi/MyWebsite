@@ -2,9 +2,17 @@
 	//ABOUT ME SITE CLASS FOR THE STARTING ACTIONS OF ABOUT ME SCREEN WHEN IT IS LOADED
 	class AboutMeScreen {
 		constructor() {
+			this.mainPageCore;
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
+		}
+
+		getMainPageCore() {
+			return this.mainPageCore;
+		}
+		setMainPageCore(mainPageCore) {
+			this.mainPageCore = mainPageCore;
 		}
 
 		//EVENT FUNCTIONS FROM HERE
@@ -16,6 +24,7 @@
 
 		InitializeMainPageCore() {
 			var mainPageCore = new MainPageCore("About me");
+			this.setMainPageCore(mainPageCore);
 		}
 
 		MainContentButton() {
@@ -33,6 +42,8 @@
 				}
 				else {
 					OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsAndExperienceC, false);
+					//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
+					globalVars.getEduGoogleChart().DrawNow(false);
 					c = false;
 				}
 			});
@@ -83,18 +94,7 @@
 
 			//CHANGE COLORS COMPARED TO CURRENT BACKGROUND PROFILE
 			var changeBackgroundBtn = document.getElementById("changeBackgroundBtn");
-			if(changeBackgroundBtn.name == "prof1") {
-				var color0 = "rgb(255, 255, 255)";
-				var dataOpacity0 = "0.8";
-				
-				var color2 = "white";
-			}
-			else if(changeBackgroundBtn.name == "prof3") {
-				var color0 = "rgb(0, 4, 40)";
-				var dataOpacity0 = "0.6";
-
-				var color2 = "rgb(0, 4, 40)";
-			}
+			
 
 			//LOOK HTML FILE, ELEMENT WITH ID: #chartTitleH FOR CHART TITLE
 			var options = {
@@ -147,8 +147,8 @@
 				seriesType: "bars",
 				series: {
 					0: {
-						color: color0,
-						dataOpacity: dataOpacity0
+						color: "rgb(0, 4, 40)",
+						dataOpacity: "0.6"
 					},
 					1: {
 						color: "rgb(143, 56, 14)",
@@ -156,7 +156,7 @@
 					},
 					2: {
 						type: "line",
-						color: color2
+						color: "rgb(0, 4, 40)"
 					},
 					3: {
 						type: "line",
@@ -177,7 +177,9 @@
 				"Combo=bars+lines", data, options, chartWrapC,
 				4500, 500, triggerElemnt, buttonMenu, 850
 			);
-			globalVars.SetEduGoogleChart(eduGC);
+			globalVars.setEduGoogleChart(eduGC);
+			//RIGHT MAIN AboutMeChartChanges FUNCTION
+			this.getMainPageCore().getRightMainObj().AboutMeChartChanges();
 		}
 
 		InitializeTranscriptOfUniCourses() {
@@ -300,7 +302,26 @@
 				CreateContentOfSemester(courses, 7);
 			}
 
-			CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn);
+			CreateMenuForSemesters();
+			window.addEventListener("resize", function() {
+				CreateMenuForSemesters();
+			})
+
+			function CreateMenuForSemesters() {
+				var semestersTitleC = document.getElementById("semestersTitleC");
+				var currheighOfElmnt = semestersTitleC.offsetHeight - 4;
+				
+				if(GetPageWidth() > 850) {
+					if(currheighOfElmnt != 30) {
+						CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 30);
+					}
+				}
+				else {
+					if(currheighOfElmnt != 22) {
+						CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 22);
+					}
+				}
+			}
 
 			function CreateContentOfSemester(courses, counter) {
 				var average = 0;
@@ -322,15 +343,6 @@
 					currSemesterCourseWrapC.className = "currSemesterCourseWrapC";
 					
 					if(course[1] != null) {
-						var currSemesterCourseC = document.createElement("div");
-						currSemesterCourseC.className = "currSemesterCourseC";
-						var currSemesterCourseP = document.createElement("p");
-						currSemesterCourseP.className = "currSemesterCourseP small_Text";
-						currSemesterCourseP.innerHTML = course[0];
-
-						currSemesterCourseC.appendChild(currSemesterCourseP);
-						currSemesterCourseWrapC.appendChild(currSemesterCourseC);
-
 						var currSemesterCourseGradeC = document.createElement("div");
 						currSemesterCourseGradeC.className = "currSemesterCourseGradeC";
 						var currSemesterCourseGradeP = document.createElement("p");
@@ -339,6 +351,15 @@
 
 						currSemesterCourseGradeC.appendChild(currSemesterCourseGradeP);
 						currSemesterCourseWrapC.appendChild(currSemesterCourseGradeC);
+
+						var currSemesterCourseC = document.createElement("div");
+						currSemesterCourseC.className = "currSemesterCourseC";
+						var currSemesterCourseP = document.createElement("p");
+						currSemesterCourseP.className = "currSemesterCourseP small_Text";
+						currSemesterCourseP.innerHTML = course[0];
+
+						currSemesterCourseC.appendChild(currSemesterCourseP);
+						currSemesterCourseWrapC.appendChild(currSemesterCourseC);
 						semesterMainContentC.appendChild(currSemesterCourseWrapC);
 
 						if((courseCount % 2) == 0) {
