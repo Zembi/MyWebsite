@@ -5,7 +5,8 @@
 			this.rightMainScreen;
 
 			//ABOUT ME PAGE
-			this.googleChart;
+			this.eduGoogleChart;
+			this.skillsGoogleChart = [];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
@@ -20,12 +21,21 @@
 		}
 		////
 
-		//ABOUT ME PAGE
+		//ABOUT ME/EDUCATION PAGE SEMESTERS CHART 
 		getEduGoogleChart() {
-			return this.googleChart;
+			return this.eduGoogleChart;
 		}
-		setEduGoogleChart(googleChart) {
-			this.googleChart = googleChart;
+		setEduGoogleChart(eduGoogleChart) {
+			this.eduGoogleChart = eduGoogleChart;
+		}
+		////
+
+		//ABOUT ME/SKILLS PAGE SEMESTERS CHART 
+		getSkillsGoogleChart(counter) {
+			return this.skillsGoogleChart[counter];
+		}
+		setSkillsGoogleChart(skillsGoogleChart, counter) {
+			this.skillsGoogleChart[counter] = skillsGoogleChart;
 		}
 		////
 

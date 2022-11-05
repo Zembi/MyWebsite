@@ -38,12 +38,32 @@ function GetPageWidth() {
 
 
 //CREATE VERTICAL AND HORIZONTAL MENU OPTIONS
-function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn, heightOfC) {
+function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn, heightOfC, changingHeightOfC) {
 	var counterHelp = 0;
 	var verticalDragElmntC = null;
 	//HEIGHT OF EACH PAR
 	var verticalDragPElmntHeight = heightOfC;
-	placeToBe.style.height = verticalDragPElmntHeight + "px";
+	//MAKE IT RESPONSIVE
+	var onChangeVerticalDragPElmntHeight = changingHeightOfC;
+
+	//
+	if(GetPageWidth() > 850) {
+		placeToBe.style.height = verticalDragPElmntHeight + "px";
+	}
+	else {
+		placeToBe.style.height = onChangeVerticalDragPElmntHeight + "px";
+	}
+	//RESPONSIVENESS REASON
+	window.addEventListener("resize", function() {
+		if(GetPageWidth() > 850) {
+			placeToBe.style.height = verticalDragPElmntHeight + "px";
+		}
+		else {
+			placeToBe.style.height = onChangeVerticalDragPElmntHeight + "px";
+		}
+	});
+	//
+
 	placeToBe.innerHTML = '<div class="verticalDragC"></div>';
 
 	items.forEach(item => {
@@ -60,19 +80,51 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 		elmnt.innerHTML = '<span class="verticalMenuSemesterSp">' + titleFirstPart + ' </span><span class="verticalMenuTextSp">' + titleSecondPart + '</span>';
 
 		verticalDragC.appendChild(elmnt);
-		elmnt.style.height = verticalDragPElmntHeight + "px";
+
+		//
+		if(GetPageWidth() > 850) {
+			elmnt.style.height = verticalDragPElmntHeight + "px";
+		}
+		else {
+			elmnt.style.height = onChangeVerticalDragPElmntHeight + "px";
+		}
+		//RESPONSIVENESS REASON
+		window.addEventListener("resize", function() {
+			if(GetPageWidth() > 850) {
+				elmnt.style.height = verticalDragPElmntHeight + "px";
+			}
+			else {
+				elmnt.style.height = onChangeVerticalDragPElmntHeight + "px";
+			}
+		});
+		//
 
 		if(counterHelp == 0) {
 			elmnt.style.transform = "scale(1.3)";
 		}
 
 		verticalDragElmntC = verticalDragC;
-		verticalDragPElmntHeight = elmnt.offsetHeight;
+
+		//
+		if(GetPageWidth() > 850) {
+			verticalDragPElmntHeight = elmnt.offsetHeight;
+		}
+		else {
+			onChangeVerticalDragPElmntHeight = elmnt.offsetHeight;
+		}
+		//RESPONSIVENESS REASON
+		window.addEventListener("resize", function() {
+			if(GetPageWidth() > 850) {
+				verticalDragPElmntHeight = elmnt.offsetHeight;
+			}
+			else {
+				onChangeVerticalDragPElmntHeight = elmnt.offsetHeight;
+			}
+		});
+		//
 
 		counterHelp++;
 	});
-
-	var getHeightOfSemtext = verticalDragPElmntHeight;
 
 	placeToBe.name = 0;
 	var semestersContentC = document.getElementById("semestersContentC");
@@ -93,9 +145,31 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 				downBtn.style.opacity = 1;
 			}
 
-			var newPos = (getHeightOfSemtext * (currentCounter));
-		
-			verticalDragElmntC.style.marginTop = -newPos + "px";
+			//
+			if(GetPageWidth() > 850) {			
+				var newPos = (verticalDragPElmntHeight * (currentCounter));
+
+				verticalDragElmntC.style.marginTop = -newPos + "px";
+			}
+			else {
+				var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter));
+
+				verticalDragElmntC.style.marginTop = -newPos + "px";
+			}
+			//RESPONSIVENESS REASON
+			window.addEventListener("resize", function() {
+				if(GetPageWidth() > 850) {			
+					var newPos = (verticalDragPElmntHeight * (currentCounter));
+
+					verticalDragElmntC.style.marginTop = -newPos + "px";
+				}
+				else {
+					var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter));
+
+					verticalDragElmntC.style.marginTop = -newPos + "px";
+				}
+			});
+			//
 
 			//TRANSFORM CURRENT PAR SELECTED
 			var helpForCurPar = "verticalDragP" + counter + currentCounter;
@@ -128,7 +202,6 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 	//ADD LIFE TO MOVE DOWN MENU BUTTON
 	downBtn.addEventListener("click", function() {
 		var currentCounter = parseInt(placeToBe.name);
-		var newPos = (getHeightOfSemtext * (currentCounter + 1));
 
 		if(currentCounter < (items.length - 1)) {
 			//IF UP BUTTONS IS HIDDEN SHOW IT
@@ -137,7 +210,31 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 				upBtn.style.opacity = 1;
 			}
 
-			verticalDragElmntC.style.marginTop = -newPos + "px";
+			//
+			if(GetPageWidth() > 850) {
+				var newPos = (verticalDragPElmntHeight * (currentCounter + 1));
+
+				verticalDragElmntC.style.marginTop = -newPos + "px";
+			}
+			else {
+				var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter + 1));
+
+				verticalDragElmntC.style.marginTop = -newPos + "px";
+			}
+			//RESPONSIVENESS REASON
+			window.addEventListener("resize", function() {
+				if(GetPageWidth() > 850) {
+					var newPos = (verticalDragPElmntHeight * (currentCounter + 1));
+
+					verticalDragElmntC.style.marginTop = -newPos + "px";
+				}
+				else {
+					var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter + 1));
+
+					verticalDragElmntC.style.marginTop = -newPos + "px";
+				}
+			});
+			//
 			
 			//TRANSFORM CURRENT PAR SELECTED
 			var helpForCurPar = "verticalDragP" + counter + (currentCounter + 1);

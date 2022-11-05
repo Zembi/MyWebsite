@@ -5,7 +5,7 @@ function LoadBar() {
     c = 1;
 
     var loadingBarC = document.getElementById("loadingBarC");
-    var loadingCountP = document.getElementById("loadingCountP");
+    var loadingCountSp = document.getElementById("loadingCountP").children[0];
     var width = 0;
     
     var id = setInterval(FramePerFrame, 15);
@@ -21,7 +21,7 @@ function LoadBar() {
       else {
         width++;
         loadingBarC.style.width = width + "%";
-        loadingCountP.innerHTML = width + "%";
+        loadingCountSp.innerHTML = width;
       }
     }
   }

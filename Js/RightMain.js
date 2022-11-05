@@ -1,7 +1,17 @@
+/*	DELETE CONSOLE MESSAGE BY SETTING this.console TO FALSE
+*/
 	//RIGHT MAIN CLASS
 	class RightMain {
 		constructor(status) {
+			this.console = false;
+
 			this.status = status;
+
+			//ABOUT ME/EDUCATION PAGE VARIABLES REALLY IMPORTANT FOR CHART'S CREATION AND DISPLAY
+			this.eduChartValue = true;
+
+			//ABOUT ME/SKILLS PAGE ARRAY REALLY IMPORTANT FOR CHART'S CREATION AND DISPLAY
+			this.skillsChartValue = [true, true];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
@@ -9,6 +19,20 @@
 
 		getStatus() {
 			return this.status;
+		}
+
+		getEduChartValue() {
+			return this.eduChartValue;
+		}
+		setEduChartValue(eduChartValue) {
+			this.eduChartValue = eduChartValue;
+		}
+
+		getSkillsChartValue(counter) {
+			return this.skillsChartValue[counter];
+		}
+		setSkillsChartValue(skillsChartValue, counter) {
+			this.skillsChartValue[counter] = skillsChartValue;
 		}
 
 		//EVENT FUNCTIONS FROM HERE
@@ -75,6 +99,8 @@
 				}
 				//ABOUT ME PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "About me") {
+					//IMPORTANT FOR RUNNING
+					var run = false;
 				}
 				//CONTACT PAGE CHANGES INITIALIZE VARIABLES
 				else if(currentObj.getStatus() == "Contact") {
@@ -118,7 +144,9 @@
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 	
-						currentObj.AboutMeChartChanges();
+						currentObj.AboutMeEduChartChanges();
+						currentObj.AboutMeSkillChartChanges(0);
+						currentObj.AboutMeSkillChartChanges(1);
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow5.png')";
@@ -202,7 +230,9 @@
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 						
-						currentObj.AboutMeChartChanges();
+						currentObj.AboutMeEduChartChanges();
+						currentObj.AboutMeSkillChartChanges(0);
+						currentObj.AboutMeSkillChartChanges(1);
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow6.png')";
@@ -218,40 +248,78 @@
 			}
 		}
 
-		AboutMeChartChanges() {
-			if(changeBackgroundBtn.name == "prof1") {
-				//1ST BARS AND LINE
-				var color0 = "rgb(255, 255, 255)";
-				var dataOpacity0 = "0.8";
-				
-				var color2 = "white";
+		AboutMeEduChartChanges() {
+			if(this.getEduChartValue()) {
+				if(changeBackgroundBtn.name == "prof1") {
+					//1ST BARS AND LINE
+					var color0 = "rgb(255, 255, 255)";
+					var dataOpacity0 = "0.8";
+					
+					var color2 = "white";
 
-				//2ND BARS AND LINE
-				var color1 = "rgb(87, 126, 161)";
-				var dataOpacity1 = "0.8";
+					//2ND BARS AND LINE
+					var color1 = "rgb(87, 126, 161)";
+					var dataOpacity1 = "0.8";
 
-				var color3 = "rgb(87, 126, 161)";
+					var color3 = "rgb(87, 126, 161)";
+				}
+				else if(changeBackgroundBtn.name == "prof3") {
+					//1ST BARS AND LINE
+					var color0 = "rgb(0, 4, 40)";
+					var dataOpacity0 = "0.6";
+
+					var color2 = "rgb(0, 4, 40)";
+
+					//2ND BARS AND LINE
+					var color1 = "rgb(143, 56, 14)";
+					var dataOpacity1 = "0.6";
+
+					var color3 = "rgb(143, 56, 14)";
+				}
+
+				//CHECK IF GLOBAL GOOGLE CHART EXISTS
+				if(globalVars.getEduGoogleChart() != null) {
+					globalVars.getEduGoogleChart().RecolorSeries(0, color0, dataOpacity0);
+					globalVars.getEduGoogleChart().RecolorSeries(1, color1, dataOpacity1);
+					globalVars.getEduGoogleChart().RecolorSeries(2, color2, 0);
+					globalVars.getEduGoogleChart().RecolorSeries(3, color3, 0);
+				}
 			}
-			else if(changeBackgroundBtn.name == "prof3") {
-				//1ST BARS AND LINE
-				var color0 = "rgb(0, 4, 40)";
-				var dataOpacity0 = "0.6";
-
-				var color2 = "rgb(0, 4, 40)";
-
-				//2ND BARS AND LINE
-				var color1 = "rgb(143, 56, 14)";
-				var dataOpacity1 = "0.6";
-
-				var color3 = "rgb(143, 56, 14)";
+			else {
+				if(this.console) {
+					console.log(`--WAITING TO RUN MAIN CORE--
+AboutMeEduChartChanges(): in waiting line`);
+				}
 			}
+		}
 
-			//CHECK IF GLOBAL GOOGLE CHART EXISTS
-			if(globalVars.getEduGoogleChart() != null) {
-				globalVars.getEduGoogleChart().RecolorSeries(0, color0, dataOpacity0);
-				globalVars.getEduGoogleChart().RecolorSeries(1, color1, dataOpacity1);
-				globalVars.getEduGoogleChart().RecolorSeries(2, color2, 0);
-				globalVars.getEduGoogleChart().RecolorSeries(3, color3, 0);
+		AboutMeSkillChartChanges(c) {
+			if(this.getSkillsChartValue(c)) {
+				if(changeBackgroundBtn.name == "prof1") {
+					//FULL PIE
+					var color0 = "rgb(255, 255, 255)";
+					
+					//PIE THAT WILL FILL 
+					var color1 = "rgb(87, 126, 161)";
+				}
+				else if(changeBackgroundBtn.name == "prof3") {
+					//FULL PIE
+					var color0 = "rgb(0, 4, 40)";
+					
+					//PIE THAT WILL FILL 
+					var color1 = "rgb(143, 56, 14)";
+				}
+
+				//CHECK IF GLOBAL GOOGLE CHART EXISTS
+				if(globalVars.getSkillsGoogleChart(c) != null) {
+					globalVars.getSkillsGoogleChart(c).RecolorPies(color0, color1);
+				}
+			}
+			else {
+				if(this.console) {
+					console.log(`--WAITING TO RUN MAIN CORE--
+AboutMeSkillChartChanges(` + c + `): in waiting line`);
+				}
 			}
 		}
 	}

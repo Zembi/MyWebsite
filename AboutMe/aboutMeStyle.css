@@ -39,7 +39,7 @@
 		font-size: 24px;
 	}
 	.small_Title {
-		font-size: 20px;
+		font-size: 22px;
 	}
 	.highlight_Title {
 		color: var(--highlightTextColor) !important;
@@ -76,7 +76,7 @@
 		border-radius: 4px;
 		opacity: 0;
 		margin: 80px auto 60px auto;
-		animation: ShowElement 1.5s linear 2.5s 1;
+		animation: ShowElement var(--animationShowLine) linear var(--animationDelayShowLine) 1;
 		animation-fill-mode: forwards;
 	}
 
@@ -86,7 +86,7 @@
 	}
 
 	.animSlideIn {
-		animation: SendScreenInView var(--animationEnter) ease-out 1;
+		animation: SendScreenInViewWithSkew var(--animationEnter) ease-out 1;
 		animation-fill-mode: forwards;
 	}
 
@@ -242,7 +242,7 @@
 				opacity: 0;
 				margin: 0;
 				padding: 10px 0 5px 0;
-				animation: SendScreenInView 1s ease-out calc(var(--animationWaitToEnter)) 1;
+				animation: SendScreenInViewWithSkew 1s ease-out calc(var(--animationWaitToEnter)) 1;
 				animation-fill-mode: forwards;
 			}
 		
@@ -617,10 +617,104 @@
 			}
 
 		/*POINT1998*/
-		#aboutMeSkillsAndExperienceC {
-			height: 100px;
-			background: green;
+		#aboutMeSkillsC {
+			background: transparent;
 		}
+		#aboutMeSkillsIntroC {
+			position: relative;
+			display: block;
+			width: 80%;
+			background: transparent;
+			box-sizing: border-box;
+			margin: auto; margin-top: 40px; margin-bottom: -20px;
+			padding: 0 10px 0 10px;
+		}
+			#aboutMeSkillsIntroC h2 {
+				position: relative;
+				display: block;
+				text-align: center;
+				margin: 0 0 10px 0;
+			}
+			#aboutMeSkillsIntroC p {
+				position: relative;
+				display: block;
+				text-align: center;
+			}
+
+		.aboutMeSkillWrapC {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+		.skillOverallWrapC {
+			position: relative;
+			display: block;
+			width: 100%;
+			overflow: auto;
+		}
+			.skillOverallLeftC {
+				position: relative;
+				display: block;
+				float: left;
+				width: 50%;
+			}
+			.skillOverallChartC {
+				position: relative;
+				display: block;
+				width: 100%; height: 200px;
+				overflow: hidden;
+				animation: SendScreenInView var(--animationEnter) linear 1;
+				animation-fill-mode: forwards;
+			}
+				.chartSkillsCC {
+					position: absolute;
+					display: block;
+					wdith: 100%; height: 100%;
+					left: 0; right: 0;
+					overflow: hidden;
+				}
+				.chartSkillsC {
+					position: relative;
+					width: 100%; height: 100%;
+					background: transparent;
+				}
+
+				.skillsChartLoadingFullC {
+					position: absolute;
+					display: none;
+					width: 90%; height: 90%;
+					background: rgba(0, 0, 0, 0.6);
+					border: 2px solid rgb(117, 42, 6);
+					top: 50%;
+					left: 50%;
+					z-index: -1;
+					transform: translate(-50%, -50%);
+				}
+				.skillsChartCenterLoaderC {
+					position: relative;
+					display: block;
+					width: 8vw; height: 8vw;
+					max-width: 100px; max-height: 100px;
+					background: transparent;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+				.skillsChartCenterLoaderImg {
+					position: relative;
+					display: block;
+					width: 100%; height: 100%;
+					content: url("../Assets/loading1.png");
+					animation: LoadingCharts 0.5s ease-in-out infinite;
+					animation-play-state: paused;
+				}
+
+			.skillOverallRightC {
+				position: relative;
+				display: block;
+				float: right;
+				width: 50%; height: 200px;
+			}
 
 
 	/*SCREEN WIDTH UNDER 1000px*/
@@ -691,7 +785,7 @@
 
 		.verticalDragP {
 			font-size: 15px !important;
-			padding-top: 1.5px;
+			padding-top: 1px;
 		}
 		/**/
 	}
@@ -898,7 +992,7 @@
 		}
 	}
 
-	@keyframes SendScreenInView {
+	@keyframes SendScreenInViewWithSkew {
 		0% {
 			left: 0;
 			opacity: 0;
@@ -913,6 +1007,22 @@
 			transform: translate(-50%, 0) skew(0deg);
 		}
 	}
+	@keyframes SendScreenInView {
+		0% {
+			left: 0;
+			opacity: 0;
+			transform: translate(-100%, 0);
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+
 
 	@keyframes Loader {
 		0% {

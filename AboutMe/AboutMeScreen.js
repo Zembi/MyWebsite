@@ -4,8 +4,25 @@
 		constructor() {
 			this.mainPageCore;
 
+			this.countEduCharts = 0;
+			this.countSkillsCharts = 0;
+
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
+		}
+
+		getCountEduCharts() {
+			return this.countEduCharts;
+		}
+		setCountEduCharts(countEduCharts) {
+			this.countEduCharts = countEduCharts;
+		}
+
+		getCountSkillsCharts() {
+			return this.countSkillsCharts;
+		}
+		setCountSkillsCharts(countSkillsCharts) {
+			this.countSkillsCharts = countSkillsCharts;
 		}
 
 		getMainPageCore() {
@@ -19,7 +36,8 @@
 		Main() {
 			this.InitializeMainPageCore();
 			this.MainContentButton();
-			this.InitializeAboutMeMenuItems();
+			this.InitializeAboutMeMenuEducationItems();
+			this.InitializeAboutMeMenuSkillsItems();
 		}
 
 		InitializeMainPageCore() {
@@ -28,27 +46,31 @@
 		}
 
 		MainContentButton() {
-			var c = false;
+			var c = true;
 			var changeContentAboutMeBtn = document.getElementById("changeContentAboutMeBtn");
 			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
-			var aboutMeSkillsAndExperienceC = document.getElementById("aboutMeSkillsAndExperienceC");
+			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
 
-			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsAndExperienceC, true);
+			OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
+			//OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
 
 			changeContentAboutMeBtn.addEventListener("click", function() {
 				if(!c) {
-					OpenedAboutMeContent(aboutMeSkillsAndExperienceC, aboutMeEducationC, false);
+					OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, false, "SKILLS");
 					c = true;
 				}
 				else {
-					OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsAndExperienceC, false);
+					OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, false, "EDUCATION");
 					//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
 					globalVars.getEduGoogleChart().DrawNow(false);
 					c = false;
 				}
 			});
 
-			function OpenedAboutMeContent(elementToShow, elementToHide, firstTimeCall) {
+			function OpenedAboutMeContent(elementToShow, elementToHide, firstTimeCall, subPageTitleName) {
+				var titleEducationH = document.getElementById("titleEducationH");
+				titleEducationH.innerHTML = subPageTitleName;
+
 				elementToHide.style.display = "none";
 				elementToHide.style.opacity = "0";
 				elementToHide.style.transform = "translateX(-100%) skew(-90deg)";
@@ -62,23 +84,31 @@
 					document.documentElement.style.setProperty("--animationWaitToEnter", "0.6s");
 					document.documentElement.style.setProperty("--step2", "0.2s");
 
+
 					document.documentElement.style.setProperty("--animationShow", "2s");
 					document.documentElement.style.setProperty("--animationWaitToShow", "1.2s");
 					document.documentElement.style.setProperty("--step3", "1s");
+
+					document.documentElement.style.setProperty("--animationShowLine", "1s");
+					document.documentElement.style.setProperty("--animationDelayShowLine", "2s");
 				}
 				else {
 					document.documentElement.style.setProperty("--animationEnter", "0.3s");
 					document.documentElement.style.setProperty("--animationWaitToEnter", "0.1s");
 					document.documentElement.style.setProperty("--step2", "0.1s");
 
-					document.documentElement.style.setProperty("--animationShow", "0.8s");
+					document.documentElement.style.setProperty("--animationShow", "1s");
 					document.documentElement.style.setProperty("--animationWaitToShow", "0s");
 					document.documentElement.style.setProperty("--step3", "0s");
+
+					document.documentElement.style.setProperty("--animationShowLine", "1s");
+					document.documentElement.style.setProperty("--animationDelayShowLine", "0.4s");
 				}
 			}
 		}
 
-		InitializeAboutMeMenuItems() {
+		/*EDUCATION PART*/
+		InitializeAboutMeMenuEducationItems() {
 			this.LoadGoogleCharts();
 			this.InitializeTranscriptOfUniCourses();
 		}
@@ -91,10 +121,6 @@
 				["3", 7.667, 7.167, 7.667, 7.167],
 				["4", 9, 8.6, 9, 8.6],
 			];
-
-			//CHANGE COLORS COMPARED TO CURRENT BACKGROUND PROFILE
-			var changeBackgroundBtn = document.getElementById("changeBackgroundBtn");
-			
 
 			//LOOK HTML FILE, ELEMENT WITH ID: #chartTitleH FOR CHART TITLE
 			var options = {
@@ -171,15 +197,16 @@
 			};
 
 			var chartWrapC = document.getElementById("chartWrapC");
-			var triggerElemnt = document.getElementById("aboutMeBodyC");
+			var triggerElemnt = document.getElementById("aboutMeEducationC");
 			var buttonMenu = document.getElementById("openMenuBtn");
 			var eduGC = new GoogleChart(
-				"Combo=bars+lines", data, options, chartWrapC,
+				"Combo", data, options, chartWrapC,
 				4500, 500, triggerElemnt, buttonMenu, 850
 			);
 			globalVars.setEduGoogleChart(eduGC);
-			//RIGHT MAIN AboutMeChartChanges FUNCTION
-			this.getMainPageCore().getRightMainObj().AboutMeChartChanges();
+			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
+			this.getMainPageCore().getRightMainObj().setEduChartValue(eduGC.getStatus());
+			this.getMainPageCore().getRightMainObj().AboutMeEduChartChanges();
 		}
 
 		InitializeTranscriptOfUniCourses() {
@@ -303,23 +330,20 @@
 			}
 
 			CreateMenuForSemesters();
-			window.addEventListener("resize", function() {
-				CreateMenuForSemesters();
-			})
 
 			function CreateMenuForSemesters() {
 				var semestersTitleC = document.getElementById("semestersTitleC");
 				var currheighOfElmnt = semestersTitleC.offsetHeight - 4;
-				
+
+				CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 30, 22);
+
 				if(GetPageWidth() > 850) {
-					if(currheighOfElmnt != 30) {
-						CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 30);
-					}
+					//if(currheighOfElmnt != 30) {
+					//}
 				}
 				else {
-					if(currheighOfElmnt != 22) {
-						CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 22);
-					}
+					//if(currheighOfElmnt != 22) {
+					//}
 				}
 			}
 
@@ -402,8 +426,98 @@
 				semesterTitleAverageSp.innerHTML = average;
 			}
 		}
+		////
 
+		/*SKILLS PART*/
+		InitializeAboutMeMenuSkillsItems() {
+			this.LoadSkills();
+		}
+		
+		LoadSkills() {
+			this.HtmlSkillView(90);
+			this.CssSkillView(90);
+		}
 
+		HtmlSkillView(animationPercent) {
+			var chartType = "Pie";
+
+			var data = [
+				["Task", "Percent"],
+				["Knoweledge of Html", 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				width: "100%",
+				height: "100%",
+				legend: "none",
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["rgb(87, 126, 161)", "rgb(255, 255, 255)"]
+			};
+
+			var firstTime = 4500;
+			var afterFirstTIme = 500;
+			var turningScreenPoint = 850;
+
+			var skillsPlaceToBe = document.getElementById("first");
+			var skillsText = "flkefjef jefjehfjeh fjeh fje";
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint,  skillsPlaceToBe, skillsText, animationPercent);
+		}
+
+		CssSkillView(animationPercent) {
+			var chartType = "Pie";
+
+			var data = [
+				["Task", "Percent"],
+				["Knoweledge of Css", 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				width: "100%",
+				height: "100%",
+				legend: "none",
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["rgb(87, 126, 161)", "rgb(255, 255, 255)"]
+			};
+
+			var firstTime = 4500;
+			var afterFirstTIme = 500;
+			var turningScreenPoint = 850;
+
+			var skillsPlaceToBe = document.getElementById("second");
+			var skillsText = "flkefjef jefjehfjeh fjeh fje";
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint,  skillsPlaceToBe, skillsText, animationPercent);
+		}
+
+		SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsText, animationPercent) {
+			var c = this.getCountSkillsCharts();
+			
+			var triggerElemnt = document.getElementById("first");
+			var buttonMenu = document.getElementById("openMenuBtn");
+
+			var skillGC = new GoogleChart(
+				chartType, data, options, null,
+				firstTime, afterFirstTIme, skillsPlaceToBe, buttonMenu, turningScreenPoint
+			);
+			globalVars.setSkillsGoogleChart(skillGC, c);
+			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
+
+			var skill1 = new Skill(skillGC, skillsPlaceToBe, skillsText, c);
+			skill1.PrototypePieOfHorizontalView(animationPercent);
+			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skillGC.getStatus(), c);
+			this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(c);
+
+			c++;
+			this.setCountSkillsCharts(c);
+		}
+		////
 
 		AboutMeMainContent() {
 			$(window).scroll(function() {
