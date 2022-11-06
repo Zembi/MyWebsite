@@ -1,6 +1,9 @@
 	//CLASS THAT CARRIES ALL GLOBAL VARIABLES ABOUT ME PAGE
 	class GlobalVariables {
 		constructor() {
+			//CONSOLE SHOW MESSAGES OR NOT
+			this.console = false;
+
 			//OVERALL PAGES
 			this.rightMainScreen;
 
@@ -13,6 +16,13 @@
 		}
 
 		//OVERALL PAGES
+		getConsole() {
+			return this.console;
+		}
+		setConsole(console) {
+			this.console = console;
+		}
+
 		getRightMainScreen() {
 			return this.rightMainScreen;
 		}

@@ -3,7 +3,7 @@
 	//RIGHT MAIN CLASS
 	class RightMain {
 		constructor(status) {
-			this.console = false;
+			this.console = globalVars.getConsole();
 
 			this.status = status;
 
@@ -297,22 +297,76 @@ AboutMeEduChartChanges(): in waiting line`);
 			if(this.getSkillsChartValue(c)) {
 				if(changeBackgroundBtn.name == "prof1") {
 					//FULL PIE
-					var color0 = "rgb(255, 255, 255)";
+					var color0 = "white";
+					var fontColor0 = color0;
 					
 					//PIE THAT WILL FILL 
-					var color1 = "rgb(87, 126, 161)";
+					var color1 = null;
+					var fontColor1 = null;
+
+					var darkerFontColor = "rgb(87, 126, 161)";
+					var lighterFontColor = "white";
+
+					//MAIN COLOR rgb(87, 126, 161)
+					if(c == 0) {
+						//90% OF COLOR
+						color1 = "rgb(222, 229, 237)";
+						fontColor1 = darkerFontColor;
+					}
+					else if(c == 1) {
+						//80% OF COLOR
+						color1 = "rgb(189, 203, 219)";
+						fontColor1 = darkerFontColor;
+					}
+					else if(c == 2) {
+						//70% OF COLOR
+						color1 = "rgb(156, 180, 201)";
+						fontColor1 = lighterFontColor;
+					}
+					else if(c == 3) {
+						//60% OF COLOR
+						color1 = "rgb(123, 155, 183)";
+						fontColor1 = lighterFontColor;
+					}
 				}
 				else if(changeBackgroundBtn.name == "prof3") {
 					//FULL PIE
-					var color0 = "rgb(0, 4, 40)";
+					var color0 = "white";
+					var fontColor0 = color0;
 					
 					//PIE THAT WILL FILL 
-					var color1 = "rgb(143, 56, 14)";
+					var color1 = null;
+					var fontColor1 = null;
+
+					var darkerFontColor = "rgb(143, 56, 14)";
+					var lighterFontColor = "white";
+
+					//MAIN COLOR rgb(143, 56, 14)
+					if(c == 0) {
+						//90% OF COLOR
+						color1 = "rgb(250, 223, 209)";
+						fontColor1 = darkerFontColor;
+					}
+					else if(c == 1) {
+						//80% OF COLOR
+						color1 = "rgb(245, 190, 163)";
+						fontColor1 = darkerFontColor;
+					}
+					else if(c == 2) {
+						//70% OF COLOR
+						color1 = "rgb(240, 158, 117)";
+						fontColor1 = lighterFontColor;
+					}
+					else if(c == 3) {
+						//60% OF COLOR
+						color1 = "rgb(235, 126, 71)";
+						fontColor1 = lighterFontColor;
+					}
 				}
 
 				//CHECK IF GLOBAL GOOGLE CHART EXISTS
 				if(globalVars.getSkillsGoogleChart(c) != null) {
-					globalVars.getSkillsGoogleChart(c).RecolorPies(color0, color1);
+					globalVars.getSkillsGoogleChart(c).RecolorPies(color0, color1, fontColor0, fontColor1);
 				}
 			}
 			else {

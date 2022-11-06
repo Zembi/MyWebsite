@@ -37,6 +37,18 @@ function GetPageWidth() {
 ////
 
 
+//CLEAR ALL INTERVALS
+function ClearAllIntervals() {
+	var intervalId = window.setInterval(function() {}, Number.MAX_SAFE_INTEGER);
+	
+	//CLEAR ANY TIMEOUT/INTERVAL UP TO THAT ID
+	for(var i = 1; i < intervalId; i++) {
+		window.clearInterval(i);
+	}
+}
+////
+
+
 //CREATE VERTICAL AND HORIZONTAL MENU OPTIONS
 function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn, heightOfC, changingHeightOfC) {
 	var counterHelp = 0;

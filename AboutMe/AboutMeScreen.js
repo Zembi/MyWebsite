@@ -35,9 +35,9 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
-			this.MainContentButton();
 			this.InitializeAboutMeMenuEducationItems();
 			this.InitializeAboutMeMenuSkillsItems();
+			this.MainContentButton();
 		}
 
 		InitializeMainPageCore() {
@@ -46,15 +46,18 @@
 		}
 
 		MainContentButton() {
-			var c = true;
+			var c = false;
 			var changeContentAboutMeBtn = document.getElementById("changeContentAboutMeBtn");
 			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
 			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
+			var thisObj = this;
 
-			OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
-			//OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
+			//OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
+			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
 
 			changeContentAboutMeBtn.addEventListener("click", function() {
+				//MAKE SURE ALL INTERVALS ARE CLOSED
+				ClearAllIntervals();
 				if(!c) {
 					OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, false, "SKILLS");
 					c = true;
@@ -103,6 +106,17 @@
 
 					document.documentElement.style.setProperty("--animationShowLine", "1s");
 					document.documentElement.style.setProperty("--animationDelayShowLine", "0.4s");
+					
+					if(elementToShow.id == "aboutMeEducationC") {
+
+					}
+					else if(elementToShow.id == "aboutMeSkillsC") {
+						//SKILLS CHART 1
+						globalVars.getSkillsGoogleChart(0).PieAnimation();
+
+						//SKILLS CHART 2
+						globalVars.getSkillsGoogleChart(1).PieAnimation();
+					}
 				}
 			}
 		}
@@ -449,22 +463,36 @@
 
 			var options = {
 				title: "",
+				is3D: true,
 				width: "100%",
 				height: "100%",
 				legend: "none",
 				pieStartAngle: 0,
 				backgroundColor: "transparent",
-				colors: ["rgb(87, 126, 161)", "rgb(255, 255, 255)"]
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
 			};
 
 			var firstTime = 4500;
 			var afterFirstTIme = 500;
 			var turningScreenPoint = 850;
 
-			var skillsPlaceToBe = document.getElementById("first");
+			var skillsPlaceToBe = document.getElementById("htmlWrapC");
+			var skillsTitle = "HTML";
 			var skillsText = "flkefjef jefjehfjeh fjeh fje";
 
-			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint,  skillsPlaceToBe, skillsText, animationPercent);
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
 		}
 
 		CssSkillView(animationPercent) {
@@ -478,12 +506,25 @@
 
 			var options = {
 				title: "",
+				is3D: true,
 				width: "100%",
 				height: "100%",
 				legend: "none",
 				pieStartAngle: 0,
 				backgroundColor: "transparent",
-				colors: ["rgb(87, 126, 161)", "rgb(255, 255, 255)"]
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
 			};
 
 			var firstTime = 4500;
@@ -491,15 +532,15 @@
 			var turningScreenPoint = 850;
 
 			var skillsPlaceToBe = document.getElementById("second");
+			var skillsTitle = "CSS";
 			var skillsText = "flkefjef jefjehfjeh fjeh fje";
 
-			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint,  skillsPlaceToBe, skillsText, animationPercent);
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
 		}
 
-		SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsText, animationPercent) {
+		SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent) {
 			var c = this.getCountSkillsCharts();
-			
-			var triggerElemnt = document.getElementById("first");
+
 			var buttonMenu = document.getElementById("openMenuBtn");
 
 			var skillGC = new GoogleChart(
@@ -509,7 +550,7 @@
 			globalVars.setSkillsGoogleChart(skillGC, c);
 			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
 
-			var skill1 = new Skill(skillGC, skillsPlaceToBe, skillsText, c);
+			var skill1 = new Skill(skillGC, skillsPlaceToBe, skillsTitle, skillsText, c);
 			skill1.PrototypePieOfHorizontalView(animationPercent);
 			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skillGC.getStatus(), c);
 			this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(c);

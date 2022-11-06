@@ -1,12 +1,14 @@
 	
 	//GOOGLE CHART CORE CLASS
 	class Skill {
-		constructor(googleChart, placeToBe, text, counter) {
+		constructor(googleChart, placeToBe, title, text, counter) {
 			//MY OBJECT FOR GOOGLE CHARTS
 			this.googleChart = googleChart;
 
 			//ELEMENT WHERE CHART AND INFO ABOUT MY SKILLS WILL BE CREATED AND DISPLAYED
 			this.placeToBe = placeToBe;
+
+			this.title = title;
 
 			this.text = text;
 
@@ -23,6 +25,10 @@
 			return this.placeToBe;
 		}
 
+		getTitle() {
+			return this.title;
+		}
+
 		getText() {
 			return this.text;
 		}
@@ -37,6 +43,12 @@
 
 		PrototypePieOfHorizontalView(percentToReach) {
 			this.getPlaceToBe().innerHTML = `
+				<div class="skillOverallWrapTitleC">
+					<div class="skillOverallTitleC">
+						<h2 class="skillOverallTitleH small_Title">` + this.getTitle() + `</h2>
+					</div>
+				</div>
+
 				<div class="skillOverallWrapC">
 					<div class="skillOverallLeftC">
 						<div id="chartWrap` + this.getCounter() + `C" class="skillOverallChartC">
@@ -52,7 +64,7 @@
 					</div>
 					
 					<div class="skillOverallRightC">
-						
+						<div class="skillOverallTextWrapC animShow">` + this.getText() + `</div>
 					</div>
 				</div>
 			`;
@@ -63,7 +75,5 @@
 			this.getGoogleChart().setElmntOverall(getChartPlaceId);
 			this.getGoogleChart().setPieAnimLvl(percentToReach);
 			this.getGoogleChart().Main();
-
-			//console.log(this.getGoogleChart());
 		}
 	}

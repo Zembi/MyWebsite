@@ -41,7 +41,7 @@
 	//GOOGLE CHART CORE CLASS
 	class GoogleChart {
 		constructor(chartType, chartData, chartOptions, elmntOverall, firstTime, afterTime, elmntTrigR, buttonResize, turningScreenPoint) {
-			this.console = false;
+			this.console = globalVars.getConsole();
 
 			//MONITOR PROCCESS AND IF SOMETHING GOES WRONG GIVE FALSE VALUE, OTHERWISE TRUE AND RETURN IT
 			this.status = false;
@@ -103,7 +103,7 @@ current value of elmntOverall: ` + this.getElmntOverall());
 			}
 
 			//PIE ANIMATION WHERE TO REACH IN %
-			this.pieAnimLvl = 70;
+			this.pieAnimLvl = null;
 			this.currPieAnimLvl = 0;
 			this.firstTimeLoading = true;
 
@@ -217,6 +217,13 @@ current value of elmntOverall: ` + this.getElmntOverall());
 			this.firstTimeLoading = firstTimeLoading;
 		}
 
+		getChartObjectToDraw() {
+			return this.chartObjectToDraw;
+		}
+		setChartObjectToDraw(chartObjectToDraw) {
+			this.chartObjectToDraw = chartObjectToDraw;
+		}
+
 		//DIFFERENT FUNCTIONS FROM NOW ON
 		Main() {
 			//LOAD LIBRARY
@@ -276,33 +283,39 @@ current value of elmntOverall: ` + this.getElmntOverall());
 			var helper = google.visualization.arrayToDataTable(this.getChartData());
 			this.setChartDataToGoogleDataForm(helper);
 
+			this.setChartObjectToDraw(null);
+
 			var chartObj = null;
-			var thisObj = this;
 
 			if(this.getChartType() == "GeoChart")  {
 				chartObj = new google.visualization.GeoChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Scatter")  {
 				chartObj = new google.visualization.ScatterChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Column")  {
 				chartObj = new google.visualization.ColumnChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Histogram")  {
 				chartObj = new google.visualization.Histogram(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Bar")  {
 				chartObj = new google.visualization.BarChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Combo")  {
 				//OPTIONS LAST FIXES BEFORE FUNCTION RUNS
@@ -310,61 +323,87 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				this.getChartOptions().animation.duration = animationTime;
 
 				chartObj = new google.visualization.ComboChart(this.getElmntChartMain());
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
+				this.setChartObjectToDraw(chartObj);
+
+				this.ReDrawChartRightNow();
+				//chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
 			}
 			else if(this.getChartType() == "Area")  {
 				chartObj = new google.visualization.AreaChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "SteppedArea")  {
 				chartObj = new google.visualization.SteppedAreaChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Line")  {
 				chartObj = new google.visualization.LineChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
 			}
 			else if(this.getChartType() == "Pie")  {
 				chartObj = new google.visualization.PieChart(this.getElmntChartMain());
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
-				
-					thisObj.PieAnimation();
+				this.setChartObjectToDraw(chartObj);
+
+				this.ReDrawChartRightNow();
+				//IF IT HAVE ALREADY LOAD ANIMATION ONCE, JUST SHOW CHART
+				if(!this.getFirstTimeLoading()) {
+					this.PieUnableAnimation();
+				}
 			}
 			else if(this.getChartType() == "BubbleChart")  {
 				chartObj = new google.visualization.BubbleChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "OrgChart")  {
 				chartObj = new google.visualization.OrgChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "TreeMap")  {
 				chartObj = new google.visualization.TreeMap(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Table")  {
 				chartObj = new google.visualization.Table(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Gauge")  {
 				chartObj = new google.visualization.Gauge(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
 			else if(this.getChartType() == "Candlestick")  {
 				chartObj = new google.visualization.CandlestickChart(this.getElmntChartMain());
+				this.setChartObjectToDraw(chartObj);
+
 				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
-				this.chartObjectToDraw = chartObj;
 			}
+
+			this.setChartObjectToDraw(chartObj);
 		}
+
+		ReDrawChartRightNow() {
+			var thisObj = this;
+
+			google.charts.setOnLoadCallback(function() {
+				thisObj.getChartObjectToDraw().draw(thisObj.getChartDataAsGoogleDataForm(), thisObj.getChartOptions());
+			});
+		}
+
 
 		ResizeTriggersReload() {
 			var thisObj = this;
@@ -416,9 +455,10 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				thisObj.getElmntChartLoadingOverall().style.display = "none";
 				thisObj.getElmntChartLoadingOverall().style.zIndex = "-1";
 				thisObj.getElmntChartCenterLoadingImg().style.animationPlayState = "paused";
+				console.log(thisObj.getChartObjectToDraw());
 				google.charts.setOnLoadCallback(function() {
 					thisObj.DrawNow(false);
-				});
+				});	
 			}, 500);
 		}
 
@@ -431,11 +471,10 @@ current value of elmntOverall: ` + this.getElmntOverall());
 			}
 
 			//TIME TO DRAW
-			var thisObj = this;
-			google.charts.setOnLoadCallback(function() {
-				thisObj.DrawNow(false);
-			});
+			this.ReDrawChartRightNow();
 		}
+
+
 
 		//MAKE ABLE TO ANIMATE A PIE CHART
 		PieAnimation() {
@@ -448,8 +487,8 @@ current value of elmntOverall: ` + this.getElmntOverall());
 						//CHECK IF REACHED THE VALUE WE WANT
 						if(currPrecent >= thisObj.getPieAnimLvl()) {
 							//STOP THE LOOP
-							clearInterval(handler);
 							thisObj.setFirstTimeLoading(false);
+							clearInterval(handler);
 						}
 						else {
 							currPrecent += 1;
@@ -460,10 +499,13 @@ current value of elmntOverall: ` + this.getElmntOverall());
 							thisObj.getChartDataAsGoogleDataForm().setValue(0, 1, currPrecent);
 
 							//UPDATE THE PIE
-							thisObj.chartObjectToDraw.draw(thisObj.getChartDataAsGoogleDataForm(), thisObj.getChartOptions());
+							thisObj.ReDrawChartRightNow();
 						}
 					}, 50);
-				}, 800);
+				}, 100);
+
+				//STOP THE LOOP
+				thisObj.setFirstTimeLoading(false);
 			}
 			else {
 				this.PieUnableAnimation();
@@ -472,24 +514,24 @@ current value of elmntOverall: ` + this.getElmntOverall());
 
 		//UNABLE ANIMATION OF PIE CHART
 		PieUnableAnimation() {
-			console.log(100 - this.getPieAnimLvl());
+			this.setFirstTimeLoading(false);
+
 			//APPLY CURRENT VALUES
 			this.getChartDataAsGoogleDataForm().setValue(1, 1, 100 - this.getPieAnimLvl());
 			this.getChartDataAsGoogleDataForm().setValue(0, 1, this.getPieAnimLvl());
 
 			//UPDATE THE PIE
-			this.chartObjectToDraw.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+			this.ReDrawChartRightNow();
 		}
 
 		//EDIT COLOR OF PIE CHART
-		RecolorPies(color0, color1) {
+		RecolorPies(color0, color1, fontColor0, fontColor1) {
 			//MAKE THE CHANGE
 			this.getChartOptions().colors = [color1, color0];
+			this.getChartOptions().slices[0].textStyle.color = fontColor1;
+			this.getChartOptions().slices[1].textStyle.color = fontColor0;
 
 			//TIME TO DRAW
-			var thisObj = this;
-			google.charts.setOnLoadCallback(function() {
-				thisObj.DrawNow(false);
-			});
+			this.ReDrawChartRightNow();
 		}
 	}
