@@ -531,7 +531,7 @@
 			var afterFirstTIme = 500;
 			var turningScreenPoint = 850;
 
-			var skillsPlaceToBe = document.getElementById("second");
+			var skillsPlaceToBe = document.getElementById("cssWrapC");
 			var skillsTitle = "CSS";
 			var skillsText = "flkefjef jefjehfjeh fjeh fje";
 
