@@ -48,6 +48,49 @@ function ClearAllIntervals() {
 }
 ////
 
+//CHECK IF GIVEN ELEMENT IS ON VIEWPORT (ENTIRE ELEMENT IN VIEW)
+function CheckEntireElementInViewport(el) {
+	var top = el.offsetTop;
+	var left = el.offsetLeft;
+	var width = el.offsetWidth;
+	var height = el.offsetHeight;
+
+	while(el.offsetParent) {
+		el = el.offsetParent;
+		top += el.offsetTop;
+		left += el.offsetLeft;
+	}
+			
+	return (
+		top >= window.pageYOffset &&
+		left >= window.pageXOffset &&
+		(top + height) <= (window.pageYOffset + window.innerHeight) &&
+		(left + width) <= (window.pageXOffset + window.innerWidth)
+	);
+}
+
+//CHECK IF GIVEN ELEMENT IS ON VIEWPORT (PART OF ELEMENT IN VIEW)
+function CheckPartOfElementInViewport(el) {
+	var top = el.offsetTop;
+	var left = el.offsetLeft;
+	var width = el.offsetWidth;
+	var height = el.offsetHeight;
+
+	while(el.offsetParent) {
+		el = el.offsetParent;
+		top += el.offsetTop;
+		left += el.offsetLeft;
+	}
+
+	return (
+		top < (window.pageYOffset + window.innerHeight) &&
+		left < (window.pageXOffset + window.innerWidth) &&
+		(top + height) > window.pageYOffset &&
+		(left + width) > window.pageXOffset
+	);
+}
+////
+
 
 //CREATE VERTICAL AND HORIZONTAL MENU OPTIONS
 function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn, heightOfC, changingHeightOfC) {

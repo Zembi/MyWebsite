@@ -64,7 +64,7 @@
 					</div>
 					
 					<div class="skillOverallRightC">
-						<div class="skillOverallTextWrapC animShow">` + this.getText() + `</div>
+						<div id="skillOverallTextWrap` + this.getCounter() + `C" class="skillOverallTextWrapC animShow">` + this.getText() + `</div>
 					</div>
 				</div>
 			`;
@@ -75,5 +75,8 @@
 			this.getGoogleChart().setElmntOverall(getChartPlaceId);
 			this.getGoogleChart().setPieAnimLvl(percentToReach);
 			this.getGoogleChart().Main();
+
+			//var unqiueId = "skillOverallTextWrap" + this.getCounter() + "C";
+			//var l = document.getElementById(unqiueId);
 		}
 	}

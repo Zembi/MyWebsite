@@ -35,9 +35,9 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
+			this.MainContentButton();
 			this.InitializeAboutMeMenuEducationItems();
 			this.InitializeAboutMeMenuSkillsItems();
-			this.MainContentButton();
 		}
 
 		InitializeMainPageCore() {
@@ -52,8 +52,8 @@
 			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
 			var thisObj = this;
 
-			//OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
-			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
+			OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
+			//OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
 
 			changeContentAboutMeBtn.addEventListener("click", function() {
 				//MAKE SURE ALL INTERVALS ARE CLOSED
@@ -559,16 +559,6 @@
 			this.setCountSkillsCharts(c);
 		}
 		////
-
-		AboutMeMainContent() {
-			$(window).scroll(function() {
-			    if ($('#chartCC').is(':in-viewport')) {
-			        alert(1);
-			    } else {
-			    	alert(0);
-			    }
-			});
-		}
 	}
 
 	var startAboutMeWeb = new AboutMeScreen();
