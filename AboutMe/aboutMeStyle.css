@@ -1,3 +1,4 @@
+
 	/*FONT-FAMILIES USED*/
 	@import url('https://fonts.googleapis.com/css?family=Flamenco');
 	@import url('https://fonts.googleapis.com/css?family=Roboto Flex');
@@ -19,6 +20,10 @@
 		--upArrowHoverUrl: url("../Assets/arrow4.png");
 		--downArrowUrl: url("../Assets/arrow4.png");
 		--downArrowHoverUrl: url("../Assets/arrow5.png");
+
+		--skillsBackground: rgb(255, 255, 255, 0.1);
+
+		--skillsChartSendInView: 1200ms;
 	}
 
 	div {
@@ -241,8 +246,10 @@
 				color: white;
 				border-bottom: 3px solid white;
 				opacity: 0;
+				left: 0;
 				margin: 0;
 				padding: 10px 0 5px 0;
+				transform: translate(-100%, 0) skew(-120deg);
 				animation: SendScreenInViewWithSkew 1s ease-out calc(var(--animationWaitToEnter)) 1;
 				animation-fill-mode: forwards;
 			}
@@ -367,7 +374,7 @@
 					display: none;
 					width: 90%; height: 90%;
 					background: rgba(0, 0, 0, 0.6);
-					border: 2px solid rgb(117, 42, 6);
+					border: 2px solid var(--highlightTextColor);
 					top: 50%;
 					left: 50%;
 					z-index: -1;
@@ -650,30 +657,36 @@
 
 		}
 
+		#jsWrapC {
+
+		}
+
 		.aboutMeSkillWrapC {
 			position: relative;
 			display: block;
 			width: 100%;
-			margin-top: -15px;
+			box-sizing: border-box;
+			margin: -15px 0 -20px 0;
+			padding: 0 20px 0 20px;
 		}
 		
 		.skillOverallWrapTitleC {
 			position: relative;
 			display: block;
 			width: 100%;
-			overflow: auto;
-			margin-bottom: 40px;
+			overflow: hidden;
 		}
 		.skillOverallTitleC {
 			position: relative;
 			display: block;
 			float: left;
 			background: var(--highlightTextColor);
-			border-radius: 5px;
+			border-radius: 3px 3px 0 0;
 			left: 50%;
 			box-sizing: border-box;
 			padding: 6px 10px 6px 10px;
-			transform: translateX(-50%);
+			transform: translate(-50%, 100%);
+			transition: transform 2s;
 		}
 		.skillOverallTitleH {
 			position: relative;
@@ -686,8 +699,12 @@
 		.skillOverallWrapC {
 			position: relative;
 			display: block;
-			width: 100%;
+			width: 100%; height: 200px;
+			background: var(--skillsBackground);
+			border-radius: 3px;
 			overflow: auto;
+			opacity: 0;
+			transition: background 1.4s, opacity 1s;
 		}
 			.skillOverallLeftC {
 				position: relative;
@@ -698,11 +715,14 @@
 			.skillOverallChartC {
 				position: relative;
 				display: block;
-				width: 100%;
-				min-height: 200px;
+				width: 100%; min-height: 200px;
+				left: 0;
+				opacity: 0;
 				overflow: hidden;
-				animation: SendScreenInView var(--animationEnter) linear 1;
+				transform: translate(-100%, 0);
+				animation: SendScreenInView var(--skillsChartSendInView) linear 1;
 				animation-fill-mode: forwards;
+				animation-play-state: paused;
 			}
 				.chartSkillsCC {
 					position: absolute;
@@ -722,7 +742,7 @@
 					display: none;
 					width: 90%; height: 90%;
 					background: rgba(0, 0, 0, 0.6);
-					border: 2px solid rgb(117, 42, 6);
+					border: 2px solid var(--highlightTextColor);
 					top: 50%;
 					left: 50%;
 					z-index: -1;
@@ -751,11 +771,36 @@
 				position: relative;
 				display: block;
 				float: right;
-				width: 50%; height: 200px;
+				width: 50%; height: 100%;
 			}
 			.skillOverallTextWrapC {
-
+				width: 100%; height: 100%;
 			}
+			.skillOverallTextWrapP {
+				position: relative;
+				display: block;
+				float: left;
+				width: 75%;
+				opacity: 0;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				transition: opacity 4s;
+			}
+				.skillTextArP {
+					font-weight: none;
+					text-align: center;
+					text-decoration: underline;
+				}
+
+				.skillTextArUl {
+					font-style: italic;
+					margin: 0;
+					padding: 15px 10px 10px 10px;
+				}
+				.textUlLi {
+
+				}
 
 
 	/*SCREEN WIDTH UNDER 1000px*/
@@ -829,6 +874,13 @@
 			padding-top: 1px;
 		}
 		/**/
+
+		.skillOverallTextWrapP {
+			width: 100%;
+		}
+		.skillTextArUl {
+			padding-top: 15px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 650px*/
@@ -860,6 +912,14 @@
 		.button_Text {
 			font-size: 15px;
 		}
+
+		.aboutMeSkillWrapC {
+			padding: 0;
+		}
+
+		.skillTextArUl {
+			padding: 10 3px 0 10px;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 450px*/
@@ -890,6 +950,10 @@
 
 		.button_Text {
 			font-size: 15px;
+		}
+
+		.skillTextArUl {
+			padding-top: 8px;
 		}
 	}
 

@@ -455,7 +455,6 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				thisObj.getElmntChartLoadingOverall().style.display = "none";
 				thisObj.getElmntChartLoadingOverall().style.zIndex = "-1";
 				thisObj.getElmntChartCenterLoadingImg().style.animationPlayState = "paused";
-				console.log(thisObj.getChartObjectToDraw());
 				google.charts.setOnLoadCallback(function() {
 					thisObj.DrawNow(false);
 				});	
@@ -502,7 +501,7 @@ current value of elmntOverall: ` + this.getElmntOverall());
 							thisObj.ReDrawChartRightNow();
 						}
 					}, 50);
-				}, 100);
+				}, thisObj.getFirstTime());
 
 				//STOP THE LOOP
 				thisObj.setFirstTimeLoading(false);

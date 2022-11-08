@@ -11,7 +11,7 @@
 			this.eduChartValue = true;
 
 			//ABOUT ME/SKILLS PAGE ARRAY REALLY IMPORTANT FOR CHART'S CREATION AND DISPLAY
-			this.skillsChartValue = [true, true];
+			this.skillsChartValue = [true, true, true];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
@@ -143,10 +143,12 @@
 					//ABOUT ME PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
+						document.documentElement.style.setProperty("--skillsBackground", "rgb(0, 0, 0, 0.1)");
 	
 						currentObj.AboutMeEduChartChanges();
 						currentObj.AboutMeSkillChartChanges(0);
 						currentObj.AboutMeSkillChartChanges(1);
+						currentObj.AboutMeSkillChartChanges(2);
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow5.png')";
@@ -229,10 +231,12 @@
 					//ABOUT ME PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "About me") {
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
+						document.documentElement.style.setProperty("--skillsBackground", "rgb(255, 255, 255, 0.1)");
 						
 						currentObj.AboutMeEduChartChanges();
 						currentObj.AboutMeSkillChartChanges(0);
 						currentObj.AboutMeSkillChartChanges(1);
+						currentObj.AboutMeSkillChartChanges(2);
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow6.png')";

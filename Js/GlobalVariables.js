@@ -1,10 +1,15 @@
 	//CLASS THAT CARRIES ALL GLOBAL VARIABLES ABOUT ME PAGE
 	class GlobalVariables {
 		constructor() {
+			//OVERALL PAGES
+
 			//CONSOLE SHOW MESSAGES OR NOT
 			this.console = false;
 
-			//OVERALL PAGES
+			//LOAD MORE FUNCTIONS, FOR EVENT SCROLL
+			this.loadingMoreItems = false;
+
+			//OBJECT OF CLASS RightMainScreen
 			this.rightMainScreen;
 
 			//ABOUT ME PAGE
@@ -21,6 +26,13 @@
 		}
 		setConsole(console) {
 			this.console = console;
+		}
+
+		getLoadingMoreItems() {
+			return this.loadingMoreItems;
+		}
+		setLoadingMoreItems(loadingMoreItems) {
+			this.loadingMoreItems = loadingMoreItems;
 		}
 
 		getRightMainScreen() {

@@ -47,7 +47,7 @@ function ClearAllIntervals() {
 	}
 }
 ////
-
+//alert(window.pageXOffset);
 //CHECK IF GIVEN ELEMENT IS ON VIEWPORT (ENTIRE ELEMENT IN VIEW)
 function CheckEntireElementInViewport(el) {
 	var top = el.offsetTop;
@@ -58,9 +58,9 @@ function CheckEntireElementInViewport(el) {
 	while(el.offsetParent) {
 		el = el.offsetParent;
 		top += el.offsetTop;
-		left += el.offsetLeft;
+		//left += el.offsetLeft;
 	}
-			
+
 	return (
 		top >= window.pageYOffset &&
 		left >= window.pageXOffset &&

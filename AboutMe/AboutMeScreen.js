@@ -7,6 +7,8 @@
 			this.countEduCharts = 0;
 			this.countSkillsCharts = 0;
 
+			this.skillsChartsAr = [];
+
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
 		}
@@ -18,11 +20,15 @@
 			this.countEduCharts = countEduCharts;
 		}
 
-		getCountSkillsCharts() {
-			return this.countSkillsCharts;
+		getSkillsChartsAr() {
+			return this.skillsChartsAr;
 		}
-		setCountSkillsCharts(countSkillsCharts) {
-			this.countSkillsCharts = countSkillsCharts;
+		setSkillsChartsAr(skillsChartsAr) {
+			this.skillsChartsAr.push(skillsChartsAr);
+		}
+
+		getCountSkillsCharts() {
+			return this.getSkillsChartsAr().length;
 		}
 
 		getMainPageCore() {
@@ -52,8 +58,8 @@
 			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
 			var thisObj = this;
 
-			OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
-			//OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
+			//OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
+			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
 
 			changeContentAboutMeBtn.addEventListener("click", function() {
 				//MAKE SURE ALL INTERVALS ARE CLOSED
@@ -112,10 +118,26 @@
 					}
 					else if(elementToShow.id == "aboutMeSkillsC") {
 						//SKILLS CHART 1
-						globalVars.getSkillsGoogleChart(0).PieAnimation();
+						//globalVars.getSkillsGoogleChart(0).PieAnimation();
 
 						//SKILLS CHART 2
-						globalVars.getSkillsGoogleChart(1).PieAnimation();
+						//globalVars.getSkillsGoogleChart(1).PieAnimation();
+
+						//SKILLS CHART 2
+						//globalVars.getSkillsGoogleChart(2).PieAnimation();
+
+						//INSTEAD OF SETTING EACH ONE ThE ELEMENTS TO ANIMATE, WE LET ONLY ON SCROLL FUNCTION
+						//DO THE ANIMATION AND WE JUST UPDATE A MAIN VALUE OF SKILL CLASS, THAT IS BEING CHECKED
+						//EVERY TIME USER SCROLLS, TO SEE IF AN ELEMENT IS ENTIRE IN A VIEWPORT
+
+						thisObj.getSkillsChartsAr().forEach(skill => {
+							if(!skill.getSkillActiveStatus()) {
+								skill.setSkillActiveStatus(true);
+							}
+							else {
+								skill.DisablePieAnimation();
+							}
+						});
 					}
 				}
 			}
@@ -448,11 +470,20 @@
 		}
 		
 		LoadSkills() {
-			this.HtmlSkillView(90);
-			this.CssSkillView(90);
+			var firstTime = getComputedStyle(document.documentElement).getPropertyValue("--skillsChartSendInView");
+			//IF IN CSS, --skillsChartSendInView VAR IS WITH MS
+			firstTime = firstTime.substring(0, firstTime.length - 2);
+			firstTime = parseInt(firstTime);
+
+			var afterFirstTIme = 500;
+			var turningScreenPoint = 850;
+
+			this.HtmlSkillView(90, firstTime, afterFirstTIme, turningScreenPoint);
+			this.CssSkillView(85, firstTime, afterFirstTIme, turningScreenPoint);
+			this.JsSkillView(40, firstTime, afterFirstTIme, turningScreenPoint);
 		}
 
-		HtmlSkillView(animationPercent) {
+		HtmlSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
 			var chartType = "Pie";
 
 			var data = [
@@ -484,18 +515,19 @@
 				}
 			};
 
-			var firstTime = 4500;
-			var afterFirstTIme = 500;
-			var turningScreenPoint = 850;
-
 			var skillsPlaceToBe = document.getElementById("htmlWrapC");
-			var skillsTitle = "HTML";
-			var skillsText = "flkefjef jefjehfjeh fjeh fje";
+			var skillsTitle = "Html";
+			var skillsText = [
+				"Html - The beggining is half of everything",
+				"first introduction through W3shcools",
+				"simple and easy to learn",
+				"the main core of a website"
+			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
 		}
 
-		CssSkillView(animationPercent) {
+		CssSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
 			var chartType = "Pie";
 
 			var data = [
@@ -527,15 +559,68 @@
 				}
 			};
 
-			var firstTime = 4500;
 			var afterFirstTIme = 500;
 			var turningScreenPoint = 850;
 
 			var skillsPlaceToBe = document.getElementById("cssWrapC");
-			var skillsTitle = "CSS";
-			var skillsText = "flkefjef jefjehfjeh fjeh fje";
+			var skillsTitle = "Css";
+			var skillsText = [
+				"Css - The aesthetic side",
+				"first introduction through W3shcools",
+				"at first couldn't recognize the potentials",
+				"the artistic touch, on the canvas of web"
+			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		
+		}
+
+		JsSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
+			var chartType = "Pie";
+
+			var data = [
+				["Task", "Percent"],
+				["Knoweledge of Js", 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				is3D: true,
+				width: "100%",
+				height: "100%",
+				legend: "none",
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
+			};
+
+			var afterFirstTIme = 500;
+			var turningScreenPoint = 850;
+
+			var skillsPlaceToBe = document.getElementById("jsWrapC");
+			var skillsTitle = "Js";
+			var skillsText = [
+				"Js - The OG of Web pages",
+				"first introduction through W3shcools",
+				"after learning java in university, it was easier than expected",
+				"an unsung hero in the battle of coding"
+			];
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		
 		}
 
 		SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent) {
@@ -550,13 +635,13 @@
 			globalVars.setSkillsGoogleChart(skillGC, c);
 			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
 
-			var skill1 = new Skill(skillGC, skillsPlaceToBe, skillsTitle, skillsText, c);
-			skill1.PrototypePieOfHorizontalView(animationPercent);
+			var skill = new Skill(skillGC, skillsPlaceToBe, skillsTitle, skillsText, c);
+			skill.PrototypePieOfHorizontalView(animationPercent);
 			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skillGC.getStatus(), c);
 			this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(c);
 
 			c++;
-			this.setCountSkillsCharts(c);
+			this.setSkillsChartsAr(skill);
 		}
 		////
 	}
