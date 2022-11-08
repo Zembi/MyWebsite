@@ -1,9 +1,11 @@
 	
 	//GOOGLE CHART CORE CLASS
 	class Skill {
-		constructor(googleChart, placeToBe, title, textAr, counter) {
-			//MY OBJECT FOR GOOGLE CHARTS
-			this.googleChart = googleChart;
+		constructor(gCItems, placeToBe, title, textAr, counter) {
+			//CREATE MY OBJECT FOR GOOGLE CHARTS
+			this.gCItems = gCItems;
+			
+			this.googleChart = null;
 
 			//ELEMENT WHERE CHART AND INFO ABOUT MY SKILLS WILL BE CREATED AND DISPLAYED
 			this.placeToBe = placeToBe;
@@ -20,8 +22,15 @@
 			this.Main();
 		}
 
+		getGCItems() {
+			return this.gCItems;
+		}
+
 		getGoogleChart() {
 			return this.googleChart;
+		}
+		setGoogleChart(googleChart) {
+			this.googleChart = googleChart;
 		}
 
 		getPlaceToBe() {
@@ -83,7 +92,12 @@
 
 			var unqiueId = "chartWrap" + this.getCounter() + "C";
 			var getChartPlaceId = document.getElementById(unqiueId);
-			this.getGoogleChart().setElmntOverall(getChartPlaceId);
+			//this.getGoogleChart().setElmntOverall(getChartPlaceId);
+			this.setGoogleChart( new GoogleChart(
+				this.getGCItems()[0], this.getGCItems()[1], this.getGCItems()[2],
+				getChartPlaceId, this.getGCItems()[4], this.getGCItems()[5],
+				this.getGCItems()[6], this.getGCItems()[7], this.getGCItems()[8]
+			));
 
 			this.getGoogleChart().setPieAnimLvl(percentToReach);
 			this.getGoogleChart().Main();
@@ -115,6 +129,8 @@
 
 			document.addEventListener("scroll", function() {
 				if(CheckPartOfElementInViewport(skillOverallTextWrapP) && check && thisObj.getSkillActiveStatus()) {
+					googlCh.PieAnimation();
+
 					skillOverallTitleC.style.transform = "translate(-50%, 0)";
 
 					skillOverallChartC.style.animationPlayState = "running";
@@ -123,7 +139,6 @@
 
 					skillOverallTextWrapP.style.opacity = "1";
 					
-					googlCh.PieAnimation();
 
 					check = false;
 				}

@@ -291,31 +291,31 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				chartObj = new google.visualization.GeoChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Scatter")  {
 				chartObj = new google.visualization.ScatterChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Column")  {
 				chartObj = new google.visualization.ColumnChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Histogram")  {
 				chartObj = new google.visualization.Histogram(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Bar")  {
 				chartObj = new google.visualization.BarChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Combo")  {
 				//OPTIONS LAST FIXES BEFORE FUNCTION RUNS
@@ -326,25 +326,24 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				this.setChartObjectToDraw(chartObj);
 
 				this.ReDrawChartRightNow();
-				//chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
 			}
 			else if(this.getChartType() == "Area")  {
 				chartObj = new google.visualization.AreaChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "SteppedArea")  {
 				chartObj = new google.visualization.SteppedAreaChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Line")  {
 				chartObj = new google.visualization.LineChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Pie")  {
 				chartObj = new google.visualization.PieChart(this.getElmntChartMain());
@@ -360,37 +359,37 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				chartObj = new google.visualization.BubbleChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "OrgChart")  {
 				chartObj = new google.visualization.OrgChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "TreeMap")  {
 				chartObj = new google.visualization.TreeMap(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Table")  {
 				chartObj = new google.visualization.Table(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Gauge")  {
 				chartObj = new google.visualization.Gauge(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 			else if(this.getChartType() == "Candlestick")  {
 				chartObj = new google.visualization.CandlestickChart(this.getElmntChartMain());
 				this.setChartObjectToDraw(chartObj);
 
-				chartObj.draw(this.getChartDataAsGoogleDataForm(), this.getChartOptions());
+				this.ReDrawChartRightNow();
 			}
 
 			this.setChartObjectToDraw(chartObj);

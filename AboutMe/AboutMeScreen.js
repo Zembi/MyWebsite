@@ -475,6 +475,9 @@
 			firstTime = firstTime.substring(0, firstTime.length - 2);
 			firstTime = parseInt(firstTime);
 
+			//OR CUSTOM FIRST TIME
+			firstTime = 560;
+
 			var afterFirstTIme = 500;
 			var turningScreenPoint = 850;
 
@@ -628,16 +631,18 @@
 
 			var buttonMenu = document.getElementById("openMenuBtn");
 
-			var skillGC = new GoogleChart(
-				chartType, data, options, null,
-				firstTime, afterFirstTIme, skillsPlaceToBe, buttonMenu, turningScreenPoint
-			);
-			globalVars.setSkillsGoogleChart(skillGC, c);
+			var skillGCItems = [
+				chartType, data, options, null, firstTime, afterFirstTIme,
+				skillsPlaceToBe, buttonMenu, turningScreenPoint
+			];
+
+			var skill = new Skill(skillGCItems, skillsPlaceToBe, skillsTitle, skillsText, c);
+			skill.PrototypePieOfHorizontalView(animationPercent);
+
+			globalVars.setSkillsGoogleChart(skill.getGoogleChart(), c);
 			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
 
-			var skill = new Skill(skillGC, skillsPlaceToBe, skillsTitle, skillsText, c);
-			skill.PrototypePieOfHorizontalView(animationPercent);
-			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skillGC.getStatus(), c);
+			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skill.getGoogleChart().getStatus(), c);
 			this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(c);
 
 			c++;
