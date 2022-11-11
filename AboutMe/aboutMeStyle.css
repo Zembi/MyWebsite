@@ -652,12 +652,19 @@
 		#htmlWrapC {
 
 		}
-
 		#cssWrapC {
 
 		}
-
 		#jsWrapC {
+
+		}
+		#sqlWrapC {
+
+		}
+		#phpWrapC {
+
+		}
+		#javaWrapC {
 
 		}
 
@@ -666,8 +673,7 @@
 			display: block;
 			width: 100%;
 			box-sizing: border-box;
-			margin: -15px 0 -20px 0;
-			padding: 0 20px 0 20px;
+			margin: -25px 0 -30px 0;
 		}
 		
 		.skillOverallWrapTitleC {
@@ -699,12 +705,14 @@
 		.skillOverallWrapC {
 			position: relative;
 			display: block;
-			width: 100%; height: 200px;
+			width: 85%; height: 200px;
 			background: var(--skillsBackground);
 			border-radius: 3px;
+			border-top: 2px solid grey;
 			overflow: auto;
 			opacity: 0;
-			transition: background 1.4s, opacity 1s;
+			margin: auto;
+			transition: background 1s, opacity 1s;
 		}
 			.skillOverallLeftC {
 				position: relative;
@@ -830,6 +838,10 @@
 		.button_Text {
 			font-size: 15px;
 		}
+
+		.skillOverallWrapC {
+			width: 90%;
+		}
 	}
 
 	/*SCREEN WIDTH UNDER 850px*/
@@ -912,7 +924,12 @@
 		}
 
 		.aboutMeSkillWrapC {
-			padding: 0;
+			margin: -30px 0 -35px 0;
+		}
+
+		.skillOverallWrapC {
+			width: 100%;
+			border-radius: 0;
 		}
 
 		.skillTextArUl {
@@ -950,6 +967,10 @@
 			font-size: 15px;
 		}
 
+		.aboutMeSkillWrapC {
+			margin: -35px 0 -40px 0;
+		}
+
 		.skillTextArUl {
 			padding-top: 8px;
 		}
@@ -983,6 +1004,10 @@
 
 		.button_Text {
 			font-size: 15px;
+		}
+
+		.aboutMeSkillWrapC {
+			margin: -35px 0 -50px 0;
 		}
 	}
 

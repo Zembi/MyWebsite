@@ -13,6 +13,21 @@
 		return sum;
 	}
 	////
+
+	//CHROMA COLORS
+	function ChromaColor(type, colors, count) {
+		var colorObj = null;
+
+		if(type == "simple") {
+			colorObj = chroma.scale(colors).colors(count);
+		}
+		else if(type == "hcl") {
+			colorObj = chroma.scale(colors).mode('lch').domain([0, 1]).colors(count);
+		}
+		
+		return colorObj;
+	}
+	////
 	
 	//TYPE WRITER FUNCTION, SO CAN ANIMATE TEXT WRITING//
 	function TypeWriter(lineItemsArray, counter, type, timingToWait, timeToDelete) {

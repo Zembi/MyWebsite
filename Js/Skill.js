@@ -127,7 +127,12 @@
 			var thisObj = this;
 			var check = true;
 
+			CheckCurrentViewPort();
 			document.addEventListener("scroll", function() {
+				CheckCurrentViewPort();
+			});
+
+			function CheckCurrentViewPort() {
 				if(CheckPartOfElementInViewport(skillOverallTextWrapP) && check && thisObj.getSkillActiveStatus()) {
 					googlCh.PieAnimation();
 
@@ -139,10 +144,9 @@
 
 					skillOverallTextWrapP.style.opacity = "1";
 					
-
 					check = false;
 				}
-			});
+			}
 		}
 
 		DisablePieAnimation() {

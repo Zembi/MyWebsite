@@ -28,7 +28,8 @@
 		}
 
 		getCountSkillsCharts() {
-			return this.getSkillsChartsAr().length;
+			this.countSkillsCharts = this.getSkillsChartsAr().length;
+			return this.countSkillsCharts;
 		}
 
 		getMainPageCore() {
@@ -481,26 +482,33 @@
 			var afterFirstTIme = 500;
 			var turningScreenPoint = 850;
 
-			this.HtmlSkillView(90, firstTime, afterFirstTIme, turningScreenPoint);
-			this.CssSkillView(85, firstTime, afterFirstTIme, turningScreenPoint);
-			this.JsSkillView(40, firstTime, afterFirstTIme, turningScreenPoint);
+			this.HtmlPrepareSkillView(90, "Html", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.CssPrepareSkillView(85, "Css", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.JsPrepareSkillView(40, "Js", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.SqlPrepareSkillView(65, "Sql", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.PhpPrepareSkillView(15, "Php", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.JavaPrepareSkillView(45, "Java", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			
+			this.StyleSkillCharts();
 		}
 
-		HtmlSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
-			var chartType = "Pie";
-
+		HtmlPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
 			var data = [
 				["Task", "Percent"],
-				["Knoweledge of Html", 0],
+				[dtH, 0],
 				["Still to learn", 1]
 			];
 
 			var options = {
 				title: "",
-				is3D: true,
+				is3D: "true",
 				width: "100%",
 				height: "100%",
-				legend: "none",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
 				pieStartAngle: 0,
 				backgroundColor: "transparent",
 				colors: ["", ""],
@@ -519,32 +527,33 @@
 			};
 
 			var skillsPlaceToBe = document.getElementById("htmlWrapC");
-			var skillsTitle = "Html";
 			var skillsText = [
-				"Html - The beggining is half of everything",
+				"Html - The beginning is half of everything",
 				"first introduction through W3shcools",
 				"simple and easy to learn",
-				"the main core of a website"
+				"the main core"
 			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
 		}
 
-		CssSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
-			var chartType = "Pie";
-
+		CssPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
 			var data = [
 				["Task", "Percent"],
-				["Knoweledge of Css", 0],
+				[dtH, 0],
 				["Still to learn", 1]
 			];
 
 			var options = {
 				title: "",
-				is3D: true,
+				is3D: "true",
 				width: "100%",
 				height: "100%",
-				legend: "none",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
 				pieStartAngle: 0,
 				backgroundColor: "transparent",
 				colors: ["", ""],
@@ -562,37 +571,34 @@
 				}
 			};
 
-			var afterFirstTIme = 500;
-			var turningScreenPoint = 850;
-
 			var skillsPlaceToBe = document.getElementById("cssWrapC");
-			var skillsTitle = "Css";
 			var skillsText = [
-				"Css - The aesthetic side",
+				"Css - An aesthetic side",
 				"first introduction through W3shcools",
 				"at first couldn't recognize the potentials",
 				"the artistic touch, on the canvas of web"
 			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
-		
 		}
 
-		JsSkillView(animationPercent, firstTime, afterFirstTIme, turningScreenPoint) {
-			var chartType = "Pie";
-
+		JsPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
 			var data = [
 				["Task", "Percent"],
-				["Knoweledge of Js", 0],
+				[dtH, 0],
 				["Still to learn", 1]
 			];
 
 			var options = {
 				title: "",
-				is3D: true,
+				is3D: "true",
 				width: "100%",
 				height: "100%",
-				legend: "none",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
 				pieStartAngle: 0,
 				backgroundColor: "transparent",
 				colors: ["", ""],
@@ -610,22 +616,156 @@
 				}
 			};
 
-			var afterFirstTIme = 500;
-			var turningScreenPoint = 850;
-
 			var skillsPlaceToBe = document.getElementById("jsWrapC");
-			var skillsTitle = "Js";
 			var skillsText = [
-				"Js - The OG of Web pages",
+				"Js - The Frog Prince",
 				"first introduction through W3shcools",
-				"after learning java in university, it was easier than expected",
-				"an unsung hero in the battle of coding"
+				"after java in university, it was easier than expected",
+				"master client-side, then server-side",
+				"an unsung hero in web"
 			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
-		
 		}
 
+		SqlPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
+			var data = [
+				["Task", "Percent"],
+				[dtH, 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				is3D: "true",
+				width: "100%",
+				height: "100%",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
+			};
+
+			var skillsPlaceToBe = document.getElementById("sqlWrapC");
+			var skillsText = [
+				"Sql - Banks of data",
+				"first introduction through university",
+				"easy to use",
+				"studied database structure, as well",
+			];
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		}
+
+		PhpPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
+			var data = [
+				["Task", "Percent"],
+				[dtH, 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				is3D: "true",
+				width: "100%",
+				height: "100%",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
+			};
+
+			var skillsPlaceToBe = document.getElementById("phpWrapC");
+			var skillsText = [
+				"Php - Timeless worker",
+				"first introduction through W3shcools",
+				"unique and complicated, especially for a self-taught",
+				"only use for database connections, till now",
+				"back-end seems like a dark place"
+			];
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		}
+
+		JavaPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
+			var data = [
+				["Task", "Percent"],
+				[dtH, 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				is3D: "true",
+				width: "100%",
+				height: "100%",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
+			};
+
+			var skillsPlaceToBe = document.getElementById("javaWrapC");
+			var skillsText = [
+				"Java - Things are serious",
+				"first introduction through university",
+				"object-oriention is a god-given tool",
+				"implemented object-oriention wherever its possible",
+				"noweledge is never enough"
+			];
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		}
+
+		//PROTOTYPE OF CREATING NEW SKILL
 		SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent) {
 			var c = this.getCountSkillsCharts();
 
@@ -640,13 +780,16 @@
 			skill.PrototypePieOfHorizontalView(animationPercent);
 
 			globalVars.setSkillsGoogleChart(skill.getGoogleChart(), c);
-			//RIGHT MAIN AboutMeEduChartChanges FUNCTION
-
+			//RIGHT MAIN AboutMeSkillChartChanges FUNCTION
 			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skill.getGoogleChart().getStatus(), c);
-			this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(c);
 
-			c++;
 			this.setSkillsChartsAr(skill);
+		}
+
+		StyleSkillCharts() {
+			for(var i = 0; i < this.getCountSkillsCharts(); i++) {
+				this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(i);
+			}
 		}
 		////
 	}

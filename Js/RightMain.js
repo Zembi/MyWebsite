@@ -11,7 +11,7 @@
 			this.eduChartValue = true;
 
 			//ABOUT ME/SKILLS PAGE ARRAY REALLY IMPORTANT FOR CHART'S CREATION AND DISPLAY
-			this.skillsChartValue = [true, true, true];
+			this.skillsChartValue = [];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
@@ -28,11 +28,15 @@
 			this.eduChartValue = eduChartValue;
 		}
 
-		getSkillsChartValue(counter) {
-			return this.skillsChartValue[counter];
+		getSkillsChartValue() {
+			return this.skillsChartValue;
 		}
 		setSkillsChartValue(skillsChartValue, counter) {
 			this.skillsChartValue[counter] = skillsChartValue;
+		}
+
+		getSkillsChartsCounter() {
+			return this.getSkillsChartValue().length;
 		}
 
 		//EVENT FUNCTIONS FROM HERE
@@ -146,9 +150,10 @@
 						document.documentElement.style.setProperty("--skillsBackground", "rgb(0, 0, 0, 0.1)");
 	
 						currentObj.AboutMeEduChartChanges();
-						currentObj.AboutMeSkillChartChanges(0);
-						currentObj.AboutMeSkillChartChanges(1);
-						currentObj.AboutMeSkillChartChanges(2);
+
+						for(var i = 0; i < currentObj.getSkillsChartsCounter(); i++) {
+							currentObj.AboutMeSkillChartChanges(i);
+						}
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow5.png')";
@@ -234,9 +239,9 @@
 						document.documentElement.style.setProperty("--skillsBackground", "rgb(255, 255, 255, 0.1)");
 						
 						currentObj.AboutMeEduChartChanges();
-						currentObj.AboutMeSkillChartChanges(0);
-						currentObj.AboutMeSkillChartChanges(1);
-						currentObj.AboutMeSkillChartChanges(2);
+						for(var i = 0; i < currentObj.getSkillsChartsCounter(); i++) {
+							currentObj.AboutMeSkillChartChanges(i);
+						}
 
 						//ARROWS CHANGES
 						var changeArrowImg = "url('../Assets/arrow6.png')";
@@ -298,7 +303,7 @@ AboutMeEduChartChanges(): in waiting line`);
 		}
 
 		AboutMeSkillChartChanges(c) {
-			if(this.getSkillsChartValue(c)) {
+			if(this.getSkillsChartValue()[c]) {
 				if(changeBackgroundBtn.name == "prof1") {
 					//FULL PIE
 					var color0 = "white";
@@ -311,27 +316,18 @@ AboutMeEduChartChanges(): in waiting line`);
 					var darkerFontColor = "rgb(87, 126, 161)";
 					var lighterFontColor = "white";
 
-					//MAIN COLOR rgb(87, 126, 161)
-					if(c == 0) {
-						//90% OF COLOR
-						color1 = "rgb(222, 229, 237)";
+					var colors = ["rgb(87, 126, 161)", "black"];
+					var allColors = ChromaColor("hcl", colors, this.getSkillsChartValue().length);
+					
+					/*if(c < 2) {
 						fontColor1 = darkerFontColor;
 					}
-					else if(c == 1) {
-						//80% OF COLOR
-						color1 = "rgb(189, 203, 219)";
-						fontColor1 = darkerFontColor;
-					}
-					else if(c == 2) {
-						//70% OF COLOR
-						color1 = "rgb(156, 180, 201)";
+					else if(c > 2) {
 						fontColor1 = lighterFontColor;
-					}
-					else if(c == 3) {
-						//60% OF COLOR
-						color1 = "rgb(123, 155, 183)";
-						fontColor1 = lighterFontColor;
-					}
+					}*/
+
+					color1 = allColors[c];
+					fontColor1 = lighterFontColor;
 				}
 				else if(changeBackgroundBtn.name == "prof3") {
 					//FULL PIE
@@ -345,27 +341,18 @@ AboutMeEduChartChanges(): in waiting line`);
 					var darkerFontColor = "rgb(143, 56, 14)";
 					var lighterFontColor = "white";
 
-					//MAIN COLOR rgb(143, 56, 14)
-					if(c == 0) {
-						//90% OF COLOR
-						color1 = "rgb(250, 223, 209)";
+					var colors = ["rgb(117, 42, 6)", "black"];
+					var allColors = ChromaColor("hcl", colors, this.getSkillsChartValue().length);
+
+					/*if(c < 2) {
 						fontColor1 = darkerFontColor;
 					}
-					else if(c == 1) {
-						//80% OF COLOR
-						color1 = "rgb(245, 190, 163)";
-						fontColor1 = darkerFontColor;
-					}
-					else if(c == 2) {
-						//70% OF COLOR
-						color1 = "rgb(240, 158, 117)";
+					else if(c > 2) {
 						fontColor1 = lighterFontColor;
-					}
-					else if(c == 3) {
-						//60% OF COLOR
-						color1 = "rgb(235, 126, 71)";
-						fontColor1 = lighterFontColor;
-					}
+					}*/
+
+					color1 = allColors[c];
+					fontColor1 = lighterFontColor;
 				}
 
 				//CHECK IF GLOBAL GOOGLE CHART EXISTS
