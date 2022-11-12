@@ -146,6 +146,7 @@
 					}
 					//ABOUT ME PAGE CHANGES PROF 1
 					else if(currentObj.getStatus() == "About me") {
+						document.documentElement.style.setProperty("--menuBackground", "rgb(0, 0, 0, 0.5)");
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 						document.documentElement.style.setProperty("--skillsBackground", "rgb(0, 0, 0, 0.1)");
 	
@@ -235,6 +236,7 @@
 					}
 					//ABOUT ME PAGE CHANGES PROF 3
 					else if(currentObj.getStatus() == "About me") {
+						document.documentElement.style.setProperty("--menuBackground", "rgb(255, 255, 255, 0.6)");
 						document.documentElement.style.setProperty("--highlightTextColor", colorText);
 						document.documentElement.style.setProperty("--skillsBackground", "rgb(255, 255, 255, 0.1)");
 						

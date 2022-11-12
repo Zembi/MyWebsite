@@ -4,13 +4,22 @@
 		constructor() {
 			this.mainPageCore;
 
-			this.countEduCharts = 0;
-			this.countSkillsCharts = 0;
+			this.pageToBe = null;
 
+			this.countEduCharts = 0;
+
+			this.countSkillsCharts = 0;
 			this.skillsChartsAr = [];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
+		}
+
+		getPageToBe() {
+			return this.pageToBe;
+		}
+		setPageToBe(pageToBe) {
+			this.pageToBe = pageToBe;
 		}
 
 		getCountEduCharts() {
@@ -42,7 +51,7 @@
 		//EVENT FUNCTIONS FROM HERE
 		Main() {
 			this.InitializeMainPageCore();
-			this.MainContentButton();
+			this.MainMenuOfAboutMePage();
 			this.InitializeAboutMeMenuEducationItems();
 			this.InitializeAboutMeMenuSkillsItems();
 		}
@@ -52,94 +61,154 @@
 			this.setMainPageCore(mainPageCore);
 		}
 
-		MainContentButton() {
-			var c = false;
-			var changeContentAboutMeBtn = document.getElementById("changeContentAboutMeBtn");
+		MainMenuOfAboutMePage() {
+			var thisObj = this;
+			//MAIN CONTAINERS OF CONTENT
+			var aboutMeContainers = [];
 			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
 			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
-			var thisObj = this;
+			var aboutMeExperiencesC = document.getElementById("aboutMeExperiencesC");
+			var aboutMeToolsC = document.getElementById("aboutMeToolsC");
+			aboutMeContainers = [aboutMeEducationC, aboutMeSkillsC, aboutMeExperiencesC, aboutMeToolsC];
 
-			//OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, true, "SKILLS");
-			OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, true, "EDUCATION");
+			//BUTTONS OF TOP MENU
+			var aboutMeBtns = [];
+			var changeEduAboutMeBtn = document.getElementById("changeEduAboutMeBtn");
+			var changeSkillsAboutMeBtn = document.getElementById("changeSkillsAboutMeBtn");
+			var changeExpAboutMeBtn = document.getElementById("changeExpAboutMeBtn");
+			var changeToolsAboutMeBtn = document.getElementById("changeToolsAboutMeBtn");
+			aboutMeBtns = [changeEduAboutMeBtn, changeSkillsAboutMeBtn, changeExpAboutMeBtn, changeToolsAboutMeBtn];
 
-			changeContentAboutMeBtn.addEventListener("click", function() {
-				//MAKE SURE ALL INTERVALS ARE CLOSED
-				ClearAllIntervals();
-				if(!c) {
-					OpenedAboutMeContent(aboutMeSkillsC, aboutMeEducationC, false, "SKILLS");
-					c = true;
-				}
-				else {
-					OpenedAboutMeContent(aboutMeEducationC, aboutMeSkillsC, false, "EDUCATION");
+			//SET STARTING PAGE EDUCATION
+			this.MainContentChangeButton(aboutMeEducationC, changeEduAboutMeBtn, aboutMeContainers, aboutMeBtns, "EDUCATION", true);	
+			//window.location.hash = "#education";
+
+			//EDUCATION
+			changeEduAboutMeBtn.addEventListener("click", function() {
+				var status = thisObj.MainContentChangeButton(aboutMeEducationC, this, aboutMeContainers, aboutMeBtns, "EDUCATION", false);
+
+				//window.location.hash = "#education";
+
+				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
+				if(status) {
 					//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
 					globalVars.getEduGoogleChart().DrawNow(false);
-					c = false;
 				}
 			});
 
-			function OpenedAboutMeContent(elementToShow, elementToHide, firstTimeCall, subPageTitleName) {
-				var titleEducationH = document.getElementById("titleEducationH");
-				titleEducationH.innerHTML = subPageTitleName;
+			//SKILLS
+			changeSkillsAboutMeBtn.addEventListener("click", function() {
+				var status = thisObj.MainContentChangeButton(aboutMeSkillsC, this, aboutMeContainers, aboutMeBtns, "SKILLS", false);	
 
-				elementToHide.style.display = "none";
-				elementToHide.style.opacity = "0";
-				elementToHide.style.transform = "translateX(-100%) skew(-90deg)";
+				//window.location.hash = "#skills";
 
-				elementToShow.style.display = "block";
-				elementToShow.style.opacity = "1";
-				elementToShow.style.transform = "translateX(0) skew(0)";
-
-				if(firstTimeCall) {
-					document.documentElement.style.setProperty("--animationEnter", "1.5s");
-					document.documentElement.style.setProperty("--animationWaitToEnter", "0.6s");
-					document.documentElement.style.setProperty("--step2", "0.2s");
-
-
-					document.documentElement.style.setProperty("--animationShow", "2s");
-					document.documentElement.style.setProperty("--animationWaitToShow", "1.2s");
-					document.documentElement.style.setProperty("--step3", "1s");
-
-					document.documentElement.style.setProperty("--animationShowLine", "1s");
-					document.documentElement.style.setProperty("--animationDelayShowLine", "2s");
+				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
+				if(status) {
 				}
-				else {
-					document.documentElement.style.setProperty("--animationEnter", "0.3s");
-					document.documentElement.style.setProperty("--animationWaitToEnter", "0.1s");
-					document.documentElement.style.setProperty("--step2", "0.1s");
+			});
 
-					document.documentElement.style.setProperty("--animationShow", "1s");
-					document.documentElement.style.setProperty("--animationWaitToShow", "0s");
-					document.documentElement.style.setProperty("--step3", "0s");
+			//EXPERIENCE
+			changeExpAboutMeBtn.addEventListener("click", function() {
+				var status = thisObj.MainContentChangeButton(aboutMeExperiencesC, this, aboutMeContainers, aboutMeBtns, "EXPERIENCES", false);
 
-					document.documentElement.style.setProperty("--animationShowLine", "1s");
-					document.documentElement.style.setProperty("--animationDelayShowLine", "0.4s");
-					
-					if(elementToShow.id == "aboutMeEducationC") {
+				//window.location.hash = "#experiences";
 
-					}
-					else if(elementToShow.id == "aboutMeSkillsC") {
-						//SKILLS CHART 1
-						//globalVars.getSkillsGoogleChart(0).PieAnimation();
+				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
+				if(status) {
+				}
+			});
 
-						//SKILLS CHART 2
-						//globalVars.getSkillsGoogleChart(1).PieAnimation();
+			//TOOLS
+			changeToolsAboutMeBtn.addEventListener("click", function() {
+				var status = thisObj.MainContentChangeButton(aboutMeToolsC, this, aboutMeContainers, aboutMeBtns, "TOOLS", false);
 
-						//SKILLS CHART 2
-						//globalVars.getSkillsGoogleChart(2).PieAnimation();
+				//window.location.hash = "#tools";
 
-						//INSTEAD OF SETTING EACH ONE ThE ELEMENTS TO ANIMATE, WE LET ONLY ON SCROLL FUNCTION
-						//DO THE ANIMATION AND WE JUST UPDATE A MAIN VALUE OF SKILL CLASS, THAT IS BEING CHECKED
-						//EVERY TIME USER SCROLLS, TO SEE IF AN ELEMENT IS ENTIRE IN A VIEWPORT
+				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
+				if(status) {
+				}
+			});
+		}
 
-						thisObj.getSkillsChartsAr().forEach(skill => {
-							if(!skill.getSkillActiveStatus()) {
-								skill.setSkillActiveStatus(true);
-							}
-							else {
-								skill.DisablePieAnimation();
-							}
-						});
-					}
+		MainContentChangeButton(elmntToShow, btnActive, allElmnts, allBtns, title, firstCall) {
+			if(this.getPageToBe() != title) {
+				//MAKE SURE ALL INTERVALS ARE CLOSED
+				ClearAllIntervals();
+				//REFRESH THE STYLING OF MENU BUTTONS
+				this.ClearMenuBttonsStatusStyling(allBtns);
+				
+				btnActive.children[1].style.opacity = "1";
+				this.OpenedAboutMeContent(elmntToShow, allElmnts, firstCall, title);
+				this.setPageToBe(title);
+
+
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		ClearMenuBttonsStatusStyling(allBtns) {
+			allBtns.forEach(btn => {
+				btn.children[1].style.opacity = "0";
+			});
+		}
+
+		OpenedAboutMeContent(elementToShow, elementsToHide, firstTimeCall, subPageTitleName) {
+			var titleEducationH = document.getElementById("titleEducationH");
+			titleEducationH.innerHTML = subPageTitleName;
+
+			elementsToHide.forEach(elmnt => {
+				elmnt.style.display = "none";
+				elmnt.style.opacity = "0";
+				elmnt.style.transform = "translateX(-100%) skew(-90deg)";
+			});
+
+			elementToShow.style.display = "block";
+			elementToShow.style.opacity = "1";
+			elementToShow.style.transform = "translateX(0) skew(0)";
+
+			if(firstTimeCall) {
+				document.documentElement.style.setProperty("--animationEnter", "1.5s");
+				document.documentElement.style.setProperty("--animationWaitToEnter", "0.6s");
+				document.documentElement.style.setProperty("--step2", "0.2s");
+
+
+				document.documentElement.style.setProperty("--animationShow", "2s");
+				document.documentElement.style.setProperty("--animationWaitToShow", "1.2s");
+				document.documentElement.style.setProperty("--step3", "1s");
+
+				document.documentElement.style.setProperty("--animationShowLine", "1s");
+				document.documentElement.style.setProperty("--animationDelayShowLine", "2s");
+			}
+			else {
+				document.documentElement.style.setProperty("--animationEnter", "0.3s");
+				document.documentElement.style.setProperty("--animationWaitToEnter", "0.1s");
+				document.documentElement.style.setProperty("--step2", "0.1s");
+
+				document.documentElement.style.setProperty("--animationShow", "1s");
+				document.documentElement.style.setProperty("--animationWaitToShow", "0s");
+				document.documentElement.style.setProperty("--step3", "0s");
+
+				document.documentElement.style.setProperty("--animationShowLine", "1s");
+				document.documentElement.style.setProperty("--animationDelayShowLine", "0.4s");
+				
+				if(elementToShow.id == "aboutMeEducationC") {
+
+				}
+				else if(elementToShow.id == "aboutMeSkillsC") {
+					//INSTEAD OF SETTING EACH ONE ThE ELEMENTS TO ANIMATE, WE LET ONLY ON SCROLL FUNCTION
+					//DO THE ANIMATION AND WE JUST UPDATE A MAIN VALUE OF SKILL CLASS, THAT IS BEING CHECKED
+					//EVERY TIME USER SCROLLS, TO SEE IF AN ELEMENT IS ENTIRE IN A VIEWPORT
+					this.getSkillsChartsAr().forEach(skill => {
+						if(!skill.getSkillActiveStatus()) {
+							skill.setSkillActiveStatus(true);
+						}
+						else {
+							skill.DisablePieAnimation();
+						}
+					});
 				}
 			}
 		}
@@ -484,10 +553,11 @@
 
 			this.HtmlPrepareSkillView(90, "Html", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.CssPrepareSkillView(85, "Css", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
-			this.JsPrepareSkillView(40, "Js", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
-			this.SqlPrepareSkillView(65, "Sql", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.JsPrepareSkillView(50, "Js", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.SqlPrepareSkillView(70, "Sql", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.PhpPrepareSkillView(15, "Php", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
-			this.JavaPrepareSkillView(45, "Java", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.JavaPrepareSkillView(50, "Java", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.CPrepareSkillView(25, "C", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			
 			this.StyleSkillCharts();
 		}
@@ -531,7 +601,7 @@
 				"Html - The beginning is half of everything",
 				"first introduction through W3shcools",
 				"simple and easy to learn",
-				"the main core"
+				"main core of any website"
 			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
@@ -758,8 +828,53 @@
 				"Java - Things are serious",
 				"first introduction through university",
 				"object-oriention is a god-given tool",
-				"implemented object-oriention wherever its possible",
-				"noweledge is never enough"
+				"implement object-oriention wherever its possible",
+				"knowledge is never enough"
+			];
+
+			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);
+		}
+
+		CPrepareSkillView(animationPercent, skillsTitle, chartType, firstTime, afterFirstTIme, turningScreenPoint) {
+			var dtH = "Knoweledge of " + skillsTitle;
+			var data = [
+				["Task", "Percent"],
+				[dtH, 0],
+				["Still to learn", 1]
+			];
+
+			var options = {
+				title: "",
+				is3D: "true",
+				width: "100%",
+				height: "100%",
+				legend: {
+					alignment: "start",
+					position: "none"
+				},
+				pieStartAngle: 0,
+				backgroundColor: "transparent",
+				colors: ["", ""],
+				slices: {
+					0: {
+						textStyle: {
+							color: ""
+						}
+					},
+					1: {
+						textStyle: {
+							color: ""
+						}
+					}
+				}
+			};
+
+			var skillsPlaceToBe = document.getElementById("cWrapC");
+			var skillsText = [
+				"C - Intro's best language",
+				"first introduction through university",
+				"first interaction to a real programming language",
+				"really complicated, cause of indexes(unlike Java)"
 			];
 
 			this.SkillViewPrototype(chartType, data, options, firstTime, afterFirstTIme, turningScreenPoint, skillsPlaceToBe, skillsTitle, skillsText, animationPercent);

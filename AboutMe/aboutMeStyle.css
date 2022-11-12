@@ -36,6 +36,22 @@
 		  display: none;
 	}
 
+	a:link {
+		font-style: italic;
+		color: white;
+		text-decoration: underline;
+	}
+
+	a:visited {
+		color: rgb(184, 62, 4);
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--highlightTextColor);
+		text-decoration: underline;
+	}
+
 	/*GENERAL RULES ELEMENTS*/
 	.big_Title {
 		font-size: 34px;
@@ -199,10 +215,19 @@
 			position: relative;
 			display: block;
 			width: 100%;
-			background: transparent;
+			background: tranredrsparent;
 			overflow: hidden;
 		}
 		#aboutMeMainContentC {
+			position: relative;
+			display: block;
+			width: 100%;
+			background: transparent;
+			overflow: hidden;
+			z-index: 3;
+		}
+
+		#changeContentAboutMeBtnWrapC {
 			position: relative;
 			display: block;
 			width: 100%;
@@ -212,25 +237,70 @@
 		#changeContentAboutMeBtnC {
 			position: relative;
 			display: block;
-			width: 100%;
+			float: left;
 			background: transparent;
+			left: 50%;
 			overflow: hidden;
+			box-sizing: border-box;
+			margin-top: 10px;
+			padding: 0 5px 0 5px;
+			transform: translate(-50%, calc(-100% - 10px));
+			animation: ShowMenu 0.5s linear 1;
+			animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 7));
+			animation-fill-mode: forwards;
 		}
-			/*.button_Text*/
-			#changeContentAboutMeBtn {
+		#leftHalfSplitAboutMeMenuC {
+			position: relative;
+			display: block;
+			float: left;
+			background: transparent;
+			overflow: auto;
+		}
+		#rightHalfSplitAboutMeMenuC {
+			position: relative;
+			display: block;
+			float: right;
+			background: transparent;
+			overflow: auto;
+		}
+
+			/*.button_Text .simple_text*/
+			.changeContentAboutMeMenu {
 				position: relative;
 				display: block;
-				background: transparent;
-				color: white;
+				float: left;
+				background: var(--skillsBackground);
+				color: var(--highlightTextColor);
 				border-radius: 2px;
-				border: 1px solid white;
+				border: 0 solid white;
 				cursor: pointer;
-				margin: 5px auto 5px auto;
-				transform: translateY(calc(-100% - 10px));
-				animation: ShowMenu 0.5s linear 1;
-				animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 7));
-				animation-fill-mode: forwards;
+				overflow: hidden;
+				margin: 5px 2px 5px 2px;
+				padding: 0;
+				
 			}
+			.cCAmeMenuSp {
+				position: relative;
+				width: 100%; height: 100%;
+				background: transparent;
+				padding: 1px 6px 1px 6px;
+				z-index: 1;
+			}
+			.cCAmeMenuCoverSp {
+				position: absolute;
+				width: 100%; height: 100%;
+				background: var(--menuBackground);
+				opacity: 0;
+				top: 0%;
+				left: 0%;
+				transition: opacity 0.5s;
+			}
+
+		#aboutMeMenuLineBreakC {
+			width: 90%;
+			margin: 10px auto 0px auto;
+		}
+
 		#titlesGeneralBtnC {
 			position: relative;
 			display: block;
@@ -266,6 +336,7 @@
 
 		/*POINT1998*/
 		#aboutMeEducationC {
+			background: transparent;
 		}
 			/*.simple_text .animShow*/
 			#textIntroEducationP {
@@ -723,7 +794,7 @@
 			.skillOverallChartC {
 				position: relative;
 				display: block;
-				width: 100%; min-height: 200px;
+				width: 100%; height: 200px;
 				opacity: 0;
 				overflow: hidden;
 				transform: translate(0, -100%);
@@ -740,7 +811,7 @@
 				}
 				.chartSkillsC {
 					position: relative;
-					width: 100%; height: 100%;
+					width: 100%; height: 200px;
 				}
 
 				.skillsChartLoadingFullC {
@@ -807,6 +878,18 @@
 				.textUlLi {
 
 				}
+
+
+		/*POINT1998*/
+		#aboutMeExperiencesC {
+			background: transparent;
+		}
+
+
+		/*POINT1998*/
+		#aboutMeToolsC {
+			background: transparent;
+		}
 
 
 	/*SCREEN WIDTH UNDER 1000px*/
@@ -923,6 +1006,11 @@
 			font-size: 15px;
 		}
 
+		#titlesGeneralBtnC {
+			margin-top: 15px;
+		}
+
+
 		.aboutMeSkillWrapC {
 			margin: -30px 0 -35px 0;
 		}
@@ -967,6 +1055,19 @@
 			font-size: 15px;
 		}
 
+		#leftHalfSplitAboutMeMenuC {			
+			margin-right: 10px;
+		}
+
+		.changeContentAboutMeMenu {
+			float: none;
+			margin: 5px auto 5px auto;
+		}
+
+		#titlesGeneralBtnC {
+			margin-top: 10px;
+		}
+
 		.aboutMeSkillWrapC {
 			margin: -35px 0 -40px 0;
 		}
@@ -1008,6 +1109,32 @@
 
 		.aboutMeSkillWrapC {
 			margin: -35px 0 -50px 0;
+		}
+
+		#changeContentAboutMeBtnC {
+			margin-top: 5px;
+		}
+
+		#aboutMeMenuLineBreakC {
+			margin-top: 5px;
+		}
+
+		#titlesGeneralBtnC {
+			margin-top: 5px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 250px*/
+	@media only screen and (max-width: 250px) {
+		#leftHalfSplitAboutMeMenuC {			
+			margin-right: 5px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 200px*/
+	@media only screen and (max-width: 200px) {
+		#leftHalfSplitAboutMeMenuC {			
+			margin-right: 1px;
 		}
 	}
 
@@ -1104,10 +1231,10 @@
 
 	@keyframes ShowMenu {
 		0% {
-			transform: translateY(-100%);
+			transform: translate(-50%, -100%);
 		}
 		100% {
-			transform: translateY(0);
+			transform: translate(-50%, 0);
 		}
 	}
 
