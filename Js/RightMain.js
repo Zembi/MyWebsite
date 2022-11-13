@@ -358,8 +358,8 @@ AboutMeEduChartChanges(): in waiting line`);
 				}
 
 				//CHECK IF GLOBAL GOOGLE CHART EXISTS
-				if(globalVars.getSkillsGoogleChart(c) != null) {
-					globalVars.getSkillsGoogleChart(c).RecolorPies(color0, color1, fontColor0, fontColor1);
+				if(globalVars.getSkill(c) != null) {
+					globalVars.getSkill(c).getGoogleChart().RecolorPies(color0, color1, fontColor0, fontColor1);
 				}
 			}
 			else {

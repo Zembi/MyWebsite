@@ -52,8 +52,6 @@
 		Main() {
 			this.InitializeMainPageCore();
 			this.MainMenuOfAboutMePage();
-			this.InitializeAboutMeMenuEducationItems();
-			this.InitializeAboutMeMenuSkillsItems();
 		}
 
 		InitializeMainPageCore() {
@@ -63,13 +61,15 @@
 
 		MainMenuOfAboutMePage() {
 			var thisObj = this;
+			//CHECK IF 
+			var firstTimeOpenContent = [true, true, true, true];
 			//MAIN CONTAINERS OF CONTENT
 			var aboutMeContainers = [];
 			var aboutMeEducationC = document.getElementById("aboutMeEducationC");
 			var aboutMeSkillsC = document.getElementById("aboutMeSkillsC");
-			var aboutMeExperiencesC = document.getElementById("aboutMeExperiencesC");
+			var aboutMeExperienceC = document.getElementById("aboutMeExperienceC");
 			var aboutMeToolsC = document.getElementById("aboutMeToolsC");
-			aboutMeContainers = [aboutMeEducationC, aboutMeSkillsC, aboutMeExperiencesC, aboutMeToolsC];
+			aboutMeContainers = [aboutMeEducationC, aboutMeSkillsC, aboutMeExperienceC, aboutMeToolsC];
 
 			//BUTTONS OF TOP MENU
 			var aboutMeBtns = [];
@@ -82,6 +82,8 @@
 			//SET STARTING PAGE EDUCATION
 			this.MainContentChangeButton(aboutMeEducationC, changeEduAboutMeBtn, aboutMeContainers, aboutMeBtns, "EDUCATION", true);	
 			//window.location.hash = "#education";
+			this.InitializeAboutMeMenuEducationItems();
+			firstTimeOpenContent[0] = false;
 
 			//EDUCATION
 			changeEduAboutMeBtn.addEventListener("click", function() {
@@ -90,10 +92,15 @@
 				//window.location.hash = "#education";
 
 				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
-				if(status) {
+				if(status && firstTimeOpenContent[0]) {
+					thisObj.InitializeAboutMeMenuEducationItems();
 					//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
 					globalVars.getEduGoogleChart().DrawNow(false);
+	
+					firstTimeOpenContent[0] = false;
 				}
+
+
 			});
 
 			//SKILLS
@@ -103,18 +110,24 @@
 				//window.location.hash = "#skills";
 
 				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
-				if(status) {
+				if(status && firstTimeOpenContent[1]) {
+					thisObj.InitializeAboutMeMenuSkillsItems();
+
+					firstTimeOpenContent[1] = false;
 				}
 			});
 
 			//EXPERIENCE
 			changeExpAboutMeBtn.addEventListener("click", function() {
-				var status = thisObj.MainContentChangeButton(aboutMeExperiencesC, this, aboutMeContainers, aboutMeBtns, "EXPERIENCES", false);
+				var status = thisObj.MainContentChangeButton(aboutMeExperienceC, this, aboutMeContainers, aboutMeBtns, "EXPERIENCE", false);
 
-				//window.location.hash = "#experiences";
+				//window.location.hash = "#experience";
 
 				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
-				if(status) {
+				if(status && firstTimeOpenContent[2]) {
+					thisObj.InitializeAboutMeMenuExperienceItems();
+
+					firstTimeOpenContent[2] = false;
 				}
 			});
 
@@ -125,7 +138,10 @@
 				//window.location.hash = "#tools";
 
 				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
-				if(status) {
+				if(status && firstTimeOpenContent[3]) {
+					thisObj.InitializeAboutMeMenuToolsItems();
+
+					firstTimeOpenContent[3] = false;
 				}
 			});
 		}
@@ -202,10 +218,7 @@
 					//DO THE ANIMATION AND WE JUST UPDATE A MAIN VALUE OF SKILL CLASS, THAT IS BEING CHECKED
 					//EVERY TIME USER SCROLLS, TO SEE IF AN ELEMENT IS ENTIRE IN A VIEWPORT
 					this.getSkillsChartsAr().forEach(skill => {
-						if(!skill.getSkillActiveStatus()) {
-							skill.setSkillActiveStatus(true);
-						}
-						else {
+						if(skill.getSkillActiveStatus()) {
 							skill.DisablePieAnimation();
 						}
 					});
@@ -557,7 +570,7 @@
 			this.SqlPrepareSkillView(70, "Sql", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.PhpPrepareSkillView(15, "Php", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.JavaPrepareSkillView(50, "Java", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
-			this.CPrepareSkillView(25, "C", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.CPrepareSkillView(35, "C", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			
 			this.StyleSkillCharts();
 		}
@@ -894,7 +907,7 @@
 			var skill = new Skill(skillGCItems, skillsPlaceToBe, skillsTitle, skillsText, c);
 			skill.PrototypePieOfHorizontalView(animationPercent);
 
-			globalVars.setSkillsGoogleChart(skill.getGoogleChart(), c);
+			globalVars.setSkill(skill, c);
 			//RIGHT MAIN AboutMeSkillChartChanges FUNCTION
 			this.getMainPageCore().getRightMainObj().setSkillsChartValue(skill.getGoogleChart().getStatus(), c);
 
@@ -905,6 +918,42 @@
 			for(var i = 0; i < this.getCountSkillsCharts(); i++) {
 				this.getMainPageCore().getRightMainObj().AboutMeSkillChartChanges(i);
 			}
+		}
+		////
+
+		/*EXPERIENCE PART*/
+		InitializeAboutMeMenuExperienceItems() {
+			let aboutMeExpUnderConstrC = document.getElementById("aboutMeExpUnderConstrC");
+			let msgObj = { 
+				text: "EXPERIENCE PAGE IS UNDER CONSTRUCTION!",
+				fontClass: "big_Title"
+			};
+			let imgObj = {
+				url: "../Assets/loading2.png",
+				width: 50,
+				height: 50
+			};
+			let multOfConstrImg = 3;
+
+			UnderConstructionPage(aboutMeExpUnderConstrC, msgObj, imgObj, multOfConstrImg);
+		}
+		////
+
+		/*TOOLS PART*/
+		InitializeAboutMeMenuToolsItems() {
+			let aboutMeToolsUnderConstrC = document.getElementById("aboutMeToolsUnderConstrC");
+			let msgObj = { 
+				text: "TOOLS PAGE IS UNDER CONSTRUCTION!",
+				fontClass: "big_Title"
+			};
+			let imgObj = {
+				url: "../Assets/loading2.png",
+				width: 50,
+				height: 50
+			};
+			let multOfConstrImg = 3;
+
+			UnderConstructionPage(aboutMeToolsUnderConstrC, msgObj, imgObj, multOfConstrImg);
 		}
 		////
 	}

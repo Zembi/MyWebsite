@@ -7,11 +7,276 @@
 	
 	@import url('../Css/mainPageCoreStyle.css');
 
+	:root {
+		--highlightTextColor: rgb(117, 42, 6);
+	}
 
-	/*SCREEN WIDTH UNDER 750px*/
-	@media only screen and (max-width: 750px) {
+	div {
+		-ms-overflow-style: none;  /*IE AND EDGE*/
+		scrollbar-width: none;  /*FIREFOX*/
+	}
+	
+	/*HIDE SCROLLBAR FOR CHROME, SAFARI and OPERA*/
+	div::-webkit-scrollbar {
+		  display: none;
+	}
+
+	a:link {
+		font-style: italic;
+		color: white;
+		text-decoration: underline;
+	}
+
+	a:visited {
+		color: rgb(184, 62, 4);
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--highlightTextColor);
+		text-decoration: underline;
+	}
+
+	/*GENERAL RULES ELEMENTS*/
+	.big_Title {
+		font-size: 34px;
+	}
+	.medium_Title {
+		font-size: 24px;
+	}
+	.small_Title {
+		font-size: 22px;
+	}
+	.highlight_Title {
+		color: var(--highlightTextColor) !important;
+		font-weight: bold !important;
+	}
+
+	.medium_Highlight_Text {
+		color: var(--highlightTextColor) !important;
+		font-size: 20px;
+		font-weight: bold !important;
+	}
+	.simple_Highlight_Text {
+		color: var(--highlightTextColor) !important;
+		font-size: 18px;
+		font-weight: bold !important;
+	}
+
+	.simple_Text {
+		font-size: 18px;
+	}
+	.small_Text {
+		font-size: 16px;
+	}
+
+	.lineToBreakContentC {
+		position: relative;
+		display: block;
+		width: 40%; height: 4px;
+		min-width: 50px;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		opacity: 0;
+		margin: 80px auto 60px auto;
+		animation: ShowElement var(--animationShowLine) linear var(--animationDelayShowLine) 1;
+		animation-fill-mode: forwards;
+	}
+
+	.animShow {
+		animation: ShowElement var(--animationShow) linear 1;
+		animation-fill-mode: forwards;
+	}
+
+	.animSlideIn {
+		animation: SendScreenInViewWithSkew var(--animationEnter) ease-out 1;
+		animation-fill-mode: forwards;
+	}
+
+
+	/*SPECIFIC CONTENT FROM NOW ON*/
+	#contactInfoBodyC {
+		background: transparent;
+	}
+
+	#contactUnderConstrC {
+		position: relative;
+		display: block;
+		width: 100%; height: 1000px;
+		color: white;
+		box-sizing: border-box;
+		padding: 5%;
+	}
+
+
+	/*SCREEN WIDTH UNDER 1000px*/
+	@media only screen and (max-width: 1000px) {
+		.big_Title {
+			font-size: 32px;
+		}
+		.medium_Title {
+			font-size: 23px;
+		}
+		.small_Title {
+			font-size: 19px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 19px;
+		}
+		.simple_Highlight_Text {
+			font-size: 17px;
+		}
+
+		.simple_Text {
+			font-size: 17px;
+		}
+		.small_Text {
+			font-size: 15px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 850px*/
+	@media only screen and (max-width: 850px) {
+		.big_Title {
+			font-size: 30px;
+		}
+		.medium_Title {
+			font-size: 22px;
+		}
+		.small_Title {
+			font-size: 18px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 18px;
+		}
+		.simple_Highlight_Text {
+			font-size: 16px;
+		}
+
+		.simple_Text {
+			font-size: 16px;
+		}
+		.small_Text {
+			font-size: 15px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 650px*/
+	@media only screen and (max-width: 650px) {
+		.big_Title {
+			font-size: 28px;
+		}
+		.medium_Title {
+			font-size: 20px;
+		}
+		.small_Title {
+			font-size: 16px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 16px;
+		}
+		.simple_Highlight_Text {
+			font-size: 15px;
+		}
+
+		.simple_Text {
+			font-size: 15px;
+		}
+		.small_Text {
+			font-size: 14px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 450px*/
+	@media only screen and (max-width: 450px) {
+		.big_Title {
+			font-size: 25px;
+		}
+		.medium_Title {
+			font-size: 18px;
+		}
+		.small_Title {
+			font-size: 14px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 15px;
+		}
+		.simple_Highlight_Text {
+			font-size: 14px;
+		}
+
+		.simple_Text {
+			font-size: 12px;
+		}
+		.small_Text {
+			font-size: 11px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 350px*/
+	@media only screen and (max-width: 350px) {
+		.big_Title {
+			font-size: 18px;
+		}
+		.medium_Title {
+			font-size: 16px;
+		}
+		.small_Title {
+			font-size: 12px;
+		}
+
+		.medium_Highlight_Text {
+			font-size: 13px;
+		}
+		.simple_Highlight_Text {
+			font-size: 12px;
+		}
+
+		.simple_Text {
+			font-size: 10px;
+		}
+		.small_Text {
+			font-size: 9px;
+		}
+	}
+
+	/*SCREEN WIDTH UNDER 250px*/
+	@media only screen and (max-width: 250px) {
 		
+	}
+
+	/*SCREEN WIDTH UNDER 200px*/
+	@media only screen and (max-width: 200px) {
+	
 	}
 
 
 	/*ANIMATIONS*/
+	@keyframes ShowElement {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes SendScreenInViewWithSkew {
+		0% {
+			left: 0;
+			opacity: 0;
+			transform: translate(-100%, 0) skew(-120deg);
+		}
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+			left: 50%;
+			transform: translate(-50%, 0) skew(0deg);
+		}
+	}

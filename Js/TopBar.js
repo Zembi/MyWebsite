@@ -23,7 +23,7 @@
 				<div id="midTaskBarHalfC">
 					<div id="bottomTaskBarMidC">
 						<div id="bottomTaskBarPageTitleC">
-							<h1 id="bottomTaskBarPageTitleTextH"></h1>
+							<h2 id="bottomTaskBarPageTitleTextH"></h2>
 						</div>
 					</div>
 				</div>

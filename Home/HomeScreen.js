@@ -62,7 +62,6 @@
 				
 				if(!mainTable[1][5].includes(renewTableText)) {
 					mainTable[1][5].splice(1, 0, renewTableText);
-					console.log(mainTable);
 				}
 				BackSpaceWriter(mainTable, 1, status1, timeToWait, timeToDelete);
 			});

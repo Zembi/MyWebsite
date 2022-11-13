@@ -85,10 +85,6 @@
 		font-size: 16px;
 	}
 
-	.button_Text {
-		font-size: 16px;
-	}
-
 	.lineToBreakContentC {
 		position: relative;
 		display: block;
@@ -264,7 +260,7 @@
 			overflow: auto;
 		}
 
-			/*.button_Text .simple_text*/
+			/*.simple_text*/
 			.changeContentAboutMeMenu {
 				position: relative;
 				display: block;
@@ -881,14 +877,28 @@
 
 
 		/*POINT1998*/
-		#aboutMeExperiencesC {
+		#aboutMeExperienceC {
 			background: transparent;
+		}
+		#aboutMeExpUnderConstrC {
+			position: relative;
+			display: block;
+			width: 100%; height: 1000px;
+			box-sizing: border-box;
+			padding: 5%;
 		}
 
 
 		/*POINT1998*/
 		#aboutMeToolsC {
 			background: transparent;
+		}
+		#aboutMeToolsUnderConstrC {
+			position: relative;
+			display: block;
+			width: 100%; height: 1000px;
+			box-sizing: border-box;
+			padding: 5%;
 		}
 
 
@@ -915,10 +925,6 @@
 			font-size: 17px;
 		}
 		.small_Text {
-			font-size: 15px;
-		}
-
-		.button_Text {
 			font-size: 15px;
 		}
 
@@ -950,10 +956,6 @@
 			font-size: 16px;
 		}
 		.small_Text {
-			font-size: 15px;
-		}
-
-		.button_Text {
 			font-size: 15px;
 		}
 
@@ -1002,10 +1004,6 @@
 			font-size: 14px;
 		}
 
-		.button_Text {
-			font-size: 15px;
-		}
-
 		#titlesGeneralBtnC {
 			margin-top: 15px;
 		}
@@ -1049,10 +1047,6 @@
 		}
 		.small_Text {
 			font-size: 11px;
-		}
-
-		.button_Text {
-			font-size: 15px;
 		}
 
 		#leftHalfSplitAboutMeMenuC {			
@@ -1101,10 +1095,6 @@
 		}
 		.small_Text {
 			font-size: 9px;
-		}
-
-		.button_Text {
-			font-size: 15px;
 		}
 
 		.aboutMeSkillWrapC {

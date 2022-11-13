@@ -10,7 +10,10 @@
 			//ELEMENT WHERE CHART AND INFO ABOUT MY SKILLS WILL BE CREATED AND DISPLAYED
 			this.placeToBe = placeToBe;
 
+			//TITLE INNER HTML
 			this.title = title;
+			//GET TITLE CONTAINER SO WE CAN STYLE IT
+			this.titleC = null;
 
 			//ARRAY THAT FIRST ELEMENT IS SEMI-TITLE AND THE OTHERS ARE LIST-ELEMENTS
 			this.textAr = textAr;
@@ -39,6 +42,13 @@
 
 		getTitle() {
 			return this.title;
+		}
+
+		getTitleC() {
+			return this.titleC;
+		}
+		setTitleC(titleC) {
+			this.titleC = titleC;
 		}
 
 		getTextAr() {
@@ -102,6 +112,10 @@
 			this.getGoogleChart().setPieAnimLvl(percentToReach);
 			this.getGoogleChart().Main();
 
+			//GET TITLE CONTAINER OF SKILL
+			let thisTitleC = "skillOverallTitle" + this.getCounter() + "C";
+			this.setTitleC(thisTitleC);
+
 			//WHEN USER IS SCROLLING ON TOP OF AN ELEMENT, REVEAL IT
 			this.ShowWhenInViewElements();
 
@@ -133,7 +147,10 @@
 			});
 
 			function CheckCurrentViewPort() {
-				if(CheckPartOfElementInViewport(skillOverallTextWrapP) && check && thisObj.getSkillActiveStatus()) {
+				if(CheckPartOfElementInViewport(skillOverallTextWrapP) && check && !thisObj.getSkillActiveStatus()) {
+					
+					thisObj.setSkillActiveStatus(true);
+					
 					googlCh.PieAnimation();
 
 					skillOverallTitleC.style.transform = "translate(-50%, 0)";

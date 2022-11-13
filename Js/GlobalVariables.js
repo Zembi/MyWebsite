@@ -14,7 +14,7 @@
 
 			//ABOUT ME PAGE
 			this.eduGoogleChart;
-			this.skillsGoogleChart = [];
+			this.skill = [];
 
 			//FUNCTIONS AT THE START OF THE OBJECT
 			this.Main();
@@ -53,11 +53,11 @@
 		////
 
 		//ABOUT ME/SKILLS PAGE SEMESTERS CHART 
-		getSkillsGoogleChart(counter) {
-			return this.skillsGoogleChart[counter];
+		getSkill(counter) {
+			return this.skill[counter];
 		}
-		setSkillsGoogleChart(skillsGoogleChart, counter) {
-			this.skillsGoogleChart[counter] = skillsGoogleChart;
+		setSkill(skill, counter) {
+			this.skill[counter] = skill;
 		}
 		////
 

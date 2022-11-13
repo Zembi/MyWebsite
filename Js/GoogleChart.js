@@ -506,6 +506,7 @@ current value of elmntOverall: ` + this.getElmntOverall());
 				thisObj.setFirstTimeLoading(false);
 			}
 			else {
+				//alert(1);
 				this.PieUnableAnimation();
 			}
 		}

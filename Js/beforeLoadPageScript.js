@@ -322,3 +322,29 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 	});
 }
 ////
+
+
+//IF PAGE IS UNDER CONSTRUCTION COVER IT WITH THE RIGHT MESSAGE
+function UnderConstructionPage(elmntToPlace, msgObj, imgObj, multiSizeOfUnderConstImg) {
+	if(msgObj.text == null) {
+		msgObj.text = "THIS PAGE IS UNDER CONSTRUCTION";
+	}
+	console.log(multiSizeOfUnderConstImg);
+
+	elmntToPlace.innerHTML = `
+		<div class="underConstrtuctionC">
+			<div class="underConstrtuctionWrapC">
+				<div class="underConstrtuctionHeadImgC" style="width: ` + (imgObj.width * multiSizeOfUnderConstImg) + `px; height: ` + (imgObj.height * multiSizeOfUnderConstImg) + `px;">
+					<img class="underConstrtuctionHeadImg" src="../Assets/underConst2.png">
+				</div>
+				<div class="underConstrtuctionTextC">
+					<p class="underConstrtuctionTextP ` + msgObj.fontClass + `">` + msgObj.text + `</p>
+				</div>
+				<div class="underConstrtuctionImgC" style="width: ` + imgObj.width + `px; height: ` + imgObj.height + `px;">
+					<img class="underConstrtuctionImg" src=` + imgObj.url + `>
+				</div>
+			</div>
+		</div>
+	`;
+}
+////
