@@ -454,16 +454,7 @@
 				var semestersTitleC = document.getElementById("semestersTitleC");
 				var currheighOfElmnt = semestersTitleC.offsetHeight - 4;
 
-				CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn, 30, 22);
-
-				if(GetPageWidth() > 850) {
-					//if(currheighOfElmnt != 30) {
-					//}
-				}
-				else {
-					//if(currheighOfElmnt != 22) {
-					//}
-				}
+				CreateVerticalOrHorizontalMenu(items, semestersTitleC, 0, semestersUpBtn, semestersDownBtn);
 			}
 
 			function CreateContentOfSemester(courses, counter) {

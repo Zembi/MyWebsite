@@ -9,6 +9,7 @@
 	@import url('../Css/mainPageCoreStyle.css');
 
 	:root {
+		--heightOfSemTitle: 30px;
 		--stepOfTopground: 0.1%;
 
 		--highlightTextColor: rgb(117, 42, 6);
@@ -271,15 +272,17 @@
 				border: 0 solid white;
 				cursor: pointer;
 				overflow: hidden;
+				box-sizing: border-box;
 				margin: 5px 2px 5px 2px;
-				padding: 0;
+				padding: 2px 0 2px 0;
 				
 			}
 			.cCAmeMenuSp {
 				position: relative;
 				width: 100%; height: 100%;
 				background: transparent;
-				padding: 1px 6px 1px 6px;
+				box-sizing: border-box;
+				padding: 0 6px 0 6px;
 				z-index: 1;
 			}
 			.cCAmeMenuCoverSp {
@@ -503,6 +506,7 @@
 					opacity: 0;
 					box-sizing: border-box;
 					padding: 0;
+					z-index: 1;
 					transition: opacity 0.2s;
 				}
 				#semestersUpBtn img {
@@ -516,6 +520,7 @@
 				#semestersTitleC {
 					position: relative;
 					display: block;
+					height: var(--heightOfSemTitle);
 					background: rgb(255, 255, 255, 0.3);
 					border: 2px solid white;
 					overflow: hidden;
@@ -565,7 +570,9 @@
 			.verticalDragP {
 				position: relative;
 				display: block;
+				height: var(--heightOfSemTitle);
 				color: white;
+				background: transparent;
 				font-size: 18px !important;
 				text-align: center;
 				border: 1px solid transparent;
@@ -935,6 +942,10 @@
 
 	/*SCREEN WIDTH UNDER 850px*/
 	@media only screen and (max-width: 850px) {
+		:root {
+			--heightOfSemTitle: 22px;
+		}
+
 		.big_Title {
 			font-size: 30px;
 		}

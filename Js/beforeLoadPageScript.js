@@ -93,31 +93,9 @@ function CheckPartOfElementInViewport(el) {
 
 
 //CREATE VERTICAL AND HORIZONTAL MENU OPTIONS
-function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn, heightOfC, changingHeightOfC) {
+function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBtn) {
 	var counterHelp = 0;
 	var verticalDragElmntC = null;
-	//HEIGHT OF EACH PAR
-	var verticalDragPElmntHeight = heightOfC;
-	//MAKE IT RESPONSIVE
-	var onChangeVerticalDragPElmntHeight = changingHeightOfC;
-
-	//
-	if(GetPageWidth() > 850) {
-		placeToBe.style.height = verticalDragPElmntHeight + "px";
-	}
-	else {
-		placeToBe.style.height = onChangeVerticalDragPElmntHeight + "px";
-	}
-	//RESPONSIVENESS REASON
-	window.addEventListener("resize", function() {
-		if(GetPageWidth() > 850) {
-			placeToBe.style.height = verticalDragPElmntHeight + "px";
-		}
-		else {
-			placeToBe.style.height = onChangeVerticalDragPElmntHeight + "px";
-		}
-	});
-	//
 
 	placeToBe.innerHTML = '<div class="verticalDragC"></div>';
 
@@ -136,47 +114,11 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 
 		verticalDragC.appendChild(elmnt);
 
-		//
-		if(GetPageWidth() > 850) {
-			elmnt.style.height = verticalDragPElmntHeight + "px";
-		}
-		else {
-			elmnt.style.height = onChangeVerticalDragPElmntHeight + "px";
-		}
-		//RESPONSIVENESS REASON
-		window.addEventListener("resize", function() {
-			if(GetPageWidth() > 850) {
-				elmnt.style.height = verticalDragPElmntHeight + "px";
-			}
-			else {
-				elmnt.style.height = onChangeVerticalDragPElmntHeight + "px";
-			}
-		});
-		//
-
 		if(counterHelp == 0) {
 			elmnt.style.transform = "scale(1.3)";
 		}
 
 		verticalDragElmntC = verticalDragC;
-
-		//
-		if(GetPageWidth() > 850) {
-			verticalDragPElmntHeight = elmnt.offsetHeight;
-		}
-		else {
-			onChangeVerticalDragPElmntHeight = elmnt.offsetHeight;
-		}
-		//RESPONSIVENESS REASON
-		window.addEventListener("resize", function() {
-			if(GetPageWidth() > 850) {
-				verticalDragPElmntHeight = elmnt.offsetHeight;
-			}
-			else {
-				onChangeVerticalDragPElmntHeight = elmnt.offsetHeight;
-			}
-		});
-		//
 
 		counterHelp++;
 	});
@@ -201,28 +143,12 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			}
 
 			//
-			if(GetPageWidth() > 850) {			
-				var newPos = (verticalDragPElmntHeight * (currentCounter));
-
-				verticalDragElmntC.style.marginTop = -newPos + "px";
-			}
-			else {
-				var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter));
-
-				verticalDragElmntC.style.marginTop = -newPos + "px";
-			}
+			let newPos = (placeToBe.clientHeight * (currentCounter));
+			verticalDragElmntC.style.marginTop = -newPos + "px";
 			//RESPONSIVENESS REASON
 			window.addEventListener("resize", function() {
-				if(GetPageWidth() > 850) {			
-					var newPos = (verticalDragPElmntHeight * (currentCounter));
-
-					verticalDragElmntC.style.marginTop = -newPos + "px";
-				}
-				else {
-					var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter));
-
-					verticalDragElmntC.style.marginTop = -newPos + "px";
-				}
+				let newPos = (placeToBe.clientHeight * (currentCounter));
+				verticalDragElmntC.style.marginTop = -newPos + "px";
 			});
 			//
 
@@ -266,28 +192,12 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			}
 
 			//
-			if(GetPageWidth() > 850) {
-				var newPos = (verticalDragPElmntHeight * (currentCounter + 1));
-
-				verticalDragElmntC.style.marginTop = -newPos + "px";
-			}
-			else {
-				var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter + 1));
-
-				verticalDragElmntC.style.marginTop = -newPos + "px";
-			}
+			let newPos = (placeToBe.clientHeight * (currentCounter + 1));
+			verticalDragElmntC.style.marginTop = -newPos + "px";
 			//RESPONSIVENESS REASON
 			window.addEventListener("resize", function() {
-				if(GetPageWidth() > 850) {
-					var newPos = (verticalDragPElmntHeight * (currentCounter + 1));
-
-					verticalDragElmntC.style.marginTop = -newPos + "px";
-				}
-				else {
-					var newPos = (onChangeVerticalDragPElmntHeight * (currentCounter + 1));
-
-					verticalDragElmntC.style.marginTop = -newPos + "px";
-				}
+				let newPos = (placeToBe.clientHeight * (currentCounter + 1));
+				verticalDragElmntC.style.marginTop = -newPos + "px";
 			});
 			//
 			
@@ -329,7 +239,6 @@ function UnderConstructionPage(elmntToPlace, msgObj, imgObj, multiSizeOfUnderCon
 	if(msgObj.text == null) {
 		msgObj.text = "THIS PAGE IS UNDER CONSTRUCTION";
 	}
-	console.log(multiSizeOfUnderConstImg);
 
 	elmntToPlace.innerHTML = `
 		<div class="underConstrtuctionC">
