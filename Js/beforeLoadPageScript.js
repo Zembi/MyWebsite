@@ -9,7 +9,7 @@ function CheckIfPageThatIsAboutToLoadIsInCurrentStatus() {
 	}
 }
 
-CheckIfPageThatIsAboutToLoadIsInCurrentStatus();
+//CheckIfPageThatIsAboutToLoadIsInCurrentStatus();
 ////
 
 
