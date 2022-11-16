@@ -1,13 +1,4 @@
 	
-	#footerFullC {
-		position: absolute;
-		display: inline-block;
-		width: 96%; height: 45px;
-		bottom: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
-		z-index: 1;
-	}
 	#footerC {
 		position: relative;
 		display: block;

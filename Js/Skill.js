@@ -150,14 +150,15 @@
 			var thisObj = this;
 			var check = true;
 
+			var rightBodyTCC = document.getElementById("rightBodyTCC");
+
 			CheckCurrentViewPort();
 			document.addEventListener("scroll", function() {
 				CheckCurrentViewPort();
 			});
 
 			function CheckCurrentViewPort() {
-				if(CheckPartOfElementInViewport(skillOverallTextWrapP) && check && !thisObj.getSkillActiveStatus()) {
-					
+				if(CheckPartOfElementInViewport(skillOverallWrapC) && check && !thisObj.getSkillActiveStatus()) {
 					thisObj.setSkillActiveStatus(true);
 					
 					googlCh.PieAnimation();
