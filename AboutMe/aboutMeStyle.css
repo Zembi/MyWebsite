@@ -269,7 +269,7 @@
 				background: var(--skillsBackground);
 				color: var(--highlightTextColor);
 				border-radius: 2px;
-				border: 0 solid white;
+				border: 1px solid var(--highlightTextColor);
 				cursor: pointer;
 				overflow: hidden;
 				box-sizing: border-box;
@@ -760,7 +760,6 @@
 			position: relative;
 			display: block;
 			float: left;
-			background: var(--highlightTextColor);
 			border-radius: 3px 3px 0 0;
 			left: 50%;
 			box-sizing: border-box;
@@ -793,6 +792,7 @@
 				display: block;
 				float: left;
 				width: 50%;
+				color: white;
 			}
 			.skillOverallChartC {
 				position: relative;
@@ -852,6 +852,7 @@
 				display: block;
 				float: right;
 				width: 50%; height: 100%;
+				color: white;
 			}
 			.skillOverallTextWrapC {
 				width: 100%; height: 100%;

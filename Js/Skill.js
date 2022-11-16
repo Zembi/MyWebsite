@@ -13,7 +13,8 @@
 			//TITLE INNER HTML
 			this.title = title;
 			//GET TITLE CONTAINER SO WE CAN STYLE IT
-			this.titleC = null;
+			this.elemntsThatChangeBackground =[];
+			this.elemntsThatChangeFont =[];
 
 			//ARRAY THAT FIRST ELEMENT IS SEMI-TITLE AND THE OTHERS ARE LIST-ELEMENTS
 			this.textAr = textAr;
@@ -44,11 +45,18 @@
 			return this.title;
 		}
 
-		getTitleC() {
-			return this.titleC;
+		getElemntsThatChangeBackground() {
+			return this.elemntsThatChangeBackground;
 		}
-		setTitleC(titleC) {
-			this.titleC = titleC;
+		setElemntsThatChangeBackground(elemntsThatChangeBackground) {
+			this.elemntsThatChangeBackground.push(elemntsThatChangeBackground);
+		}
+
+		getElemntsThatChangeFont() {
+			return this.elemntsThatChangeFont;
+		}
+		setElemntsThatChangeFont(elemntsThatChangeFont) {
+			this.elemntsThatChangeFont.push(elemntsThatChangeFont);
 		}
 
 		getTextAr() {
@@ -114,7 +122,8 @@
 
 			//GET TITLE CONTAINER OF SKILL
 			let thisTitleC = "skillOverallTitle" + this.getCounter() + "C";
-			this.setTitleC(thisTitleC);
+			thisTitleC = document.getElementById(thisTitleC);
+			this.setElemntsThatChangeBackground(thisTitleC);
 
 			//WHEN USER IS SCROLLING ON TOP OF AN ELEMENT, REVEAL IT
 			this.ShowWhenInViewElements();
@@ -177,20 +186,30 @@
 			skillOverallTextWrapP = document.getElementById(skillOverallTextWrapP);
 
 			skillOverallTextWrapP.innerHTML = `
-				<p id="skillTextAr` + this.getCounter() + `P" class="skillTextArP small_Title"></p>
+				<p class="skillTextArP small_Title">
+					<span id="skillTextArMain` + this.getCounter() + `Sp"></span>
+					<span id="skillTextArSecondary` + this.getCounter() + `Sp"></span>
+				</p>
 				<ul id="skillTextAr` + this.getCounter() + `Ul" class="skillTextArUl"></ul>
 			`;
 
 			//GET ELEMENTS THAT JUST CREATED UP
-			var skillTextArP = "skillTextAr" + this.getCounter() + "P";
-			skillTextArP = document.getElementById(skillTextArP);
+			var skillTextArMainSp = "skillTextArMain" + this.getCounter() + "Sp";
+			skillTextArMainSp = document.getElementById(skillTextArMainSp);
+			this.setElemntsThatChangeFont(skillTextArMainSp);
+
+			var skillTextArSecondarySp = "skillTextArSecondary" + this.getCounter() + "Sp";
+			skillTextArSecondarySp = document.getElementById(skillTextArSecondarySp);
 
 			var skillTextArUl = "skillTextAr" + this.getCounter() + "Ul";
 			skillTextArUl = document.getElementById(skillTextArUl);
 
 			for(var i = 0; i < getTextAr.length;i++) {
 				if(i == 0) {
-					skillTextArP.innerHTML = getTextAr[i];
+					skillTextArMainSp.innerHTML = getTextAr[i];
+				}
+				else if(i == 1) {
+					skillTextArSecondarySp.innerHTML = " - " + getTextAr[i];
 				}
 				else {
 					var newItemInUl = this.getCounter() + `` + i; 
@@ -199,5 +218,17 @@
 					skillTextArUl.innerHTML += newItemInUl;
 				}
 			};
+		}
+
+		RecolorAttrtsOfSkill(backgroundColor, fontColor) {
+			//BACKGROUND CHANGES
+			this.getElemntsThatChangeBackground().forEach(elmntBackgr => {
+				elmntBackgr.style.background = backgroundColor;
+			});
+
+			//FONT CHANGES
+			this.getElemntsThatChangeFont().forEach(elemntFont => {
+				elemntFont.style.color = fontColor;
+			});
 		}
 	}

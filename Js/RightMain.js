@@ -306,60 +306,43 @@ AboutMeEduChartChanges(): in waiting line`);
 
 		AboutMeSkillChartChanges(c) {
 			if(this.getSkillsChartValue()[c]) {
-				if(changeBackgroundBtn.name == "prof1") {
-					//FULL PIE
-					var color0 = "white";
-					var fontColor0 = color0;
-					
-					//PIE THAT WILL FILL 
-					var color1 = null;
-					var fontColor1 = null;
+				//FULL PIE
+				var color0 = "white";
+				var fontColor0 = color0;
+				
+				//PIE THAT WILL FILL 
+				var color1 = null;
+				var fontColor1 = null;
 
+				var fontOnChangingColor = null;
+			
+				if(changeBackgroundBtn.name == "prof1") {
 					var darkerFontColor = "rgb(87, 126, 161)";
 					var lighterFontColor = "white";
 
 					var colors = ["rgb(87, 126, 161)", "black"];
 					var allColors = ChromaColor("hcl", colors, this.getSkillsChartValue().length);
-					
-					/*if(c < 2) {
-						fontColor1 = darkerFontColor;
-					}
-					else if(c > 2) {
-						fontColor1 = lighterFontColor;
-					}*/
 
 					color1 = allColors[c];
 					fontColor1 = lighterFontColor;
+					fontOnChangingColor = allColors[allColors.length - 2];
 				}
 				else if(changeBackgroundBtn.name == "prof3") {
-					//FULL PIE
-					var color0 = "white";
-					var fontColor0 = color0;
-					
-					//PIE THAT WILL FILL 
-					var color1 = null;
-					var fontColor1 = null;
-
 					var darkerFontColor = "rgb(143, 56, 14)";
 					var lighterFontColor = "white";
 
 					var colors = ["rgb(117, 42, 6)", "black"];
 					var allColors = ChromaColor("hcl", colors, this.getSkillsChartValue().length);
 
-					/*if(c < 2) {
-						fontColor1 = darkerFontColor;
-					}
-					else if(c > 2) {
-						fontColor1 = lighterFontColor;
-					}*/
-
 					color1 = allColors[c];
 					fontColor1 = lighterFontColor;
+					fontOnChangingColor = allColors[allColors.length - 2];
 				}
 
 				//CHECK IF GLOBAL GOOGLE CHART EXISTS
 				if(globalVars.getSkill(c) != null) {
 					globalVars.getSkill(c).getGoogleChart().RecolorPies(color0, color1, fontColor0, fontColor1);
+					globalVars.getSkill(c).RecolorAttrtsOfSkill(color1, fontOnChangingColor);
 				}
 			}
 			else {

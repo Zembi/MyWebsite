@@ -187,6 +187,8 @@
 			function OpenMenu(pointOfChange) {
 				//INITIALIZE VARIABLES
 				var leftBodyTCC = document.getElementById("leftBodyTCC");
+				var leftBackgroundC = document.getElementById("leftBackgroundC");
+				var leftBodyWrapC = document.getElementById("leftBodyWrapC");
 				var openMenuBtnC = document.getElementById("openMenuBtnC");
 				var downMenuBtnLineC = document.getElementById("downMenuBtnLineC");
 				var downMenuBtnMovingInLineC = document.getElementById("downMenuBtnMovingInLineC");
@@ -252,9 +254,13 @@
 					//BIG OPEN MENU
 					if(GetPageWidth() < 1200) {
 						leftBodyTCC.style.width = "200px";
+						leftBackgroundC.style.width = "200px";
+						leftBodyWrapC.style.width = "200px";
 					}
 					else {
 						leftBodyTCC.style.width = "240px";
+						leftBackgroundC.style.width = "240px";
+						leftBodyWrapC.style.width = "240px";
 					}
 					openMenuBtnC.style.top = "60%";
 
@@ -266,6 +272,8 @@
 				else {
 					//SMALL OPEN MENU
 					leftBodyTCC.style.width = "100%";
+					leftBackgroundC.style.width = "100%";
+					leftBodyWrapC.style.width = "100%";
 
 					openMenuBtnC.style.top = "50%";
 
@@ -329,9 +337,13 @@
 					//BIG CLOSE MENU
 					if(GetPageWidth() < 1200) {
 						leftBodyTCC.style.width = "110px";
+						leftBackgroundC.style.width = "110px";
+						leftBodyWrapC.style.width = "110px";
 					}
 					else {
 						leftBodyTCC.style.width = "140px";
+						leftBackgroundC.style.width = "140px";
+						leftBodyWrapC.style.width = "140px";
 					}
 					openMenuBtnC.style.transform = "translate(-50%, -50%)";
 
@@ -343,6 +355,8 @@
 				else {
 					//SMALL CLOSE MENU
 					leftBodyTCC.style.width = "0";
+					leftBackgroundC.style.width = "0";
+					leftBodyWrapC.style.width = "0";
 					
 					openMenuBtnC.style.background = "transparent";
 					openMenuBtnC.style.transform = "translate(0, -50%)";

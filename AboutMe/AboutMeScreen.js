@@ -556,7 +556,7 @@
 			var turningScreenPoint = 850;
 
 			this.HtmlPrepareSkillView(90, "Html", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
-			this.CssPrepareSkillView(85, "Css", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
+			this.CssPrepareSkillView(80, "Css", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.JsPrepareSkillView(50, "Js", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.SqlPrepareSkillView(70, "Sql", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
 			this.PhpPrepareSkillView(15, "Php", "Pie", firstTime, afterFirstTIme, turningScreenPoint);
@@ -602,7 +602,8 @@
 
 			var skillsPlaceToBe = document.getElementById("htmlWrapC");
 			var skillsText = [
-				"Html - The beginning is half of everything",
+				"Html",
+				"The beginning is half of everything",
 				"first introduction through W3shcools",
 				"simple and easy to learn",
 				"main core of any website"
@@ -647,7 +648,8 @@
 
 			var skillsPlaceToBe = document.getElementById("cssWrapC");
 			var skillsText = [
-				"Css - An aesthetic side",
+				"Css",
+				"An aesthetic side",
 				"first introduction through W3shcools",
 				"at first couldn't recognize the potentials",
 				"the artistic touch, on the canvas of web"
@@ -692,7 +694,8 @@
 
 			var skillsPlaceToBe = document.getElementById("jsWrapC");
 			var skillsText = [
-				"Js - The Frog Prince",
+				"Js",
+				"The Frog Prince",
 				"first introduction through W3shcools",
 				"after java in university, it was easier than expected",
 				"master client-side, then server-side",
@@ -738,7 +741,8 @@
 
 			var skillsPlaceToBe = document.getElementById("sqlWrapC");
 			var skillsText = [
-				"Sql - Banks of data",
+				"Sql",
+				"Banks of data",
 				"first introduction through university",
 				"easy to use",
 				"studied database structure, as well",
@@ -783,7 +787,8 @@
 
 			var skillsPlaceToBe = document.getElementById("phpWrapC");
 			var skillsText = [
-				"Php - Timeless worker",
+				"Php",
+				"Timeless worker",
 				"first introduction through W3shcools",
 				"unique and complicated, especially for a self-taught",
 				"only use for database connections, till now",
@@ -829,7 +834,8 @@
 
 			var skillsPlaceToBe = document.getElementById("javaWrapC");
 			var skillsText = [
-				"Java - Things are serious",
+				"Java",
+				"Things are serious",
 				"first introduction through university",
 				"object-oriention is a god-given tool",
 				"implement object-oriention wherever its possible",
@@ -875,7 +881,8 @@
 
 			var skillsPlaceToBe = document.getElementById("cWrapC");
 			var skillsText = [
-				"C - Intro's best language",
+				"C",
+				"Great introductory language",
 				"first introduction through university",
 				"first interaction to a real programming language",
 				"really complicated, cause of indexes(unlike Java)"
