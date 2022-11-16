@@ -3,6 +3,7 @@
 		#leftBodyTCC {
 			position: relative;
 			display: table-cell;
+			float: left;
 			width: 140px; height: 100%;
 			background: linear-gradient(120deg, rgb(0, 4, 40, 0.7) 0%, rgb(44, 62, 80, 0.7) 50%, rgb(0, 4, 40, 0.7) 100%);
 			box-shadow: 0 0 6px black;
@@ -13,15 +14,15 @@
 		#leftBackgroundC {
 			position: absolute;
 			display: block;
-			width: 200px; height: 100%;
+			width: inherit; height: 100%;
 			background: transparent;
 		}
 		
 		#leftBodyWrapC {
 			position: fixed;
 			display: block;
-			width: 200px; height: 100%;
-			background: green;
+			width: inherit; height: 100%;
+			background: transparent;
 			overflow: visible;
 		}
 			#upLeftC {
