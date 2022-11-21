@@ -26,7 +26,7 @@
 					</div>
 					<div id="footerRightEmailC">
 						<div id="footerRightEmailTextC">
-							<p id="footerRightEmailTextP">Email: <span>vasilisfzembilas@gmail.com</span></p>
+							<p id="footerRightEmailTextP">Email: <span><a href="mailto:vasilisfzembilas@gmail.com" style="text-decoration: none;">vasilisfzembilas@gmail.com</a></span></p>
 						</div>
 					</div>
 				</div>

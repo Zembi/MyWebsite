@@ -88,19 +88,16 @@
 			//EDUCATION
 			changeEduAboutMeBtn.addEventListener("click", function() {
 				var status = thisObj.MainContentChangeButton(aboutMeEducationC, this, aboutMeContainers, aboutMeBtns, "EDUCATION", false);
-
 				//window.location.hash = "#education";
 
 				//IF THERE IS ACTUALLLY A LOAD OF ANOTHER SUB-PAGE ONCLICK
 				if(status && firstTimeOpenContent[0]) {
 					thisObj.InitializeAboutMeMenuEducationItems();
-					//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
-					globalVars.getEduGoogleChart().DrawNow(false);
-	
+
 					firstTimeOpenContent[0] = false;
 				}
-
-
+				//WHEN EDUCATION PAGE IS OPENING AGAIN RELOAD, SO IT CAN FIX THE SIZE
+				globalVars.getEduGoogleChart().DrawNow(false);
 			});
 
 			//SKILLS

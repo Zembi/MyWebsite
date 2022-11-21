@@ -30,7 +30,7 @@
 		MainMenuOfContactPage() {
 			let contactUnderConstrC = document.getElementById("contactUnderConstrC");
 			let msgObj = { 
-				text: "CONTACT/INFO PAGE IS UNDER CONSTRUCTION!",
+				text: "CONTACT PAGE IS UNDER CONSTRUCTION!",
 				fontClass: "big_Title"
 			};
 			let imgObj = {
@@ -54,7 +54,7 @@
 						["Arkhangelsk", 38.00, 614.92]
 					]);
 
-				    var geochart = new google.visualization.GeoChart(document.getElementById("contactInfoChartC"));
+				    var geochart = new google.visualization.GeoChart(document.getElementById("contactChartC"));
 
 				    var options = {
 						region: "RU",
