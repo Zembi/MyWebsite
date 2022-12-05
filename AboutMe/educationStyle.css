@@ -1,0 +1,824 @@
+@import url('../Css/mainPageCoreStyle.css');
+
+:root {
+   --heightOfSemTitle: 30px;
+   --stepOfTopground: 0.1%;
+
+   --highlightTextColor: rgb(117, 42, 6);
+
+   --animeSlideOut: 0.6s;
+   --step1:  0.3s;
+
+   --upArrowUrl: url("../Assets/arrow5.png");
+   --upArrowHoverUrl: url("../Assets/arrow4.png");
+   --downArrowUrl: url("../Assets/arrow4.png");
+   --downArrowHoverUrl: url("../Assets/arrow5.png");
+
+   --skillsBackground: rgb(255, 255, 255, 0.1);
+}
+
+div {
+   -ms-overflow-style: none;  /*IE AND EDGE*/
+   scrollbar-width: none;  /*FIREFOX*/
+}
+
+/*HIDE SCROLLBAR FOR CHROME, SAFARI and OPERA*/
+div::-webkit-scrollbar {
+     display: none;
+}
+
+#aboutMeBodyC {
+   position: relative;
+   display: block;
+   width: 100%; height: 100%;
+   color: white;
+}
+
+   #aboutMeBodyTopGround1C {
+      top: 0;
+      bottom: calc(87.5% - var(--stepOfTopground));
+      animation-delay: var(--animeSlideOut);
+   }
+   #aboutMeBodyTopGround2C {
+      top: 12.5%;
+      bottom: calc(75% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 1));
+   }
+   #aboutMeBodyTopGround3C {
+      top: 25%;
+      bottom: calc(62.5% - var(--stepOfTopground));
+      overflow: hidden;
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 2));
+   }
+   #aboutMeBodyTopGround4C {
+      top: 37.5%;
+      bottom: calc(50% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 3));
+   }
+   #aboutMeBodyTopGround5C {
+      top: 50%;
+      bottom: calc(37.5% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 4));
+   }
+   #aboutMeBodyTopGround6C {
+      top: 62.5%;
+      bottom: calc(25% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 5));
+   }
+   #aboutMeBodyTopGround7C {
+      top: 75%;
+      bottom: calc(12.5% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 6));
+   }
+   #aboutMeBodyTopGround8C {
+      top: 87.5%;
+      bottom: calc(0% - var(--stepOfTopground));
+      animation-delay: calc(var(--animeSlideOut) + calc(var(--step1) * 7));
+   }
+   .aboutMeBodyTopGroundAnimC {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background: linear-gradient(120deg, rgb(0, 4, 40, 0.5) 0%, rgb(44, 62, 80, 0.5) 50%, rgb(0, 4, 40, 0.5) 100%);
+      z-index: 2;
+       animation: MoveLeftTopGround 1s ease-in-out 1;
+       animation-fill-mode: forwards;
+   }
+
+   #aboutMeBodyTopGroundOverC {
+      position: absolute;
+      display: block;
+      float: right;
+      top: 0;
+      right: 50%;
+      margin-top: 40px;
+      z-index: 2;
+      transform: translate(50%, 0);
+      animation: MoveOverTopGroundToMainPos 1.5s ease-in-out 2s 1;
+      animation-fill-mode: forwards;
+   }
+      #aboutMeBodyTopGroundHeartC {
+         position: relative;
+         display: inline-block;
+         font-size: 400%;
+         left: 50%;
+         transform: translate(-50%, 0);
+         animation: AfterTopGroundHeartAction 1.5s ease-in-out 2s 1;
+         animation-fill-mode: forwards;
+      }
+      #aboutMeBodyTopGroundHeart {
+         animation: BeatingHeart 1.5s linear infinite, 
+            ColorHeart 1s ease-in-out 2s 1;
+         animation-fill-mode: forwards;
+      }
+
+      /*big_Title*/
+      #aboutMeBodyTopGroundP {
+         position: relative;
+         display: block;
+         color: white;
+         text-align: center;
+         overflow: hidden;
+         animation: AfterTopGroundParAction 1.5s ease-in-out 2s 1;
+         animation-fill-mode: forwards;
+      }
+
+
+
+   #aboutMeBodyMainC {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: tranredrsparent;
+      overflow: hidden;
+   }
+   #aboutMeMainContentC {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: 3;
+   }
+
+   #titlesGeneralBtnC {
+      position: relative;
+      display: block;
+      width: 100%;
+      opacity: 0;
+      overflow: hidden;
+      margin: 20px 0 -50px 0;
+      transform: translate(-100%, 0) skew(-120deg);
+      animation: SendScreenInViewWithSkew 1s ease-out calc(var(--animationWaitToEnter)) 1;
+      animation-fill-mode: forwards;
+   }
+      #titleC {
+         position: relative;
+         display: block;
+         width: 100%;
+      }
+      /*.simple_Text*/
+      #titleH {
+         position: relative;
+         display: block;
+         width: 100%;
+         color: white;
+         font-style: italic;
+         text-align: center;
+         margin: auto;
+         padding: 10px 1em 5px 1em;
+         box-sizing: border-box;
+      }
+
+      #subTitleC {
+         position: relative;
+         display: block;
+      }
+      /*small_Text*/
+      #subTitleP {
+         position: relative;
+         display: block;
+         color: black;
+         font-style: italic;
+         text-align: center;
+      }
+      #subTitleP span {
+          color: var(--highlightTextColor);
+      }
+   
+   .aboutMePageContent {
+      position: relative;
+      display: block;
+      width: 100%;
+      opacity: 0;
+      overflow: hidden;
+      animation: ShowElement 2s ease-out calc(var(--animationWaitToEnter)) 1;
+      animation-fill-mode: forwards;
+   }
+
+   /*POINT1998*/
+   #aboutMeEducationC {
+      background: transparent;
+      margin-top: -20px;
+   }
+      /*.simple_text .animShow*/
+      #textIntroEducationP {
+         text-align: center;
+         opacity: 0;
+         margin: 20px 0 40px 0;
+         padding: 0 5% 0 5%;
+         animation-delay: calc(var(--animationWaitToShow) + calc(var(--step3) * 1));
+      }
+      /*.medium_Highlight_Text*/
+      /* #textIntroEducationP span {
+      } */
+
+      #textIntroEducationC {
+         position: relative;
+         display: block;
+         background: transparent;
+         overflow: auto;
+         z-index: 1;
+      }
+      /*.animShow*/
+      #textIntroInfoAboutMeEduC {
+         position: relative;
+         display: inline-block;
+         left: 50%;
+         opacity: 0;
+         padding: 0 10% 0 10%;
+         transform: translate(-50%, 0);
+         animation-delay: calc(var(--animationWaitToShow) + calc(var(--step3) * 1));
+      }
+      /*.simple_text*/
+      #textIntroInfoAboutMeEduUl {
+         position: relative;
+         display: block;
+         margin: 0;
+         padding: 0;
+      }
+         /* .textIntroInfoAboutMeEduLi {
+
+         } */
+         /*.medium_Highlight_Text*/
+         /* .textIntroInfoAboutMeEduLi span {
+         } */
+         .textIntroInfoAboutMeEduLi span img {
+            width: 16px; height: 16px;
+            margin: 0 0 -3px 7px;
+            content: url(../Assets/loading2.png);
+            animation: Loader 1s ease-in-out infinite;
+            animation-delay: calc(var(--animationWaitToShow) + calc(var(--step3) * 1));
+         }
+
+      /*.animSlideIn*/
+      #chartTitleC {
+         position: relative;
+         display: block;
+         overflow: auto;
+         opacity: 0;
+         margin-top: 50px;
+         padding: 0 5% 0 5%;
+         z-index: 1;
+         animation-delay: calc(var(--animationWaitToEnter) + calc(var(--step2) * 1));
+      }
+      /*.small_Title*/
+      #chartTitleH {
+         position: relative;
+         display: block;
+         float: left;
+         text-align: center;
+         left: 50%;
+         transform: translate(-50%, 0);
+      }
+      /*.highlight_Title*/
+      #chartTitleH span {
+         color: rgb(117, 42, 6);
+         padding: 0 2px 0 2px;
+      }
+
+      /*.animSlideIn*/
+      #chartWrapC {
+         position: relative;
+         display: block;
+         width: 100%; height: 600px;
+         overflow: hidden;
+         margin: -80px 0 -60px 0;
+         animation-delay: calc(var(--animationWaitToEnter) + calc(var(--step2) * 2));;
+      }
+      .elementsMoveInsight {
+         opacity: 0;
+         transform: translate(-100%, 0) skew(-120deg);
+         animation: SendScreenInViewWithSkew 1s ease-out calc(var(--animationWaitToEnter)) 1;
+         animation-fill-mode: forwards;
+      }
+         #chartCC {
+            position: absolute;
+            display: block;
+            wdith: 100%; height: 100%;
+            left: 0; right: 0;
+            overflow: hidden;
+         }
+            #chartC {
+               position: relative;
+               width: 100%; height: 100%;
+               background: transparent;
+            }
+
+         #eduChartLoadingFullC {
+            position: absolute;
+            display: none;
+            width: 90%; height: 90%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--highlightTextColor);
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+         }
+            #eduChartCenterLoaderC {
+               position: relative;
+               display: block;
+               width: 8vw; height: 8vw;
+               max-width: 100px; max-height: 100px;
+               background: transparent;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+            }
+            #eduChartCenterLoadingImg {
+               position: relative;
+               display: block;
+               width: 100%; height: 100%;
+               content: url("../Assets/loading1.png");
+               animation: LoadingCharts 0.5s ease-in-out infinite;
+               animation-play-state: paused;
+            }
+
+      #eduCoursesOfUniversityC {
+         position: relative;
+         display: block;
+         width: 100%;
+         background: transparent;
+      }
+      #titleWrapAboutSemestersChooseC {
+         position: relative;
+         display: block;
+         width: 100%;
+         background: transparent;
+      }
+      /*.animSlideIn*/
+      #titleAboutSemestersChooseC {
+         position: relative;
+         display: block;
+         width: 140px;
+         background: transparent;
+         transform: translate(-100%, 0);
+         animation-delay: calc(var(--animationWaitToEnter) + calc(var(--step2) * 3));
+      }
+         #semestersUpBtnC {
+            position: relative;
+            display: block;
+            width: 26px; height: 18px;
+            margin: auto; margin-bottom: 6px;
+         }
+         #semestersUpBtn {
+            position: relative;
+            display: block;
+            width: 100%; height: 100%;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            box-sizing: border-box;
+            padding: 0;
+            z-index: 1;
+            transition: opacity 0.2s;
+         }
+         #semestersUpBtn img {
+            width: 100%; height: 100%;
+            content: var(--upArrowUrl);
+         }
+         #semestersUpBtn:hover img {
+            content: var(--upArrowHoverUrl);
+         }
+         
+         #semestersTitleC {
+            position: relative;
+            display: block;
+            height: var(--heightOfSemTitle);
+            background: rgb(255, 255, 255, 0.3);
+            border: 2px solid white;
+            overflow: hidden;
+            -ms-overflow-style: none;  /*IE AND EDGE*/
+            scrollbar-width: none;  /*FIREFOX*/
+         }
+         /*HIDE SCROLLBAR FOR CHROME, SAFARI and OPERA*/
+         #semestersTitleC::-webkit-scrollbar {
+           display: none;
+         }
+         
+         #semestersDownBtnC {
+            position: relative;
+            display: block;
+            width: 26px; height: 18px;
+            background: transparent;
+            margin: auto; margin-top: 6px;
+         }
+         #semestersDownBtn{
+            position: relative;
+            display: block;
+            width: 100%; height: 100%;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding: 0;
+            transition: opacity 0.5s;
+         }
+         #semestersDownBtn img {
+            width: 100%; height: 100%;
+            transform: rotate(180deg);
+            content: var(--downArrowUrl);
+         }
+         #semestersDownBtn:hover img {
+            content: var(--downArrowHoverUrl);
+         }
+
+      .verticalDragC {
+         position: relative;
+         display: block;
+         width: 100%;
+         background: transparent;
+         margin-top: 0;
+         transition: margin 0.4s;
+      }
+      .verticalDragP {
+         position: relative;
+         display: block;
+         height: var(--heightOfSemTitle);
+         color: white;
+         background: transparent;
+         font-size: 18px !important;
+         text-align: center;
+         border: 1px solid transparent;
+         box-sizing: border-box;
+         padding: 4px 5px 0 5px;
+         transform: scale(1);
+         transition: transform 0.3s;
+      }
+         .verticalMenuSemesterSp {
+            color: rgb(0, 0, 0, 0.5);
+            font-weight: bold;
+         }
+
+         .verticalMenuTextSp {
+
+         }
+         .verticalDragP:hover .verticalMenuTextSp {
+            color: rgb(0, 0, 0, 0.5);
+         }
+
+
+      /*.animSlideIn*/
+      #semestersContentC {
+         position: relative;
+         display: block;
+         background: transparent;
+         opacity: 0;
+         margin-top: 20px;
+         padding: 0 5% 0 5%;
+         transition: opacity 0.2s;
+         animation-delay: calc(var(--animationWaitToEnter) + calc(var(--step2) * 4));
+      }
+         .semesterTitleC {
+            position: relative;
+            display: block;
+            background: transparent;
+            border-bottom: 2px solid white;
+            overflow: auto;
+            padding: 6px 2% 6px 2%;
+         }
+            /*.small_Title*/
+            .semesterTitleH {
+               position: relative;
+               display: block;
+               float: left;
+               background: transparent;
+               margin: 0;
+               padding: 0;
+            }
+            /*.highlight_Title*/
+            /* .semesterTitleH span {
+            } */
+            
+            .semesterTitleAverageC {
+               position: relative;
+               display: block;
+               float: right;
+            }
+            /*.small_Text*/
+            .semesterTitleAverageP {
+               position: relative;
+               display: block;
+            }
+               .semesterTitleAverageTextSp {
+                  position: relative;
+                  margin-right: 5px;
+                  font-style: italic;
+               }
+               /*.medium_Highlight_Text*/
+               .semesterTitleAverageSp {
+                  position: relative;
+               }
+         
+         .semesterMainContentC {
+            padding: 0 2% 0 2%;
+         }
+         .currSemesterCourseWrapC {
+            border: 4px solid var(--highlightTextColor);
+            border-top: none;
+            border-bottom: 1px solid white;
+            overflow: auto;
+            box-sizing: border-box;
+            padding: 4px 0 4px 0;
+         }
+            .currSemesterCourseC {
+               position: relative;
+               display: block;
+               float: left;
+               width: 88%;
+               box-sizing: border-box;
+               padding-left: 2%;
+            }
+            /*.small_Text*/
+            .currSemesterCourseP {
+               text-align: left;
+            }
+            .currSemesterCourseWrapC:hover .currSemesterCourseP {
+               color: grey;
+            }
+
+            .currSemesterCourseGradeC {
+               position: relative;
+               display: block;
+               float: right;
+               width: 12%; height: 100%;
+               box-sizing: border-box;
+               padding-right: 5%;
+
+            }
+            /*.simple_Text*/
+            .currSemesterCourseGradeP {
+               position: relative;
+               display: block;
+               height: 100%;
+               text-align: right;
+            }
+            .currSemesterCourseWrapC:hover .currSemesterCourseGradeP {
+               color: var(--highlightTextColor);
+            }
+
+
+      /* #infoAndPhotosOfUniversityC {
+
+      } */
+
+      .lineToBreakContentC {
+         position: relative;
+         display: block;
+         width: 40%; height: 4px;
+         min-width: 50px;
+         background: rgba(255, 255, 255, 0.2);
+         border-radius: 4px;
+         opacity: 0;
+         margin: 80px auto 60px auto;
+         animation: ShowElement var(--animationShowLine) linear var(--animationDelayShowLine) 1;
+         animation-fill-mode: forwards;
+       }
+       
+       .animShow {
+         animation: ShowElement var(--animationShow) linear 1;
+         animation-fill-mode: forwards;
+      }
+   
+      .animSlideIn {
+         animation: SendScreenInViewWithSkew var(--animationEnter) ease-out 1;
+         animation-fill-mode: forwards;
+      }
+
+
+
+/*SCREEN WIDTH UNDER 1000px*/
+@media only screen and (max-width: 1000px) {
+
+}
+
+/*SCREEN WIDTH UNDER 850px*/
+@media only screen and (max-width: 850px) {
+   :root {
+      --heightOfSemTitle: 22px;
+   }
+
+   /*CHANGE SEMESTER CONTENT*/
+   #titleAboutSemestersChooseC {
+      width: 120px;
+   }
+
+   .verticalDragP {
+      font-size: 15px !important;
+      padding-top: 1px;
+   }
+   /**/
+}
+
+/*SCREEN WIDTH UNDER 650px*/
+@media only screen and (max-width: 650px) {
+   #titlesGeneralBtnC {
+      margin-top: 15px;
+   }
+}
+
+/*SCREEN WIDTH UNDER 450px*/
+@media only screen and (max-width: 450px) {
+   #leftHalfSplitAboutMeMenuC {			
+      margin-right: 10px;
+   }
+
+   .changeContentAboutMeMenu {
+      float: none;
+      margin: 5px auto 5px auto;
+   }
+
+   #titlesGeneralBtnC {
+      margin-top: 10px;
+   }
+}
+
+/*SCREEN WIDTH UNDER 350px*/
+@media only screen and (max-width: 350px) {
+   #changeContentAboutMeBtnC {
+      margin-top: 5px;
+   }
+
+   #aboutMeMenuLineBreakC {
+      margin-top: 5px;
+   }
+
+   #titlesGeneralBtnC {
+      margin-top: 5px;
+   }
+}
+
+/*SCREEN WIDTH UNDER 250px*/
+@media only screen and (max-width: 250px) {
+   #leftHalfSplitAboutMeMenuC {			
+      margin-right: 5px;
+   }
+}
+
+/*SCREEN WIDTH UNDER 200px*/
+@media only screen and (max-width: 200px) {
+   #leftHalfSplitAboutMeMenuC {			
+      margin-right: 1px;
+   }
+}
+
+
+
+
+/*ANIMATIONS*/
+@keyframes MoveLeftTopGround {
+   0% {
+      width: 100%;
+   }
+   100% {
+      width: 0;
+   }
+}
+
+@keyframes MoveOverTopGroundToMainPos {
+   100% {
+      right: 0;
+      margin-top: 0;
+      padding: 0 5px 0 0;
+      transform: translate(0, 0);
+   }
+}
+
+@keyframes AfterTopGroundHeartAction {
+   38% {
+      opacity: 0;
+   }
+   52% {
+      opacity: 0;
+   }
+   100% {
+      font-size: 200%;
+      left: 0;
+      transform: translate(0, 0);
+   }
+}
+
+@keyframes BeatingHeart {
+   0% {
+      transform: scale(.8);
+   }
+   20% {
+      text-shadow: 0 0 0.5vw rgb(150, 0, 0, 0.7);
+      transform: scale(.9);
+   }
+   40% {
+      transform: scale(.8);
+   }
+   60% {
+      text-shadow: 0 0 0.5vw rgb(150, 0, 0, 0.7);
+      transform: scale(1);
+   }
+   80% {
+      transform: scale(.8);
+   }
+   100% {
+      transform: scale(.8);
+   }
+}
+
+@keyframes ColorHeart {
+   0% {
+      color: white;
+   }
+   100% {
+      color: transparent;
+   }
+}
+
+@keyframes AfterTopGroundParAction {
+   20% {
+      color: transparent;
+   }
+   50% {
+      display: none;
+      width: 0;
+      float: right;
+      color: transparent;
+      padding-right: 6px;
+   }
+   100% {
+      display: none;
+      float: right;
+      width: 0;
+      right: 0px;
+      color: transparent;
+      font-size: 0;
+      padding-left: 6px;
+      transform: translate(0, 40%);
+   }
+}
+
+@keyframes ShowMenu {
+   0% {
+      transform: translate(-50%, -100%);
+   }
+   100% {
+      transform: translate(-50%, 0);
+   }
+}
+
+@keyframes ShowElement {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes SendScreenInViewWithSkew {
+   0% {
+      left: 0;
+      opacity: 0;
+      transform: translate(-100%, 0) skew(-120deg);
+   }
+   50% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+      left: 50%;
+      transform: translate(-50%, 0) skew(0deg);
+   }
+}
+@keyframes SendScreenInView {
+   0% {
+      left: 0;
+      opacity: 0;
+      transform: translate(-100%, 0);
+   }
+   50% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+      left: 50%;
+      transform: translate(-50%, 0);
+   }
+}
+
+
+@keyframes Loader {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes LoadingCharts {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}

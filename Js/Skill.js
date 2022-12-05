@@ -1,85 +1,85 @@
-	
-	//GOOGLE CHART CORE CLASS
-	class Skill {
-		constructor(gCItems, placeToBe, title, textAr, counter) {
-			//CREATE MY OBJECT FOR GOOGLE CHARTS
-			this.gCItems = gCItems;
-			
-			this.googleChart = null;
 
-			//ELEMENT WHERE CHART AND INFO ABOUT MY SKILLS WILL BE CREATED AND DISPLAYED
-			this.placeToBe = placeToBe;
+//GOOGLE CHART CORE CLASS
+class Skill {
+	constructor(gCItems, placeToBe, title, textAr, counter) {
+		//CREATE MY OBJECT FOR GOOGLE CHARTS
+		this.gCItems = gCItems;
 
-			//TITLE INNER HTML
-			this.title = title;
-			//GET TITLE CONTAINER SO WE CAN STYLE IT
-			this.elemntsThatChangeBackground =[];
-			this.elemntsThatChangeFont =[];
+		this.googleChart = null;
 
-			//ARRAY THAT FIRST ELEMENT IS SEMI-TITLE AND THE OTHERS ARE LIST-ELEMENTS
-			this.textAr = textAr;
+		//ELEMENT WHERE CHART AND INFO ABOUT MY SKILLS WILL BE CREATED AND DISPLAYED
+		this.placeToBe = placeToBe;
 
-			this.counter = counter;
+		//TITLE INNER HTML
+		this.title = title;
+		//GET TITLE CONTAINER SO WE CAN STYLE IT
+		this.elemntsThatChangeBackground = [];
+		this.elemntsThatChangeFont = [];
 
-			this.skillActiveStatus = false;
+		//ARRAY THAT FIRST ELEMENT IS SEMI-TITLE AND THE OTHERS ARE LIST-ELEMENTS
+		this.textAr = textAr;
 
-			this.Main();
-		}
+		this.counter = counter;
 
-		getGCItems() {
-			return this.gCItems;
-		}
+		this.skillActiveStatus = false;
 
-		getGoogleChart() {
-			return this.googleChart;
-		}
-		setGoogleChart(googleChart) {
-			this.googleChart = googleChart;
-		}
+		this.Main();
+	}
 
-		getPlaceToBe() {
-			return this.placeToBe;
-		}
+	getGCItems() {
+		return this.gCItems;
+	}
 
-		getTitle() {
-			return this.title;
-		}
+	getGoogleChart() {
+		return this.googleChart;
+	}
+	setGoogleChart(googleChart) {
+		this.googleChart = googleChart;
+	}
 
-		getElemntsThatChangeBackground() {
-			return this.elemntsThatChangeBackground;
-		}
-		setElemntsThatChangeBackground(elemntsThatChangeBackground) {
-			this.elemntsThatChangeBackground.push(elemntsThatChangeBackground);
-		}
+	getPlaceToBe() {
+		return this.placeToBe;
+	}
 
-		getElemntsThatChangeFont() {
-			return this.elemntsThatChangeFont;
-		}
-		setElemntsThatChangeFont(elemntsThatChangeFont) {
-			this.elemntsThatChangeFont.push(elemntsThatChangeFont);
-		}
+	getTitle() {
+		return this.title;
+	}
 
-		getTextAr() {
-			return this.textAr;
-		}
+	getElemntsThatChangeBackground() {
+		return this.elemntsThatChangeBackground;
+	}
+	setElemntsThatChangeBackground(elemntsThatChangeBackground) {
+		this.elemntsThatChangeBackground.push(elemntsThatChangeBackground);
+	}
 
-		getCounter() {
-			return this.counter;
-		}
+	getElemntsThatChangeFont() {
+		return this.elemntsThatChangeFont;
+	}
+	setElemntsThatChangeFont(elemntsThatChangeFont) {
+		this.elemntsThatChangeFont.push(elemntsThatChangeFont);
+	}
 
-		getSkillActiveStatus() {
-			return this.skillActiveStatus;
-		}
-		setSkillActiveStatus(skillActiveStatus) {
-			this.skillActiveStatus = skillActiveStatus;
-		}
+	getTextAr() {
+		return this.textAr;
+	}
 
-		Main() {
+	getCounter() {
+		return this.counter;
+	}
 
-		}
+	getSkillActiveStatus() {
+		return this.skillActiveStatus;
+	}
+	setSkillActiveStatus(skillActiveStatus) {
+		this.skillActiveStatus = skillActiveStatus;
+	}
 
-		PrototypePieOfHorizontalView(percentToReach) {
-			this.getPlaceToBe().innerHTML = `
+	Main() {
+
+	}
+
+	PrototypePieOfHorizontalView(percentToReach) {
+		this.getPlaceToBe().innerHTML = `
 				<div class="skillOverallWrapTitleC">
 					<div id="skillOverallTitle` + this.getCounter() + `C" class="skillOverallTitleC">
 						<h2 class="skillOverallTitleH small_Title">` + this.getTitle() + `</h2>
@@ -108,85 +108,85 @@
 				</div>
 			`;
 
-			var unqiueId = "chartWrap" + this.getCounter() + "C";
-			var getChartPlaceId = document.getElementById(unqiueId);
-			//this.getGoogleChart().setElmntOverall(getChartPlaceId);
-			this.setGoogleChart( new GoogleChart(
-				this.getGCItems()[0], this.getGCItems()[1], this.getGCItems()[2],
-				getChartPlaceId, this.getGCItems()[4], this.getGCItems()[5],
-				this.getGCItems()[6], this.getGCItems()[7], this.getGCItems()[8]
-			));
+		var unqiueId = "chartWrap" + this.getCounter() + "C";
+		var getChartPlaceId = document.getElementById(unqiueId);
+		//this.getGoogleChart().setElmntOverall(getChartPlaceId);
+		this.setGoogleChart(new GoogleChart(
+			this.getGCItems()[0], this.getGCItems()[1], this.getGCItems()[2],
+			getChartPlaceId, this.getGCItems()[4], this.getGCItems()[5],
+			this.getGCItems()[6], this.getGCItems()[7], this.getGCItems()[8]
+		));
 
-			this.getGoogleChart().setPieAnimLvl(percentToReach);
-			this.getGoogleChart().Main();
+		this.getGoogleChart().setPieAnimLvl(percentToReach);
+		this.getGoogleChart().Main();
 
-			//GET TITLE CONTAINER OF SKILL
-			let thisTitleC = "skillOverallTitle" + this.getCounter() + "C";
-			thisTitleC = document.getElementById(thisTitleC);
-			this.setElemntsThatChangeBackground(thisTitleC);
+		//GET TITLE CONTAINER OF SKILL
+		let thisTitleC = "skillOverallTitle" + this.getCounter() + "C";
+		thisTitleC = document.getElementById(thisTitleC);
+		this.setElemntsThatChangeBackground(thisTitleC);
 
-			//WHEN USER IS SCROLLING ON TOP OF AN ELEMENT, REVEAL IT
-			this.ShowWhenInViewElements();
+		//WHEN USER IS SCROLLING ON TOP OF AN ELEMENT, REVEAL IT
+		this.ShowWhenInViewElements();
 
-			//CREATE THE SHOW VIEW OF TEXT ARRAY OF THIS ELEMENT
-			this.TransformTextArrayToShowView();
-		}
+		//CREATE THE SHOW VIEW OF TEXT ARRAY OF THIS ELEMENT
+		this.TransformTextArrayToShowView();
+	}
 
-		ShowWhenInViewElements() {
-			var skillOverallTitleC = "skillOverallTitle" + this.getCounter() + "C";
-			skillOverallTitleC = document.getElementById(skillOverallTitleC);
+	ShowWhenInViewElements() {
+		var skillOverallTitleC = "skillOverallTitle" + this.getCounter() + "C";
+		skillOverallTitleC = document.getElementById(skillOverallTitleC);
 
-			var skillOverallWrapC = "skillOverallWrap" + this.getCounter() + "C";
-			skillOverallWrapC = document.getElementById(skillOverallWrapC);
+		var skillOverallWrapC = "skillOverallWrap" + this.getCounter() + "C";
+		skillOverallWrapC = document.getElementById(skillOverallWrapC);
 
-			var skillOverallTextWrapP = "skillOverallTextWrap" + this.getCounter() + "P";
-			skillOverallTextWrapP = document.getElementById(skillOverallTextWrapP);
+		var skillOverallTextWrapP = "skillOverallTextWrap" + this.getCounter() + "P";
+		skillOverallTextWrapP = document.getElementById(skillOverallTextWrapP);
 
-			var skillOverallChartC = "chartWrap" + this.getCounter() + "C";
-			skillOverallChartC = document.getElementById(skillOverallChartC);
+		var skillOverallChartC = "chartWrap" + this.getCounter() + "C";
+		skillOverallChartC = document.getElementById(skillOverallChartC);
 
-			var googlCh = this.getGoogleChart();
+		var googlCh = this.getGoogleChart();
 
-			var thisObj = this;
-			var check = true;
+		var thisObj = this;
+		var check = true;
 
-			var rightBodyTCC = document.getElementById("rightBodyTCC");
+		var rightBodyTCC = document.getElementById("rightBodyTCC");
 
+		CheckCurrentViewPort();
+		document.addEventListener("scroll", function () {
 			CheckCurrentViewPort();
-			document.addEventListener("scroll", function() {
-				CheckCurrentViewPort();
-			});
+		});
 
-			function CheckCurrentViewPort() {
-				if(CheckPartOfElementInViewport(skillOverallWrapC) && check && !thisObj.getSkillActiveStatus()) {
-					thisObj.setSkillActiveStatus(true);
-					
-					googlCh.PieAnimation();
+		function CheckCurrentViewPort() {
+			if (CheckPartOfElementInViewport(skillOverallWrapC) && check && !thisObj.getSkillActiveStatus()) {
+				thisObj.setSkillActiveStatus(true);
 
-					skillOverallTitleC.style.transform = "translate(-50%, 0)";
+				googlCh.PieAnimation();
 
-					skillOverallChartC.style.animationPlayState = "running";
+				skillOverallTitleC.style.transform = "translate(-50%, 0)";
 
-					skillOverallWrapC.style.opacity = "1";
+				skillOverallChartC.style.animationPlayState = "running";
 
-					skillOverallTextWrapP.style.opacity = "1";
-					
-					check = false;
-				}
+				skillOverallWrapC.style.opacity = "1";
+
+				skillOverallTextWrapP.style.opacity = "1";
+
+				check = false;
 			}
 		}
+	}
 
-		DisablePieAnimation() {
-			this.getGoogleChart().PieUnableAnimation();
-		}
+	DisablePieAnimation() {
+		this.getGoogleChart().PieUnableAnimation();
+	}
 
-		TransformTextArrayToShowView() {
-			var getTextAr = this.getTextAr();
+	TransformTextArrayToShowView() {
+		var getTextAr = this.getTextAr();
 
-			var skillOverallTextWrapP = "skillOverallTextWrap" + this.getCounter() + "P";
-			skillOverallTextWrapP = document.getElementById(skillOverallTextWrapP);
+		var skillOverallTextWrapP = "skillOverallTextWrap" + this.getCounter() + "P";
+		skillOverallTextWrapP = document.getElementById(skillOverallTextWrapP);
 
-			skillOverallTextWrapP.innerHTML = `
+		skillOverallTextWrapP.innerHTML = `
 				<p class="skillTextArP small_Title">
 					<span id="skillTextArMain` + this.getCounter() + `Sp"></span>
 					<span id="skillTextArSecondary` + this.getCounter() + `Sp"></span>
@@ -194,42 +194,42 @@
 				<ul id="skillTextAr` + this.getCounter() + `Ul" class="skillTextArUl"></ul>
 			`;
 
-			//GET ELEMENTS THAT JUST CREATED UP
-			var skillTextArMainSp = "skillTextArMain" + this.getCounter() + "Sp";
-			skillTextArMainSp = document.getElementById(skillTextArMainSp);
-			this.setElemntsThatChangeFont(skillTextArMainSp);
+		//GET ELEMENTS THAT JUST CREATED UP
+		var skillTextArMainSp = "skillTextArMain" + this.getCounter() + "Sp";
+		skillTextArMainSp = document.getElementById(skillTextArMainSp);
+		this.setElemntsThatChangeFont(skillTextArMainSp);
 
-			var skillTextArSecondarySp = "skillTextArSecondary" + this.getCounter() + "Sp";
-			skillTextArSecondarySp = document.getElementById(skillTextArSecondarySp);
+		var skillTextArSecondarySp = "skillTextArSecondary" + this.getCounter() + "Sp";
+		skillTextArSecondarySp = document.getElementById(skillTextArSecondarySp);
 
-			var skillTextArUl = "skillTextAr" + this.getCounter() + "Ul";
-			skillTextArUl = document.getElementById(skillTextArUl);
+		var skillTextArUl = "skillTextAr" + this.getCounter() + "Ul";
+		skillTextArUl = document.getElementById(skillTextArUl);
 
-			for(var i = 0; i < getTextAr.length;i++) {
-				if(i == 0) {
-					skillTextArMainSp.innerHTML = getTextAr[i];
-				}
-				else if(i == 1) {
-					skillTextArSecondarySp.innerHTML = " - " + getTextAr[i];
-				}
-				else {
-					var newItemInUl = this.getCounter() + `` + i; 
-					newItemInUl = `<li id="textUl` + newItemInUl + `Li" class="textUlLi simple_Text">` + getTextAr[i] + `</li>`;
+		for (var i = 0; i < getTextAr.length; i++) {
+			if (i == 0) {
+				skillTextArMainSp.innerHTML = getTextAr[i];
+			}
+			else if (i == 1) {
+				skillTextArSecondarySp.innerHTML = " - " + getTextAr[i];
+			}
+			else {
+				var newItemInUl = this.getCounter() + `` + i;
+				newItemInUl = `<li id="textUl` + newItemInUl + `Li" class="textUlLi simple_Text">` + getTextAr[i] + `</li>`;
 
-					skillTextArUl.innerHTML += newItemInUl;
-				}
-			};
-		}
-
-		RecolorAttrtsOfSkill(backgroundColor, fontColor) {
-			//BACKGROUND CHANGES
-			this.getElemntsThatChangeBackground().forEach(elmntBackgr => {
-				elmntBackgr.style.background = backgroundColor;
-			});
-
-			//FONT CHANGES
-			this.getElemntsThatChangeFont().forEach(elemntFont => {
-				elemntFont.style.color = fontColor;
-			});
-		}
+				skillTextArUl.innerHTML += newItemInUl;
+			}
+		};
 	}
+
+	RecolorAttrtsOfSkill(backgroundColor, fontColor) {
+		//BACKGROUND CHANGES
+		this.getElemntsThatChangeBackground().forEach(elmntBackgr => {
+			elmntBackgr.style.background = backgroundColor;
+		});
+
+		//FONT CHANGES
+		this.getElemntsThatChangeFont().forEach(elemntFont => {
+			elemntFont.style.color = fontColor;
+		});
+	}
+}

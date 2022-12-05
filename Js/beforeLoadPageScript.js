@@ -2,9 +2,9 @@
 //CHECK USER PAGE STATUS BEFORE LOAD
 function CheckIfPageThatIsAboutToLoadIsInCurrentStatus() {
 	var check = sessionStorage.getItem("siteIsLoaded");
-	
+
 	//CHECK IF SITE IS ALREADY LOADED IN THE CURRENT SESSION
-	if(check == null) {
+	if (check == null) {
 		window.location.href = "../index.html";
 	}
 }
@@ -15,18 +15,18 @@ CheckIfPageThatIsAboutToLoadIsInCurrentStatus();
 
 //PAGE BACKGROUND BUTTON STATUS LOAD
 function InitializePageBackgroundStatus() {
-	if(sessionStorage.getItem("pageBackgroundProfile") == null) {
+	if (sessionStorage.getItem("pageBackgroundProfile") == null) {
 		sessionStorage.setItem("pageBackgroundProfile", "prof1");
 	}
 }
-	
+
 InitializePageBackgroundStatus();
 ////
 
 
 //GET PAGE WIDTH
 function GetPageWidth() {
-	var width =  Math.max(document.body.scrollWidth,
+	var width = Math.max(document.body.scrollWidth,
 		document.documentElement.scrollWidth,
 		document.body.offsetWidth,
 		document.documentElement.offsetWidth,
@@ -39,10 +39,10 @@ function GetPageWidth() {
 
 //CLEAR ALL INTERVALS
 function ClearAllIntervals() {
-	var intervalId = window.setInterval(function() {}, Number.MAX_SAFE_INTEGER);
-	
+	var intervalId = window.setInterval(function () { }, Number.MAX_SAFE_INTEGER);
+
 	//CLEAR ANY TIMEOUT/INTERVAL UP TO THAT ID
-	for(var i = 1; i < intervalId; i++) {
+	for (var i = 1; i < intervalId; i++) {
 		window.clearInterval(i);
 	}
 }
@@ -55,7 +55,7 @@ function CheckEntireElementInViewport(el) {
 	var width = el.offsetWidth;
 	var height = el.offsetHeight;
 
-	while(el.offsetParent) {
+	while (el.offsetParent) {
 		el = el.offsetParent;
 		top += el.offsetTop;
 		//left += el.offsetLeft;
@@ -76,7 +76,7 @@ function CheckPartOfElementInViewport(el) {
 	var width = el.offsetWidth;
 	var height = el.offsetHeight;
 
-	while(el.offsetParent) {
+	while (el.offsetParent) {
 		el = el.offsetParent;
 		top += el.offsetTop;
 		left += el.offsetLeft;
@@ -114,7 +114,7 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 
 		verticalDragC.appendChild(elmnt);
 
-		if(counterHelp == 0) {
+		if (counterHelp == 0) {
 			elmnt.style.transform = "scale(1.3)";
 		}
 
@@ -129,15 +129,15 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 	upBtn.style.display = "none";
 
 	//ADD LIFE TO MOVE UP MENU BUTTON
-	upBtn.addEventListener("click", function() {
+	upBtn.addEventListener("click", function () {
 		var currentCounter = parseInt(placeToBe.name);
 
-		if(currentCounter > 0) {
+		if (currentCounter > 0) {
 			placeToBe.name = currentCounter - 1;
 			currentCounter = parseInt(placeToBe.name);
-			
+
 			//IF UP BUTTONS IS HIDDEN SHOW IT
-			if(currentCounter == (items.length - 2)) {
+			if (currentCounter == (items.length - 2)) {
 				downBtn.style.display = "block";
 				downBtn.style.opacity = 1;
 			}
@@ -146,7 +146,7 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			let newPos = (placeToBe.clientHeight * (currentCounter));
 			verticalDragElmntC.style.marginTop = -newPos + "px";
 			//RESPONSIVENESS REASON
-			window.addEventListener("resize", function() {
+			window.addEventListener("resize", function () {
 				let newPos = (placeToBe.clientHeight * (currentCounter));
 				verticalDragElmntC.style.marginTop = -newPos + "px";
 			});
@@ -163,8 +163,8 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			currentPar.style.transform = "scale(1)";
 
 			//IF REACHES MIN OPTION
-			if(currentCounter == 0) {
-				setTimeout(function() {
+			if (currentCounter == 0) {
+				setTimeout(function () {
 					upBtn.style.display = "none";
 				}, 200);
 				upBtn.style.opacity = 0;
@@ -173,7 +173,7 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			//CONTENT OF SEMESTER
 			semestersContentC.style.opacity = 0;
 			semestersContentC.style.animation = "none";
-			setTimeout(function() {
+			setTimeout(function () {
 				semestersContentC.style.opacity = 1;
 				items[currentCounter][1]();
 			}, 300);
@@ -181,12 +181,12 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 	});
 
 	//ADD LIFE TO MOVE DOWN MENU BUTTON
-	downBtn.addEventListener("click", function() {
+	downBtn.addEventListener("click", function () {
 		var currentCounter = parseInt(placeToBe.name);
 
-		if(currentCounter < (items.length - 1)) {
+		if (currentCounter < (items.length - 1)) {
 			//IF UP BUTTONS IS HIDDEN SHOW IT
-			if(currentCounter == 0) {
+			if (currentCounter == 0) {
 				upBtn.style.display = "block";
 				upBtn.style.opacity = 1;
 			}
@@ -195,12 +195,12 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			let newPos = (placeToBe.clientHeight * (currentCounter + 1));
 			verticalDragElmntC.style.marginTop = -newPos + "px";
 			//RESPONSIVENESS REASON
-			window.addEventListener("resize", function() {
+			window.addEventListener("resize", function () {
 				let newPos = (placeToBe.clientHeight * (currentCounter + 1));
 				verticalDragElmntC.style.marginTop = -newPos + "px";
 			});
 			//
-			
+
 			//TRANSFORM CURRENT PAR SELECTED
 			var helpForCurPar = "verticalDragP" + counter + (currentCounter + 1);
 			var currentPar = document.getElementById(helpForCurPar);
@@ -212,8 +212,8 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			currentPar.style.transform = "scale(1)";
 
 			//IF REACHES MAX OPTION
-			if(currentCounter == (items.length - 2)) {
-				setTimeout(function() {
+			if (currentCounter == (items.length - 2)) {
+				setTimeout(function () {
 					downBtn.style.display = "none";
 				}, 200);
 				downBtn.style.opacity = 0;
@@ -222,7 +222,7 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 			//CONTENT OF SEMESTER
 			semestersContentC.style.opacity = 0;
 			semestersContentC.style.animation = "none";
-			setTimeout(function() {
+			setTimeout(function () {
 				semestersContentC.style.opacity = 1;
 				items[currentCounter + 1][1]();
 			}, 300);
@@ -234,9 +234,26 @@ function CreateVerticalOrHorizontalMenu(items, placeToBe, counter, upBtn, downBt
 ////
 
 
+
 //IF PAGE IS UNDER CONSTRUCTION COVER IT WITH THE RIGHT MESSAGE
+/*
+	STRUCTURE WHEN CALLING UNDER CONSTRUCTION
+	-----------------------------------------
+		let elmntToPlace = document.getElementById(elmntToPlace);
+		let msgObj = {
+			text: "MESSAGE TO SHOW!",
+			fontClass: "class to set fonts styling"
+		};
+		let imgObj = {
+			url: "IMG DISPLAYING WITH THE MESSAGE (path here)",
+			width: size,
+			height: size
+		};
+		let multOfConstrImg = sizeMulti;
+	-----------------------------------------
+*/
 function UnderConstructionPage(elmntToPlace, msgObj, imgObj, multiSizeOfUnderConstImg) {
-	if(msgObj.text == null) {
+	if (msgObj.text == null) {
 		msgObj.text = "THIS PAGE IS UNDER CONSTRUCTION";
 	}
 
